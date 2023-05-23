@@ -20,6 +20,7 @@ Service.init(
   },
   {
     sequelize,
+    timestamps: false,
     modelName: 'Service',
     tableName: 'services',
   },

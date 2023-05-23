@@ -25,6 +25,7 @@ ColumnOrders.init(
   },
   {
     sequelize,
+    timestamps: false,
     modelName: "ColumnOrders",
     tableName: "column_orders",
   }
