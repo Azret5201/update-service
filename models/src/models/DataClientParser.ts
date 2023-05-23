@@ -25,6 +25,7 @@ DataClientParser.init(
   },
   {
     sequelize,
+    timestamps: false,
     modelName: "DataClientParser",
     tableName: "data_client_parsers",
   }
