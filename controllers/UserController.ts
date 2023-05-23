@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { User } from '../models/src/models/User';
-import { QP01Hash, checkQP01Hash, generateToken } from '../utils/authUtils';
+import { checkHash, generateToken } from '../utils/authUtils';
 
 export class UserController {
   public static async login(req: Request, res: Response): Promise<void> {
@@ -16,10 +16,11 @@ export class UserController {
         res.status(404).json({ error: 'User not found' });
         return;
       }
-      const hash = QP01Hash(password);
-      const isPasswordValid = checkQP01Hash(hash, user.passwd);
+      const isPasswordValid = checkHash(user.passwd, password);
 
-      if (isPasswordValid) {
+      console.log(isPasswordValid);
+
+      if (!isPasswordValid) {
         res.status(401).json({ error: 'Invalid password' });
         return;
       }

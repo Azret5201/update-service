@@ -61,3 +61,10 @@ export function checkQP01Hash(hash: string, passwd: string): boolean {
 
   return false;
 }
+
+console.log(
+  checkHash(
+    '$QP01$426309972bfd184c36fdb8286e1094b1a711474fb72227c2df5de9d6e8ddd140$1b15179dc552b7a5f58aed977ce31656c890698c24e35904ce4d3214aa94e577',
+    '0123456789',
+  ),
+);
