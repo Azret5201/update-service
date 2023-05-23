@@ -1,11 +1,11 @@
-import { Sequelize } from 'sequelize-typescript';
+import { Sequelize } from 'sequelize';
+import { config } from '../../utils/config';
+import { Dialect } from 'sequelize';
 
-const sequelize = new Sequelize({
-  database: process.env.DB_NAME,
-  username: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  dialect: process.env.DB_PASSWORD, // например, 'mysql', 'postgres', 'sqlite', 'mssql'
-  models: [__dirname + '/models'] // путь к каталогу моделей
+export const sequelize = new Sequelize(config.dbName, config.dbUser, config.dbPassword, {
+  host: config.dbHost,
+  port: +config.dbPort,
+  dialect: config.dbDialect as Dialect,
 });
 
 export default sequelize;
