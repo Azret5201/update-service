@@ -7,7 +7,10 @@ export class UserController {
     const { username, password } = req.body;
 
     try {
-      const user = await User.findOne({ where: { username } });
+      const user = await User.findOne({
+        attributes: ['login', 'passwd'],
+        where: { login: username },
+      });
 
       if (!user) {
         res.status(404).json({ error: 'User not found' });
