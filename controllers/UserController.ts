@@ -18,8 +18,6 @@ export class UserController {
       }
       const isPasswordValid = checkHash(user.passwd, password);
 
-      console.log(isPasswordValid);
-
       if (!isPasswordValid) {
         res.status(401).json({ error: 'Invalid password' });
         return;
