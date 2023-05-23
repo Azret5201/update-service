@@ -14,11 +14,11 @@ User.init(
       autoIncrement: true,
       primaryKey: true,
     },
-    username: {
+    login: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    password: {
+    passwd: {
       type: DataTypes.STRING,
       allowNull: false,
     },
