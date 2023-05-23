@@ -14,17 +14,25 @@ ColumnOrders.init(
       autoIncrement: true,
       primaryKey: true,
     },
+
     service_id: {
       type: DataTypes.BIGINT,
       allowNull: false,
     },
-    orders: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+
+    identifier_order: {
+      type: DataTypes.SMALLINT,
+      allowNull: false,
+    },
+
+    pay_sum_order: {
+      type: DataTypes.SMALLINT,
       allowNull: true,
     },
   },
   {
     sequelize,
+    timestamps: false,
     modelName: "ColumnOrders",
     tableName: "column_orders",
   }
