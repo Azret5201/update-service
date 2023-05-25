@@ -6,6 +6,7 @@ import { AuthMiddleware } from './middleware/AuthMiddleware';
 import sequelize from './models/src/sequelize';
 
 import cors from 'cors';
+import { AbonentServiceController } from './controllers/AbonentServiceController';
 
 // Enable CORS for all routes
 dotenv.config();
@@ -17,7 +18,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post('/login', UserController.login);
-app.get('/users', AuthMiddleware.authenticate, UserController.getUsers);
+app.post('/abonent-service/store', AbonentServiceController.store);
 
 app.get('/', (req, res) => {
   res.send('Express + TypeScript Server');
