@@ -23,7 +23,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/listServices', AbonentServiceController.getServices);
-app.get('/api/properties/:id', AbonentServiceController.getProperties);
 
 app.listen(port, () => {
     console.log(`[server]: Server is running at http://localhost:${port}`);
