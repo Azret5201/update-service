@@ -3,7 +3,7 @@ import { User } from '../models/src/models/User';
 import { checkHash, generateToken } from '../utils/authUtils';
 
 export class UserController {
-  public static async login(req: Request, res: Response): Promise<void> {
+  public async login(req: Request, res: Response): Promise<void> {
     const { username, password } = req.body;
 
     try {
@@ -31,7 +31,7 @@ export class UserController {
     }
   }
 
-  public static async getUsers(req: Request, res: Response): Promise<void> {
+  public async getUsers(req: Request, res: Response): Promise<void> {
     try {
       const users = await User.findAll();
 
