@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { User } from '../models/src/models/User';
-import { QP01Hash, checkHash } from '../utils/authUtils';
 
 declare global {
   namespace Express {
