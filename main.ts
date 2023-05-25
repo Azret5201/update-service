@@ -1,5 +1,4 @@
 import express from 'express';
-import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import router from './routes/api';
 import cors from 'cors';
@@ -11,7 +10,7 @@ app.use(bodyParser.json());
 
 // Enable CORS for all routes
 app.use(cors());
-app.use(router);
+app.use('/api', router);
 
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);

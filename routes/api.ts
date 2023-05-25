@@ -11,6 +11,6 @@ const userController = new UserController();
 router.post('/login', userController.login);
 router.get('/users', AuthMiddleware.authenticate, userController.getUsers);
 router.post('/abonent-service/store', abonentServiceController.store);
-router.get('/api/listServices', abonentServiceController.getServices);
+router.get('/listServices', abonentServiceController.getServices);
 
 export default router;
