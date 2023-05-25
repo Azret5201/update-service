@@ -1,13 +1,13 @@
 import { Model, DataTypes } from "sequelize";
 import sequelize from "../sequelize";
 
-export class ColumnOrders extends Model {
+export class ColumnOrder extends Model {
   public id!: number;
   public service_id!: number;
   public orders!: string[];
 }
 
-ColumnOrders.init(
+ColumnOrder.init(
   {
     id: {
       type: DataTypes.BIGINT,
