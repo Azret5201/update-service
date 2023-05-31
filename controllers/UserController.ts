@@ -8,7 +8,7 @@ export class UserController {
 
     try {
       const user = await User.findOne({
-        attributes: ['login', 'passwd'],
+        attributes: ['id', 'login', 'passwd'],
         where: { login: username },
       });
 
