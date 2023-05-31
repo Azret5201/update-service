@@ -12,22 +12,24 @@ declare global {
 
 export class AuthMiddleware {
   public static authenticate(req: Request, res: Response, next: NextFunction): void {
-    const token = req.header('Authorization');
+    let token = req.header('Authorization');
 
     if (!token) {
       res.status(401).json({ error: 'Unauthorized' });
       return;
     }
-
+    token = token.split(' ')[1];
     try {
       const decoded = jwt.verify(token, 'secret');
 
       if (typeof decoded === 'object' && decoded.hasOwnProperty('userId')) {
         const userId = (decoded as { userId: number }).userId;
 
-        User.findByPk(userId).then((user) => {
+        User.findByPk(userId, {
+          attributes: ['id', 'login', 'passwd'],
+        }).then((user) => {
           if (user) {
-            req.user = user;
+            decoded.user = user.id;
             next();
           } else {
             res.status(401).json({ error: 'Unauthorized' });
