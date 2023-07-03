@@ -6,7 +6,7 @@ import cors from 'cors';
 const app = express();
 const port = 3000;
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '50mb' }));
 
 // Enable CORS for all routes
 app.use(cors());
