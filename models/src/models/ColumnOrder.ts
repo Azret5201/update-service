@@ -1,10 +1,11 @@
-import { Model, DataTypes } from "sequelize";
-import sequelize from "../sequelize";
+import { Model, DataTypes } from 'sequelize';
+import sequelize from '../sequelize';
 
 export class ColumnOrder extends Model {
   public id!: number;
   public service_id!: number;
-  public orders!: string[];
+  public identifier_order!: number;
+  public pay_sum_order!: number;
 }
 
 ColumnOrder.init(
@@ -33,7 +34,7 @@ ColumnOrder.init(
   {
     sequelize,
     timestamps: false,
-    modelName: "ColumnOrders",
-    tableName: "column_orders",
-  }
+    modelName: 'ColumnOrders',
+    tableName: 'column_orders',
+  },
 );
