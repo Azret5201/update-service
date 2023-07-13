@@ -1,5 +1,5 @@
-import { Model, DataTypes } from "sequelize";
-import sequelize from "../sequelize";
+import { Model, DataTypes } from 'sequelize';
+import sequelize from '../sequelize';
 
 export class AbonentService extends Model {
   public id!: number;
@@ -31,16 +31,17 @@ AbonentService.init(
     },
     delete_mark: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
+      allowNull: true,
     },
     another_data: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.JSON,
       allowNull: true,
     },
   },
   {
     sequelize,
-    modelName: "AbonentService",
-    tableName: "abonent_service",
-  }
+    timestamps: false,
+    modelName: 'AbonentService',
+    tableName: 'abonent_service',
+  },
 );
