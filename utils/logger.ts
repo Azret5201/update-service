@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as fs from 'fs/promises';
 
 const logFilePath = 'script_log.log'; // Путь к файлу лога
 
@@ -26,3 +27,18 @@ const getCurrentTimestamp = () => {
     const now = new Date();
     return now.toLocaleString(); // Возвращаем дату и время в формате "дд.мм.гггг, чч:мм:сс"
 };
+
+
+type LogType = 'successful' | 'error';
+
+export async function writeLogToFile(logType: LogType, message: string): Promise<void> {
+  const fileName = logType === 'successful' ? 'successful.txt' : 'error.txt';
+  const logMessage = `${new Date().toLocaleString()} - ${message}\n`;
+
+  try {
+    await fs.appendFile(fileName, logMessage);
+  } catch (err) {
+    console.error(`Failed to write log to ${fileName}: ${err}`);
+  }
+}
+

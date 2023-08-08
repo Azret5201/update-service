@@ -8,3 +8,8 @@ jspm_packages/
 storage/*
 *.js
 filtered/
+package-lock.json
+package.json
+successful.txt
+error.txt
+static/
