@@ -1,21 +1,25 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../sequelize';
+import {RegistryFile} from "./RegistryFile";
+import {RegistriesRegistryFilesRelation} from "./RegistriesRegistryFilesRelation";
 
-export class RegistryList extends Model {
+export class Registry extends Model {
   public id!: number;
-  public title!: string;
+  public name!: string;
   public type!: number;
-  public rc_service_ids!: object;
+  public emails!: object;
+  public is_blocked!: boolean;
+  public RegistryFiles?: RegistryFile[];
 }
 
-RegistryList.init(
+Registry.init(
   {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    title: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -23,15 +27,20 @@ RegistryList.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-      rc_service_ids: {
+      emails: {
       type: DataTypes.JSON,
       allowNull: true,
+    },
+      is_blocked: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
     }
   },
   {
     sequelize,
     timestamps: false,
-    modelName: 'RegistryList',
-    tableName: 'rc_list',
+    modelName: 'Registry',
+    tableName: 'registries',
   },
 );
+

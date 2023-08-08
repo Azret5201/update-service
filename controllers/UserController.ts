@@ -27,6 +27,7 @@ export class UserController {
 
       res.json({ token });
     } catch (error) {
+      console.error(error)
       res.status(500).json({ error: 'Internal server error' });
     }
   }

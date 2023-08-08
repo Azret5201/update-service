@@ -1,0 +1,282 @@
+2023-08-01T08:10:41.229Z - An error occurred: Please provide a valid type as an argument.
+2023-08-01T08:18:59.341Z - Script started.
+2023-08-01T08:18:59.511Z - An error occurred: Class constructor Model cannot be invoked without 'new'
+2023-08-01T08:20:46.290Z - Script started.
+2023-08-01T08:20:46.427Z - An error occurred: Class constructor Model cannot be invoked without 'new'
+2023-08-01T08:20:57.137Z - An error occurred: Please provide a valid type as an argument.
+2023-08-01T08:22:20.494Z - Script started.
+2023-08-01T08:22:20.866Z - An error occurred: Class constructor Model cannot be invoked without 'new'
+2023-08-01T08:23:16.182Z - Script started.
+2023-08-01T08:23:16.351Z - An error occurred: Class constructor Model cannot be invoked without 'new'
+2023-08-01T08:24:00.008Z - Script started.
+2023-08-01T08:24:00.179Z - An error occurred: Class constructor Model cannot be invoked without 'new'
+2023-08-01T08:28:52.494Z - Script started.
+2023-08-01T08:29:16.384Z - Processed registry file 2 successfully.
+2023-08-01T08:29:59.023Z - Processed registry file 1 successfully.
+2023-08-01T08:29:59.970Z - Реестры успешно отправлены на указанные адреса.
+2023-08-01T08:29:59.970Z - Script completed successfully.
+2023-08-01T08:31:16.406Z - Script started.
+2023-08-01T08:31:39.762Z - An error occurred: ENOENT: no such file or directory, open 'files/2output.xlsx'
+2023-08-01T08:32:19.418Z - An error occurred: ENOENT: no such file or directory, open 'files/1output.xlsx'
+2023-08-01T08:32:20.426Z - Script completed successfully.
+2023-08-01T08:32:20.426Z - Реестры успешно отправлены на указанные адреса.
+2023-08-01T08:49:15.581Z - Script started.
+2023-08-01T08:49:39.685Z - Processed registry file 2 successfully.
+2023-08-01T08:50:19.521Z - Processed registry file 1 successfully.
+2023-08-01T08:50:21.049Z - Реестры успешно отправлены на указанные адреса.
+2023-08-01T08:50:21.050Z - Script completed successfully.
+2023-08-01T08:53:53.771Z - Script started.
+2023-08-01T08:54:13.190Z - Processed registry file 2 successfully.
+2023-08-01T08:54:51.016Z - Processed registry file 1 successfully.
+2023-08-01T08:54:52.593Z - Script completed successfully.
+2023-08-01T08:54:52.593Z - Реестры успешно отправлены на указанные адреса.
+2023-08-01T09:01:00.716Z - Script started.
+2023-08-01T09:01:21.139Z - Processed registry file 2 successfully.
+2023-08-01T09:01:56.776Z - Processed registry file 1 successfully.
+2023-08-01T09:01:57.831Z - Реестры успешно отправлены на указанные адреса.
+2023-08-01T09:01:57.832Z - Script completed successfully.
+2023-08-01T10:05:49.311Z - Script started.
+2023-08-01T10:11:34.684Z - Script completed successfully.
+2023-08-01T10:11:34.683Z - Реестры успешно отправлены на указанные адреса.
+2023-08-01T10:20:44.016Z - Script started.
+2023-08-01T10:21:44.318Z - Реестры успешно отправлены на указанные адреса.
+2023-08-01T10:21:44.319Z - Script completed successfully.
+2023-08-01T10:27:16.945Z - Script started.
+2023-08-01T10:28:20.696Z - Реестры успешно отправлены на указанные адреса.
+2023-08-01T10:28:20.697Z - Script completed successfully.
+2023-08-01T10:30:47.581Z - Script started.
+2023-08-01T10:31:08.151Z - Script started.
+2023-08-01T10:31:27.544Z - Processed registry file 2 successfully.
+2023-08-01T10:32:05.575Z - Processed registry file 1 successfully.
+2023-08-01T10:32:06.817Z - Реестры успешно отправлены на указанные адреса.
+2023-08-01T10:32:06.817Z - Script completed successfully.
+2023-08-02T04:17:50.981Z - Script started.)
+2023-08-02T04:41:19.775Z - Script started.)
+2023-08-02T04:45:12.303Z - Script started.)
+2023-08-02T04:45:32.697Z - Processed registry file 2 successfully.
+2023-08-02T04:46:08.158Z - Script started.)
+8/2/2023, 12:22:44 PM - Script started.)
+8/2/2023, 12:22:44 PM - Processing registry with ID: 7
+8/2/2023, 12:23:10 PM - Processed registry file 2 successfully.
+8/2/2023, 12:23:49 PM - Processed registry file 1 successfully.
+8/2/2023, 12:23:51 PM - Registry with ID 7 successfully sent to the specified addresses.
+8/2/2023, 12:23:51 PM - Script completed successfully.
+8/2/2023, 1:44:36 PM - Script started.)
+8/2/2023, 1:44:36 PM - Processing registry with ID: 7
+8/2/2023, 1:45:00 PM - Processed registry file 2 successfully.
+8/2/2023, 1:45:40 PM - Processed registry file 1 successfully.
+8/2/2023, 1:45:40 PM - Registry with ID 7 successfully sent to the specified addresses.
+8/2/2023, 1:45:40 PM - Script completed successfully.
+8/2/2023, 1:54:28 PM - Script started.)
+8/2/2023, 1:54:28 PM - Processing registry with ID: 7
+8/2/2023, 1:54:50 PM - Processed registry file 2 successfully.
+8/2/2023, 1:55:29 PM - Processed registry file 1 successfully.
+8/2/2023, 1:55:31 PM - Script completed successfully.
+8/2/2023, 1:55:31 PM - Registry with ID 7 successfully sent to the specified addresses.
+8/2/2023, 1:56:57 PM - Script started.)
+8/2/2023, 1:56:57 PM - Processing registry with ID: 8
+8/2/2023, 1:57:01 PM - Processed registry file 5 successfully.
+8/2/2023, 1:57:03 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 1:57:03 PM - Script completed successfully.
+8/2/2023, 1:57:58 PM - Script started.)
+8/2/2023, 1:57:58 PM - Processing registry with ID: 7
+8/2/2023, 1:58:18 PM - Processed registry file 2 successfully.
+8/2/2023, 1:58:56 PM - Processed registry file 1 successfully.
+8/2/2023, 1:58:57 PM - Registry with ID 7 successfully sent to the specified addresses.
+8/2/2023, 1:58:57 PM - Processing registry with ID: 8
+8/2/2023, 1:59:01 PM - Processed registry file 5 successfully.
+8/2/2023, 1:59:02 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 1:59:02 PM - Script completed successfully.
+8/2/2023, 2:00:28 PM - Script started.)
+8/2/2023, 2:00:28 PM - Processing registry with ID: 8
+8/2/2023, 2:00:33 PM - Processed registry file 5 successfully.
+8/2/2023, 2:00:33 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 2:00:33 PM - Processing registry with ID: 7
+8/2/2023, 2:00:52 PM - Processed registry file 2 successfully.
+8/2/2023, 2:01:34 PM - Processed registry file 1 successfully.
+8/2/2023, 2:01:35 PM - Registry with ID 7 successfully sent to the specified addresses.
+8/2/2023, 2:01:35 PM - Script completed successfully.
+8/2/2023, 2:15:24 PM - Script started.)
+8/2/2023, 2:15:25 PM - 8registry_id
+8/2/2023, 2:15:25 PM - Processing registry with ID: 8
+8/2/2023, 2:15:25 PM - Processing registry file with ID: 5
+8/2/2023, 2:15:30 PM - Processed registry file 5 successfully.
+8/2/2023, 2:15:31 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 2:15:31 PM - 7registry_id
+8/2/2023, 2:15:31 PM - Processing registry with ID: 7
+8/2/2023, 2:15:31 PM - Processing registry file with ID: 2
+8/2/2023, 2:15:50 PM - Processed registry file 2 successfully.
+8/2/2023, 2:15:50 PM - Processing registry file with ID: 1
+8/2/2023, 2:16:47 PM - Script started.)
+8/2/2023, 2:16:47 PM - 8registry_id
+8/2/2023, 2:16:47 PM - Processing registry with ID: 8
+8/2/2023, 2:16:47 PM - Processing registry file with ID: 5
+8/2/2023, 2:16:52 PM - Processed registry file 5 successfully.
+8/2/2023, 2:16:53 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 2:16:53 PM - 7registry_id
+8/2/2023, 2:16:53 PM - Processing registry with ID: 7
+8/2/2023, 2:16:53 PM - Processing registry file with ID: 2
+8/2/2023, 2:17:12 PM - Processed registry file 2 successfully.
+8/2/2023, 2:17:12 PM - Processing registry file with ID: 1
+8/2/2023, 2:17:50 PM - Processed registry file 1 successfully.
+8/2/2023, 2:17:51 PM - Registry with ID 7 successfully sent to the specified addresses.
+8/2/2023, 2:17:51 PM - Script completed successfully.
+8/2/2023, 4:27:06 PM - Script started.)
+8/2/2023, 4:27:07 PM - 8registry_id
+8/2/2023, 4:27:07 PM - Processing registry file with ID: 5
+8/2/2023, 4:27:07 PM - Processing registry with ID: 8
+8/2/2023, 4:27:22 PM - Script started.)
+8/2/2023, 4:27:22 PM - 8registry_id
+8/2/2023, 4:27:22 PM - Processing registry with ID: 8
+8/2/2023, 4:27:22 PM - Processing registry file with ID: 5
+8/2/2023, 4:27:27 PM - Processed registry file 5 successfully.
+8/2/2023, 4:27:27 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 4:27:27 PM - 7registry_id
+8/2/2023, 4:27:27 PM - Processing registry with ID: 7
+8/2/2023, 4:27:27 PM - Processing registry file with ID: 2
+8/2/2023, 4:27:47 PM - Processed registry file 2 successfully.
+8/2/2023, 4:27:47 PM - Processing registry file with ID: 1
+8/2/2023, 4:28:24 PM - Script started.)
+8/2/2023, 4:28:24 PM - 8registry_id
+8/2/2023, 4:28:24 PM - Processing registry file with ID: 5
+8/2/2023, 4:28:24 PM - Processing registry with ID: 8
+8/2/2023, 4:28:29 PM - Processed registry file 5 successfully.
+8/2/2023, 4:28:30 PM - 7registry_id
+8/2/2023, 4:28:30 PM - Processing registry file with ID: 2
+8/2/2023, 4:28:30 PM - Processing registry with ID: 7
+8/2/2023, 4:28:30 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 4:28:41 PM - Script started.)
+8/2/2023, 4:28:41 PM - 8registry_id
+8/2/2023, 4:28:41 PM - Processing registry with ID: 8
+8/2/2023, 4:28:41 PM - Processing registry file with ID: 5
+8/2/2023, 4:29:10 PM - Script started.)
+8/2/2023, 4:29:10 PM - 8registry_id
+8/2/2023, 4:29:10 PM - Processing registry with ID: 8
+8/2/2023, 4:29:10 PM - Processing registry file with ID: 5
+8/2/2023, 4:29:15 PM - Processed registry file 5 successfully.
+8/2/2023, 4:29:16 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 4:29:16 PM - 7registry_id
+8/2/2023, 4:29:16 PM - Processing registry with ID: 7
+8/2/2023, 4:29:16 PM - Processing registry file with ID: 2
+8/2/2023, 4:31:27 PM - Script started.)
+8/2/2023, 4:31:27 PM - 8registry_id
+8/2/2023, 4:31:27 PM - Processing registry with ID: 8
+8/2/2023, 4:31:27 PM - Processing registry file with ID: 5
+8/2/2023, 4:31:34 PM - Processed registry file 5 successfully.
+8/2/2023, 4:31:35 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 4:31:35 PM - 7registry_id
+8/2/2023, 4:31:35 PM - Processing registry with ID: 7
+8/2/2023, 4:31:35 PM - Processing registry file with ID: 2
+8/2/2023, 4:31:53 PM - Script started.)
+8/2/2023, 4:31:54 PM - 8registry_id
+8/2/2023, 4:31:54 PM - Processing registry with ID: 8
+8/2/2023, 4:31:54 PM - Processing registry file with ID: 5
+8/2/2023, 4:31:58 PM - Processed registry file 5 successfully.
+8/2/2023, 4:31:58 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 4:31:58 PM - 7registry_id
+8/2/2023, 4:31:58 PM - Processing registry with ID: 7
+8/2/2023, 4:31:58 PM - Processing registry file with ID: 2
+8/2/2023, 4:32:18 PM - Processed registry file 2 successfully.
+8/2/2023, 4:32:18 PM - Processing registry file with ID: 1
+8/2/2023, 4:32:57 PM - Processed registry file 1 successfully.
+8/2/2023, 4:32:58 PM - Registry with ID 7 successfully sent to the specified addresses.
+8/2/2023, 4:32:58 PM - Script completed successfully.
+8/2/2023, 4:37:36 PM - Script started.)
+8/2/2023, 4:37:36 PM - 8registry_id
+8/2/2023, 4:37:36 PM - Processing registry with ID: 8
+8/2/2023, 4:37:36 PM - Processing registry file with ID: 5
+8/2/2023, 4:37:44 PM - Processed registry file 5 successfully.
+8/2/2023, 4:37:44 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 4:37:44 PM - Processing registry file with ID: 2
+8/2/2023, 4:37:44 PM - 7registry_id
+8/2/2023, 4:37:44 PM - Processing registry with ID: 7
+8/2/2023, 4:38:03 PM - Processed registry file 2 successfully.
+8/2/2023, 4:38:03 PM - Processing registry file with ID: 1
+8/2/2023, 4:38:43 PM - Processed registry file 1 successfully.
+8/2/2023, 4:38:44 PM - Registry with ID 7 successfully sent to the specified addresses.
+8/2/2023, 4:38:44 PM - Script completed successfully.
+8/2/2023, 4:40:08 PM - Script started.)
+8/2/2023, 4:40:08 PM - 8registry_id
+8/2/2023, 4:40:08 PM - Processing registry with ID: 8
+8/2/2023, 4:40:08 PM - Processing registry file with ID: 5
+8/2/2023, 4:40:12 PM - Processed registry file 5 successfully.
+8/2/2023, 4:40:13 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 4:40:13 PM - 7registry_id
+8/2/2023, 4:40:13 PM - Processing registry with ID: 7
+8/2/2023, 4:40:13 PM - Processing registry file with ID: 2
+8/2/2023, 4:40:31 PM - Processed registry file 2 successfully.
+8/2/2023, 4:40:31 PM - Processing registry file with ID: 1
+8/2/2023, 5:00:03 PM - Script started.)
+8/2/2023, 5:00:03 PM - Processing registry with ID: 8
+8/2/2023, 5:00:03 PM - Processing registry file with ID: 5
+8/2/2023, 5:00:03 PM - 8registry_id
+8/2/2023, 5:09:15 PM - Script started.)
+8/2/2023, 5:09:15 PM - 8registry_id
+8/2/2023, 5:09:15 PM - Processing registry with ID: 8
+8/2/2023, 5:09:15 PM - Processing registry file with ID: 5
+8/2/2023, 5:09:21 PM - Processed registry file 5 successfully.
+8/2/2023, 5:09:21 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 5:09:21 PM - 7registry_id
+8/2/2023, 5:09:21 PM - Processing registry with ID: 7
+8/2/2023, 5:09:21 PM - Processing registry file with ID: 2
+8/2/2023, 5:09:40 PM - Processed registry file 2 successfully.
+8/2/2023, 5:09:40 PM - Processing registry file with ID: 1
+8/2/2023, 5:09:40 PM - Processed registry file 1 successfully.
+8/2/2023, 5:09:40 PM - Registry with ID 7 successfully sent to the specified addresses.
+8/2/2023, 5:09:40 PM - Script completed successfully.
+8/2/2023, 5:14:53 PM - Script started.)
+8/2/2023, 5:14:53 PM - 8registry_id
+8/2/2023, 5:14:53 PM - Processing registry with ID: 8
+8/2/2023, 5:14:53 PM - Processing registry file with ID: 5
+8/2/2023, 5:14:57 PM - Processed registry file 5 successfully.
+8/2/2023, 5:14:58 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 5:14:58 PM - 7registry_id
+8/2/2023, 5:14:58 PM - Processing registry with ID: 7
+8/2/2023, 5:14:58 PM - Processing registry file with ID: 2
+8/2/2023, 5:15:18 PM - Processed registry file 2 successfully.
+8/2/2023, 5:15:18 PM - Processing registry file with ID: 1
+8/2/2023, 5:15:18 PM - Processed registry file 1 successfully.
+8/2/2023, 5:15:19 PM - Script completed successfully.
+8/2/2023, 5:15:19 PM - Registry with ID 7 successfully sent to the specified addresses.
+8/2/2023, 5:19:06 PM - Script started.)
+8/2/2023, 5:19:07 PM - 8registry_id
+8/2/2023, 5:19:07 PM - Processing registry with ID: 8
+8/2/2023, 5:19:07 PM - Processing registry file with ID: 5
+8/2/2023, 5:19:12 PM - Processed registry file 5 successfully.
+8/2/2023, 5:19:12 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 5:19:12 PM - Processing registry file with ID: 2
+8/2/2023, 5:19:12 PM - Processing registry with ID: 7
+8/2/2023, 5:19:12 PM - 7registry_id
+8/2/2023, 5:19:32 PM - Processed registry file 2 successfully.
+8/2/2023, 5:19:32 PM - Processing registry file with ID: 1
+8/2/2023, 5:19:32 PM - Processed registry file 1 successfully.
+8/2/2023, 5:19:32 PM - Registry with ID 7 successfully sent to the specified addresses.
+8/2/2023, 5:19:32 PM - Script completed successfully.
+8/2/2023, 5:20:44 PM - Script started.)
+8/2/2023, 5:20:44 PM - 8registry_id
+8/2/2023, 5:20:44 PM - Processing registry file with ID: 5
+8/2/2023, 5:20:44 PM - Processing registry with ID: 8
+8/2/2023, 5:20:50 PM - Processed registry file 5 successfully.
+8/2/2023, 5:20:51 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 5:20:51 PM - 7registry_id
+8/2/2023, 5:20:51 PM - Processing registry with ID: 7
+8/2/2023, 5:20:51 PM - Processing registry file with ID: 2
+8/2/2023, 5:21:12 PM - Processed registry file 2 successfully.
+8/2/2023, 5:21:12 PM - Processing registry file with ID: 1
+8/2/2023, 5:21:12 PM - Processed registry file 1 successfully.
+8/2/2023, 5:21:13 PM - Registry with ID 7 successfully sent to the specified addresses.
+8/2/2023, 5:21:13 PM - Script completed successfully.
+8/2/2023, 5:26:15 PM - Script started.)
+8/2/2023, 5:26:15 PM - 8registry_id
+8/2/2023, 5:26:15 PM - Processing registry with ID: 8
+8/2/2023, 5:26:15 PM - Processing registry file with ID: 5
+8/2/2023, 5:26:23 PM - Processed registry file 5 successfully.
+8/2/2023, 5:26:24 PM - Registry with ID 8 successfully sent to the specified addresses.
+8/2/2023, 5:26:24 PM - 7registry_id
+8/2/2023, 5:26:24 PM - Processing registry with ID: 7
+8/2/2023, 5:26:24 PM - Processing registry file with ID: 2
+8/2/2023, 5:26:45 PM - Processed registry file 2 successfully.
+8/2/2023, 5:26:45 PM - Processing registry file with ID: 1
+8/2/2023, 5:27:29 PM - Processed registry file 1 successfully.
+8/2/2023, 5:27:30 PM - Script completed successfully.
+8/2/2023, 5:27:30 PM - Registry with ID 7 successfully sent to the specified addresses.
