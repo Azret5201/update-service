@@ -6,6 +6,7 @@ import {UserController} from '../controllers/UserController';
 import {AuthMiddleware} from '../middleware/AuthMiddleware';
 import {RegistryController} from "../controllers/RegistryController";
 import {RegistryBackupController} from "../controllers/RegistryBackupController";
+import {RegistryLogController} from "../controllers/RegistryLogController";
 import {Recipient} from "../models/src/models/Recipient";
 
 const router = Router();
@@ -14,6 +15,7 @@ const abonentServerController = new AbonentServerController();
 const recipientController = new RecipientController();
 const registryController = new RegistryController();
 const registryBackupController = new RegistryBackupController();
+const registryLogController = new RegistryLogController();
 const userController = new UserController();
 
 router.post('/login', userController.login);
@@ -37,5 +39,7 @@ router.put('/recipient/:id', recipientController.update);
 router.delete('/recipient/:id', recipientController.destroy);
 router.get('/registryBackup/index', registryBackupController.getBackups);
 router.post('/registryBackup/download', registryBackupController.downloadBackup);
+router.get('/registryLog/index', registryLogController.getLogs);
+router.post('/registryLog/download', registryLogController.downloadLog);
 
 export default router;
