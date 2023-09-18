@@ -4,7 +4,13 @@ export function getAccountValueByKey(arr: any[], key: string) {
             acc[k] = v;
             return acc;
         }, {});
-        obj.account = accountObject[key] || obj.account;
+
+        if (accountObject.hasOwnProperty(key)) {
+            obj.account = accountObject[key];
+        } else {
+            obj.account = 'Столбец отсутствует';
+        }
+
         return obj;
     });
 }

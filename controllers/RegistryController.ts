@@ -1,23 +1,34 @@
 import {Request, Response} from "express";
 import {Registry} from "../models/src/models/Registry";
-import {RegistriesRegistryFilesRelation} from "../models/src/models/RegistriesRegistryFilesRelation";
 import sequelize from "../models/src/sequelize";
+import {RecipientsRegistriesRelation} from "../models/src/models/RecipientsRegistriesRelation";
+import {Op} from "sequelize";
 
 export class RegistryController {
     public async getRegistryPage(req: Request, res: Response): Promise<void> {
-        const pageNumber = req.body.page ?? 1
-        const pageSize = 100
+        const pageNumber = req.query.page ? parseInt(req.query.page as string) : 1;
+        const pageSize = 50;
         const offset = (pageNumber - 1) * pageSize;
-        const totalCount = await Registry.count();
+        const searchTerm = req.query.search;
+
+        const whereClause:any = {}; // Пустой объект для условий поиска
+
+        if (searchTerm) {
+            whereClause['name'] = {
+                [Op.like]: `%${searchTerm}%`, // Используем оператор Op.like для поиска похожих записей
+            };
+        }
+
         try {
+            const totalCount = await Registry.count({ where: whereClause });
             const totalPages = Math.ceil(totalCount / pageSize);
             const results = await Registry.findAll({
+                where: whereClause,
                 limit: pageSize,
                 offset: offset,
-                order: [
-                    ['id', 'desc']
-                ]
+                order: [['id', 'desc']],
             });
+
             const response = {
                 total: totalCount,
                 per_page: pageSize,
@@ -27,147 +38,155 @@ export class RegistryController {
                 to: offset + results.length,
                 data: results,
             };
+
             res.json(response);
         } catch (error) {
-            res.status(500).json({error: "Internal server error"});
+            res.status(500).json({ error: "Internal server error" });
         }
     }
 
     public async getRegistries(req: Request, res: Response): Promise<void> {
         try {
-            const registryFiles = await Registry.findAll();
-            res.json(registryFiles);
+            const registries = await Registry.findAll();
+            res.json(registries);
         } catch (error) {
             res.status(500).json({error: "Internal server error"});
         }
     }
 
     public async store(req: Request, res: Response): Promise<void> {
-        const { name, type, emails, is_blocked, registry_file_ids } = req.body;
-        const t = await sequelize.transaction();
+        if (
+            !req.body.name
+            || !req.body.servicesId
+            || !req.body.serverId
+            || !req.body.formats
+        ) {
+            res.status(400).json({ error: "Required parameters are missing" });
+            return;
+        }
+
+
+        interface RowData {
+            isActive: boolean;
+            field: string;
+            tableHeader: string;
+        }
+
+        const activeRows: RowData[] = req.body.rowsData.filter((row: RowData) => row.isActive);
+
+        const arrayFields = activeRows.map(row => row.field);
+        const arrayTableHeaders = activeRows.map(row => row.tableHeader);
+
+        const fields = arrayFields.join(', ');
+        const tableHeaders = arrayTableHeaders.join(', ');
+
         try {
-            const createdRegistry = await Registry.create({
-                name,
-                type,
-                emails,
-                is_blocked,
-            }, { transaction: t });
+            await Registry.create({
+                name: req.body.name,
+                services_id: req.body.servicesId,
+                server_id: req.body.serverId,
+                table_headers: tableHeaders,
+                fields: fields,
+                formats: req.body.formats,
+                is_blocked: req.body.is_blocked,
+                sql_query: req.body.sqlQuery,
+            });
 
-            if (Array.isArray(registry_file_ids)) {
-                for (const registry_file_id of registry_file_ids) {
-                    await RegistriesRegistryFilesRelation.create({
-                        registryId: createdRegistry.id,
-                        registryFileId: registry_file_id,
-                    }, { transaction: t });
-                }
-            }
-            console.log('Record created.');
-
-            await t.commit();
-
-            res.json({ message: 'Record created' });
+            res.json({ message: "Record created" });
         } catch (error) {
-            console.error('Create operation failed:', error);
-            await t.rollback();
-            res.status(500).json({ error: 'Create operation failed' });
+            console.error("Create operation failed:", error);
+            res.status(500).json({ error: "Create operation failed" });
         }
     }
 
-
     public async show(req: Request, res: Response): Promise<void> {
-        const registryId = req.params.id;
-        try {
-            const registry = await Registry.findByPk(registryId);
-            const registryFiles = await RegistriesRegistryFilesRelation.findAll({
-                where: { registryId: registryId },
+        const fileId = req.params.id;
+
+        Registry.findByPk(fileId)
+            .then((registry) => {
+                if (!registry) {
+                    res.status(404).json({ error: "Registry file not found" });
+                    return;
+                }
+                res.json(registry);
+            })
+            .catch((error) => {
+                console.error("Show operation failed:", error);
+                res.status(500).json({ error: "Show operation failed" });
             });
-
-            if (!registry) {
-                res.status(404).json({ error: "Registry not found" });
-                return;
-            }
-
-            const registryData = {
-                id: registry.id,
-                name: registry.name,
-                type: registry.type,
-                emails: registry.emails,
-                is_blocked: registry.is_blocked,
-
-                registry_file_ids: registryFiles.map((file) => ({
-                    id: file.registryFileId,
-                })),
-            };
-
-            res.json(registryData);
-        } catch (error) {
-            console.error("Get by ID operation failed:", error);
-            res.status(500).json({ error: "Get by ID operation failed" });
-        }
     }
 
     public async update(req: Request, res: Response): Promise<void> {
-        const registryId = req.params.id;
-        const { name, type, emails, is_blocked, registry_file_ids } = req.body;
+        const fileId = req.params.id;
+        if (!req.body.serviceId && !req.body.table_headers && !req.body.name && (!req.body.fields || !req.body.sqlQuery)) {
+            res.status(400).json({error: "Required parameters are missing"});
+            return;
+        }
+        Registry.findByPk(fileId)
+            .then((registry) => {
+                if (!registry) {
+                    res.status(404).json({error: "Registry file not found"});
+                    return;
+                }
+
+                registry.name = req.body.name;
+                registry.services_id = req.body.servicesId;
+                registry.server_id = req.body.serverId;
+                registry.table_headers = req.body.tableHeaders;
+                registry.is_blocked = req.body.is_blocked;
+                registry.formats= req.body.formats;
+                registry.fields = req.body.fields;
+                registry.sql_query = req.body.sqlQuery;
+
+                return registry.save();
+
+            })
+            .then((updatedRegistry) => {
+                res.json(updatedRegistry);
+            })
+            .catch((error) => {
+                console.error("Update operation failed:", error);
+
+                res.status(500).json({error: "Update operation failed"});
+            });
+    }
+
+
+    public async destroy(req: Request, res: Response): Promise<void> {
+        const registry_id = req.params.id;
+
+        // Начинаем транзакцию
+        const t = await sequelize.transaction();
 
         try {
-            const registry = await Registry.findByPk(registryId);
+            // Удаляем связанные записи из другой таблицы
+            await RecipientsRegistriesRelation.destroy({
+                where: { registry_id: registry_id },
+                transaction: t
+            });
 
+
+            // Удаляем запись из таблицы Registry
+            const registry = await Registry.findByPk(registry_id, { transaction: t });
             if (!registry) {
                 res.status(404).json({ error: "Registry not found" });
                 return;
             }
 
-            registry.name = name;
-            registry.type = type;
-            registry.emails = emails;
-            registry.is_blocked = is_blocked;
 
-            await registry.save();
 
-            // Update RegistriesRegistryFilesRelation logic here
-            if (registry_file_ids.length > 0) {
-                // Delete existing relations
-                await RegistriesRegistryFilesRelation.destroy({
-                    where: {
-                        registryId: registry.id,
-                    },
-                });
+            await registry.destroy({ transaction: t });
 
-                // Create new relations
-                for (const registry_file_id of registry_file_ids) {
-                    await RegistriesRegistryFilesRelation.create({
-                        registryId: registry.id,
-                        registryFileId: registry_file_id,
-                    });
-                }
-            }
+            // Фиксируем транзакцию
+            await t.commit();
 
-            res.json(registry);
+            res.json({ message: "Registry and related records deleted successfully" });
         } catch (error) {
-            console.error("Update operation failed:", error);
-            res.status(500).json({ error: "Update operation failed" });
+            // Откатываем транзакцию в случае ошибки
+            await t.rollback();
+
+            console.error("Delete operation failed:", error);
+            res.status(500).json({ error: "Delete operation failed" });
         }
     }
-
-    public async destroy(req: Request, res: Response): Promise<void> {
-        const registryId = req.params.id;
-
-        Registry.findByPk(registryId)
-            .then((registry) => {
-                if (!registry) {
-                    res.status(404).json({error: "Registry not found"});
-                    return;
-                }
-
-                return registry.destroy();
-            })
-            .then(() => {
-                res.json({message: "Registry deleted successfully"});
-            })
-            .catch((error) => {
-                console.error("Delete operation failed:", error);
-                res.status(500).json({error: "Delete operation failed"});
-            });
     }
-}

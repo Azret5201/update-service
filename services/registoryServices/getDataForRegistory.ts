@@ -23,7 +23,7 @@ export const generateSQLQuery = (fields: string, serviceId: string, serverId: st
     }
 
     return `SELECT ${fields}
-            FROM payments_log
+            FROM payments_log_y2023_06
             WHERE payments_run = 1
               AND id_service = '${serviceId}'
               AND time_proc >= '${correctDateTimes[0]}'
@@ -56,10 +56,12 @@ export const getCorrectDateTime = (type: number) => {
             break;
     }
 
-    const formattedStartDate = '2023-04-05 00:00';
-    const formattedEndDate = '2023-04-05 23:59';
+    // Преобразуем даты в нужный формат
+    const formattedStartDate = startDate.format('YYYY-MM-DD');
+    const formattedEndDate = endDate.format('YYYY-MM-DD');
+
     return [formattedStartDate, formattedEndDate];
-}
+};
 
 export const setCorrectDateToSqlQuery = (sqlQuery: string, type: number) => {
     const correctDateTimes = getCorrectDateTime(type);

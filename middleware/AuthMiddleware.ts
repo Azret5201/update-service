@@ -15,8 +15,8 @@ export class AuthMiddleware {
     let token = req.header('Authorization');
 
     if (!token) {
-      res.status(401).json({ error: 'Unauthorized' });
-      return;
+      // Если отсутствует токен, перенаправьте пользователя на страницу логина
+      return res.redirect('/login'); // Используйте правильный путь к странице логина
     }
     token = token.split(' ')[1];
     try {
@@ -39,7 +39,8 @@ export class AuthMiddleware {
         res.status(401).json({ error: 'Unauthorized' });
       }
     } catch (error) {
-      res.status(401).json({ error: 'Unauthorized' });
+      // Если токен недействителен, перенаправьте пользователя на страницу логина
+      return res.redirect('/login'); // Используйте правильный путь к странице логина
     }
   }
 }

@@ -1,0 +1,2619 @@
+14.09.2023, 12:41:42 - Script started
+14.09.2023, 12:41:42 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 12:41:42 - Processing registry with ID: 42
+14.09.2023, 12:41:42 - -----------INFO------------
+14.09.2023, 12:41:42 - Sender Id: 42
+14.09.2023, 12:41:42 - Registry Id: 29
+14.09.2023, 12:41:42 - Sender Name: Северe3
+14.09.2023, 12:41:42 - Registry Name: moment pay reestr
+14.09.2023, 12:41:42 - Server id: 10066
+14.09.2023, 12:41:42 - Services ids: 3361,4554
+14.09.2023, 12:41:42 - Formats: xlsx,csv
+14.09.2023, 12:41:42 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 12:41:42 - Current Date: 2023-09-14 12:41:42
+14.09.2023, 12:41:42 - ---------PROCESSING---------
+14.09.2023, 12:41:42 - Processing registry file with ID: 29
+14.09.2023, 12:41:42 - Get data from service 3361 in format xlsx
+14.09.2023, 12:41:45 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 12:41:45 -  
+14.09.2023, 12:41:45 - Processing registry file with ID: 29
+14.09.2023, 12:41:45 - Get data from service 3361 in format csv
+14.09.2023, 12:41:47 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 12:41:47 -  
+14.09.2023, 12:41:47 - Processing registry file with ID: 29
+14.09.2023, 12:41:47 - Get data from service 4554 in format xlsx
+14.09.2023, 12:41:47 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 12:41:47 -  
+14.09.2023, 12:41:47 - Processing registry file with ID: 29
+14.09.2023, 12:41:47 - Get data from service 4554 in format csv
+14.09.2023, 12:41:47 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 12:41:47 -  
+14.09.2023, 12:41:47 - ---------SENDING---------
+14.09.2023, 12:41:49 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 12:41:49 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 12:41:49 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 12:41:49 - --------FINISHED--------
+14.09.2023, 12:41:49 -  
+14.09.2023, 12:41:49 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 12:41:49 - Processing registry with ID: 33
+14.09.2023, 12:41:49 - -----------INFO------------
+14.09.2023, 12:41:49 - Sender Id: 33
+14.09.2023, 12:41:49 - Registry Id: 29
+14.09.2023, 12:41:49 - Sender Name: Moment Pay
+14.09.2023, 12:41:49 - Registry Name: moment pay reestr
+14.09.2023, 12:41:49 - Server id: 10066
+14.09.2023, 12:41:49 - Services ids: 3361,4554
+14.09.2023, 12:41:49 - Formats: xlsx,csv
+14.09.2023, 12:41:49 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 12:41:49 - Current Date: 2023-09-14 12:41:49
+14.09.2023, 12:41:49 - ---------PROCESSING---------
+14.09.2023, 12:41:49 - Processing registry file with ID: 29
+14.09.2023, 12:41:49 - Get data from service 3361 in format xlsx
+14.09.2023, 12:41:51 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 12:41:51 -  
+14.09.2023, 12:41:51 - Processing registry file with ID: 29
+14.09.2023, 12:41:51 - Get data from service 3361 in format csv
+14.09.2023, 12:41:54 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 12:41:54 -  
+14.09.2023, 12:41:54 - Processing registry file with ID: 29
+14.09.2023, 12:41:54 - Get data from service 4554 in format xlsx
+14.09.2023, 12:41:54 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 12:41:54 -  
+14.09.2023, 12:41:54 - Processing registry file with ID: 29
+14.09.2023, 12:41:54 - Get data from service 4554 in format csv
+14.09.2023, 12:41:54 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 12:41:54 - ---------SENDING---------
+14.09.2023, 12:41:54 -  
+14.09.2023, 12:41:55 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 12:41:55 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 12:41:55 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 12:41:55 - --------FINISHED--------
+14.09.2023, 12:41:55 -  
+14.09.2023, 12:41:55 - Script completed successfully.
+14.09.2023, 13:22:01 - Script started
+14.09.2023, 13:22:01 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:22:01 - Processing registry with ID: 42
+14.09.2023, 13:22:01 - -----------INFO------------
+14.09.2023, 13:22:01 - Sender Id: 42
+14.09.2023, 13:22:01 - Registry Id: 29
+14.09.2023, 13:22:01 - Sender Name: Северe3
+14.09.2023, 13:22:01 - Registry Name: moment pay reestr
+14.09.2023, 13:22:01 - Server id: 10066
+14.09.2023, 13:22:01 - Services ids: 3361,4554
+14.09.2023, 13:22:01 - Formats: xlsx,csv
+14.09.2023, 13:22:01 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:22:01 - Current Date: 2023-09-14 13:22:01
+14.09.2023, 13:22:01 - ---------PROCESSING---------
+14.09.2023, 13:22:01 - Processing registry file with ID: 29
+14.09.2023, 13:22:01 - Get data from service 3361 in format xlsx
+14.09.2023, 13:22:05 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:22:05 -  
+14.09.2023, 13:22:05 - Processing registry file with ID: 29
+14.09.2023, 13:22:05 - Get data from service 3361 in format csv
+14.09.2023, 13:22:08 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:22:08 -  
+14.09.2023, 13:22:08 - Processing registry file with ID: 29
+14.09.2023, 13:22:08 - Get data from service 4554 in format xlsx
+14.09.2023, 13:22:08 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:22:08 -  
+14.09.2023, 13:22:08 - Processing registry file with ID: 29
+14.09.2023, 13:22:08 - Get data from service 4554 in format csv
+14.09.2023, 13:22:08 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:22:08 - ---------SENDING---------
+14.09.2023, 13:22:08 -  
+14.09.2023, 13:22:10 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 13:22:10 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:22:10 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:22:10 - --------FINISHED--------
+14.09.2023, 13:22:10 -  
+14.09.2023, 13:22:10 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 13:22:10 - Processing registry with ID: 33
+14.09.2023, 13:22:10 - -----------INFO------------
+14.09.2023, 13:22:10 - Sender Id: 33
+14.09.2023, 13:22:10 - Registry Id: 29
+14.09.2023, 13:22:10 - Sender Name: Moment Pay
+14.09.2023, 13:22:10 - Registry Name: moment pay reestr
+14.09.2023, 13:22:10 - Server id: 10066
+14.09.2023, 13:22:10 - Services ids: 3361,4554
+14.09.2023, 13:22:10 - Formats: xlsx,csv
+14.09.2023, 13:22:10 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:22:10 - Current Date: 2023-09-14 13:22:10
+14.09.2023, 13:22:10 - ---------PROCESSING---------
+14.09.2023, 13:22:10 - Processing registry file with ID: 29
+14.09.2023, 13:22:10 - Get data from service 3361 in format xlsx
+14.09.2023, 13:22:13 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:22:13 -  
+14.09.2023, 13:22:13 - Processing registry file with ID: 29
+14.09.2023, 13:22:13 - Get data from service 3361 in format csv
+14.09.2023, 13:22:16 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:22:16 -  
+14.09.2023, 13:22:16 - Processing registry file with ID: 29
+14.09.2023, 13:22:16 - Get data from service 4554 in format xlsx
+14.09.2023, 13:22:16 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:22:16 -  
+14.09.2023, 13:22:16 - Processing registry file with ID: 29
+14.09.2023, 13:22:16 - Get data from service 4554 in format csv
+14.09.2023, 13:22:16 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:22:16 -  
+14.09.2023, 13:22:16 - ---------SENDING---------
+14.09.2023, 13:22:16 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 13:22:16 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:22:16 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:22:16 - --------FINISHED--------
+14.09.2023, 13:22:16 -  
+14.09.2023, 13:22:16 - Script completed successfully.
+14.09.2023, 13:22:16 - [ERROR] An error occurred: ENOENT: no such file or directory, copyfile '/home/user/Рабочий стол/New Admin/update-service/services/registoryServices/error.log' -> '/home/user/Рабочий стол/New Admin/update-service/services/registoryServices/log_backups/error.log.2023-09-14T07:22:16.825Z.zip'
+14.09.2023, 13:33:42 - Script started
+14.09.2023, 13:33:42 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:33:42 - Processing registry with ID: 42
+14.09.2023, 13:33:42 - -----------INFO------------
+14.09.2023, 13:33:42 - Sender Id: 42
+14.09.2023, 13:33:42 - Registry Id: 29
+14.09.2023, 13:33:42 - Sender Name: Северe3
+14.09.2023, 13:33:42 - Registry Name: moment pay reestr
+14.09.2023, 13:33:42 - Server id: 10066
+14.09.2023, 13:33:42 - Services ids: 3361,4554
+14.09.2023, 13:33:42 - Formats: xlsx,csv
+14.09.2023, 13:33:43 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:33:43 - Current Date: 2023-09-14 13:33:43
+14.09.2023, 13:33:43 - ---------PROCESSING---------
+14.09.2023, 13:33:43 - Processing registry file with ID: 29
+14.09.2023, 13:33:43 - Get data from service 3361 in format xlsx
+14.09.2023, 13:33:45 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:33:45 -  
+14.09.2023, 13:33:45 - Processing registry file with ID: 29
+14.09.2023, 13:33:45 - Get data from service 3361 in format csv
+14.09.2023, 13:33:49 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:33:49 -  
+14.09.2023, 13:33:49 - Processing registry file with ID: 29
+14.09.2023, 13:33:49 - Get data from service 4554 in format xlsx
+14.09.2023, 13:33:49 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:33:49 -  
+14.09.2023, 13:33:49 - Processing registry file with ID: 29
+14.09.2023, 13:33:49 - Get data from service 4554 in format csv
+14.09.2023, 13:33:49 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:33:49 -  
+14.09.2023, 13:33:49 - ---------SENDING---------
+14.09.2023, 13:33:51 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 13:33:51 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:33:51 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:33:51 - --------FINISHED--------
+14.09.2023, 13:33:51 -  
+14.09.2023, 13:33:51 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 13:33:51 - Processing registry with ID: 33
+14.09.2023, 13:33:51 - -----------INFO------------
+14.09.2023, 13:33:51 - Sender Id: 33
+14.09.2023, 13:33:51 - Registry Id: 29
+14.09.2023, 13:33:51 - Sender Name: Moment Pay
+14.09.2023, 13:33:51 - Registry Name: moment pay reestr
+14.09.2023, 13:33:51 - Server id: 10066
+14.09.2023, 13:33:51 - Services ids: 3361,4554
+14.09.2023, 13:33:51 - Formats: xlsx,csv
+14.09.2023, 13:33:51 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:33:51 - Current Date: 2023-09-14 13:33:51
+14.09.2023, 13:33:51 - ---------PROCESSING---------
+14.09.2023, 13:33:51 - Processing registry file with ID: 29
+14.09.2023, 13:33:51 - Get data from service 3361 in format xlsx
+14.09.2023, 13:33:56 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:33:56 -  
+14.09.2023, 13:33:56 - Processing registry file with ID: 29
+14.09.2023, 13:33:56 - Get data from service 3361 in format csv
+14.09.2023, 13:33:58 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:33:58 -  
+14.09.2023, 13:33:58 - Processing registry file with ID: 29
+14.09.2023, 13:33:58 - Get data from service 4554 in format xlsx
+14.09.2023, 13:33:58 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:33:58 -  
+14.09.2023, 13:33:58 - Processing registry file with ID: 29
+14.09.2023, 13:33:58 - Get data from service 4554 in format csv
+14.09.2023, 13:33:59 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:33:59 -  
+14.09.2023, 13:33:59 - ---------SENDING---------
+14.09.2023, 13:33:59 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 13:33:59 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:33:59 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:33:59 - --------FINISHED--------
+14.09.2023, 13:33:59 -  
+14.09.2023, 13:33:59 - Script completed successfully.
+14.09.2023, 13:33:59 - Backup of registry files created successfully.
+14.09.2023, 13:34:53 - Script started
+14.09.2023, 13:34:53 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:34:53 - Processing registry with ID: 42
+14.09.2023, 13:34:53 - -----------INFO------------
+14.09.2023, 13:34:53 - Sender Id: 42
+14.09.2023, 13:34:53 - Registry Id: 29
+14.09.2023, 13:34:53 - Sender Name: Северe3
+14.09.2023, 13:34:53 - Registry Name: moment pay reestr
+14.09.2023, 13:34:53 - Server id: 10066
+14.09.2023, 13:34:53 - Services ids: 3361,4554
+14.09.2023, 13:34:53 - Formats: xlsx,csv
+14.09.2023, 13:34:53 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:34:53 - Current Date: 2023-09-14 13:34:53
+14.09.2023, 13:34:53 - ---------PROCESSING---------
+14.09.2023, 13:34:53 - Processing registry file with ID: 29
+14.09.2023, 13:34:53 - Get data from service 3361 in format xlsx
+14.09.2023, 13:34:57 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:34:57 -  
+14.09.2023, 13:34:57 - Processing registry file with ID: 29
+14.09.2023, 13:34:57 - Get data from service 3361 in format csv
+14.09.2023, 13:35:01 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:35:01 -  
+14.09.2023, 13:35:01 - Processing registry file with ID: 29
+14.09.2023, 13:35:01 - Get data from service 4554 in format xlsx
+14.09.2023, 13:35:01 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:35:01 -  
+14.09.2023, 13:35:01 - Processing registry file with ID: 29
+14.09.2023, 13:35:01 - Get data from service 4554 in format csv
+14.09.2023, 13:35:02 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:35:02 -  
+14.09.2023, 13:35:02 - ---------SENDING---------
+14.09.2023, 13:35:04 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 13:35:04 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:35:04 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:35:04 - --------FINISHED--------
+14.09.2023, 13:35:04 -  
+14.09.2023, 13:35:04 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 13:35:04 - Processing registry with ID: 33
+14.09.2023, 13:35:04 - -----------INFO------------
+14.09.2023, 13:35:04 - Sender Id: 33
+14.09.2023, 13:35:04 - Registry Id: 29
+14.09.2023, 13:35:04 - Sender Name: Moment Pay
+14.09.2023, 13:35:04 - Registry Name: moment pay reestr
+14.09.2023, 13:35:04 - Server id: 10066
+14.09.2023, 13:35:04 - Services ids: 3361,4554
+14.09.2023, 13:35:04 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:35:04 - Formats: xlsx,csv
+14.09.2023, 13:35:04 - Current Date: 2023-09-14 13:35:04
+14.09.2023, 13:35:04 - ---------PROCESSING---------
+14.09.2023, 13:35:04 - Processing registry file with ID: 29
+14.09.2023, 13:35:04 - Get data from service 3361 in format xlsx
+14.09.2023, 13:35:07 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:35:07 -  
+14.09.2023, 13:35:07 - Processing registry file with ID: 29
+14.09.2023, 13:35:07 - Get data from service 3361 in format csv
+14.09.2023, 13:35:09 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:35:09 -  
+14.09.2023, 13:35:09 - Processing registry file with ID: 29
+14.09.2023, 13:35:09 - Get data from service 4554 in format xlsx
+14.09.2023, 13:35:10 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:35:10 -  
+14.09.2023, 13:35:10 - Processing registry file with ID: 29
+14.09.2023, 13:35:10 - Get data from service 4554 in format csv
+14.09.2023, 13:35:10 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:35:10 -  
+14.09.2023, 13:35:10 - ---------SENDING---------
+14.09.2023, 13:35:10 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 13:35:10 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:35:10 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:35:10 - --------FINISHED--------
+14.09.2023, 13:35:10 -  
+14.09.2023, 13:35:10 - Script completed successfully.
+14.09.2023, 13:35:10 - Backup of registry files created successfully.
+14.09.2023, 13:36:29 - Script started
+14.09.2023, 13:36:29 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:36:29 - Processing registry with ID: 42
+14.09.2023, 13:36:29 - -----------INFO------------
+14.09.2023, 13:36:29 - Sender Id: 42
+14.09.2023, 13:36:29 - Registry Id: 29
+14.09.2023, 13:36:29 - Sender Name: Северe3
+14.09.2023, 13:36:29 - Registry Name: moment pay reestr
+14.09.2023, 13:36:29 - Server id: 10066
+14.09.2023, 13:36:29 - Services ids: 3361,4554
+14.09.2023, 13:36:29 - Formats: xlsx,csv
+14.09.2023, 13:36:29 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:36:29 - Current Date: 2023-09-14 13:36:29
+14.09.2023, 13:36:29 - ---------PROCESSING---------
+14.09.2023, 13:36:29 - Processing registry file with ID: 29
+14.09.2023, 13:36:29 - Get data from service 3361 in format xlsx
+14.09.2023, 13:36:32 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:36:32 -  
+14.09.2023, 13:36:32 - Processing registry file with ID: 29
+14.09.2023, 13:36:32 - Get data from service 3361 in format csv
+14.09.2023, 13:36:34 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:36:34 -  
+14.09.2023, 13:36:34 - Processing registry file with ID: 29
+14.09.2023, 13:36:34 - Get data from service 4554 in format xlsx
+14.09.2023, 13:36:34 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:36:34 -  
+14.09.2023, 13:36:34 - Processing registry file with ID: 29
+14.09.2023, 13:36:34 - Get data from service 4554 in format csv
+14.09.2023, 13:36:35 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:36:35 -  
+14.09.2023, 13:36:35 - ---------SENDING---------
+14.09.2023, 13:36:36 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 13:36:36 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:36:36 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:36:36 - --------FINISHED--------
+14.09.2023, 13:36:36 -  
+14.09.2023, 13:36:36 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 13:36:36 - Processing registry with ID: 33
+14.09.2023, 13:36:36 - -----------INFO------------
+14.09.2023, 13:36:36 - Sender Id: 33
+14.09.2023, 13:36:36 - Registry Id: 29
+14.09.2023, 13:36:36 - Sender Name: Moment Pay
+14.09.2023, 13:36:36 - Registry Name: moment pay reestr
+14.09.2023, 13:36:36 - Server id: 10066
+14.09.2023, 13:36:36 - Services ids: 3361,4554
+14.09.2023, 13:36:36 - Formats: xlsx,csv
+14.09.2023, 13:36:36 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:36:36 - Current Date: 2023-09-14 13:36:36
+14.09.2023, 13:36:36 - ---------PROCESSING---------
+14.09.2023, 13:36:36 - Processing registry file with ID: 29
+14.09.2023, 13:36:36 - Get data from service 3361 in format xlsx
+14.09.2023, 13:36:41 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:36:41 -  
+14.09.2023, 13:36:41 - Processing registry file with ID: 29
+14.09.2023, 13:36:41 - Get data from service 3361 in format csv
+14.09.2023, 13:36:47 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:36:47 -  
+14.09.2023, 13:36:47 - Processing registry file with ID: 29
+14.09.2023, 13:36:47 - Get data from service 4554 in format xlsx
+14.09.2023, 13:36:47 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:36:47 -  
+14.09.2023, 13:36:47 - Processing registry file with ID: 29
+14.09.2023, 13:36:47 - Get data from service 4554 in format csv
+14.09.2023, 13:36:47 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:36:47 -  
+14.09.2023, 13:36:47 - ---------SENDING---------
+14.09.2023, 13:36:48 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 13:36:48 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:36:48 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:36:48 - --------FINISHED--------
+14.09.2023, 13:36:48 -  
+14.09.2023, 13:36:48 - Script completed successfully.
+14.09.2023, 13:36:48 - Backup of registry files created successfully.
+14.09.2023, 13:41:42 - Script started
+14.09.2023, 13:41:42 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:41:42 - Processing registry with ID: 42
+14.09.2023, 13:41:42 - -----------INFO------------
+14.09.2023, 13:41:42 - Sender Id: 42
+14.09.2023, 13:41:42 - Registry Id: 29
+14.09.2023, 13:41:42 - Sender Name: Северe3
+14.09.2023, 13:41:42 - Registry Name: moment pay reestr
+14.09.2023, 13:41:42 - Server id: 10066
+14.09.2023, 13:41:42 - Services ids: 3361,4554
+14.09.2023, 13:41:42 - Formats: xlsx,csv
+14.09.2023, 13:41:42 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:41:42 - Current Date: 2023-09-14 13:41:42
+14.09.2023, 13:41:42 - ---------PROCESSING---------
+14.09.2023, 13:41:42 - Processing registry file with ID: 29
+14.09.2023, 13:41:42 - Get data from service 3361 in format xlsx
+14.09.2023, 13:41:47 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:41:47 -  
+14.09.2023, 13:41:47 - Processing registry file with ID: 29
+14.09.2023, 13:41:47 - Get data from service 3361 in format csv
+14.09.2023, 13:41:50 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:41:50 -  
+14.09.2023, 13:41:50 - Processing registry file with ID: 29
+14.09.2023, 13:41:50 - Get data from service 4554 in format xlsx
+14.09.2023, 13:41:51 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:41:51 -  
+14.09.2023, 13:41:51 - Processing registry file with ID: 29
+14.09.2023, 13:41:51 - Get data from service 4554 in format csv
+14.09.2023, 13:41:51 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:41:51 -  
+14.09.2023, 13:41:51 - ---------SENDING---------
+14.09.2023, 13:41:53 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 13:41:53 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:41:53 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:41:53 - --------FINISHED--------
+14.09.2023, 13:41:53 -  
+14.09.2023, 13:41:53 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 13:41:53 - Processing registry with ID: 33
+14.09.2023, 13:41:53 - -----------INFO------------
+14.09.2023, 13:41:53 - Sender Id: 33
+14.09.2023, 13:41:53 - Registry Id: 29
+14.09.2023, 13:41:53 - Sender Name: Moment Pay
+14.09.2023, 13:41:53 - Registry Name: moment pay reestr
+14.09.2023, 13:41:53 - Server id: 10066
+14.09.2023, 13:41:53 - Services ids: 3361,4554
+14.09.2023, 13:41:53 - Formats: xlsx,csv
+14.09.2023, 13:41:53 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:41:53 - Current Date: 2023-09-14 13:41:53
+14.09.2023, 13:41:53 - ---------PROCESSING---------
+14.09.2023, 13:41:53 - Processing registry file with ID: 29
+14.09.2023, 13:41:53 - Get data from service 3361 in format xlsx
+14.09.2023, 13:41:56 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:41:56 -  
+14.09.2023, 13:41:56 - Processing registry file with ID: 29
+14.09.2023, 13:41:56 - Get data from service 3361 in format csv
+14.09.2023, 13:41:59 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:41:59 -  
+14.09.2023, 13:41:59 - Processing registry file with ID: 29
+14.09.2023, 13:41:59 - Get data from service 4554 in format xlsx
+14.09.2023, 13:41:59 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:41:59 -  
+14.09.2023, 13:41:59 - Processing registry file with ID: 29
+14.09.2023, 13:41:59 - Get data from service 4554 in format csv
+14.09.2023, 13:41:59 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:41:59 -  
+14.09.2023, 13:41:59 - ---------SENDING---------
+14.09.2023, 13:42:00 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 13:42:00 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:42:00 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:42:00 - --------FINISHED--------
+14.09.2023, 13:42:00 -  
+14.09.2023, 13:42:00 - Script completed successfully.
+14.09.2023, 13:42:00 - Backup of registry files created successfully.
+14.09.2023, 13:42:30 - Script started
+14.09.2023, 13:42:31 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:42:31 - Processing registry with ID: 42
+14.09.2023, 13:42:31 - -----------INFO------------
+14.09.2023, 13:42:31 - Sender Id: 42
+14.09.2023, 13:42:31 - Registry Id: 29
+14.09.2023, 13:42:31 - Sender Name: Северe3
+14.09.2023, 13:42:31 - Registry Name: moment pay reestr
+14.09.2023, 13:42:31 - Server id: 10066
+14.09.2023, 13:42:31 - Services ids: 3361,4554
+14.09.2023, 13:42:31 - Formats: xlsx,csv
+14.09.2023, 13:42:31 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:42:31 - Current Date: 2023-09-14 13:42:31
+14.09.2023, 13:42:31 - ---------PROCESSING---------
+14.09.2023, 13:42:31 - Processing registry file with ID: 29
+14.09.2023, 13:42:31 - Get data from service 3361 in format xlsx
+14.09.2023, 13:42:35 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:42:35 -  
+14.09.2023, 13:42:35 - Processing registry file with ID: 29
+14.09.2023, 13:42:35 - Get data from service 3361 in format csv
+14.09.2023, 13:42:38 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:42:38 -  
+14.09.2023, 13:42:38 - Processing registry file with ID: 29
+14.09.2023, 13:42:38 - Get data from service 4554 in format xlsx
+14.09.2023, 13:42:38 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:42:38 -  
+14.09.2023, 13:42:38 - Processing registry file with ID: 29
+14.09.2023, 13:42:38 - Get data from service 4554 in format csv
+14.09.2023, 13:42:38 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:42:38 -  
+14.09.2023, 13:42:38 - ---------SENDING---------
+14.09.2023, 13:42:39 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 13:42:39 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:42:39 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:42:39 - --------FINISHED--------
+14.09.2023, 13:42:39 -  
+14.09.2023, 13:42:39 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 13:42:39 - Processing registry with ID: 33
+14.09.2023, 13:42:39 - -----------INFO------------
+14.09.2023, 13:42:39 - Sender Id: 33
+14.09.2023, 13:42:39 - Registry Id: 29
+14.09.2023, 13:42:39 - Sender Name: Moment Pay
+14.09.2023, 13:42:39 - Registry Name: moment pay reestr
+14.09.2023, 13:42:39 - Server id: 10066
+14.09.2023, 13:42:39 - Services ids: 3361,4554
+14.09.2023, 13:42:39 - Formats: xlsx,csv
+14.09.2023, 13:42:39 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:42:39 - Current Date: 2023-09-14 13:42:39
+14.09.2023, 13:42:39 - ---------PROCESSING---------
+14.09.2023, 13:42:39 - Processing registry file with ID: 29
+14.09.2023, 13:42:39 - Get data from service 3361 in format xlsx
+14.09.2023, 13:42:42 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:42:42 -  
+14.09.2023, 13:42:42 - Processing registry file with ID: 29
+14.09.2023, 13:42:42 - Get data from service 3361 in format csv
+14.09.2023, 13:42:47 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:42:47 -  
+14.09.2023, 13:42:47 - Processing registry file with ID: 29
+14.09.2023, 13:42:47 - Get data from service 4554 in format xlsx
+14.09.2023, 13:42:48 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:42:48 -  
+14.09.2023, 13:42:48 - Processing registry file with ID: 29
+14.09.2023, 13:42:48 - Get data from service 4554 in format csv
+14.09.2023, 13:42:48 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:42:48 -  
+14.09.2023, 13:42:48 - ---------SENDING---------
+14.09.2023, 13:42:48 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 13:42:48 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:42:48 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:42:48 - --------FINISHED--------
+14.09.2023, 13:42:48 -  
+14.09.2023, 13:42:48 - Script completed successfully.
+14.09.2023, 13:42:48 - Backup of registry files created successfully.
+14.09.2023, 13:43:16 - Script started
+14.09.2023, 13:43:17 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:43:17 - Processing registry with ID: 42
+14.09.2023, 13:43:17 - -----------INFO------------
+14.09.2023, 13:43:17 - Sender Id: 42
+14.09.2023, 13:43:17 - Registry Id: 29
+14.09.2023, 13:43:17 - Sender Name: Северe3
+14.09.2023, 13:43:17 - Server id: 10066
+14.09.2023, 13:43:17 - Registry Name: moment pay reestr
+14.09.2023, 13:43:17 - Services ids: 3361,4554
+14.09.2023, 13:43:17 - Formats: xlsx,csv
+14.09.2023, 13:43:17 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:43:17 - Current Date: 2023-09-14 13:43:17
+14.09.2023, 13:43:17 - ---------PROCESSING---------
+14.09.2023, 13:43:17 - Processing registry file with ID: 29
+14.09.2023, 13:43:17 - Get data from service 3361 in format xlsx
+14.09.2023, 13:43:19 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:43:19 -  
+14.09.2023, 13:43:19 - Processing registry file with ID: 29
+14.09.2023, 13:43:19 - Get data from service 3361 in format csv
+14.09.2023, 13:43:22 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:43:22 -  
+14.09.2023, 13:43:22 - Processing registry file with ID: 29
+14.09.2023, 13:43:22 - Get data from service 4554 in format xlsx
+14.09.2023, 13:43:22 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:43:22 -  
+14.09.2023, 13:43:22 - Processing registry file with ID: 29
+14.09.2023, 13:43:22 - Get data from service 4554 in format csv
+14.09.2023, 13:43:22 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:43:22 -  
+14.09.2023, 13:43:22 - ---------SENDING---------
+14.09.2023, 13:43:23 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 13:43:23 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:43:23 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:43:23 - --------FINISHED--------
+14.09.2023, 13:43:23 -  
+14.09.2023, 13:43:23 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 13:43:23 - Processing registry with ID: 33
+14.09.2023, 13:43:23 - -----------INFO------------
+14.09.2023, 13:43:23 - Sender Id: 33
+14.09.2023, 13:43:23 - Registry Id: 29
+14.09.2023, 13:43:23 - Sender Name: Moment Pay
+14.09.2023, 13:43:23 - Registry Name: moment pay reestr
+14.09.2023, 13:43:23 - Server id: 10066
+14.09.2023, 13:43:23 - Services ids: 3361,4554
+14.09.2023, 13:43:23 - Formats: xlsx,csv
+14.09.2023, 13:43:23 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:43:23 - Current Date: 2023-09-14 13:43:23
+14.09.2023, 13:43:23 - ---------PROCESSING---------
+14.09.2023, 13:43:23 - Processing registry file with ID: 29
+14.09.2023, 13:43:23 - Get data from service 3361 in format xlsx
+14.09.2023, 13:43:26 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:43:26 -  
+14.09.2023, 13:43:26 - Processing registry file with ID: 29
+14.09.2023, 13:43:26 - Get data from service 3361 in format csv
+14.09.2023, 13:43:29 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:43:29 -  
+14.09.2023, 13:43:29 - Processing registry file with ID: 29
+14.09.2023, 13:43:29 - Get data from service 4554 in format xlsx
+14.09.2023, 13:43:29 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:43:29 - Processing registry file with ID: 29
+14.09.2023, 13:43:29 -  
+14.09.2023, 13:43:29 - Get data from service 4554 in format csv
+14.09.2023, 13:43:29 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:43:29 -  
+14.09.2023, 13:43:29 - ---------SENDING---------
+14.09.2023, 13:43:29 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 13:43:29 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:43:29 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:43:29 - --------FINISHED--------
+14.09.2023, 13:43:29 -  
+14.09.2023, 13:43:29 - Script completed successfully.
+14.09.2023, 13:43:29 - Backup of registry files created successfully.
+14.09.2023, 13:44:47 - Script started
+14.09.2023, 13:44:47 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:44:47 - Processing registry with ID: 42
+14.09.2023, 13:44:47 - -----------INFO------------
+14.09.2023, 13:44:47 - Sender Id: 42
+14.09.2023, 13:44:47 - Registry Id: 29
+14.09.2023, 13:44:47 - Sender Name: Северe3
+14.09.2023, 13:44:47 - Registry Name: moment pay reestr
+14.09.2023, 13:44:47 - Server id: 10066
+14.09.2023, 13:44:47 - Services ids: 3361,4554
+14.09.2023, 13:44:47 - Formats: xlsx,csv
+14.09.2023, 13:44:47 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:44:47 - Current Date: 2023-09-14 13:44:47
+14.09.2023, 13:44:47 - ---------PROCESSING---------
+14.09.2023, 13:44:47 - Processing registry file with ID: 29
+14.09.2023, 13:44:47 - Get data from service 3361 in format xlsx
+14.09.2023, 13:44:50 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:44:50 -  
+14.09.2023, 13:44:50 - Processing registry file with ID: 29
+14.09.2023, 13:44:50 - Get data from service 3361 in format csv
+14.09.2023, 13:44:52 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:44:52 -  
+14.09.2023, 13:44:52 - Processing registry file with ID: 29
+14.09.2023, 13:44:52 - Get data from service 4554 in format xlsx
+14.09.2023, 13:44:52 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:44:52 -  
+14.09.2023, 13:44:52 - Processing registry file with ID: 29
+14.09.2023, 13:44:52 - Get data from service 4554 in format csv
+14.09.2023, 13:44:52 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:44:52 -  
+14.09.2023, 13:44:52 - ---------SENDING---------
+14.09.2023, 13:44:53 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 13:44:53 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:44:53 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:44:53 - --------FINISHED--------
+14.09.2023, 13:44:53 -  
+14.09.2023, 13:44:53 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 13:44:53 - Processing registry with ID: 33
+14.09.2023, 13:44:53 - -----------INFO------------
+14.09.2023, 13:44:53 - Sender Id: 33
+14.09.2023, 13:44:53 - Registry Id: 29
+14.09.2023, 13:44:53 - Sender Name: Moment Pay
+14.09.2023, 13:44:53 - Registry Name: moment pay reestr
+14.09.2023, 13:44:53 - Server id: 10066
+14.09.2023, 13:44:53 - Services ids: 3361,4554
+14.09.2023, 13:44:53 - Formats: xlsx,csv
+14.09.2023, 13:44:53 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:44:53 - Current Date: 2023-09-14 13:44:53
+14.09.2023, 13:44:53 - ---------PROCESSING---------
+14.09.2023, 13:44:53 - Processing registry file with ID: 29
+14.09.2023, 13:44:53 - Get data from service 3361 in format xlsx
+14.09.2023, 13:44:56 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:44:56 -  
+14.09.2023, 13:44:56 - Processing registry file with ID: 29
+14.09.2023, 13:44:56 - Get data from service 3361 in format csv
+14.09.2023, 13:44:58 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:44:58 -  
+14.09.2023, 13:44:58 - Processing registry file with ID: 29
+14.09.2023, 13:44:58 - Get data from service 4554 in format xlsx
+14.09.2023, 13:44:58 -  
+14.09.2023, 13:44:58 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:44:58 - Processing registry file with ID: 29
+14.09.2023, 13:44:58 - Get data from service 4554 in format csv
+14.09.2023, 13:44:58 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:44:58 -  
+14.09.2023, 13:44:58 - ---------SENDING---------
+14.09.2023, 13:44:59 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 13:44:59 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:44:59 - --------FINISHED--------
+14.09.2023, 13:44:59 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:44:59 -  
+14.09.2023, 13:44:59 - Script completed successfully.
+14.09.2023, 13:44:59 - Backup of registry files created successfully.
+14.09.2023, 13:46:37 - Script started
+14.09.2023, 13:46:38 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:46:38 - Processing registry with ID: 42
+14.09.2023, 13:46:38 - -----------INFO------------
+14.09.2023, 13:46:38 - Sender Id: 42
+14.09.2023, 13:46:38 - Registry Id: 29
+14.09.2023, 13:46:38 - Sender Name: Северe3
+14.09.2023, 13:46:38 - Registry Name: moment pay reestr
+14.09.2023, 13:46:38 - Server id: 10066
+14.09.2023, 13:46:38 - Services ids: 3361,4554
+14.09.2023, 13:46:38 - Formats: xlsx,csv
+14.09.2023, 13:46:38 - Current Date: 2023-09-14 13:46:38
+14.09.2023, 13:46:38 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:46:38 - ---------PROCESSING---------
+14.09.2023, 13:46:38 - Processing registry file with ID: 29
+14.09.2023, 13:46:38 - Get data from service 3361 in format xlsx
+14.09.2023, 13:46:42 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:46:42 -  
+14.09.2023, 13:46:42 - Processing registry file with ID: 29
+14.09.2023, 13:46:42 - Get data from service 3361 in format csv
+14.09.2023, 13:46:45 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:46:45 -  
+14.09.2023, 13:46:45 - Processing registry file with ID: 29
+14.09.2023, 13:46:45 - Get data from service 4554 in format xlsx
+14.09.2023, 13:46:45 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:46:45 -  
+14.09.2023, 13:46:45 - Processing registry file with ID: 29
+14.09.2023, 13:46:45 - Get data from service 4554 in format csv
+14.09.2023, 13:46:45 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:46:45 -  
+14.09.2023, 13:46:45 - ---------SENDING---------
+14.09.2023, 13:46:46 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 13:46:46 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:46:46 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:46:46 - --------FINISHED--------
+14.09.2023, 13:46:46 -  
+14.09.2023, 13:46:46 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 13:46:46 - Processing registry with ID: 33
+14.09.2023, 13:46:46 - -----------INFO------------
+14.09.2023, 13:46:46 - Sender Id: 33
+14.09.2023, 13:46:46 - Registry Id: 29
+14.09.2023, 13:46:46 - Sender Name: Moment Pay
+14.09.2023, 13:46:46 - Registry Name: moment pay reestr
+14.09.2023, 13:46:46 - Server id: 10066
+14.09.2023, 13:46:46 - Services ids: 3361,4554
+14.09.2023, 13:46:46 - Formats: xlsx,csv
+14.09.2023, 13:46:46 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:46:46 - Current Date: 2023-09-14 13:46:46
+14.09.2023, 13:46:46 - ---------PROCESSING---------
+14.09.2023, 13:46:46 - Processing registry file with ID: 29
+14.09.2023, 13:46:46 - Get data from service 3361 in format xlsx
+14.09.2023, 13:46:49 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:46:49 -  
+14.09.2023, 13:46:49 - Processing registry file with ID: 29
+14.09.2023, 13:46:49 - Get data from service 3361 in format csv
+14.09.2023, 13:46:51 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:46:51 -  
+14.09.2023, 13:46:51 - Processing registry file with ID: 29
+14.09.2023, 13:46:51 - Get data from service 4554 in format xlsx
+14.09.2023, 13:46:51 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:46:51 -  
+14.09.2023, 13:46:51 - Processing registry file with ID: 29
+14.09.2023, 13:46:51 - Get data from service 4554 in format csv
+14.09.2023, 13:46:52 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:46:52 -  
+14.09.2023, 13:46:52 - ---------SENDING---------
+14.09.2023, 13:46:53 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 13:46:53 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:46:53 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:46:53 - --------FINISHED--------
+14.09.2023, 13:46:53 -  
+14.09.2023, 13:46:53 - Script completed successfully.
+14.09.2023, 13:46:53 - Backup of registry files created successfully.
+14.09.2023, 13:52:07 - Script started
+14.09.2023, 13:52:07 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:52:07 - Processing registry with ID: 42
+14.09.2023, 13:52:07 - -----------INFO------------
+14.09.2023, 13:52:07 - Sender Id: 42
+14.09.2023, 13:52:07 - Registry Id: 29
+14.09.2023, 13:52:07 - Sender Name: Северe3
+14.09.2023, 13:52:07 - Registry Name: moment pay reestr
+14.09.2023, 13:52:07 - Server id: 10066
+14.09.2023, 13:52:07 - Services ids: 3361,4554
+14.09.2023, 13:52:07 - Formats: xlsx,csv
+14.09.2023, 13:52:07 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:52:07 - Current Date: 2023-09-14 13:52:07
+14.09.2023, 13:52:07 - ---------PROCESSING---------
+14.09.2023, 13:52:07 - Processing registry file with ID: 29
+14.09.2023, 13:52:07 - Get data from service 3361 in format xlsx
+14.09.2023, 13:52:10 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:52:10 -  
+14.09.2023, 13:52:10 - Processing registry file with ID: 29
+14.09.2023, 13:52:10 - Get data from service 3361 in format csv
+14.09.2023, 13:52:13 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:52:13 -  
+14.09.2023, 13:52:13 - Processing registry file with ID: 29
+14.09.2023, 13:52:13 - Get data from service 4554 in format xlsx
+14.09.2023, 13:52:13 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:52:13 -  
+14.09.2023, 13:52:13 - Processing registry file with ID: 29
+14.09.2023, 13:52:13 - Get data from service 4554 in format csv
+14.09.2023, 13:52:13 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:52:13 -  
+14.09.2023, 13:52:13 - ---------SENDING---------
+14.09.2023, 13:52:15 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 13:52:15 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:52:15 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:52:15 - --------FINISHED--------
+14.09.2023, 13:52:15 -  
+14.09.2023, 13:52:15 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 13:52:15 - Processing registry with ID: 33
+14.09.2023, 13:52:15 - -----------INFO------------
+14.09.2023, 13:52:15 - Sender Id: 33
+14.09.2023, 13:52:15 - Registry Id: 29
+14.09.2023, 13:52:15 - Sender Name: Moment Pay
+14.09.2023, 13:52:15 - Registry Name: moment pay reestr
+14.09.2023, 13:52:15 - Server id: 10066
+14.09.2023, 13:52:15 - Services ids: 3361,4554
+14.09.2023, 13:52:15 - Formats: xlsx,csv
+14.09.2023, 13:52:15 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:52:15 - Current Date: 2023-09-14 13:52:15
+14.09.2023, 13:52:15 - ---------PROCESSING---------
+14.09.2023, 13:52:15 - Processing registry file with ID: 29
+14.09.2023, 13:52:15 - Get data from service 3361 in format xlsx
+14.09.2023, 13:52:17 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:52:17 -  
+14.09.2023, 13:52:17 - Processing registry file with ID: 29
+14.09.2023, 13:52:17 - Get data from service 3361 in format csv
+14.09.2023, 13:52:20 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:52:20 -  
+14.09.2023, 13:52:20 - Processing registry file with ID: 29
+14.09.2023, 13:52:20 - Get data from service 4554 in format xlsx
+14.09.2023, 13:52:20 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:52:20 -  
+14.09.2023, 13:52:20 - Processing registry file with ID: 29
+14.09.2023, 13:52:20 - Get data from service 4554 in format csv
+14.09.2023, 13:52:20 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:52:20 -  
+14.09.2023, 13:52:20 - ---------SENDING---------
+14.09.2023, 13:52:20 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 13:52:20 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:52:20 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:52:20 - --------FINISHED--------
+14.09.2023, 13:52:20 -  
+14.09.2023, 13:52:20 - Script completed successfully.
+14.09.2023, 13:52:20 - Backup of registry files created successfully.
+14.09.2023, 13:55:19 - Script started
+14.09.2023, 13:55:19 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:55:19 - Processing registry with ID: 42
+14.09.2023, 13:55:19 - -----------INFO------------
+14.09.2023, 13:55:19 - Sender Id: 42
+14.09.2023, 13:55:19 - Registry Id: 29
+14.09.2023, 13:55:19 - Sender Name: Северe3
+14.09.2023, 13:55:19 - Registry Name: moment pay reestr
+14.09.2023, 13:55:19 - Server id: 10066
+14.09.2023, 13:55:19 - Services ids: 3361,4554
+14.09.2023, 13:55:19 - Formats: xlsx,csv
+14.09.2023, 13:55:19 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:55:19 - Current Date: 2023-09-14 13:55:19
+14.09.2023, 13:55:19 - ---------PROCESSING---------
+14.09.2023, 13:55:19 - Processing registry file with ID: 29
+14.09.2023, 13:55:19 - Get data from service 3361 in format xlsx
+14.09.2023, 13:55:30 - Script started
+14.09.2023, 13:55:31 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:55:31 - Processing registry with ID: 42
+14.09.2023, 13:55:31 - -----------INFO------------
+14.09.2023, 13:55:31 - Sender Id: 42
+14.09.2023, 13:55:31 - Registry Id: 29
+14.09.2023, 13:55:31 - Sender Name: Северe3
+14.09.2023, 13:55:31 - Registry Name: moment pay reestr
+14.09.2023, 13:55:31 - Server id: 10066
+14.09.2023, 13:55:31 - Services ids: 3361,4554
+14.09.2023, 13:55:31 - Formats: xlsx,csv
+14.09.2023, 13:55:31 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:55:31 - Current Date: 2023-09-14 13:55:31
+14.09.2023, 13:55:31 - ---------PROCESSING---------
+14.09.2023, 13:55:31 - Processing registry file with ID: 29
+14.09.2023, 13:55:31 - Get data from service 3361 in format xlsx
+14.09.2023, 13:55:46 - Script started
+14.09.2023, 13:55:47 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:55:47 - Processing registry with ID: 42
+14.09.2023, 13:55:47 - -----------INFO------------
+14.09.2023, 13:55:47 - Sender Id: 42
+14.09.2023, 13:55:47 - Registry Id: 29
+14.09.2023, 13:55:47 - Sender Name: Северe3
+14.09.2023, 13:55:47 - Registry Name: moment pay reestr
+14.09.2023, 13:55:47 - Server id: 10066
+14.09.2023, 13:55:47 - Services ids: 3361,4554
+14.09.2023, 13:55:47 - Formats: xlsx,csv
+14.09.2023, 13:55:47 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:55:47 - Current Date: 2023-09-14 13:55:47
+14.09.2023, 13:55:47 - ---------PROCESSING---------
+14.09.2023, 13:55:47 - Processing registry file with ID: 29
+14.09.2023, 13:55:47 - Get data from service 3361 in format xlsx
+14.09.2023, 13:55:50 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:55:50 -  
+14.09.2023, 13:55:50 - Processing registry file with ID: 29
+14.09.2023, 13:55:50 - Get data from service 3361 in format csv
+14.09.2023, 13:55:53 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:55:53 -  
+14.09.2023, 13:55:53 - Processing registry file with ID: 29
+14.09.2023, 13:55:53 - Get data from service 4554 in format xlsx
+14.09.2023, 13:55:53 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:55:53 -  
+14.09.2023, 13:55:53 - Processing registry file with ID: 29
+14.09.2023, 13:55:53 - Get data from service 4554 in format csv
+14.09.2023, 13:55:53 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:55:53 -  
+14.09.2023, 13:55:53 - ---------SENDING---------
+14.09.2023, 13:55:54 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:55:54 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 13:55:54 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:55:54 - --------FINISHED--------
+14.09.2023, 13:55:54 -  
+14.09.2023, 13:55:54 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 13:55:54 - Processing registry with ID: 33
+14.09.2023, 13:55:54 - -----------INFO------------
+14.09.2023, 13:55:54 - Sender Id: 33
+14.09.2023, 13:55:54 - Registry Id: 29
+14.09.2023, 13:55:54 - Sender Name: Moment Pay
+14.09.2023, 13:55:54 - Registry Name: moment pay reestr
+14.09.2023, 13:55:54 - Server id: 10066
+14.09.2023, 13:55:54 - Services ids: 3361,4554
+14.09.2023, 13:55:54 - Formats: xlsx,csv
+14.09.2023, 13:55:54 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:55:54 - Current Date: 2023-09-14 13:55:54
+14.09.2023, 13:55:54 - ---------PROCESSING---------
+14.09.2023, 13:55:54 - Processing registry file with ID: 29
+14.09.2023, 13:55:54 - Get data from service 3361 in format xlsx
+14.09.2023, 13:56:03 - Script started
+14.09.2023, 13:56:03 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:56:03 - Processing registry with ID: 42
+14.09.2023, 13:56:03 - -----------INFO------------
+14.09.2023, 13:56:03 - Sender Id: 42
+14.09.2023, 13:56:03 - Registry Id: 29
+14.09.2023, 13:56:03 - Sender Name: Северe3
+14.09.2023, 13:56:03 - Registry Name: moment pay reestr
+14.09.2023, 13:56:03 - Server id: 10066
+14.09.2023, 13:56:03 - Services ids: 3361,4554
+14.09.2023, 13:56:03 - Formats: xlsx,csv
+14.09.2023, 13:56:03 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:56:03 - Current Date: 2023-09-14 13:56:03
+14.09.2023, 13:56:03 - ---------PROCESSING---------
+14.09.2023, 13:56:03 - Processing registry file with ID: 29
+14.09.2023, 13:56:03 - Get data from service 3361 in format xlsx
+14.09.2023, 13:58:18 - Script started
+14.09.2023, 13:58:19 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:58:19 - Processing registry with ID: 42
+14.09.2023, 13:58:19 - -----------INFO------------
+14.09.2023, 13:58:19 - Sender Id: 42
+14.09.2023, 13:58:19 - Registry Id: 29
+14.09.2023, 13:58:19 - Sender Name: Северe3
+14.09.2023, 13:58:19 - Registry Name: moment pay reestr
+14.09.2023, 13:58:19 - Server id: 10066
+14.09.2023, 13:58:19 - Services ids: 3361,4554
+14.09.2023, 13:58:19 - Formats: xlsx,csv
+14.09.2023, 13:58:19 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:58:19 - Current Date: 2023-09-14 13:58:19
+14.09.2023, 13:58:19 - ---------PROCESSING---------
+14.09.2023, 13:58:19 - Processing registry file with ID: 29
+14.09.2023, 13:58:19 - Get data from service 3361 in format xlsx
+14.09.2023, 13:58:24 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:58:24 -  
+14.09.2023, 13:58:24 - Processing registry file with ID: 29
+14.09.2023, 13:58:24 - Get data from service 3361 in format csv
+14.09.2023, 13:58:26 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:58:26 -  
+14.09.2023, 13:58:26 - Processing registry file with ID: 29
+14.09.2023, 13:58:26 - Get data from service 4554 in format xlsx
+14.09.2023, 13:58:27 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:58:27 -  
+14.09.2023, 13:58:27 - Processing registry file with ID: 29
+14.09.2023, 13:58:27 - Get data from service 4554 in format csv
+14.09.2023, 13:58:27 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:58:27 -  
+14.09.2023, 13:58:27 - ---------SENDING---------
+14.09.2023, 13:58:28 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 13:58:28 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:58:28 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:58:28 - --------FINISHED--------
+14.09.2023, 13:58:28 -  
+14.09.2023, 13:58:28 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 13:58:28 - Processing registry with ID: 33
+14.09.2023, 13:58:28 - -----------INFO------------
+14.09.2023, 13:58:28 - Registry Id: 29
+14.09.2023, 13:58:28 - Sender Id: 33
+14.09.2023, 13:58:28 - Sender Name: Moment Pay
+14.09.2023, 13:58:28 - Registry Name: moment pay reestr
+14.09.2023, 13:58:28 - Server id: 10066
+14.09.2023, 13:58:28 - Services ids: 3361,4554
+14.09.2023, 13:58:28 - Formats: xlsx,csv
+14.09.2023, 13:58:28 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:58:28 - Current Date: 2023-09-14 13:58:28
+14.09.2023, 13:58:28 - ---------PROCESSING---------
+14.09.2023, 13:58:28 - Processing registry file with ID: 29
+14.09.2023, 13:58:28 - Get data from service 3361 in format xlsx
+14.09.2023, 13:58:30 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:58:30 -  
+14.09.2023, 13:58:30 - Processing registry file with ID: 29
+14.09.2023, 13:58:30 - Get data from service 3361 in format csv
+14.09.2023, 13:58:38 - File delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv from folder - files
+14.09.2023, 13:58:38 - File delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx from folder - files
+14.09.2023, 13:58:38 - File delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv from folder - files
+14.09.2023, 13:58:38 - File delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx from folder - files
+14.09.2023, 13:58:38 - Script started
+14.09.2023, 13:58:39 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 13:58:39 - Processing registry with ID: 42
+14.09.2023, 13:58:39 - -----------INFO------------
+14.09.2023, 13:58:39 - Sender Id: 42
+14.09.2023, 13:58:39 - Registry Id: 29
+14.09.2023, 13:58:39 - Sender Name: Северe3
+14.09.2023, 13:58:39 - Registry Name: moment pay reestr
+14.09.2023, 13:58:39 - Server id: 10066
+14.09.2023, 13:58:39 - Services ids: 3361,4554
+14.09.2023, 13:58:39 - Formats: xlsx,csv
+14.09.2023, 13:58:39 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:58:39 - Current Date: 2023-09-14 13:58:39
+14.09.2023, 13:58:39 - ---------PROCESSING---------
+14.09.2023, 13:58:39 - Processing registry file with ID: 29
+14.09.2023, 13:58:39 - Get data from service 3361 in format xlsx
+14.09.2023, 13:58:42 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:58:42 -  
+14.09.2023, 13:58:42 - Processing registry file with ID: 29
+14.09.2023, 13:58:42 - Get data from service 3361 in format csv
+14.09.2023, 13:58:44 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:58:44 -  
+14.09.2023, 13:58:44 - Processing registry file with ID: 29
+14.09.2023, 13:58:44 - Get data from service 4554 in format xlsx
+14.09.2023, 13:58:45 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:58:45 -  
+14.09.2023, 13:58:45 - Processing registry file with ID: 29
+14.09.2023, 13:58:45 - Get data from service 4554 in format csv
+14.09.2023, 13:58:45 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:58:45 -  
+14.09.2023, 13:58:45 - ---------SENDING---------
+14.09.2023, 13:58:46 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 13:58:46 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 13:58:46 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:58:46 - --------FINISHED--------
+14.09.2023, 13:58:46 -  
+14.09.2023, 13:58:46 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 13:58:46 - Processing registry with ID: 33
+14.09.2023, 13:58:46 - -----------INFO------------
+14.09.2023, 13:58:46 - Sender Id: 33
+14.09.2023, 13:58:46 - Registry Id: 29
+14.09.2023, 13:58:46 - Sender Name: Moment Pay
+14.09.2023, 13:58:46 - Registry Name: moment pay reestr
+14.09.2023, 13:58:46 - Server id: 10066
+14.09.2023, 13:58:46 - Services ids: 3361,4554
+14.09.2023, 13:58:46 - Formats: xlsx,csv
+14.09.2023, 13:58:46 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:58:46 - Current Date: 2023-09-14 13:58:46
+14.09.2023, 13:58:46 - ---------PROCESSING---------
+14.09.2023, 13:58:46 - Processing registry file with ID: 29
+14.09.2023, 13:58:46 - Get data from service 3361 in format xlsx
+14.09.2023, 13:58:49 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 13:58:49 - Processing registry file with ID: 29
+14.09.2023, 13:58:49 - Get data from service 3361 in format csv
+14.09.2023, 13:58:49 -  
+14.09.2023, 13:58:51 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 13:58:51 -  
+14.09.2023, 13:58:51 - Processing registry file with ID: 29
+14.09.2023, 13:58:51 - Get data from service 4554 in format xlsx
+14.09.2023, 13:58:51 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 13:58:51 -  
+14.09.2023, 13:58:51 - Processing registry file with ID: 29
+14.09.2023, 13:58:51 - Get data from service 4554 in format csv
+14.09.2023, 13:58:52 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 13:58:52 -  
+14.09.2023, 13:58:52 - ---------SENDING---------
+14.09.2023, 13:58:52 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 13:58:52 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 13:58:52 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 13:58:52 - --------FINISHED--------
+14.09.2023, 13:58:52 -  
+14.09.2023, 13:58:52 - Script completed successfully.
+14.09.2023, 13:58:52 - Backup of registry files created successfully.
+14.09.2023, 14:02:21 - Script started
+14.09.2023, 14:02:21 - Remove old records from folder - Files
+14.09.2023, 14:02:21 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 14:02:21 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 14:02:21 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:02:21 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 14:02:21 - All old files been successful removed
+14.09.2023, 14:02:21 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 14:02:21 - Processing registry with ID: 42
+14.09.2023, 14:02:21 - -----------INFO------------
+14.09.2023, 14:02:21 - Sender Id: 42
+14.09.2023, 14:02:21 - Registry Id: 29
+14.09.2023, 14:02:21 - Sender Name: Северe3
+14.09.2023, 14:02:21 - Registry Name: moment pay reestr
+14.09.2023, 14:02:21 - Server id: 10066
+14.09.2023, 14:02:21 - Services ids: 3361,4554
+14.09.2023, 14:02:21 - Formats: xlsx,csv
+14.09.2023, 14:02:21 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:02:21 - Current Date: 2023-09-14 14:02:21
+14.09.2023, 14:02:21 - ---------PROCESSING---------
+14.09.2023, 14:02:21 - Processing registry file with ID: 29
+14.09.2023, 14:02:21 - Get data from service 3361 in format xlsx
+14.09.2023, 14:02:24 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 14:02:24 -  
+14.09.2023, 14:02:24 - Processing registry file with ID: 29
+14.09.2023, 14:02:24 - Get data from service 3361 in format csv
+14.09.2023, 14:02:27 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 14:02:27 -  
+14.09.2023, 14:02:27 - Processing registry file with ID: 29
+14.09.2023, 14:02:27 - Get data from service 4554 in format xlsx
+14.09.2023, 14:02:27 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 14:02:27 -  
+14.09.2023, 14:02:27 - Processing registry file with ID: 29
+14.09.2023, 14:02:27 - Get data from service 4554 in format csv
+14.09.2023, 14:02:28 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 14:02:28 -  
+14.09.2023, 14:02:28 - ---------SENDING---------
+14.09.2023, 14:02:29 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 14:02:29 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:02:29 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:02:29 - --------FINISHED--------
+14.09.2023, 14:02:29 -  
+14.09.2023, 14:02:29 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 14:02:29 - Processing registry with ID: 33
+14.09.2023, 14:02:29 - -----------INFO------------
+14.09.2023, 14:02:29 - Sender Id: 33
+14.09.2023, 14:02:29 - Registry Id: 29
+14.09.2023, 14:02:29 - Sender Name: Moment Pay
+14.09.2023, 14:02:29 - Registry Name: moment pay reestr
+14.09.2023, 14:02:29 - Server id: 10066
+14.09.2023, 14:02:29 - Services ids: 3361,4554
+14.09.2023, 14:02:29 - Formats: xlsx,csv
+14.09.2023, 14:02:29 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:02:29 - ---------PROCESSING---------
+14.09.2023, 14:02:29 - Processing registry file with ID: 29
+14.09.2023, 14:02:29 - Get data from service 3361 in format xlsx
+14.09.2023, 14:02:29 - Current Date: 2023-09-14 14:02:29
+14.09.2023, 14:02:31 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 14:02:31 -  
+14.09.2023, 14:02:31 - Processing registry file with ID: 29
+14.09.2023, 14:02:31 - Get data from service 3361 in format csv
+14.09.2023, 14:02:34 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 14:02:34 -  
+14.09.2023, 14:02:34 - Processing registry file with ID: 29
+14.09.2023, 14:02:34 - Get data from service 4554 in format xlsx
+14.09.2023, 14:02:34 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 14:02:34 -  
+14.09.2023, 14:02:34 - Processing registry file with ID: 29
+14.09.2023, 14:02:34 - Get data from service 4554 in format csv
+14.09.2023, 14:02:34 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 14:02:34 -  
+14.09.2023, 14:02:34 - ---------SENDING---------
+14.09.2023, 14:02:35 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 14:02:35 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:02:35 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:02:35 - --------FINISHED--------
+14.09.2023, 14:02:35 -  
+14.09.2023, 14:02:35 - Script completed successfully.
+14.09.2023, 14:02:35 - Backup of registry files created successfully.
+14.09.2023, 14:06:09 - ============ Script started ============
+14.09.2023, 14:06:09 - Remove old records from folder - Files
+14.09.2023, 14:06:09 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 14:06:09 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:06:09 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 14:06:09 - All old files been successful removed
+14.09.2023, 14:06:09 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 14:06:09 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 14:06:09 - Processing registry with ID: 42
+14.09.2023, 14:06:09 - -----------INFO------------
+14.09.2023, 14:06:09 - Sender Id: 42
+14.09.2023, 14:06:09 - Registry Id: 29
+14.09.2023, 14:06:09 - Sender Name: Северe3
+14.09.2023, 14:06:09 - Registry Name: moment pay reestr
+14.09.2023, 14:06:09 - Server id: 10066
+14.09.2023, 14:06:09 - Services ids: 3361,4554
+14.09.2023, 14:06:09 - Formats: xlsx,csv
+14.09.2023, 14:06:09 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:06:09 - Current Date: 2023-09-14 14:06:09
+14.09.2023, 14:06:09 - ---------PROCESSING---------
+14.09.2023, 14:06:09 - Processing registry file with ID: 29
+14.09.2023, 14:06:09 - Get data from service 3361 in format xlsx
+14.09.2023, 14:06:13 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 14:06:13 -  
+14.09.2023, 14:06:13 - Processing registry file with ID: 29
+14.09.2023, 14:06:13 - Get data from service 3361 in format csv
+14.09.2023, 14:06:15 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 14:06:15 -  
+14.09.2023, 14:06:15 - Processing registry file with ID: 29
+14.09.2023, 14:06:15 - Get data from service 4554 in format xlsx
+14.09.2023, 14:06:15 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 14:06:15 -  
+14.09.2023, 14:06:15 - Processing registry file with ID: 29
+14.09.2023, 14:06:15 - Get data from service 4554 in format csv
+14.09.2023, 14:06:16 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 14:06:16 -  
+14.09.2023, 14:06:16 - ---------SENDING---------
+14.09.2023, 14:06:18 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 14:06:18 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:06:18 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:06:18 - ============ Script finished ============
+14.09.2023, 14:06:18 -  
+14.09.2023, 14:06:18 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 14:06:18 - Processing registry with ID: 33
+14.09.2023, 14:06:18 - -----------INFO------------
+14.09.2023, 14:06:18 - Sender Id: 33
+14.09.2023, 14:06:18 - Registry Id: 29
+14.09.2023, 14:06:18 - Sender Name: Moment Pay
+14.09.2023, 14:06:18 - Registry Name: moment pay reestr
+14.09.2023, 14:06:18 - Server id: 10066
+14.09.2023, 14:06:18 - Services ids: 3361,4554
+14.09.2023, 14:06:18 - Formats: xlsx,csv
+14.09.2023, 14:06:18 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:06:18 - Current Date: 2023-09-14 14:06:18
+14.09.2023, 14:06:18 - ---------PROCESSING---------
+14.09.2023, 14:06:18 - Processing registry file with ID: 29
+14.09.2023, 14:06:18 - Get data from service 3361 in format xlsx
+14.09.2023, 14:06:21 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 14:06:21 -  
+14.09.2023, 14:06:21 - Processing registry file with ID: 29
+14.09.2023, 14:06:21 - Get data from service 3361 in format csv
+14.09.2023, 14:06:26 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 14:06:26 -  
+14.09.2023, 14:06:26 - Processing registry file with ID: 29
+14.09.2023, 14:06:26 - Get data from service 4554 in format xlsx
+14.09.2023, 14:06:26 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 14:06:26 -  
+14.09.2023, 14:06:26 - Processing registry file with ID: 29
+14.09.2023, 14:06:26 - Get data from service 4554 in format csv
+14.09.2023, 14:06:26 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 14:06:26 -  
+14.09.2023, 14:06:26 - ---------SENDING---------
+14.09.2023, 14:06:27 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 14:06:27 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:06:27 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:06:27 - ============ Script finished ============
+14.09.2023, 14:06:27 -  
+14.09.2023, 14:06:27 - Script completed successfully.
+14.09.2023, 14:06:27 - Backup of registry files created successfully.
+14.09.2023, 14:08:24 -  
+14.09.2023, 14:08:24 - ============ Script started ============
+14.09.2023, 14:08:24 - Remove old records from folder - Files
+14.09.2023, 14:08:24 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 14:08:24 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 14:08:24 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:08:24 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 14:08:24 - All old files been successful removed
+14.09.2023, 14:08:24 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 14:08:24 - Processing registry with ID: 42
+14.09.2023, 14:08:24 - -----------INFO------------
+14.09.2023, 14:08:24 - Sender Id: 42
+14.09.2023, 14:08:24 - Registry Id: 29
+14.09.2023, 14:08:24 - Sender Name: Северe3
+14.09.2023, 14:08:24 - Registry Name: moment pay reestr
+14.09.2023, 14:08:24 - Services ids: 3361,4554
+14.09.2023, 14:08:24 - Server id: 10066
+14.09.2023, 14:08:24 - Formats: xlsx,csv
+14.09.2023, 14:08:24 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:08:24 - Current Date: 2023-09-14 14:08:24
+14.09.2023, 14:08:24 - ---------PROCESSING---------
+14.09.2023, 14:08:24 - Processing registry file with ID: 29
+14.09.2023, 14:08:24 - Get data from service 3361 in format xlsx
+14.09.2023, 14:08:27 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 14:08:27 -  
+14.09.2023, 14:08:27 - Processing registry file with ID: 29
+14.09.2023, 14:08:27 - Get data from service 3361 in format csv
+14.09.2023, 14:08:29 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 14:08:29 -  
+14.09.2023, 14:08:29 - Processing registry file with ID: 29
+14.09.2023, 14:08:29 - Get data from service 4554 in format xlsx
+14.09.2023, 14:08:30 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 14:08:30 -  
+14.09.2023, 14:08:30 - Processing registry file with ID: 29
+14.09.2023, 14:08:30 - Get data from service 4554 in format csv
+14.09.2023, 14:08:30 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 14:08:30 -  
+14.09.2023, 14:08:30 - ---------SENDING---------
+14.09.2023, 14:08:31 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:08:31 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 14:08:31 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:08:31 - --------- FINISHED --------
+14.09.2023, 14:08:31 -  
+14.09.2023, 14:08:31 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 14:08:31 - Processing registry with ID: 33
+14.09.2023, 14:08:31 - -----------INFO------------
+14.09.2023, 14:08:31 - Sender Id: 33
+14.09.2023, 14:08:31 - Registry Id: 29
+14.09.2023, 14:08:31 - Sender Name: Moment Pay
+14.09.2023, 14:08:31 - Registry Name: moment pay reestr
+14.09.2023, 14:08:31 - Server id: 10066
+14.09.2023, 14:08:31 - Services ids: 3361,4554
+14.09.2023, 14:08:31 - Formats: xlsx,csv
+14.09.2023, 14:08:31 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:08:31 - Current Date: 2023-09-14 14:08:31
+14.09.2023, 14:08:31 - ---------PROCESSING---------
+14.09.2023, 14:08:31 - Processing registry file with ID: 29
+14.09.2023, 14:08:31 - Get data from service 3361 in format xlsx
+14.09.2023, 14:08:33 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 14:08:33 -  
+14.09.2023, 14:08:33 - Processing registry file with ID: 29
+14.09.2023, 14:08:33 - Get data from service 3361 in format csv
+14.09.2023, 14:08:36 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 14:08:36 -  
+14.09.2023, 14:08:36 - Processing registry file with ID: 29
+14.09.2023, 14:08:36 - Get data from service 4554 in format xlsx
+14.09.2023, 14:08:36 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 14:08:36 -  
+14.09.2023, 14:08:36 - Processing registry file with ID: 29
+14.09.2023, 14:08:36 - Get data from service 4554 in format csv
+14.09.2023, 14:08:36 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 14:08:36 -  
+14.09.2023, 14:08:36 - ---------SENDING---------
+14.09.2023, 14:08:36 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 14:08:36 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:08:36 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:08:36 - --------- FINISHED --------
+14.09.2023, 14:08:36 -  
+14.09.2023, 14:08:36 - ============ Script completed ============
+14.09.2023, 14:08:36 -  
+14.09.2023, 14:08:36 - Backup of registry files created successfully.
+14.09.2023, 14:09:29 -  
+14.09.2023, 14:09:29 - ============ Script started ============
+14.09.2023, 14:09:29 - Remove old records from folder - Files
+14.09.2023, 14:09:29 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 14:09:29 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:09:29 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 14:09:29 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 14:09:29 - All old files been successful removed
+14.09.2023, 14:09:29 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 14:09:29 - Processing registry with ID: 42
+14.09.2023, 14:09:29 - -----------INFO------------
+14.09.2023, 14:09:29 - Sender Id: 42
+14.09.2023, 14:09:29 - Registry Id: 29
+14.09.2023, 14:09:29 - Sender Name: Северe3
+14.09.2023, 14:09:29 - Registry Name: moment pay reestr
+14.09.2023, 14:09:29 - Server id: 10066
+14.09.2023, 14:09:29 - Services ids: 3361,4554
+14.09.2023, 14:09:29 - Formats: xlsx,csv
+14.09.2023, 14:09:29 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:09:29 - Current Date: 2023-09-14 14:09:29
+14.09.2023, 14:09:29 - ---------PROCESSING---------
+14.09.2023, 14:09:29 - Processing registry file with ID: 29
+14.09.2023, 14:09:29 - Get data from service 3361 in format xlsx
+14.09.2023, 14:09:33 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 14:09:33 -  
+14.09.2023, 14:09:33 - Processing registry file with ID: 29
+14.09.2023, 14:09:33 - Get data from service 3361 in format csv
+14.09.2023, 14:09:36 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 14:09:36 -  
+14.09.2023, 14:09:36 - Processing registry file with ID: 29
+14.09.2023, 14:09:36 - Get data from service 4554 in format xlsx
+14.09.2023, 14:09:37 -  
+14.09.2023, 14:09:37 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 14:09:37 - Processing registry file with ID: 29
+14.09.2023, 14:09:37 - Get data from service 4554 in format csv
+14.09.2023, 14:09:37 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 14:09:37 -  
+14.09.2023, 14:09:37 - ---------SENDING---------
+14.09.2023, 14:09:38 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 14:09:38 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:09:38 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:09:38 - --------- FINISHED --------
+14.09.2023, 14:09:38 -  
+14.09.2023, 14:09:38 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 14:09:38 - Processing registry with ID: 33
+14.09.2023, 14:09:38 - -----------INFO------------
+14.09.2023, 14:09:38 - Sender Id: 33
+14.09.2023, 14:09:38 - Registry Id: 29
+14.09.2023, 14:09:38 - Sender Name: Moment Pay
+14.09.2023, 14:09:38 - Registry Name: moment pay reestr
+14.09.2023, 14:09:38 - Server id: 10066
+14.09.2023, 14:09:38 - Services ids: 3361,4554
+14.09.2023, 14:09:38 - Formats: xlsx,csv
+14.09.2023, 14:09:38 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:09:38 - Current Date: 2023-09-14 14:09:38
+14.09.2023, 14:09:38 - ---------PROCESSING---------
+14.09.2023, 14:09:38 - Processing registry file with ID: 29
+14.09.2023, 14:09:38 - Get data from service 3361 in format xlsx
+14.09.2023, 14:09:41 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 14:09:41 -  
+14.09.2023, 14:09:41 - Processing registry file with ID: 29
+14.09.2023, 14:09:41 - Get data from service 3361 in format csv
+14.09.2023, 14:09:43 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 14:09:43 -  
+14.09.2023, 14:09:43 - Processing registry file with ID: 29
+14.09.2023, 14:09:43 - Get data from service 4554 in format xlsx
+14.09.2023, 14:09:44 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 14:09:44 -  
+14.09.2023, 14:09:44 - Processing registry file with ID: 29
+14.09.2023, 14:09:44 - Get data from service 4554 in format csv
+14.09.2023, 14:09:44 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 14:09:44 -  
+14.09.2023, 14:09:44 - ---------SENDING---------
+14.09.2023, 14:09:44 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 14:09:44 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:09:44 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:09:44 - --------- FINISHED --------
+14.09.2023, 14:09:44 -  
+14.09.2023, 14:09:44 - Backup of registry files created successfully.
+14.09.2023, 14:09:44 -  
+14.09.2023, 14:09:44 - ============ Script completed ============
+14.09.2023, 14:09:44 -  
+14.09.2023, 14:10:14 -  
+14.09.2023, 14:10:14 - ============ Script started ============
+14.09.2023, 14:10:14 - Remove old records from folder - Files
+14.09.2023, 14:10:14 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 14:10:14 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 14:10:14 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:10:14 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 14:10:14 - All old files been successful removed
+14.09.2023, 14:10:14 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 14:10:14 - Processing registry with ID: 42
+14.09.2023, 14:10:14 - -----------INFO------------
+14.09.2023, 14:10:14 - Sender Id: 42
+14.09.2023, 14:10:14 - Registry Id: 29
+14.09.2023, 14:10:14 - Sender Name: Северe3
+14.09.2023, 14:10:14 - Registry Name: moment pay reestr
+14.09.2023, 14:10:14 - Server id: 10066
+14.09.2023, 14:10:14 - Services ids: 3361,4554
+14.09.2023, 14:10:14 - Formats: xlsx,csv
+14.09.2023, 14:10:14 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:10:14 - Current Date: 2023-09-14 14:10:14
+14.09.2023, 14:10:14 - ---------PROCESSING---------
+14.09.2023, 14:10:14 - Processing registry file with ID: 29
+14.09.2023, 14:10:14 - Get data from service 3361 in format xlsx
+14.09.2023, 14:10:17 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 14:10:17 -  
+14.09.2023, 14:10:17 - Processing registry file with ID: 29
+14.09.2023, 14:10:17 - Get data from service 3361 in format csv
+14.09.2023, 14:10:19 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 14:10:19 -  
+14.09.2023, 14:10:19 - Processing registry file with ID: 29
+14.09.2023, 14:10:19 - Get data from service 4554 in format xlsx
+14.09.2023, 14:10:20 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 14:10:20 -  
+14.09.2023, 14:10:20 - Get data from service 4554 in format csv
+14.09.2023, 14:10:20 - Processing registry file with ID: 29
+14.09.2023, 14:10:20 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 14:10:20 -  
+14.09.2023, 14:10:20 - ---------SENDING---------
+14.09.2023, 14:10:21 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 14:10:21 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:10:21 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:10:21 - --------- FINISHED --------
+14.09.2023, 14:10:21 -  
+14.09.2023, 14:10:21 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 14:10:21 - Processing registry with ID: 33
+14.09.2023, 14:10:21 - -----------INFO------------
+14.09.2023, 14:10:21 - Sender Id: 33
+14.09.2023, 14:10:21 - Registry Id: 29
+14.09.2023, 14:10:21 - Sender Name: Moment Pay
+14.09.2023, 14:10:21 - Registry Name: moment pay reestr
+14.09.2023, 14:10:21 - Server id: 10066
+14.09.2023, 14:10:21 - Services ids: 3361,4554
+14.09.2023, 14:10:21 - Formats: xlsx,csv
+14.09.2023, 14:10:21 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:10:21 - Current Date: 2023-09-14 14:10:21
+14.09.2023, 14:10:21 - ---------PROCESSING---------
+14.09.2023, 14:10:21 - Processing registry file with ID: 29
+14.09.2023, 14:10:21 - Get data from service 3361 in format xlsx
+14.09.2023, 14:10:24 - Successfully processed registry file for service 3361 in format xlsx.
+14.09.2023, 14:10:24 -  
+14.09.2023, 14:10:24 - Processing registry file with ID: 29
+14.09.2023, 14:10:24 - Get data from service 3361 in format csv
+14.09.2023, 14:10:26 - Successfully processed registry file for service 3361 in format csv.
+14.09.2023, 14:10:26 -  
+14.09.2023, 14:10:26 - Processing registry file with ID: 29
+14.09.2023, 14:10:26 - Get data from service 4554 in format xlsx
+14.09.2023, 14:10:26 - Successfully processed registry file for service 4554 in format xlsx.
+14.09.2023, 14:10:26 -  
+14.09.2023, 14:10:26 - Processing registry file with ID: 29
+14.09.2023, 14:10:26 - Get data from service 4554 in format csv
+14.09.2023, 14:10:26 - Successfully processed registry file for service 4554 in format csv.
+14.09.2023, 14:10:26 -  
+14.09.2023, 14:10:26 - ---------SENDING---------
+14.09.2023, 14:10:27 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 14:10:27 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:10:27 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:10:27 - --------- FINISHED --------
+14.09.2023, 14:10:27 - Backup of registry files created successfully.
+14.09.2023, 14:10:27 -  
+14.09.2023, 14:10:27 - 
+ ============ Script completed ============ 
+
+14.09.2023, 14:14:11 - ============ Script started ============ 
+
+14.09.2023, 14:14:11 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 14:14:11 - Remove old records from folder - Files
+14.09.2023, 14:14:11 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 14:14:11 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:14:11 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 14:14:11 - All old files been successful removed
+14.09.2023, 14:14:11 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 14:14:11 - Processing registry with ID: 42
+14.09.2023, 14:14:11 - -----------INFO------------
+14.09.2023, 14:14:11 - Sender Id: 42
+14.09.2023, 14:14:11 - Registry Id: 29
+14.09.2023, 14:14:11 - Sender Name: Северe3
+14.09.2023, 14:14:11 - Registry Name: moment pay reestr
+14.09.2023, 14:14:11 - Server id: 10066
+14.09.2023, 14:14:11 - Services ids: 3361,4554
+14.09.2023, 14:14:11 - Formats: xlsx,csv
+14.09.2023, 14:14:11 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:14:11 - Current Date: 2023-09-14 14:14:11
+14.09.2023, 14:14:11 - ---------PROCESSING---------
+14.09.2023, 14:14:11 - Processing registry file with ID: 29
+14.09.2023, 14:14:11 - Get data from service 3361 in format xlsx
+14.09.2023, 14:14:14 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 14:14:14 - Processing registry file with ID: 29
+14.09.2023, 14:14:14 - Get data from service 3361 in format csv
+14.09.2023, 14:14:17 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 14:14:17 - Processing registry file with ID: 29
+14.09.2023, 14:14:17 - Get data from service 4554 in format xlsx
+14.09.2023, 14:14:17 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 14:14:17 - Processing registry file with ID: 29
+14.09.2023, 14:14:17 - Get data from service 4554 in format csv
+14.09.2023, 14:14:17 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 14:14:17 - ---------SENDING---------
+14.09.2023, 14:14:19 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 14:14:19 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:14:19 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:14:19 - --------- FINISHED -------- 
+
+14.09.2023, 14:14:19 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 14:14:19 - Processing registry with ID: 33
+14.09.2023, 14:14:19 - -----------INFO------------
+14.09.2023, 14:14:19 - Sender Id: 33
+14.09.2023, 14:14:19 - Registry Id: 29
+14.09.2023, 14:14:19 - Sender Name: Moment Pay
+14.09.2023, 14:14:19 - Registry Name: moment pay reestr
+14.09.2023, 14:14:19 - Server id: 10066
+14.09.2023, 14:14:19 - Services ids: 3361,4554
+14.09.2023, 14:14:19 - Formats: xlsx,csv
+14.09.2023, 14:14:19 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:14:19 - Current Date: 2023-09-14 14:14:19
+14.09.2023, 14:14:19 - ---------PROCESSING---------
+14.09.2023, 14:14:19 - Processing registry file with ID: 29
+14.09.2023, 14:14:19 - Get data from service 3361 in format xlsx
+14.09.2023, 14:14:21 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 14:14:21 - Processing registry file with ID: 29
+14.09.2023, 14:14:21 - Get data from service 3361 in format csv
+14.09.2023, 14:14:23 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 14:14:23 - Processing registry file with ID: 29
+14.09.2023, 14:14:23 - Get data from service 4554 in format xlsx
+14.09.2023, 14:14:23 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 14:14:23 - Processing registry file with ID: 29
+14.09.2023, 14:14:23 - Get data from service 4554 in format csv
+14.09.2023, 14:14:24 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 14:14:24 - ---------SENDING---------
+14.09.2023, 14:14:24 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 14:14:24 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:14:24 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:14:24 - --------- FINISHED -------- 
+
+14.09.2023, 14:14:24 - Backup of registry files created successfully. 
+
+14.09.2023, 14:14:24 - ============ Script completed ============ 
+
+14.09.2023, 14:15:59 - ============ Script started ============ 
+
+14.09.2023, 14:15:59 - Remove old records from folder - Files
+14.09.2023, 14:15:59 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 14:15:59 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 14:15:59 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:15:59 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 14:15:59 - All old files been successful removed 
+
+14.09.2023, 14:15:59 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 14:15:59 - Processing registry with ID: 42
+14.09.2023, 14:15:59 - -----------INFO------------
+14.09.2023, 14:15:59 - Sender Id: 42
+14.09.2023, 14:15:59 - Registry Id: 29
+14.09.2023, 14:15:59 - Sender Name: Северe3
+14.09.2023, 14:15:59 - Registry Name: moment pay reestr
+14.09.2023, 14:15:59 - Server id: 10066
+14.09.2023, 14:15:59 - Services ids: 3361,4554
+14.09.2023, 14:15:59 - Formats: xlsx,csv
+14.09.2023, 14:15:59 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:15:59 - Current Date: 2023-09-14 14:15:59
+14.09.2023, 14:15:59 - ---------PROCESSING---------
+14.09.2023, 14:15:59 - Processing registry file with ID: 29
+14.09.2023, 14:15:59 - Get data from service 3361 in format xlsx
+14.09.2023, 14:16:02 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 14:16:02 - Get data from service 3361 in format csv
+14.09.2023, 14:16:02 - Processing registry file with ID: 29
+14.09.2023, 14:16:05 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 14:16:05 - Processing registry file with ID: 29
+14.09.2023, 14:16:05 - Get data from service 4554 in format xlsx
+14.09.2023, 14:16:05 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 14:16:05 - Processing registry file with ID: 29
+14.09.2023, 14:16:05 - Get data from service 4554 in format csv
+14.09.2023, 14:16:06 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 14:16:06 - ---------SENDING---------
+14.09.2023, 14:16:07 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 14:16:07 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:16:07 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:16:07 - --------- FINISHED -------- 
+
+14.09.2023, 14:16:07 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 14:16:07 - Processing registry with ID: 33
+14.09.2023, 14:16:07 - -----------INFO------------
+14.09.2023, 14:16:07 - Sender Id: 33
+14.09.2023, 14:16:07 - Registry Id: 29
+14.09.2023, 14:16:07 - Sender Name: Moment Pay
+14.09.2023, 14:16:07 - Registry Name: moment pay reestr
+14.09.2023, 14:16:07 - Server id: 10066
+14.09.2023, 14:16:07 - Services ids: 3361,4554
+14.09.2023, 14:16:07 - Formats: xlsx,csv
+14.09.2023, 14:16:07 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:16:07 - Current Date: 2023-09-14 14:16:07
+14.09.2023, 14:16:07 - ---------PROCESSING---------
+14.09.2023, 14:16:07 - Processing registry file with ID: 29
+14.09.2023, 14:16:07 - Get data from service 3361 in format xlsx
+14.09.2023, 14:16:10 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 14:16:10 - Get data from service 3361 in format csv
+14.09.2023, 14:16:10 - Processing registry file with ID: 29
+14.09.2023, 14:16:13 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 14:16:13 - Processing registry file with ID: 29
+14.09.2023, 14:16:13 - Get data from service 4554 in format xlsx
+14.09.2023, 14:16:13 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 14:16:13 - Processing registry file with ID: 29
+14.09.2023, 14:16:13 - Get data from service 4554 in format csv
+14.09.2023, 14:16:13 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 14:16:13 - ---------SENDING---------
+14.09.2023, 14:16:14 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 14:16:14 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:16:14 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:16:14 - --------- FINISHED -------- 
+
+14.09.2023, 14:16:14 - Backup of registry files created successfully. 
+
+14.09.2023, 14:16:14 - ============ Script completed ============ 
+
+14.09.2023, 14:56:47 - ============ Script started ============ 
+
+14.09.2023, 14:56:47 - Remove old records from folder - Files
+14.09.2023, 14:56:47 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:56:47 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 14:56:47 - All old files been successful removed 
+
+14.09.2023, 14:56:47 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 14:56:47 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 14:56:47 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 14:56:47 - Processing registry with ID: 42
+14.09.2023, 14:56:47 - -----------INFO------------
+14.09.2023, 14:56:47 - Sender Id: 42
+14.09.2023, 14:56:47 - Registry Id: 29
+14.09.2023, 14:56:47 - Sender Name: Северe3
+14.09.2023, 14:56:47 - Registry Name: moment pay reestr
+14.09.2023, 14:56:47 - Server id: 10066
+14.09.2023, 14:56:47 - Services ids: 3361,4554
+14.09.2023, 14:56:47 - Formats: xlsx,csv
+14.09.2023, 14:56:47 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:56:47 - Current Date: 2023-09-14 14:56:47
+14.09.2023, 14:56:47 - ---------PROCESSING---------
+14.09.2023, 14:56:47 - Processing registry file with ID: 29
+14.09.2023, 14:56:47 - Get data from service 3361 in format xlsx
+14.09.2023, 14:56:51 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 14:56:51 - Processing registry file with ID: 29
+14.09.2023, 14:56:51 - Get data from service 3361 in format csv
+14.09.2023, 14:56:54 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 14:56:54 - Processing registry file with ID: 29
+14.09.2023, 14:56:54 - Get data from service 4554 in format xlsx
+14.09.2023, 14:56:54 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 14:56:54 - Processing registry file with ID: 29
+14.09.2023, 14:56:54 - Get data from service 4554 in format csv
+14.09.2023, 14:56:54 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 14:56:54 - ---------SENDING---------
+14.09.2023, 14:56:56 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 14:56:56 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:56:56 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:56:56 - --------- FINISHED -------- 
+
+14.09.2023, 14:56:56 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 14:56:56 - Processing registry with ID: 33
+14.09.2023, 14:56:56 - -----------INFO------------
+14.09.2023, 14:56:56 - Sender Id: 33
+14.09.2023, 14:56:56 - Registry Id: 29
+14.09.2023, 14:56:56 - Sender Name: Moment Pay
+14.09.2023, 14:56:56 - Registry Name: moment pay reestr
+14.09.2023, 14:56:56 - Server id: 10066
+14.09.2023, 14:56:56 - Services ids: 3361,4554
+14.09.2023, 14:56:56 - Formats: xlsx,csv
+14.09.2023, 14:56:56 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:56:56 - Current Date: 2023-09-14 14:56:56
+14.09.2023, 14:56:56 - ---------PROCESSING---------
+14.09.2023, 14:56:56 - Processing registry file with ID: 29
+14.09.2023, 14:56:56 - Get data from service 3361 in format xlsx
+14.09.2023, 14:57:00 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 14:57:00 - Processing registry file with ID: 29
+14.09.2023, 14:57:00 - Get data from service 3361 in format csv
+14.09.2023, 14:57:03 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 14:57:03 - Processing registry file with ID: 29
+14.09.2023, 14:57:03 - Get data from service 4554 in format xlsx
+14.09.2023, 14:57:03 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 14:57:03 - Processing registry file with ID: 29
+14.09.2023, 14:57:03 - Get data from service 4554 in format csv
+14.09.2023, 14:57:03 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 14:57:03 - ---------SENDING---------
+14.09.2023, 14:57:03 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 14:57:03 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:57:03 - --------- FINISHED -------- 
+
+14.09.2023, 14:57:03 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:57:03 - Backup of registry files created successfully. 
+
+14.09.2023, 14:57:03 - ============ Script completed ============ 
+
+14.09.2023, 14:57:34 - ============ Script started ============ 
+
+14.09.2023, 14:57:34 - Remove old records from folder - Files
+14.09.2023, 14:57:34 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 14:57:34 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 14:57:34 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:57:34 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 14:57:34 - All old files been successful removed 
+
+14.09.2023, 14:57:34 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 14:57:34 - Processing registry with ID: 42
+14.09.2023, 14:57:34 - -----------INFO------------
+14.09.2023, 14:57:34 - Sender Id: 42
+14.09.2023, 14:57:34 - Registry Id: 29
+14.09.2023, 14:57:34 - Sender Name: Северe3
+14.09.2023, 14:57:34 - Registry Name: moment pay reestr
+14.09.2023, 14:57:34 - Server id: 10066
+14.09.2023, 14:57:34 - Services ids: 3361,4554
+14.09.2023, 14:57:34 - Formats: xlsx,csv
+14.09.2023, 14:57:34 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:57:34 - Current Date: 2023-09-14 14:57:34
+14.09.2023, 14:57:34 - ---------PROCESSING---------
+14.09.2023, 14:57:34 - Processing registry file with ID: 29
+14.09.2023, 14:57:34 - Get data from service 3361 in format xlsx
+14.09.2023, 14:57:38 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 14:57:38 - Processing registry file with ID: 29
+14.09.2023, 14:57:38 - Get data from service 3361 in format csv
+14.09.2023, 14:57:41 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 14:57:41 - Processing registry file with ID: 29
+14.09.2023, 14:57:41 - Get data from service 4554 in format xlsx
+14.09.2023, 14:57:41 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 14:57:41 - Processing registry file with ID: 29
+14.09.2023, 14:57:41 - Get data from service 4554 in format csv
+14.09.2023, 14:57:41 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 14:57:41 - ---------SENDING---------
+14.09.2023, 14:57:42 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 14:57:42 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:57:42 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:57:42 - --------- FINISHED -------- 
+
+14.09.2023, 14:57:42 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 14:57:42 - Processing registry with ID: 33
+14.09.2023, 14:57:42 - -----------INFO------------
+14.09.2023, 14:57:42 - Sender Id: 33
+14.09.2023, 14:57:42 - Registry Id: 29
+14.09.2023, 14:57:42 - Sender Name: Moment Pay
+14.09.2023, 14:57:42 - Registry Name: moment pay reestr
+14.09.2023, 14:57:42 - Server id: 10066
+14.09.2023, 14:57:42 - Services ids: 3361,4554
+14.09.2023, 14:57:42 - Formats: xlsx,csv
+14.09.2023, 14:57:42 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:57:42 - Current Date: 2023-09-14 14:57:42
+14.09.2023, 14:57:42 - ---------PROCESSING---------
+14.09.2023, 14:57:42 - Processing registry file with ID: 29
+14.09.2023, 14:57:42 - Get data from service 3361 in format xlsx
+14.09.2023, 14:57:45 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 14:57:45 - Processing registry file with ID: 29
+14.09.2023, 14:57:45 - Get data from service 3361 in format csv
+14.09.2023, 14:57:49 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 14:57:49 - Processing registry file with ID: 29
+14.09.2023, 14:57:49 - Get data from service 4554 in format xlsx
+14.09.2023, 14:57:49 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 14:57:49 - Processing registry file with ID: 29
+14.09.2023, 14:57:49 - Get data from service 4554 in format csv
+14.09.2023, 14:57:49 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 14:57:49 - ---------SENDING---------
+14.09.2023, 14:57:49 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 14:57:49 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:57:49 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:57:49 - --------- FINISHED -------- 
+
+14.09.2023, 14:57:49 - Backup of registry files created successfully. 
+
+14.09.2023, 14:57:49 - ============ Script completed ============ 
+
+14.09.2023, 14:58:58 - ============ Script started ============ 
+
+14.09.2023, 14:58:58 - Remove old records from folder - Files
+14.09.2023, 14:58:58 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 14:58:58 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 14:58:58 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:58:58 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 14:58:58 - All old files been successful removed 
+
+14.09.2023, 14:58:59 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 14:58:59 - Processing registry with ID: 42
+14.09.2023, 14:58:59 - -----------INFO------------
+14.09.2023, 14:58:59 - Sender Id: 42
+14.09.2023, 14:58:59 - Registry Id: 29
+14.09.2023, 14:58:59 - Sender Name: Северe3
+14.09.2023, 14:58:59 - Registry Name: moment pay reestr
+14.09.2023, 14:58:59 - Server id: 10066
+14.09.2023, 14:58:59 - Services ids: 3361,4554
+14.09.2023, 14:58:59 - Formats: xlsx,csv
+14.09.2023, 14:58:59 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:58:59 - Current Date: 2023-09-14 14:58:59
+14.09.2023, 14:58:59 - ---------PROCESSING---------
+14.09.2023, 14:58:59 - Processing registry file with ID: 29
+14.09.2023, 14:58:59 - Get data from service 3361 in format xlsx
+14.09.2023, 14:59:02 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 14:59:02 - Processing registry file with ID: 29
+14.09.2023, 14:59:02 - Get data from service 3361 in format csv
+14.09.2023, 14:59:04 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 14:59:04 - Processing registry file with ID: 29
+14.09.2023, 14:59:04 - Get data from service 4554 in format xlsx
+14.09.2023, 14:59:04 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 14:59:04 - Processing registry file with ID: 29
+14.09.2023, 14:59:04 - Get data from service 4554 in format csv
+14.09.2023, 14:59:05 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 14:59:05 - ---------SENDING---------
+14.09.2023, 14:59:06 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 14:59:06 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 14:59:06 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:59:06 - --------- FINISHED -------- 
+
+14.09.2023, 14:59:06 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 14:59:06 - Processing registry with ID: 33
+14.09.2023, 14:59:06 - -----------INFO------------
+14.09.2023, 14:59:06 - Sender Id: 33
+14.09.2023, 14:59:06 - Registry Id: 29
+14.09.2023, 14:59:06 - Sender Name: Moment Pay
+14.09.2023, 14:59:06 - Registry Name: moment pay reestr
+14.09.2023, 14:59:06 - Server id: 10066
+14.09.2023, 14:59:06 - Services ids: 3361,4554
+14.09.2023, 14:59:06 - Formats: xlsx,csv
+14.09.2023, 14:59:06 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:59:06 - Current Date: 2023-09-14 14:59:06
+14.09.2023, 14:59:06 - ---------PROCESSING---------
+14.09.2023, 14:59:06 - Processing registry file with ID: 29
+14.09.2023, 14:59:06 - Get data from service 3361 in format xlsx
+14.09.2023, 14:59:09 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 14:59:09 - Processing registry file with ID: 29
+14.09.2023, 14:59:09 - Get data from service 3361 in format csv
+14.09.2023, 14:59:11 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 14:59:12 - Processing registry file with ID: 29
+14.09.2023, 14:59:12 - Get data from service 4554 in format xlsx
+14.09.2023, 14:59:12 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 14:59:12 - Processing registry file with ID: 29
+14.09.2023, 14:59:12 - Get data from service 4554 in format csv
+14.09.2023, 14:59:12 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 14:59:12 - ---------SENDING---------
+14.09.2023, 14:59:12 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 14:59:12 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 14:59:12 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 14:59:12 - --------- FINISHED -------- 
+
+14.09.2023, 14:59:12 - Backup of registry files created successfully. 
+
+14.09.2023, 14:59:12 - ============ Script completed ============ 
+
+14.09.2023, 15:08:42 - ============ Script started ============ 
+
+14.09.2023, 15:08:43 - Remove old records from folder - Files
+14.09.2023, 15:08:43 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:08:43 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 15:08:43 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 15:08:43 - All old files been successful removed 
+
+14.09.2023, 15:08:43 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 15:08:44 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 15:08:44 - Processing registry with ID: 42
+14.09.2023, 15:08:44 - -----------INFO------------
+14.09.2023, 15:08:44 - Sender Id: 42
+14.09.2023, 15:08:44 - Registry Id: 29
+14.09.2023, 15:08:44 - Sender Name: Северe3
+14.09.2023, 15:08:44 - Registry Name: moment pay reestr
+14.09.2023, 15:08:44 - Server id: 10066
+14.09.2023, 15:08:44 - Services ids: 3361,4554
+14.09.2023, 15:08:44 - Formats: xlsx,csv
+14.09.2023, 15:08:44 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:08:44 - Current Date: 2023-09-14 15:08:44
+14.09.2023, 15:08:44 - ---------PROCESSING---------
+14.09.2023, 15:08:44 - Processing registry file with ID: 29
+14.09.2023, 15:08:44 - Get data from service 3361 in format xlsx
+14.09.2023, 15:08:47 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:08:47 - Processing registry file with ID: 29
+14.09.2023, 15:08:47 - Get data from service 3361 in format csv
+14.09.2023, 15:08:50 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:08:50 - Processing registry file with ID: 29
+14.09.2023, 15:08:50 - Get data from service 4554 in format xlsx
+14.09.2023, 15:08:51 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:08:51 - Processing registry file with ID: 29
+14.09.2023, 15:08:51 - Get data from service 4554 in format csv
+14.09.2023, 15:08:51 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:08:51 - ---------SENDING---------
+14.09.2023, 15:08:52 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 15:08:52 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:08:52 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:08:52 - --------- FINISHED -------- 
+
+14.09.2023, 15:08:52 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 15:08:52 - Processing registry with ID: 33
+14.09.2023, 15:08:52 - -----------INFO------------
+14.09.2023, 15:08:52 - Sender Id: 33
+14.09.2023, 15:08:52 - Registry Id: 29
+14.09.2023, 15:08:52 - Sender Name: Moment Pay
+14.09.2023, 15:08:52 - Registry Name: moment pay reestr
+14.09.2023, 15:08:52 - Server id: 10066
+14.09.2023, 15:08:52 - Services ids: 3361,4554
+14.09.2023, 15:08:52 - Formats: xlsx,csv
+14.09.2023, 15:08:52 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 15:08:52 - Current Date: 2023-09-14 15:08:52
+14.09.2023, 15:08:52 - ---------PROCESSING---------
+14.09.2023, 15:08:52 - Processing registry file with ID: 29
+14.09.2023, 15:08:52 - Get data from service 3361 in format xlsx
+14.09.2023, 15:08:57 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:08:57 - Processing registry file with ID: 29
+14.09.2023, 15:08:57 - Get data from service 3361 in format csv
+14.09.2023, 15:09:02 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:09:02 - Processing registry file with ID: 29
+14.09.2023, 15:09:02 - Get data from service 4554 in format xlsx
+14.09.2023, 15:09:02 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:09:02 - Processing registry file with ID: 29
+14.09.2023, 15:09:02 - Get data from service 4554 in format csv
+14.09.2023, 15:09:02 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:09:02 - ---------SENDING---------
+14.09.2023, 15:09:03 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 15:09:03 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 15:09:03 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:09:03 - --------- FINISHED -------- 
+
+14.09.2023, 15:09:03 - Backup of registry files created successfully. 
+
+14.09.2023, 15:09:03 - ============ Script completed ============ 
+
+14.09.2023, 15:11:24 - ============ Script started ============ 
+
+14.09.2023, 15:11:24 - Remove old records from folder - Files
+14.09.2023, 15:11:24 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 15:11:24 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 15:11:24 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:11:24 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 15:11:24 - All old files been successful removed 
+
+14.09.2023, 15:11:24 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 15:11:24 - Processing registry with ID: 42
+14.09.2023, 15:11:24 - -----------INFO------------
+14.09.2023, 15:11:24 - Sender Id: 42
+14.09.2023, 15:11:24 - Registry Id: 29
+14.09.2023, 15:11:24 - Sender Name: Северe3
+14.09.2023, 15:11:24 - Registry Name: moment pay reestr
+14.09.2023, 15:11:24 - Services ids: 3361,4554
+14.09.2023, 15:11:24 - Formats: xlsx,csv
+14.09.2023, 15:11:24 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:11:24 - Server id: 10066
+14.09.2023, 15:11:24 - Current Date: 2023-09-14 15:11:24
+14.09.2023, 15:11:24 - ---------PROCESSING---------
+14.09.2023, 15:11:24 - Processing registry file with ID: 29
+14.09.2023, 15:11:24 - Get data from service 3361 in format xlsx
+14.09.2023, 15:11:28 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:11:28 - Processing registry file with ID: 29
+14.09.2023, 15:11:28 - Get data from service 3361 in format csv
+14.09.2023, 15:11:32 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:11:32 - Processing registry file with ID: 29
+14.09.2023, 15:11:32 - Get data from service 4554 in format xlsx
+14.09.2023, 15:11:32 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:11:32 - Processing registry file with ID: 29
+14.09.2023, 15:11:32 - Get data from service 4554 in format csv
+14.09.2023, 15:11:33 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:11:33 - ---------SENDING---------
+14.09.2023, 15:11:34 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 15:11:34 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:11:34 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:11:34 - --------- FINISHED -------- 
+
+14.09.2023, 15:11:34 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 15:11:34 - Processing registry with ID: 33
+14.09.2023, 15:11:34 - -----------INFO------------
+14.09.2023, 15:11:34 - Sender Id: 33
+14.09.2023, 15:11:34 - Registry Id: 29
+14.09.2023, 15:11:34 - Sender Name: Moment Pay
+14.09.2023, 15:11:34 - Registry Name: moment pay reestr
+14.09.2023, 15:11:34 - Server id: 10066
+14.09.2023, 15:11:34 - Services ids: 3361,4554
+14.09.2023, 15:11:34 - Formats: xlsx,csv
+14.09.2023, 15:11:34 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 15:11:34 - Current Date: 2023-09-14 15:11:34
+14.09.2023, 15:11:34 - ---------PROCESSING---------
+14.09.2023, 15:11:34 - Processing registry file with ID: 29
+14.09.2023, 15:11:34 - Get data from service 3361 in format xlsx
+14.09.2023, 15:11:37 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:11:37 - Processing registry file with ID: 29
+14.09.2023, 15:11:37 - Get data from service 3361 in format csv
+14.09.2023, 15:11:39 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:11:39 - Processing registry file with ID: 29
+14.09.2023, 15:11:39 - Get data from service 4554 in format xlsx
+14.09.2023, 15:11:40 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:11:40 - Processing registry file with ID: 29
+14.09.2023, 15:11:40 - Get data from service 4554 in format csv
+14.09.2023, 15:11:40 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:11:40 - ---------SENDING---------
+14.09.2023, 15:11:40 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 15:11:40 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 15:11:40 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:11:40 - --------- FINISHED -------- 
+
+14.09.2023, 15:11:40 - Backup of registry files created successfully. 
+
+14.09.2023, 15:11:40 - ============ Script completed ============ 
+
+14.09.2023, 15:13:55 - ============ Script started ============ 
+
+14.09.2023, 15:13:55 - Remove old records from folder - Files
+14.09.2023, 15:13:55 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 15:13:55 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 15:13:55 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:13:55 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 15:13:55 - All old files been successful removed 
+
+14.09.2023, 15:13:56 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 15:13:56 - Processing registry with ID: 42
+14.09.2023, 15:13:56 - -----------INFO------------
+14.09.2023, 15:13:56 - Sender Id: 42
+14.09.2023, 15:13:56 - Registry Id: 29
+14.09.2023, 15:13:56 - Sender Name: Северe3
+14.09.2023, 15:13:56 - Registry Name: moment pay reestr
+14.09.2023, 15:13:56 - Server id: 10066
+14.09.2023, 15:13:56 - Services ids: 3361,4554
+14.09.2023, 15:13:56 - Formats: xlsx,csv
+14.09.2023, 15:13:56 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:13:56 - Current Date: 2023-09-14 15:13:56
+14.09.2023, 15:13:56 - ---------PROCESSING---------
+14.09.2023, 15:13:56 - Processing registry file with ID: 29
+14.09.2023, 15:13:56 - Get data from service 3361 in format xlsx
+14.09.2023, 15:13:59 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:13:59 - Processing registry file with ID: 29
+14.09.2023, 15:13:59 - Get data from service 3361 in format csv
+14.09.2023, 15:14:01 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:14:01 - Get data from service 4554 in format xlsx
+14.09.2023, 15:14:01 - Processing registry file with ID: 29
+14.09.2023, 15:14:01 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:14:01 - Processing registry file with ID: 29
+14.09.2023, 15:14:01 - Get data from service 4554 in format csv
+14.09.2023, 15:14:01 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:14:01 - ---------SENDING---------
+14.09.2023, 15:14:04 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 15:14:04 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:14:04 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:14:04 - --------- FINISHED -------- 
+
+14.09.2023, 15:14:04 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 15:14:04 - Processing registry with ID: 33
+14.09.2023, 15:14:04 - -----------INFO------------
+14.09.2023, 15:14:04 - Sender Id: 33
+14.09.2023, 15:14:04 - Registry Id: 29
+14.09.2023, 15:14:04 - Sender Name: Moment Pay
+14.09.2023, 15:14:04 - Registry Name: moment pay reestr
+14.09.2023, 15:14:04 - Server id: 10066
+14.09.2023, 15:14:04 - Services ids: 3361,4554
+14.09.2023, 15:14:04 - Formats: xlsx,csv
+14.09.2023, 15:14:04 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 15:14:04 - Current Date: 2023-09-14 15:14:04
+14.09.2023, 15:14:04 - ---------PROCESSING---------
+14.09.2023, 15:14:04 - Processing registry file with ID: 29
+14.09.2023, 15:14:04 - Get data from service 3361 in format xlsx
+14.09.2023, 15:14:06 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:14:06 - Processing registry file with ID: 29
+14.09.2023, 15:14:06 - Get data from service 3361 in format csv
+14.09.2023, 15:14:09 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:14:09 - Get data from service 4554 in format xlsx
+14.09.2023, 15:14:09 - Processing registry file with ID: 29
+14.09.2023, 15:14:09 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:14:09 - Processing registry file with ID: 29
+14.09.2023, 15:14:09 - Get data from service 4554 in format csv
+14.09.2023, 15:14:09 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:14:09 - ---------SENDING---------
+14.09.2023, 15:14:10 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 15:14:10 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 15:14:10 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:14:10 - --------- FINISHED -------- 
+
+14.09.2023, 15:14:10 - Backup of registry files created successfully. 
+
+14.09.2023, 15:14:10 - ============ Script completed ============ 
+
+14.09.2023, 15:18:17 - ============ Script started ============ 
+
+14.09.2023, 15:18:17 - Remove old records from folder - Files
+14.09.2023, 15:18:17 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:18:17 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 15:18:17 - All old files been successful removed 
+
+14.09.2023, 15:18:17 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 15:18:17 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 15:18:17 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 15:18:17 - Processing registry with ID: 42
+14.09.2023, 15:18:17 - -----------INFO------------
+14.09.2023, 15:18:17 - Sender Id: 42
+14.09.2023, 15:18:17 - Registry Id: 29
+14.09.2023, 15:18:17 - Sender Name: Северe3
+14.09.2023, 15:18:17 - Registry Name: moment pay reestr
+14.09.2023, 15:18:17 - Server id: 10066
+14.09.2023, 15:18:17 - Services ids: 3361,4554
+14.09.2023, 15:18:17 - Formats: xlsx,csv
+14.09.2023, 15:18:17 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:18:17 - ---------PROCESSING---------
+14.09.2023, 15:18:17 - Current Date: 2023-09-14 15:18:17
+14.09.2023, 15:18:17 - Processing registry file with ID: 29
+14.09.2023, 15:18:17 - Get data from service 3361 in format xlsx
+14.09.2023, 15:18:20 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:18:20 - Processing registry file with ID: 29
+14.09.2023, 15:18:20 - Get data from service 3361 in format csv
+14.09.2023, 15:18:23 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:18:23 - Processing registry file with ID: 29
+14.09.2023, 15:18:23 - Get data from service 4554 in format xlsx
+14.09.2023, 15:18:23 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:18:23 - Processing registry file with ID: 29
+14.09.2023, 15:18:23 - Get data from service 4554 in format csv
+14.09.2023, 15:18:23 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:18:23 - ---------SENDING---------
+14.09.2023, 15:18:25 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 15:18:25 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:18:25 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:18:25 - --------- FINISHED -------- 
+
+14.09.2023, 15:18:25 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 15:18:25 - Processing registry with ID: 33
+14.09.2023, 15:18:25 - -----------INFO------------
+14.09.2023, 15:18:25 - Sender Id: 33
+14.09.2023, 15:18:25 - Registry Id: 29
+14.09.2023, 15:18:25 - Sender Name: Moment Pay
+14.09.2023, 15:18:25 - Registry Name: moment pay reestr
+14.09.2023, 15:18:25 - Server id: 10066
+14.09.2023, 15:18:25 - Services ids: 3361,4554
+14.09.2023, 15:18:25 - Formats: xlsx,csv
+14.09.2023, 15:18:25 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 15:18:25 - Current Date: 2023-09-14 15:18:25
+14.09.2023, 15:18:25 - ---------PROCESSING---------
+14.09.2023, 15:18:25 - Processing registry file with ID: 29
+14.09.2023, 15:18:25 - Get data from service 3361 in format xlsx
+14.09.2023, 15:18:28 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:18:28 - Processing registry file with ID: 29
+14.09.2023, 15:18:28 - Get data from service 3361 in format csv
+14.09.2023, 15:18:33 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:18:33 - Processing registry file with ID: 29
+14.09.2023, 15:18:33 - Get data from service 4554 in format xlsx
+14.09.2023, 15:18:33 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:18:33 - Processing registry file with ID: 29
+14.09.2023, 15:18:33 - Get data from service 4554 in format csv
+14.09.2023, 15:18:33 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:18:33 - ---------SENDING---------
+14.09.2023, 15:18:34 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 15:18:34 - Emails: nikita.kopyltsov3@gmail.com
+14.09.2023, 15:18:34 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:18:34 - --------- FINISHED -------- 
+
+14.09.2023, 15:18:34 - Backup of registry files created successfully. 
+
+14.09.2023, 15:18:34 - ============ Script completed ============ 
+
+14.09.2023, 15:21:40 - Remove old records from folder - Files
+14.09.2023, 15:21:40 - ============ Script started ============ 
+
+14.09.2023, 15:21:40 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 15:21:40 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:21:40 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 15:21:40 - All old files been successful removed 
+
+14.09.2023, 15:21:40 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 15:21:40 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 15:21:40 - Processing registry with ID: 42
+14.09.2023, 15:21:40 - Registry Id: 29
+14.09.2023, 15:21:40 - Sender Name: Северe3
+14.09.2023, 15:21:40 - Registry Name: moment pay reestr
+14.09.2023, 15:21:40 - Server id: 10066
+14.09.2023, 15:21:40 - Services ids: 3361,4554
+14.09.2023, 15:21:40 - -----------INFO------------
+14.09.2023, 15:21:40 - Sender Id: 42
+14.09.2023, 15:21:40 - Formats: xlsx,csv
+14.09.2023, 15:21:40 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:21:40 - Current Date: 2023-09-14 15:21:40
+14.09.2023, 15:21:40 - ---------PROCESSING---------
+14.09.2023, 15:21:40 - Processing registry file with ID: 29
+14.09.2023, 15:21:40 - Get data from service 3361 in format xlsx
+14.09.2023, 15:21:43 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:21:43 - Processing registry file with ID: 29
+14.09.2023, 15:21:43 - Get data from service 3361 in format csv
+14.09.2023, 15:21:46 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:21:46 - Processing registry file with ID: 29
+14.09.2023, 15:21:46 - Get data from service 4554 in format xlsx
+14.09.2023, 15:21:46 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:21:46 - Processing registry file with ID: 29
+14.09.2023, 15:21:46 - Get data from service 4554 in format csv
+14.09.2023, 15:21:46 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:21:46 - ---------SENDING---------
+14.09.2023, 15:21:48 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 15:21:48 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:21:48 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:21:48 - --------- FINISHED -------- 
+
+14.09.2023, 15:21:48 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 15:21:48 - Processing registry with ID: 33
+14.09.2023, 15:21:48 - -----------INFO------------
+14.09.2023, 15:21:48 - Sender Id: 33
+14.09.2023, 15:21:48 - Registry Id: 29
+14.09.2023, 15:21:48 - Sender Name: Moment Pay
+14.09.2023, 15:21:48 - Registry Name: moment pay reestr
+14.09.2023, 15:21:48 - Server id: 10066
+14.09.2023, 15:21:48 - Services ids: 3361,4554
+14.09.2023, 15:21:48 - Formats: xlsx,csv
+14.09.2023, 15:21:48 - Emails: nikita.kopyltsov3@gmail.com, nikita.kopyltsov@mail.ru
+14.09.2023, 15:21:48 - Current Date: 2023-09-14 15:21:48
+14.09.2023, 15:21:48 - ---------PROCESSING---------
+14.09.2023, 15:21:48 - Processing registry file with ID: 29
+14.09.2023, 15:21:48 - Get data from service 3361 in format xlsx
+14.09.2023, 15:21:51 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:21:51 - Processing registry file with ID: 29
+14.09.2023, 15:21:51 - Get data from service 3361 in format csv
+14.09.2023, 15:21:53 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:21:53 - Processing registry file with ID: 29
+14.09.2023, 15:21:53 - Get data from service 4554 in format xlsx
+14.09.2023, 15:21:53 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:21:53 - Processing registry file with ID: 29
+14.09.2023, 15:21:53 - Get data from service 4554 in format csv
+14.09.2023, 15:21:54 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:21:54 - ---------SENDING---------
+14.09.2023, 15:21:54 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 15:21:54 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:21:54 - --------- FINISHED -------- 
+
+14.09.2023, 15:21:54 - Emails: nikita.kopyltsov3@gmail.com, nikita.kopyltsov@mail.ru
+14.09.2023, 15:21:54 - Backup of registry files created successfully. 
+
+14.09.2023, 15:21:54 - ============ Script completed ============ 
+
+14.09.2023, 15:23:21 - ============ Script started ============ 
+
+14.09.2023, 15:23:21 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:23:21 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 15:23:21 - All old files been successful removed 
+
+14.09.2023, 15:23:21 - Remove old records from folder - Files
+14.09.2023, 15:23:21 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 15:23:21 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 15:23:21 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 15:23:21 - Processing registry with ID: 42
+14.09.2023, 15:23:21 - -----------INFO------------
+14.09.2023, 15:23:21 - Sender Id: 42
+14.09.2023, 15:23:21 - Registry Id: 29
+14.09.2023, 15:23:21 - Sender Name: Северe3
+14.09.2023, 15:23:21 - Registry Name: moment pay reestr
+14.09.2023, 15:23:21 - Server id: 10066
+14.09.2023, 15:23:21 - Services ids: 3361,4554
+14.09.2023, 15:23:21 - Formats: xlsx,csv
+14.09.2023, 15:23:21 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:23:21 - Current Date: 2023-09-14 15:23:21
+14.09.2023, 15:23:21 - ---------PROCESSING---------
+14.09.2023, 15:23:21 - Processing registry file with ID: 29
+14.09.2023, 15:23:21 - Get data from service 3361 in format xlsx
+14.09.2023, 15:23:24 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:23:24 - Processing registry file with ID: 29
+14.09.2023, 15:23:24 - Get data from service 3361 in format csv
+14.09.2023, 15:23:27 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:23:27 - Processing registry file with ID: 29
+14.09.2023, 15:23:27 - Get data from service 4554 in format xlsx
+14.09.2023, 15:23:27 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:23:27 - Processing registry file with ID: 29
+14.09.2023, 15:23:27 - Get data from service 4554 in format csv
+14.09.2023, 15:23:27 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:23:27 - ---------SENDING---------
+14.09.2023, 15:23:29 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 15:23:29 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:23:29 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:23:29 - --------- FINISHED -------- 
+
+14.09.2023, 15:23:29 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 15:23:29 - Processing registry with ID: 33
+14.09.2023, 15:23:29 - -----------INFO------------
+14.09.2023, 15:23:29 - Sender Id: 33
+14.09.2023, 15:23:29 - Registry Id: 29
+14.09.2023, 15:23:29 - Sender Name: Moment Pay
+14.09.2023, 15:23:29 - Registry Name: moment pay reestr
+14.09.2023, 15:23:29 - Server id: 10066
+14.09.2023, 15:23:29 - Services ids: 3361,4554
+14.09.2023, 15:23:29 - Formats: xlsx,csv
+14.09.2023, 15:23:29 - Emails: nikita.kopyltsov3@gmail.com, nikita.kopyltsov@mail.ru
+14.09.2023, 15:23:29 - Current Date: 2023-09-14 15:23:29
+14.09.2023, 15:23:29 - ---------PROCESSING---------
+14.09.2023, 15:23:29 - Processing registry file with ID: 29
+14.09.2023, 15:23:29 - Get data from service 3361 in format xlsx
+14.09.2023, 15:23:31 - Processing registry file with ID: 29
+14.09.2023, 15:23:31 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:23:31 - Get data from service 3361 in format csv
+14.09.2023, 15:23:34 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:23:34 - Processing registry file with ID: 29
+14.09.2023, 15:23:34 - Get data from service 4554 in format xlsx
+14.09.2023, 15:23:34 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:23:34 - Processing registry file with ID: 29
+14.09.2023, 15:23:34 - Get data from service 4554 in format csv
+14.09.2023, 15:23:34 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:23:34 - ---------SENDING---------
+14.09.2023, 15:23:35 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 15:23:35 - Emails: nikita.kopyltsov3@gmail.com, nikita.kopyltsov@mail.ru
+14.09.2023, 15:23:35 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:23:35 - --------- FINISHED -------- 
+
+14.09.2023, 15:23:35 - Backup of registry files created successfully. 
+
+14.09.2023, 15:23:35 - ============ Script completed ============ 
+
+14.09.2023, 15:25:17 - ============ Script started ============ 
+
+14.09.2023, 15:25:17 - Remove old records from folder - Files
+14.09.2023, 15:25:17 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 15:25:17 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 15:25:17 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 15:25:17 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:25:17 - All old files been successful removed 
+
+14.09.2023, 15:25:17 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 15:25:17 - Processing registry with ID: 42
+14.09.2023, 15:25:17 - -----------INFO------------
+14.09.2023, 15:25:17 - Sender Id: 42
+14.09.2023, 15:25:17 - Registry Id: 29
+14.09.2023, 15:25:17 - Sender Name: Северe3
+14.09.2023, 15:25:17 - Registry Name: moment pay reestr
+14.09.2023, 15:25:17 - Server id: 10066
+14.09.2023, 15:25:17 - Services ids: 3361,4554
+14.09.2023, 15:25:17 - Formats: xlsx,csv
+14.09.2023, 15:25:17 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:25:17 - Current Date: 2023-09-14 15:25:17
+14.09.2023, 15:25:17 - ---------PROCESSING---------
+14.09.2023, 15:25:17 - Processing registry file with ID: 29
+14.09.2023, 15:25:17 - Get data from service 3361 in format xlsx
+14.09.2023, 15:25:21 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:25:21 - Get data from service 3361 in format csv
+14.09.2023, 15:25:21 - Processing registry file with ID: 29
+14.09.2023, 15:25:23 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:25:23 - Processing registry file with ID: 29
+14.09.2023, 15:25:23 - Get data from service 4554 in format xlsx
+14.09.2023, 15:25:23 - Processing registry file with ID: 29
+14.09.2023, 15:25:23 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:25:23 - Get data from service 4554 in format csv
+14.09.2023, 15:25:24 - ---------SENDING---------
+14.09.2023, 15:25:24 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:25:25 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 15:25:25 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:25:25 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:25:25 - --------- FINISHED -------- 
+
+14.09.2023, 15:25:25 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 15:25:25 - Processing registry with ID: 33
+14.09.2023, 15:25:25 - -----------INFO------------
+14.09.2023, 15:25:25 - Sender Id: 33
+14.09.2023, 15:25:25 - Registry Id: 29
+14.09.2023, 15:25:25 - Sender Name: Moment Pay
+14.09.2023, 15:25:25 - Registry Name: moment pay reestr
+14.09.2023, 15:25:25 - Server id: 10066
+14.09.2023, 15:25:25 - Services ids: 3361,4554
+14.09.2023, 15:25:25 - Formats: xlsx,csv
+14.09.2023, 15:25:25 - Emails: nikita.kopyltsov3@gmail.com, nikita.kopyltsov@mail.ru
+14.09.2023, 15:25:25 - Current Date: 2023-09-14 15:25:25
+14.09.2023, 15:25:25 - ---------PROCESSING---------
+14.09.2023, 15:25:25 - Processing registry file with ID: 29
+14.09.2023, 15:25:25 - Get data from service 3361 in format xlsx
+14.09.2023, 15:25:27 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:25:27 - Processing registry file with ID: 29
+14.09.2023, 15:25:27 - Get data from service 3361 in format csv
+14.09.2023, 15:25:30 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:25:30 - Processing registry file with ID: 29
+14.09.2023, 15:25:30 - Get data from service 4554 in format xlsx
+14.09.2023, 15:25:30 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:25:30 - Processing registry file with ID: 29
+14.09.2023, 15:25:30 - Get data from service 4554 in format csv
+14.09.2023, 15:25:30 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:25:30 - ---------SENDING---------
+14.09.2023, 15:25:31 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 15:25:31 - Emails: nikita.kopyltsov3@gmail.com, nikita.kopyltsov@mail.ru
+14.09.2023, 15:25:31 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:25:31 - --------- FINISHED -------- 
+
+14.09.2023, 15:25:31 - Backup of registry files created successfully. 
+
+14.09.2023, 15:25:31 - ============ Script completed ============ 
+
+14.09.2023, 15:49:50 - ============ Script started ============ 
+
+14.09.2023, 15:49:50 - Remove old records from folder - Files
+14.09.2023, 15:49:50 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:49:50 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 15:49:50 - All old files been successful removed 
+
+14.09.2023, 15:49:50 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 15:49:50 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 15:49:50 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 15:49:50 - Processing registry with ID: 42
+14.09.2023, 15:49:50 - -----------INFO------------
+14.09.2023, 15:49:50 - Sender Id: 42
+14.09.2023, 15:49:50 - Registry Id: 29
+14.09.2023, 15:49:50 - Sender Name: Северe3
+14.09.2023, 15:49:50 - Registry Name: moment pay reestr
+14.09.2023, 15:49:50 - Server id: 10066
+14.09.2023, 15:49:50 - Services ids: 3361,4554
+14.09.2023, 15:49:50 - Formats: xlsx,csv
+14.09.2023, 15:49:50 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:49:50 - Current Date: 2023-09-14 15:49:50
+14.09.2023, 15:49:50 - ---------PROCESSING---------
+14.09.2023, 15:49:50 - Processing registry file with ID: 29
+14.09.2023, 15:49:50 - Get data from service 3361 in format xlsx
+14.09.2023, 15:49:53 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:49:53 - Processing registry file with ID: 29
+14.09.2023, 15:49:53 - Get data from service 3361 in format csv
+14.09.2023, 15:49:55 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:49:55 - Processing registry file with ID: 29
+14.09.2023, 15:49:55 - Get data from service 4554 in format xlsx
+14.09.2023, 15:49:55 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:49:55 - Processing registry file with ID: 29
+14.09.2023, 15:49:55 - Get data from service 4554 in format csv
+14.09.2023, 15:49:55 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:49:55 - ---------SENDING---------
+14.09.2023, 15:49:58 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 15:49:58 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:49:58 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:49:58 - --------- FINISHED -------- 
+
+14.09.2023, 15:49:58 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 15:49:58 - Processing registry with ID: 33
+14.09.2023, 15:49:58 - -----------INFO------------
+14.09.2023, 15:49:58 - Sender Id: 33
+14.09.2023, 15:49:58 - Registry Id: 29
+14.09.2023, 15:49:58 - Sender Name: Moment Pay
+14.09.2023, 15:49:58 - Registry Name: moment pay reestr
+14.09.2023, 15:49:58 - Server id: 10066
+14.09.2023, 15:49:58 - Services ids: 3361,4554
+14.09.2023, 15:49:58 - Formats: xlsx,csv
+14.09.2023, 15:49:58 - Emails: nikita.kopyltsov3@gmail.com, nikita.kopyltsov@mail.ru
+14.09.2023, 15:49:58 - Current Date: 2023-09-14 15:49:58
+14.09.2023, 15:49:58 - ---------PROCESSING---------
+14.09.2023, 15:49:58 - Processing registry file with ID: 29
+14.09.2023, 15:49:58 - Get data from service 3361 in format xlsx
+14.09.2023, 15:50:00 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:50:00 - Processing registry file with ID: 29
+14.09.2023, 15:50:00 - Get data from service 3361 in format csv
+14.09.2023, 15:50:03 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:50:03 - Processing registry file with ID: 29
+14.09.2023, 15:50:03 - Get data from service 4554 in format xlsx
+14.09.2023, 15:50:03 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:50:03 - Processing registry file with ID: 29
+14.09.2023, 15:50:03 - Get data from service 4554 in format csv
+14.09.2023, 15:50:03 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:50:03 - ---------SENDING---------
+14.09.2023, 15:50:04 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 15:50:04 - Emails: nikita.kopyltsov3@gmail.com, nikita.kopyltsov@mail.ru
+14.09.2023, 15:50:04 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:50:04 - --------- FINISHED -------- 
+
+14.09.2023, 15:50:04 - Backup of registry files created successfully. 
+
+14.09.2023, 15:50:04 - ============ Script completed ============ 
+
+14.09.2023, 15:50:40 - ============ Script started ============ 
+
+14.09.2023, 15:50:40 - Remove old records from folder - Files
+14.09.2023, 15:50:40 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 15:50:40 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 15:50:40 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:50:40 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 15:50:40 - All old files been successful removed 
+
+14.09.2023, 15:50:40 - /////////// Start execution registry for recipient - Северe3 ///////////
+14.09.2023, 15:50:40 - Processing registry with ID: 42
+14.09.2023, 15:50:40 - -----------INFO------------
+14.09.2023, 15:50:40 - Sender Id: 42
+14.09.2023, 15:50:40 - Registry Id: 29
+14.09.2023, 15:50:40 - Sender Name: Северe3
+14.09.2023, 15:50:40 - Registry Name: moment pay reestr
+14.09.2023, 15:50:40 - Server id: 10066
+14.09.2023, 15:50:40 - Services ids: 3361,4554
+14.09.2023, 15:50:40 - Formats: xlsx,csv
+14.09.2023, 15:50:40 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:50:40 - Current Date: 2023-09-14 15:50:40
+14.09.2023, 15:50:40 - ---------PROCESSING---------
+14.09.2023, 15:50:40 - Processing registry file with ID: 29
+14.09.2023, 15:50:40 - Get data from service 3361 in format xlsx
+14.09.2023, 15:50:43 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:50:43 - Processing registry file with ID: 29
+14.09.2023, 15:50:43 - Get data from service 3361 in format csv
+14.09.2023, 15:50:45 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:50:45 - Processing registry file with ID: 29
+14.09.2023, 15:50:45 - Get data from service 4554 in format xlsx
+14.09.2023, 15:50:46 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:50:46 - Processing registry file with ID: 29
+14.09.2023, 15:50:46 - Get data from service 4554 in format csv
+14.09.2023, 15:50:46 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:50:46 - ---------SENDING---------
+14.09.2023, 15:50:48 - Registry Северe3 with ID 42 successfully sent to the specified addresses.
+14.09.2023, 15:50:48 - Emails: nikita.kopyltsov3@gmail.com, qerf3@mail.ru
+14.09.2023, 15:50:48 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:50:48 - --------- FINISHED -------- 
+
+14.09.2023, 15:50:48 - /////////// Start execution registry for recipient - Moment Pay ///////////
+14.09.2023, 15:50:48 - Processing registry with ID: 33
+14.09.2023, 15:50:48 - -----------INFO------------
+14.09.2023, 15:50:48 - Sender Id: 33
+14.09.2023, 15:50:48 - Registry Id: 29
+14.09.2023, 15:50:48 - Sender Name: Moment Pay
+14.09.2023, 15:50:48 - Registry Name: moment pay reestr
+14.09.2023, 15:50:48 - Server id: 10066
+14.09.2023, 15:50:48 - Services ids: 3361,4554
+14.09.2023, 15:50:48 - Formats: xlsx,csv
+14.09.2023, 15:50:48 - Emails: nikita.kopyltsov3@gmail.com, nikita.kopyltsov@mail.ru
+14.09.2023, 15:50:48 - Current Date: 2023-09-14 15:50:48
+14.09.2023, 15:50:48 - ---------PROCESSING---------
+14.09.2023, 15:50:48 - Processing registry file with ID: 29
+14.09.2023, 15:50:48 - Get data from service 3361 in format xlsx
+14.09.2023, 15:50:50 - Successfully processed registry file for service 3361 in format xlsx.
+
+14.09.2023, 15:50:50 - Processing registry file with ID: 29
+14.09.2023, 15:50:50 - Get data from service 3361 in format csv
+14.09.2023, 15:50:53 - Successfully processed registry file for service 3361 in format csv.
+
+14.09.2023, 15:50:53 - Processing registry file with ID: 29
+14.09.2023, 15:50:53 - Get data from service 4554 in format xlsx
+14.09.2023, 15:50:53 - Successfully processed registry file for service 4554 in format xlsx.
+
+14.09.2023, 15:50:53 - Processing registry file with ID: 29
+14.09.2023, 15:50:53 - Get data from service 4554 in format csv
+14.09.2023, 15:50:53 - Successfully processed registry file for service 4554 in format csv.
+
+14.09.2023, 15:50:53 - ---------SENDING---------
+14.09.2023, 15:50:54 - Registry Moment Pay with ID 33 successfully sent to the specified addresses.
+14.09.2023, 15:50:54 - Emails: nikita.kopyltsov3@gmail.com, nikita.kopyltsov@mail.ru
+14.09.2023, 15:50:54 - Files: files/moment pay reestr_3361_2023-09-14.xlsx,files/moment pay reestr_3361_2023-09-14.csv,files/moment pay reestr_4554_2023-09-14.xlsx,files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:50:54 - --------- FINISHED -------- 
+
+14.09.2023, 15:50:54 - Backup of registry files created successfully. 
+
+14.09.2023, 15:50:54 - ============ Script completed ============ 
+
+14.09.2023, 15:51:35 - ============ Script started ============ 
+
+14.09.2023, 15:51:35 - Remove old records from folder - Files
+14.09.2023, 15:51:35 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.csv
+14.09.2023, 15:51:35 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_3361_2023-09-14.xlsx
+14.09.2023, 15:51:35 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.csv
+14.09.2023, 15:51:35 - Record delete: /home/user/Рабочий стол/New Admin/update-service/files/moment pay reestr_4554_2023-09-14.xlsx
+14.09.2023, 15:51:35 - All old files been successful removed 
+
+14.09.2023, 15:51:35 - Backup of registry files created successfully. 
+
+14.09.2023, 15:51:35 - ============ Script completed ============ 
+
+14.09.2023, 15:51:59 - ============ Script started ============ 
+
+14.09.2023, 15:51:59 - Remove old records from folder - Files
+14.09.2023, 15:51:59 - All old files been successful removed 
+
+14.09.2023, 15:51:59 - Backup of registry files created successfully. 
+
+14.09.2023, 15:51:59 - ============ Script completed ============ 
+
