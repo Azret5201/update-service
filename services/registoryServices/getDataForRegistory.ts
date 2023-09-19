@@ -1,6 +1,8 @@
 import {QueryTypes} from "sequelize";
 import sequelize from "../../models/src/sequelize";
 import moment from "moment";
+import {Logform} from "winston";
+import {log} from "../../utils/logger";
 
 
 export const fetchDataFromDatabase = async (sql: string) => {

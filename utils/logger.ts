@@ -8,7 +8,7 @@ const getCurrentTimestamp = () => {
 };
 
 // Путь к файлу лога (используйте абсолютный путь)
-const logFilePath = path.join(__dirname, '..', 'logs', `${moment().format('YYYY-MM-DD')}_registry.log`);
+const logFilePath = path.join(__dirname, '..', 'logs', `${moment().format('YYYY-MM-DD')}_registries.log`);
 
 export const log = (message: any) => {
     const logMessage = `${getCurrentTimestamp()} - ${message}\n`;
@@ -28,7 +28,7 @@ export const log = (message: any) => {
 };
 
 export const logError = (error: any) => {
-    const errorMessage = `${getCurrentTimestamp()} - [ERROR] An error occurred: ${error.message}\n`;
+    const errorMessage = `${getCurrentTimestamp()} - [ERROR] ${error}\n`;
     process.stderr.write(errorMessage); // Выводим ошибку в консоль
 
     // Проверяем существование каталога и создаем его при необходимости

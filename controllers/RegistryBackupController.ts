@@ -8,9 +8,9 @@ export class RegistryBackupController {
         const pageNumber = req.query.page ? parseInt(req.query.page as string) : 1;
         const pageSize = 50;
         const offset = (pageNumber - 1) * pageSize;
-        const searchTerm = req.query.search;
+        const searchTerm: any = req.query.search; // Получите поисковый запрос из параметров запроса
 
-        const whereClause:any = {}; // Пустой объект для условий поиска
+        const whereClause: any = {}; // Пустой объект для условий поиска
 
         if (searchTerm) {
             whereClause['name'] = {
@@ -27,7 +27,7 @@ export class RegistryBackupController {
             }
 
             // Получите список файлов в каталоге с датой создания
-            const filesWithStats:any = fs.readdirSync(registriesDirectory).map((filename) => {
+            const filesWithStats: any = fs.readdirSync(registriesDirectory).map((filename) => {
                 const filePath = path.join(registriesDirectory, filename);
                 const stats = fs.statSync(filePath);
                 return {
@@ -36,11 +36,18 @@ export class RegistryBackupController {
                 };
             });
 
+            // Фильтруйте файлы на основе поискового запроса
+            let filteredFiles = filesWithStats;
+            if (searchTerm) {
+                const searchRegex = new RegExp(searchTerm, 'i'); // Создаем регулярное выражение для поиска
+                filteredFiles = filesWithStats.filter((file: any) => searchRegex.test(file.name));
+            }
+
             // Отсортируйте файлы по дате создания в убывающем порядке
-            const sortedFiles = filesWithStats.sort((a:any, b:any) => b.createdAt - a.createdAt);
+            const sortedFiles = filteredFiles.sort((a: any, b: any) => b.createdAt - a.createdAt);
 
             // Примените смещение (offset) и размер страницы (pageSize) к списку файлов
-            const paginatedFiles = sortedFiles.slice(offset, offset + pageSize).map((file:any) => file.name);
+            const paginatedFiles = sortedFiles.slice(offset, offset + pageSize).map((file: any) => file.name);
 
             const totalCount = sortedFiles.length;
             const totalPages = Math.ceil(totalCount / pageSize);
@@ -62,6 +69,8 @@ export class RegistryBackupController {
             res.status(500).json({ error: "Internal server error" });
         }
     }
+
+
 
     public async downloadBackup(req: Request, res: Response) {
         const logsDirectory = path.join(__dirname, './../registries_backup/'); // Используйте абсолютный путь
