@@ -65,28 +65,13 @@ export class RegistryController {
             return;
         }
 
-
-        interface RowData {
-            isActive: boolean;
-            field: string;
-            tableHeader: string;
-        }
-
-        const activeRows: RowData[] = req.body.rowsData.filter((row: RowData) => row.isActive);
-
-        const arrayFields = activeRows.map(row => row.field);
-        const arrayTableHeaders = activeRows.map(row => row.tableHeader);
-
-        const fields = arrayFields.join(', ');
-        const tableHeaders = arrayTableHeaders.join(', ');
-
         try {
             await Registry.create({
                 name: req.body.name,
                 services_id: req.body.servicesId,
                 server_id: req.body.serverId,
-                table_headers: tableHeaders,
-                fields: fields,
+                fields: req.body.fields,
+                table_headers: req.body.tableHeaders,
                 formats: req.body.formats,
                 is_blocked: req.body.is_blocked,
                 sql_query: req.body.sqlQuery,
@@ -132,10 +117,10 @@ export class RegistryController {
                 registry.name = req.body.name;
                 registry.services_id = req.body.servicesId;
                 registry.server_id = req.body.serverId;
+                registry.fields = req.body.fields;
                 registry.table_headers = req.body.tableHeaders;
                 registry.is_blocked = req.body.is_blocked;
                 registry.formats= req.body.formats;
-                registry.fields = req.body.fields;
                 registry.sql_query = req.body.sqlQuery;
 
                 return registry.save();

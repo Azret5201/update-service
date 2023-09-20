@@ -44,8 +44,6 @@ export const createDBFFile = async (serverId: string, serviceId: string, data: a
             return renamedItem;
         });
 
-        console.log(renamedData)
-
         offset += batchSize;
         dbfData.push(...renamedData);
     }

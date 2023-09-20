@@ -132,9 +132,6 @@ export class RecipientController {
 
         const emails: string = filteredData.join(', ');
 
-        console.log(req.body)
-
-
         const { name, type, is_blocked, registry_ids } = req.body;
         try {
 
