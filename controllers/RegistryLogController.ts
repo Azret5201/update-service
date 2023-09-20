@@ -27,12 +27,13 @@ export class RegistryLogController {
             }
 
             // Получите список файлов в каталоге с датой создания
-            const filesWithStats: any = fs.readdirSync(logsDirectory).map((filename) => {
+            const filesWithStats = fs.readdirSync(logsDirectory).map((filename) => {
                 const filePath = path.join(logsDirectory, filename);
                 const stats = fs.statSync(filePath);
                 return {
                     name: filename,
-                    createdAt: stats.ctime // Используем дату создания файла
+                    size: stats.size, // Добавляем размер файла
+                    createdAt: stats.ctime, // Используем дату создания файла
                 };
             });
 
@@ -47,9 +48,9 @@ export class RegistryLogController {
             const sortedFiles = filteredFiles.sort((a: any, b: any) => b.createdAt - a.createdAt);
 
             // Примените смещение (offset) и размер страницы (pageSize) к списку файлов
-            const paginatedFiles = sortedFiles.slice(offset, offset + pageSize).map((file: any) => file.name);
+            const paginatedFiles = sortedFiles.slice(offset, offset + pageSize);
 
-            const totalCount = sortedFiles.length;
+            const totalCount = filteredFiles.length;
             const totalPages = Math.ceil(totalCount / pageSize);
 
             // Отправьте список файлов на клиент
@@ -60,8 +61,9 @@ export class RegistryLogController {
                 last_page: totalPages,
                 from: offset + 1,
                 to: offset + paginatedFiles.length,
-                data: paginatedFiles,
+                data: paginatedFiles, // Теперь передаем все данные о файлах
             };
+
 
             res.json(response);
         } catch (error) {

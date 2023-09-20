@@ -23,16 +23,17 @@ export class RegistryBackupController {
         try {
             // Проверьте, существует ли каталог
             if (!fs.existsSync(registriesDirectory)) {
-                return res.status(404).end('Directory not found');
+                return res.status(404).end('Каталог не найден');
             }
 
-            // Получите список файлов в каталоге с датой создания
-            const filesWithStats: any = fs.readdirSync(registriesDirectory).map((filename) => {
+            // Получите список файлов в каталоге с датой создания и размером файла
+            const filesWithStats = fs.readdirSync(registriesDirectory).map((filename) => {
                 const filePath = path.join(registriesDirectory, filename);
                 const stats = fs.statSync(filePath);
                 return {
                     name: filename,
-                    createdAt: stats.ctime // Используем дату создания файла
+                    size: stats.size, // Добавляем размер файла
+                    createdAt: stats.ctime, // Используем дату создания файла
                 };
             });
 
@@ -47,9 +48,9 @@ export class RegistryBackupController {
             const sortedFiles = filteredFiles.sort((a: any, b: any) => b.createdAt - a.createdAt);
 
             // Примените смещение (offset) и размер страницы (pageSize) к списку файлов
-            const paginatedFiles = sortedFiles.slice(offset, offset + pageSize).map((file: any) => file.name);
+            const paginatedFiles = sortedFiles.slice(offset, offset + pageSize);
 
-            const totalCount = sortedFiles.length;
+            const totalCount = filteredFiles.length;
             const totalPages = Math.ceil(totalCount / pageSize);
 
             // Отправьте список файлов на клиент
@@ -60,15 +61,16 @@ export class RegistryBackupController {
                 last_page: totalPages,
                 from: offset + 1,
                 to: offset + paginatedFiles.length,
-                data: paginatedFiles,
+                data: paginatedFiles, // Теперь передаем все данные о файлах
             };
 
             res.json(response);
         } catch (error) {
             console.error(error);
-            res.status(500).json({ error: "Internal server error" });
+            res.status(500).json({ error: "Внутренняя ошибка сервера" });
         }
     }
+
 
 
 
