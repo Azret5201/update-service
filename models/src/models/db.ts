@@ -1,18 +1,18 @@
 
+import {Recipient} from "./Recipient";
 import {Registry} from "./Registry";
-import {RegistryFile} from "./RegistryFile";
-import {RegistriesRegistryFilesRelation} from "./RegistriesRegistryFilesRelation";
+import {RecipientsRegistriesRelation} from "./RecipientsRegistriesRelation";
 
-Registry.belongsToMany(RegistryFile, {
-    through: RegistriesRegistryFilesRelation,
-    foreignKey: 'registryId',
-    otherKey: 'registryFileId',
-});
-
-RegistryFile.belongsToMany(Registry, {
-    through: RegistriesRegistryFilesRelation,
-    foreignKey: 'registryFileId',
+Recipient.belongsToMany(Registry, {
+    through: RecipientsRegistriesRelation,
+    foreignKey: 'recipientId',
     otherKey: 'registryId',
 });
 
-export { Registry, RegistryFile, RegistriesRegistryFilesRelation };
+Registry.belongsToMany(Recipient, {
+    through: RecipientsRegistriesRelation,
+    foreignKey: 'registryId',
+    otherKey: 'recipientId',
+});
+
+export { Recipient, Registry, RecipientsRegistriesRelation };

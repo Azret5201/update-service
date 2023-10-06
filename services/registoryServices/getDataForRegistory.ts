@@ -1,6 +1,8 @@
 import {QueryTypes} from "sequelize";
 import sequelize from "../../models/src/sequelize";
 import moment from "moment";
+import {Logform} from "winston";
+import {log} from "../../utils/logger";
 
 
 export const fetchDataFromDatabase = async (sql: string) => {
@@ -56,10 +58,12 @@ export const getCorrectDateTime = (type: number) => {
             break;
     }
 
-    const formattedStartDate = '2023-04-05 00:00';
-    const formattedEndDate = '2023-04-05 23:59';
+    // Преобразуем даты в нужный формат
+    const formattedStartDate = startDate.format('YYYY-MM-DD');
+    const formattedEndDate = endDate.format('YYYY-MM-DD');
+
     return [formattedStartDate, formattedEndDate];
-}
+};
 
 export const setCorrectDateToSqlQuery = (sqlQuery: string, type: number) => {
     const correctDateTimes = getCorrectDateTime(type);
