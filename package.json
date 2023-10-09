@@ -6,7 +6,8 @@
   "scripts": {
     "startregistry": "ts-node services/registoryServices/main.ts",
     "dev": "nodemon main.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node main.js"
   },
   "repository": {
     "type": "git",
