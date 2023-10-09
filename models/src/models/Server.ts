@@ -21,7 +21,7 @@ Server.init(
   {
     sequelize,
     timestamps: false,
-    modelName: 'Server',s
+    modelName: 'Server',z
     tableName: 'bill_servers',
   },
 );
