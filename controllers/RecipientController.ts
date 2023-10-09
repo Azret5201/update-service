@@ -3,6 +3,7 @@ import {Recipient} from "../models/src/models/Recipient";
 import {RecipientsRegistriesRelation} from "../models/src/models/RecipientsRegistriesRelation";
 import sequelize from "../models/src/sequelize";
 import {Op} from "sequelize";
+import {log} from "../utils/logger";
 
 export class RecipientController {
     public async getRecipientPage(req: Request, res: Response): Promise<void> {
@@ -63,7 +64,7 @@ export class RecipientController {
         const filteredData: string[] = req.body.emails.filter((item: string) => item.trim() !== '');
         const emails: string = filteredData.join(', ');
 
-
+        // console.log(req.body)
         try {
             const createdRecipient = await Recipient.create({
                 name,
@@ -74,9 +75,11 @@ export class RecipientController {
 
             if (Array.isArray(registry_ids)) {
                 for (const registry_id of registry_ids) {
+                    console.log(registry_id)
                     await RecipientsRegistriesRelation.create({
                         recipientId: createdRecipient.id,
-                        registriesId: registry_id,
+                        registryId: registry_id,
+
                     }, { transaction: t });
                 }
             }
@@ -88,7 +91,7 @@ export class RecipientController {
         } catch (error) {
             console.error('Create operation failed:', error);
             await t.rollback();
-            res.status(500).json({ error: 'Create operation failed' });
+            res.status(500).json({ error: 'Create operation failed'});
         }
     }
 

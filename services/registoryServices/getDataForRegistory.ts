@@ -1,14 +1,15 @@
 import {QueryTypes} from "sequelize";
 import sequelize from "../../models/src/sequelize";
-import moment from "moment";
-import {Logform} from "winston";
-import {log} from "../../utils/logger";
+import * as moment from 'moment';
+import {log, logError} from "../../utils/logger";
 
 
 export const fetchDataFromDatabase = async (sql: string) => {
     try {
         return await sequelize.query(sql, {type: QueryTypes.SELECT});
     } catch (error) {
+        let sqlError = error.parent;
+        logError(sqlError);
         console.error('Произошла ошибка при выполнении запроса:', error);
         return [];
     }
