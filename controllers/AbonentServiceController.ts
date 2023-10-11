@@ -3,7 +3,6 @@ import { Service } from "../models/src/models/Service";
 import { ColumnOrder } from "../models/src/models/ColumnOrder";
 import { PathLike, createWriteStream, createReadStream, writeFileSync, appendFileSync } from "fs";
 import * as xlsx from "xlsx";
-import * as mimeTypes from "mime-types";
 
 
 export class AbonentServiceController {

@@ -5,7 +5,7 @@ import { Recipient, Registry } from "../../models/src/models/db";
 import { sendRegistryFiles } from "./sendRegistryFiles";
 import { Op } from "sequelize";
 import { log, logError } from "../../utils/logger";
-import * as moment from 'moment';
+import moment from 'moment';
 import {Service} from "../../models/src/models/Service";
 const archiver = require('archiver');
 const fs = require('fs');
