@@ -60,8 +60,8 @@ export const getCorrectDateTime = (type: number) => {
     }
 
     // Преобразуем даты в нужный формат
-    const formattedStartDate = startDate.format('YYYY-MM-DD');
-    const formattedEndDate = endDate.format('YYYY-MM-DD');
+    const formattedStartDate = startDate.format('YYYY-MM-DD 00:00:00');
+    const formattedEndDate = endDate.format('YYYY-MM-DD 23:59:59');
 
     return [formattedStartDate, formattedEndDate];
 };
