@@ -38,7 +38,7 @@ Recipient.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     modelName: 'Recipient',
     tableName: 'recipients',
   },

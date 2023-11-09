@@ -56,7 +56,7 @@ Registry.init(
     },
     {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         modelName: 'Registry',
         tableName: 'registries',
     },
