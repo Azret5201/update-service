@@ -1,10 +1,8 @@
 import * as nodemailer from 'nodemailer';
 import * as fs from "fs";
-import {log} from "../../utils/logger";
-
+import {Response} from "express";
 
 export const sendRegistryFiles = async (emailAddresses: string, registryFiles: string[]) => {
-
     const transporter = nodemailer.createTransport({
         host: 'mail.quickpay.kg',
         port: 465,
@@ -17,7 +15,7 @@ export const sendRegistryFiles = async (emailAddresses: string, registryFiles: s
 
     try {
         const emailsArray = emailAddresses.split(',').map(email => email.trim());
-        console.log(emailsArray)
+
         for (const email of emailsArray) {
             const mailOptions = {
                 from: 'reestr@quickpay.kg',
@@ -26,15 +24,19 @@ export const sendRegistryFiles = async (emailAddresses: string, registryFiles: s
                 text: 'Добрый день! В приложении реестры, которые вы запросили.',
                 attachments: registryFiles.map(filename => ({
                     filename: filename,
-                    content: fs.readFileSync(filename),
+                    content: fs.readFileSync(`files/` + filename),
                 }))
             };
 
             // Отправка письма
             console.log(await transporter.sendMail(mailOptions));
         }
+
+        // Вернуть успешный результат после успешной отправки всех писем
+        return true;
     } catch (error) {
         console.error('Ошибка при отправке письма:', error);
+        // Вернуть ошибку в случае неудачи
         throw error;
     }
 };

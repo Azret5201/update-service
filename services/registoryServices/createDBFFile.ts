@@ -7,32 +7,101 @@ import {
     setCorrectDateToSqlQuery
 } from "./getDataForRegistory";
 import { getAccountValueByKey } from "../../utils/account2str";
+import {Payment} from "../../models/src/models/Payment";
+import {Op} from "sequelize";
+
+interface DbfData {
+    id: string;
+    [key: string]: any;
+
+}
 
 export const createDBFFile = async (serverId: string, serviceId: string, data: any[], outputPath: string, type: number, batchSize: number): Promise<void> => {
     let dataFromDB: any[] = [];
-
-    const fields = data[0].fields.split(", ");;
+    let uniqueIds = new Set<string>();
+    const { fields, startDate, endDate, paymentsList } = data[0];
     const columns = data[0].table_headers.split(", ");
-
     console.log(fields, ' is fields');
 
-    let offset = 0;
-    const dbfData: any[] = [];
 
-    while (true) {
-        let sqlQuery = data[0]['sql'] ? setCorrectDateToSqlQuery(data[0]['sql'], type) :
-            generateSQLQuery(fields.toString(), serviceId, serverId, type);
-        sqlQuery = addOrderLimitOffset(sqlQuery, offset, batchSize);
-        dataFromDB = await fetchDataFromDatabase(sqlQuery);
-        if (dataFromDB.length === 0) {
-            break;
+    let paymentIds: string[] = [];
+
+    if (paymentsList && paymentsList.length > 0) {
+        const filteredPayments = paymentsList.filter(
+            (payment: any) => payment.id_service === serviceId
+        );
+        paymentIds = filteredPayments.map((payment: any) => payment.id);
+    }
+
+    const payments = await Payment.findAll({
+        where: {
+            id: {
+                [Op.in]: paymentIds,
+            },
+        },
+    });
+    const registryFields = fields.split(", ");
+    const hasIdColumn = /\b(id)\b/.test(fields);
+    // console.log(payments)
+    const fieldArray = hasIdColumn ? registryFields.join(", ") : ["id", ...registryFields];
+
+// Функция для удаления ненужных ключей из объекта
+    const removeNonMatchingKeys = (payment: any) => {
+        const plainPayment = payment.get({ plain: true });
+        const isFieldValid = (field: string) =>
+            fieldArray.includes(field) ||
+            (field.startsWith("account") &&
+                fieldArray.some((item: any) => item.startsWith("account.")));
+
+        Object.keys(plainPayment).forEach((field) => {
+            if (!isFieldValid(field)) {
+                delete plainPayment[field];
+            }
+        });
+
+        return plainPayment;
+    };
+
+
+
+// Удаляем ненужные ключи из каждого объекта в массиве payments
+    const paymentsWithSelectedKeys:any = payments.map(removeNonMatchingKeys);
+    console.log(paymentsWithSelectedKeys)
+    async function processDataChunk(dataFromDB: any[]) {
+
+        const mergedData = paymentsWithSelectedKeys.concat(dataFromDB);
+
+        // Удаление дубликатов по полю id
+
+        let uniqueDataFromDB = mergedData.reduce((acc: DbfData[], item: DbfData) => {
+            if (!uniqueIds.has(item.id)) {
+                uniqueIds.add(item.id);
+                acc.push(item);
+            }
+            return acc;
+        }, []);
+
+
+        uniqueDataFromDB = uniqueDataFromDB.map((row: any) => JSON.stringify(row));
+        uniqueDataFromDB = Array.from(new Set(uniqueDataFromDB));
+        uniqueDataFromDB = uniqueDataFromDB.map((row: any) => JSON.parse(row));
+
+        uniqueDataFromDB.map((row: any) => console.log(row));
+
+        if (!hasIdColumn) {
+            // Если id не является частью регистра, удаляем его из объектов в uniqueDataFromDB
+            uniqueDataFromDB = uniqueDataFromDB.map((item:any) => {
+                delete item.id;
+                return item;
+            });
         }
 
 
+
         // Переименование ключей данных
-        const renamedData: any[] = dataFromDB.map(item => {
+        const renamedData: any[] = uniqueDataFromDB.map((item:any) => {
             const renamedItem: any = {};
-            fields.forEach((field: any, index: any) => {
+            registryFields.forEach((field: any, index: any) => {
                 if (field.startsWith('account.')) {
                     const accountField = field.split('.')[1];
                     const accountValue = item.account.find((subItem: any) => subItem[0] === accountField);
@@ -44,8 +113,26 @@ export const createDBFFile = async (serverId: string, serviceId: string, data: a
             return renamedItem;
         });
 
-        offset += batchSize;
         dbfData.push(...renamedData);
+    }
+
+    let batchIndex = 0;
+    let offset = 0;
+    const dbfData: any[] = [];
+
+    while (true) {
+        let sqlQuery = generateSQLQuery(fieldArray.toString(), serviceId, serverId, type, startDate, endDate);
+        sqlQuery = addOrderLimitOffset(sqlQuery, offset, batchSize);
+        dataFromDB = await fetchDataFromDatabase(sqlQuery);
+
+        await processDataChunk(dataFromDB);
+
+        if (dataFromDB.length === 0) {
+            break;
+        }
+
+        offset += batchSize;
+        batchIndex++;
     }
 
     const fieldDescriptors = columns.map((column: string) => {
@@ -57,7 +144,7 @@ export const createDBFFile = async (serverId: string, serviceId: string, data: a
     });
 
     const buffer = createDBFBuffer(fieldDescriptors, dbfData);
-    fs.writeFileSync(outputPath, buffer);
+    fs.writeFileSync(`files/` + outputPath, buffer);
 
     console.log('DBF file created successfully.');
 };

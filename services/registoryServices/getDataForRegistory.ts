@@ -15,15 +15,20 @@ export const fetchDataFromDatabase = async (sql: string) => {
     }
 };
 
-export const generateSQLQuery = (fields: string, serviceId: string, serverId: string, type: number) => {
-    const correctDateTimes = getCorrectDateTime(type);
+export const generateSQLQuery = (fields: string, serviceId: string, serverId: string, type: number, startDate: any, endDate: any) => {
+    const correctDateTimes = getCorrectDateTime(type, startDate, endDate);
+
     if (fields.includes('account')) {
-        const match = fields.match(/account\.[\w]+/g);
-        if (match) {
-            const lastMatch = match[match.length - 1];
-            fields = fields.replace(lastMatch, 'account');
-        }
+        // Разбиваем строку fields на массив по запятым
+        const fieldArray = fields.split(',').map(f => f.trim());
+        // Удаляем все элементы, которые начинаются с "account."
+        const filteredFields = fieldArray.filter(f => !f.startsWith('account.'));
+        // Добавляем "account" в конец массива
+        filteredFields.push('account');
+        // Снова объединяем массив в строку с запятой
+        fields = filteredFields.join(', ');
     }
+
 
     return `SELECT ${fields}
             FROM payments_log
@@ -34,6 +39,7 @@ export const generateSQLQuery = (fields: string, serviceId: string, serverId: st
               AND id_bserver = '${serverId}'`;
 };
 
+
 export const addOrderLimitOffset = (sql: string, offset: number, limit: number) => {
     return `${sql}
                      ORDER BY id
@@ -41,9 +47,15 @@ export const addOrderLimitOffset = (sql: string, offset: number, limit: number) 
                      OFFSET ${offset}`;
 };
 
-export const getCorrectDateTime = (type: number) => {
-    let startDate = moment().startOf('day').subtract(1, 'day');
-    let endDate = moment(startDate).endOf('day');
+export const getCorrectDateTime = (type: number, startDate:any, endDate:any) => {
+    if (!startDate && !endDate) {
+        startDate = moment().startOf('day').subtract(1, 'day');
+        endDate = moment(startDate).endOf('day');
+    } else {
+        startDate = moment(startDate)
+        endDate = moment(endDate)
+    }
+
     switch (type) {
         case 2:
             startDate = moment(startDate).startOf('isoWeek');
@@ -63,10 +75,11 @@ export const getCorrectDateTime = (type: number) => {
     const formattedStartDate = startDate.format('YYYY-MM-DD 00:00:00');
     const formattedEndDate = endDate.format('YYYY-MM-DD 23:59:59');
 
+
     return [formattedStartDate, formattedEndDate];
 };
 
-export const setCorrectDateToSqlQuery = (sqlQuery: string, type: number) => {
-    const correctDateTimes = getCorrectDateTime(type);
+export const setCorrectDateToSqlQuery = (sqlQuery: string, type: number, startDate:any, endDate:any) => {
+    const correctDateTimes = getCorrectDateTime(type, startDate, endDate);
     return sqlQuery.replace('$dateFrom', correctDateTimes[0]).replace('$dateTo', correctDateTimes[1]);
 }

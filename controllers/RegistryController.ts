@@ -1,9 +1,7 @@
 import {Request, Response} from "express";
-import {Registry} from "../models/src/models/Registry";
 import sequelize from "../models/src/sequelize";
-import {RecipientsRegistriesRelation} from "../models/src/models/RecipientsRegistriesRelation";
 import {Op} from "sequelize";
-
+import { Recipient, Registry, RecipientsRegistriesRelation } from '../models/src/models/db'
 export class RegistryController {
     public async getRegistryPage(req: Request, res: Response): Promise<void> {
         const pageNumber = req.query.page ? parseInt(req.query.page as string) : 1;
@@ -11,7 +9,7 @@ export class RegistryController {
         const offset = (pageNumber - 1) * pageSize;
         const searchTerm = req.query.search;
 
-        const whereClause:any = {}; // Пустой объект для условий поиска
+        const whereClause: any = {}; // Пустой объект для условий поиска
 
         if (searchTerm) {
             whereClause['name'] = {
@@ -20,7 +18,7 @@ export class RegistryController {
         }
 
         try {
-            const totalCount = await Registry.count({ where: whereClause });
+            const totalCount = await Registry.count({where: whereClause});
             const totalPages = Math.ceil(totalCount / pageSize);
             const results = await Registry.findAll({
                 where: whereClause,
@@ -41,18 +39,54 @@ export class RegistryController {
 
             res.json(response);
         } catch (error) {
-            res.status(500).json({ error: "Internal server error" });
+            res.status(500).json({error: "Internal server error"});
         }
     }
 
     public async getRegistries(req: Request, res: Response): Promise<void> {
         try {
-            const registries = await Registry.findAll();
-            res.json(registries);
+            const column = req.query.column as string;
+            const value = req.query.value as string;
+            const includeRelated = req.query.includeRelated as string;
+            if (column && value) {
+                let registries;
+                if (includeRelated && includeRelated.toLowerCase() === 'true') {
+
+                    registries = await RegistryController.searchRegistriesWithRelated(column, value);
+                    console.log(includeRelated)
+                } else {
+                    const whereClause = {[column]: {[Op.like]: `%${value}%`}};
+                    registries = await Registry.findAll({where: whereClause});
+                }
+
+                res.json(registries);
+            } else {
+                const allRegistries = await Registry.findAll();
+                res.json(allRegistries);
+            }
         } catch (error) {
-            res.status(500).json({error: "Internal server error"});
+            console.error('Error:', error);
+            res.status(500).json({error: 'Internal server error'});
         }
     }
+
+    public static async searchRegistriesWithRelated(column: string, value: string) {
+        const whereClause = {[column]: `${value}`};
+
+        const recipientRegistries = await RecipientsRegistriesRelation.findAll({
+            where: whereClause,
+        });
+
+        const registryIds = recipientRegistries.map((relation) => relation.registryId);
+
+        return await Registry.findAll({
+            where: {
+                id: registryIds,
+            },
+            attributes: ['id', 'name', 'server_id', 'formats', 'services_id']
+        });
+    }
+
 
     public async store(req: Request, res: Response): Promise<void> {
         if (
@@ -61,7 +95,7 @@ export class RegistryController {
             || !req.body.serverId
             || !req.body.formats
         ) {
-            res.status(400).json({ error: "Required parameters are missing" });
+            res.status(400).json({error: "Required parameters are missing"});
             return;
         }
 
@@ -77,10 +111,10 @@ export class RegistryController {
                 sql_query: req.body.sqlQuery,
             });
 
-            res.json({ message: "Record created" });
+            res.json({message: "Record created"});
         } catch (error) {
             console.error("Create operation failed:", error);
-            res.status(500).json({ error: "Create operation failed" });
+            res.status(500).json({error: "Create operation failed"});
         }
     }
 
@@ -90,14 +124,14 @@ export class RegistryController {
         Registry.findByPk(fileId)
             .then((registry) => {
                 if (!registry) {
-                    res.status(404).json({ error: "Registry file not found" });
+                    res.status(404).json({error: "Registry file not found"});
                     return;
                 }
                 res.json(registry);
             })
             .catch((error) => {
                 console.error("Show operation failed:", error);
-                res.status(500).json({ error: "Show operation failed" });
+                res.status(500).json({error: "Show operation failed"});
             });
     }
 
@@ -120,7 +154,7 @@ export class RegistryController {
                 registry.fields = req.body.fields;
                 registry.table_headers = req.body.tableHeaders;
                 registry.is_blocked = req.body.is_blocked;
-                registry.formats= req.body.formats;
+                registry.formats = req.body.formats;
                 registry.sql_query = req.body.sqlQuery;
 
                 return registry.save();
@@ -146,32 +180,31 @@ export class RegistryController {
         try {
             // Удаляем связанные записи из другой таблицы
             await RecipientsRegistriesRelation.destroy({
-                where: { registry_id: registry_id },
+                where: {registry_id: registry_id},
                 transaction: t
             });
 
 
             // Удаляем запись из таблицы Registry
-            const registry = await Registry.findByPk(registry_id, { transaction: t });
+            const registry = await Registry.findByPk(registry_id, {transaction: t});
             if (!registry) {
-                res.status(404).json({ error: "Registry not found" });
+                res.status(404).json({error: "Registry not found"});
                 return;
             }
 
 
-
-            await registry.destroy({ transaction: t });
+            await registry.destroy({transaction: t});
 
             // Фиксируем транзакцию
             await t.commit();
 
-            res.json({ message: "Registry and related records deleted successfully" });
+            res.json({message: "Registry and related records deleted successfully"});
         } catch (error) {
             // Откатываем транзакцию в случае ошибки
             await t.rollback();
 
             console.error("Delete operation failed:", error);
-            res.status(500).json({ error: "Delete operation failed" });
+            res.status(500).json({error: "Delete operation failed"});
         }
     }
-    }
+}

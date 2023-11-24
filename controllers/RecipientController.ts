@@ -48,14 +48,31 @@ export class RecipientController {
 
 
 
-    public async getRegistries(req: Request, res: Response): Promise<void> {
+    public async getRecipients(req: Request, res: Response): Promise<void> {
         try {
-            const recipientFiles = await Recipient.findAll();
-            res.json(recipientFiles);
+            const column = req.query.column as string;
+            const value = req.query.value as string;
+
+            // Проверка наличия параметров запроса
+            if (column && value) {
+                const recipients = await Recipient.findAll({
+                    where: {
+                        [column]: {
+                            [Op.like]: `%${value}%`, // Используйте нужный оператор сравнения
+                        },
+                    },
+                });
+                res.json(recipients);
+            } else {
+                const allRecipients = await Recipient.findAll();
+                res.json(allRecipients);
+            }
         } catch (error) {
-            res.status(500).json({error: "Internal server error"});
+            res.status(500).json({ error: "Internal server error" });
         }
     }
+
+
 
     public async store(req: Request, res: Response): Promise<void> {
         const { name, type, is_blocked, registry_ids } = req.body;
@@ -75,7 +92,7 @@ export class RecipientController {
 
             if (Array.isArray(registry_ids)) {
                 for (const registry_id of registry_ids) {
-                    console.log(registry_id)
+                    // console.log(registry_id)
                     await RecipientsRegistriesRelation.create({
                         recipientId: createdRecipient.id,
                         registryId: registry_id,
@@ -116,6 +133,8 @@ export class RecipientController {
                 type: recipient.type,
                 emails: recipient.emails,
                 is_blocked: recipient.is_blocked,
+                createdAt: recipient.createdAt,
+                updatedAt: recipient.updatedAt,
 
                 registry_ids: recipientFiles.map((file) => ({
                     id: file.registryId,

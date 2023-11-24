@@ -12,7 +12,23 @@ export class Registry extends Model {
     public formats!: object;
     public is_blocked!: boolean;
     public sql_query?: string;
+    public createdAt!: string;
+    public updatedAt!: string;
+    startDate: any;
+    endDate: any;
+
+
+
+    public getFormattedCreatedAt() {
+        const updatedAt = this.getDataValue('createdAt');
+        return updatedAt ? new Date(updatedAt).toLocaleString() : null;
+    }
+    public getFormattedUpdatedAt() {
+        const updatedAt = this.getDataValue('updatedAt');
+        return updatedAt ? new Date(updatedAt).toLocaleString() : null;
+    }
 }
+
 
 Registry.init(
     {
@@ -52,13 +68,33 @@ Registry.init(
         sql_query: {
             type: DataTypes.STRING,
             allowNull: true,
-        }
+        },
+        deletedAt: {
+            type: DataTypes.DATE,
+            allowNull: true,
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            get() {
+                return this.getFormattedCreatedAt();
+            },
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            get() {
+                return this.getFormattedUpdatedAt();
+            },
+        },
     },
     {
         sequelize,
         timestamps: true,
+        paranoid: true,
         modelName: 'Registry',
-        tableName: 'registries',
+        tableName: 'registries'
     },
 );
+
 

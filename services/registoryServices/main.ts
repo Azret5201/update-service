@@ -155,7 +155,7 @@ const processRecords = async (registries: any[]) => {
                         for (const format of formats) {
                             try {
                                 log(`Processing registry file with ID: ${item['id']}`);
-                                const filePath = 'files/[' + registryName + ']_'+serviceName+'_'+ currentDate + '.' + format;
+                                const filePath = '[' + registryName + ']_'+serviceName+'_'+ currentDate + '.' + format;
                                 log(`Get data from service ${serviceId} in format ${format}`)
                                 if (format.trim() == 'xlsx') {
                                     await createExcelFile(serverId, serviceId, [item], filePath, registry.type, 1000);
