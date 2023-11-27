@@ -9,10 +9,12 @@ storage/*
 *.js
 filtered/
 package-lock.json
-package.json
+#package.json
 successful.txt
 error.txt
 static/
 files/
 logs/
 registries_backup/
+main.ts
+cron-script.ts

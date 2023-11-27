@@ -63,7 +63,7 @@
     "tsc": "^2.0.4",
     "typescript": "^5.2.2",
     "winston": "^3.10.0",
-    "xlsjs": "^1.0.1",
+    "xlsjs": "^0.7.6",
     "xlsx": "^0.18.5",
     "xlsx-populate": "^1.21.0"
   }
