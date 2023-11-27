@@ -4,7 +4,7 @@ import router from './routes/api';
 import cors from 'cors';
 
 const app = express();
-const port = 3001;
+const port = 3000;
 
 app.use(bodyParser.json({ limit: '50mb' }));
 
