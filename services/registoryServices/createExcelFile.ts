@@ -1,14 +1,9 @@
 import * as xlsx from "xlsx";
-import { promisify } from "util";
+import {promisify} from "util";
 import * as fs from "fs";
-import {
-    addOrderLimitOffset,
-    fetchDataFromDatabase,
-    generateSQLQuery,
-} from "./getDataForRegistory";
-import { getAccountValueByKey } from "../../utils/account2str";
-import { Payment } from "../../models/src/models/Payment";
-import { Op } from "sequelize";
+import {addOrderLimitOffset, fetchDataFromDatabase, generateSQLQuery,} from "./getDataForRegistory";
+import {Payment} from "../../models/src/models/Payment";
+import {Op} from "sequelize";
 
 interface ExcelData {
     id: string;
@@ -48,7 +43,8 @@ export const createExcelFile = async (
 
     const registryFields = fields.split(", ");
     const hasIdColumn = /\b(id)\b/.test(fields);
-    const fieldArray = hasIdColumn ? registryFields.join(", ") : ["id", ...registryFields];
+    const fieldArray = hasIdColumn ? [registryFields.join(", ")] : ["id", ...registryFields];
+
 
     let batchIndex = 0;
     let offset = 0;
@@ -56,23 +52,17 @@ export const createExcelFile = async (
 
     // Функция для удаления ненужных ключей из объекта
     const removeNonMatchingKeys = (payment: any) => {
-        const plainPayment = payment.get({ plain: true });
-        const isFieldValid = (field: string) =>
-            fieldArray.includes(field) ||
-            (field.startsWith("account") &&
-                fieldArray.some((item: any) => item.startsWith("account.")));
-
-        Object.keys(plainPayment).forEach((field) => {
-            if (!isFieldValid(field)) {
-                delete plainPayment[field];
-            }
+        return payment.get({
+            plain: true,
+            attributes: fieldArray, // Указываем атрибуты, которые хотим получить
         });
-
-        return plainPayment;
     };
+
 
     // Удаляем ненужные ключи из каждого объекта в массиве payments
     const paymentsWithSelectedKeys: ExcelData[] = payments.map(removeNonMatchingKeys);
+
+    console.log('ASSSSSSSSSSSSSSSSSSSSSSSSSSSS', paymentsWithSelectedKeys)
 
     async function processDataChunk(dataFromDB: any[]) {
         const uniqueIds = new Set<string>();

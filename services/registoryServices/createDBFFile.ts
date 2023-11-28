@@ -43,23 +43,14 @@ export const createDBFFile = async (serverId: string, serviceId: string, data: a
     const registryFields = fields.split(", ");
     const hasIdColumn = /\b(id)\b/.test(fields);
     // console.log(payments)
-    const fieldArray = hasIdColumn ? registryFields.join(", ") : ["id", ...registryFields];
+    const fieldArray = hasIdColumn ? [registryFields.join(", ")] : ["id", ...registryFields];
 
 // Функция для удаления ненужных ключей из объекта
     const removeNonMatchingKeys = (payment: any) => {
-        const plainPayment = payment.get({ plain: true });
-        const isFieldValid = (field: string) =>
-            fieldArray.includes(field) ||
-            (field.startsWith("account") &&
-                fieldArray.some((item: any) => item.startsWith("account.")));
-
-        Object.keys(plainPayment).forEach((field) => {
-            if (!isFieldValid(field)) {
-                delete plainPayment[field];
-            }
+        return payment.get({
+            plain: true,
+            attributes: fieldArray, // Указываем атрибуты, которые хотим получить
         });
-
-        return plainPayment;
     };
 
 
