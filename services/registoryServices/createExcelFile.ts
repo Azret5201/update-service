@@ -32,6 +32,7 @@ export const createExcelFile = async (
 
     let paymentIds: string[] = [];
 
+    throw 'XSL';
     if (paymentsList && paymentsList.length > 0) {
         const filteredPayments = paymentsList.filter(
             (payment: any) => payment.id_service === serviceId
