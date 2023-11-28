@@ -32,19 +32,20 @@ export const createExcelFile = async (
 
     let paymentIds: string[] = [];
 
-    if (paymentsList && paymentsList.length > 0) {
-        const filteredPayments = paymentsList.filter(
-            (payment: any) => payment.id_service === serviceId
-        );
-        paymentIds = filteredPayments.map((payment: any) => payment.id);
-    }
-    const payments = await Payment.findAll({
-        where: {
-            id: {
-                [Op.in]: paymentIds,
-            },
-        },
-    });
+
+    // if (paymentsList && paymentsList.length > 0) {
+    //     const filteredPayments = paymentsList.filter(
+    //         (payment: any) => payment.id_service === serviceId
+    //     );
+    //     paymentIds = filteredPayments.map((payment: any) => payment.id);
+    // }
+    // const payments = await Payment.findAll({
+    //     where: {
+    //         id: {
+    //             [Op.in]: paymentIds,
+    //         },
+    //     },
+    // });
 
     const registryFields = fields.split(", ");
     const hasIdColumn = /\b(id)\b/.test(fields);
@@ -72,11 +73,11 @@ export const createExcelFile = async (
     };
 
     // Удаляем ненужные ключи из каждого объекта в массиве payments
-    const paymentsWithSelectedKeys: ExcelData[] = payments.map(removeNonMatchingKeys);
+    // const paymentsWithSelectedKeys: ExcelData[] = payments.map(removeNonMatchingKeys);
 
     async function processDataChunk(dataFromDB: any[]) {
         const uniqueIds = new Set<string>();
-        const uniqueDataFromDB = [...paymentsWithSelectedKeys, ...dataFromDB].filter((item) => {
+        const uniqueDataFromDB = [...dataFromDB].filter((item) => {
             if (uniqueIds.has(item.id)) {
                 return false; // Пропускаем запись, если у нас уже есть такой идентификатор
             }

@@ -115,9 +115,9 @@ export class RegistryResendController {
 
 
                 for (const format of formats) {
-
+                    // throw 'XSL3';
                     try {
-                        throw 'XSL3';
+
                         const filePath = `[${registryName}]_${serviceName}_${startDate}_${endDate}.${format}`;
 
                         switch (format.trim()) {
