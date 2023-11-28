@@ -29,20 +29,14 @@ export const createCSVFile = async (
         );
         paymentIds = filteredPayments.map((payment: any) => payment.id);
     }
-    let payments
 
-    try {
-        payments = await Payment.findAll({
-            where: {
-                id: {
-                    [Op.in]: paymentIds,
-                },
+    const payments = await Payment.findAll({
+        where: {
+            id: {
+                [Op.in]: paymentIds,
             },
-        });
-    } catch (error) {
-        throw error;
-    }
-
+        },
+    });
     let uniqueIds = new Set<string>();
     const columns = data[0].table_headers.split(", ");
     const registryFields = fields.split(", ");
