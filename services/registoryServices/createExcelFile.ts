@@ -31,7 +31,7 @@ export const createExcelFile = async (
     const { fields, startDate, endDate, paymentsList } = data[0];
 
     let paymentIds: string[] = ['318793438'];
-
+let payments;
     
     // if (paymentsList && paymentsList.length > 0) {
     //     const filteredPayments = paymentsList.filter(
@@ -39,13 +39,18 @@ export const createExcelFile = async (
     //     );
     //     paymentIds = filteredPayments.map((payment: any) => payment.id);
     // }
-    const payments = await Payment.findAll({
-        where: {
-            id: {
-                [Op.in]: paymentIds,
+    try {
+        payments = await Payment.findAll({
+            where: {
+                id: {
+                    [Op.in]: paymentIds,
+                },
             },
-        },
-    });
+        });
+    } catch (error) {
+        throw error
+    }
+
 
     const registryFields = fields.split(", ");
     const hasIdColumn = /\b(id)\b/.test(fields);
