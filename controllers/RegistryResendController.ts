@@ -113,11 +113,11 @@ export class RegistryResendController {
 
                 const serviceName = service.name;
 
-                throw 'XSL';
+
                 for (const format of formats) {
                     try {
                         const filePath = `[${registryName}]_${serviceName}_${startDate}_${endDate}.${format}`;
-
+                        // throw 'XSL2';
                         switch (format.trim()) {
                             case 'xlsx':
                                 await createExcelFile(serverId, serviceId, [registryData], filePath, registryData.type, 1000);
