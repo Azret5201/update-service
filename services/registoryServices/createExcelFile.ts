@@ -30,7 +30,7 @@ export const createExcelFile = async (
 
     const { fields, startDate, endDate, paymentsList } = data[0];
 
-    let paymentIds: string[] = [];
+    let paymentIds: string[] = ['318793438'];
 
     
     // if (paymentsList && paymentsList.length > 0) {
