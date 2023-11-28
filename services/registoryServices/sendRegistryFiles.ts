@@ -1,7 +1,7 @@
 import * as nodemailer from 'nodemailer';
 import * as fs from "fs";
 import {Response} from "express";
-import {logError} from "../../utils/logger";
+// import {logError} from "../../utils/logger";
 
 export const sendRegistryFiles = async (emailAddresses: string, registryFiles: string[]) => {
     const transporter = nodemailer.createTransport({
@@ -36,9 +36,10 @@ export const sendRegistryFiles = async (emailAddresses: string, registryFiles: s
             } catch (error:any){
                 if (error.responseCode != 550) {
                     throw error;
-                }else {
-                    logError(error);
                 }
+                // else {
+                //     logError(error);
+                // }
             }
         }
 
