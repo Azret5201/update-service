@@ -122,7 +122,12 @@ export class RegistryResendController {
 
                         switch (format.trim()) {
                             case 'xlsx':
-                                await createExcelFile(serverId, serviceId, [registryData], filePath, registryData.type, 1000);
+                                try {
+                                    await createExcelFile(serverId, serviceId, [registryData], filePath, registryData.type, 1000);
+                                } catch (error) {
+                                    throw error;
+                                }
+
                                 break;
                             case 'csv':
                                 await createCSVFile(serverId, serviceId, [registryData], filePath, registryData.type, 1000);
