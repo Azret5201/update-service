@@ -203,6 +203,6 @@ Payment.init(
         paranoid: false,
         timestamps: false,
         modelName: 'Payments',
-        tableName: 'payments_log_y2023_06',
+        tableName: 'payments_log',
     },
 );

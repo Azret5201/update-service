@@ -31,7 +31,7 @@ export const generateSQLQuery = (fields: string, serviceId: string, serverId: st
 
 
     return `SELECT ${fields}
-            FROM payments_log_y2023_06
+            FROM payments_log
             WHERE payments_run = 1
               AND id_service = '${serviceId}'
               AND time_proc >= '${correctDateTimes[0]}'
