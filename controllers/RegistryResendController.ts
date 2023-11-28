@@ -113,21 +113,13 @@ export class RegistryResendController {
 
                 const serviceName = service.name;
 
-
                 for (const format of formats) {
-                    // throw 'XSL3';
                     try {
-
                         const filePath = `[${registryName}]_${serviceName}_${startDate}_${endDate}.${format}`;
 
                         switch (format.trim()) {
                             case 'xlsx':
-                                try {
-                                    await createExcelFile(serverId, serviceId, [registryData], filePath, registryData.type, 1000);
-                                } catch (error) {
-                                    throw error;
-                                }
-
+                                await createExcelFile(serverId, serviceId, [registryData], filePath, registryData.type, 1000);
                                 break;
                             case 'csv':
                                 await createCSVFile(serverId, serviceId, [registryData], filePath, registryData.type, 1000);
@@ -151,7 +143,7 @@ export class RegistryResendController {
                 const success = await sendRegistryFiles(emailAddresses, registryFilePaths);
 
                 if (success) {
-                    res.status(200).json({ success: true, message: 'Реестр успешно отправлен'  });
+                    res.status(200).json({ success: true, message: 'Реестр успешно отправлен' });
                 } else {
                     // Обработка ошибки, если sendRegistryFiles вернул ошибку
                     res.status(500).json({ success: false, message: 'Произошла ошибка при отправке письма' });
