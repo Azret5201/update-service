@@ -29,15 +29,16 @@ export const sendRegistryFiles = async (emailAddresses: string, registryFiles: s
                 }))
             };
             // Отправка письма
-            try {
-                console.log(await transporter.sendMail(mailOptions));
-            } catch (error:any){
-                if (error.responseCode != 550) {
-                    throw error;
-                }else {
-                    logError(error);
-                }
-            }
+            console.log(await transporter.sendMail(mailOptions));
+            // try {
+            //     console.log(await transporter.sendMail(mailOptions));
+            // } catch (error:any){
+            //     if (error.responseCode != 550) {
+            //         throw error;
+            //     }else {
+            //         logError(error);
+            //     }
+            // }
         }
 
         // Вернуть успешный результат после успешной отправки всех писем
