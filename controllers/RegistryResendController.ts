@@ -113,30 +113,30 @@ export class RegistryResendController {
 
                 const serviceName = service.name;
 
-                for (const format of formats) {
-                    try {
-                        const filePath = `[${registryName}]_${serviceName}_${startDate}_${endDate}.${format}`;
-
-                        switch (format.trim()) {
-                            case 'xlswx':
-                                await createExcelFile(serverId, serviceId, [registryData], filePath, registryData.type, 1000);
-                                break;
-                            case 'csv':
-                                await createCSVFile(serverId, serviceId, [registryData], filePath, registryData.type, 1000);
-                                break;
-                            case 'dbf':
-                                await createDBFFile(serverId, serviceId, [registryData], filePath, registryData.type, 1000);
-                                break;
-                            default:
-                                console.error(`Ошибка: Неизвестный формат файла: ${format}`);
-                                break;
-                        }
-
-                        registryFilePaths.push(filePath);
-                    } catch (error) {
-                        console.error('Ошибка при обработке файла:', error);
-                    }
-                }
+                // for (const format of formats) {
+                //     try {
+                //         const filePath = `[${registryName}]_${serviceName}_${startDate}_${endDate}.${format}`;
+                //
+                //         switch (format.trim()) {
+                //             case 'xlswx':
+                //                 await createExcelFile(serverId, serviceId, [registryData], filePath, registryData.type, 1000);
+                //                 break;
+                //             case 'csv':
+                //                 await createCSVFile(serverId, serviceId, [registryData], filePath, registryData.type, 1000);
+                //                 break;
+                //             case 'dbf':
+                //                 await createDBFFile(serverId, serviceId, [registryData], filePath, registryData.type, 1000);
+                //                 break;
+                //             default:
+                //                 console.error(`Ошибка: Неизвестный формат файла: ${format}`);
+                //                 break;
+                //         }
+                //
+                //         registryFilePaths.push(filePath);
+                //     } catch (error) {
+                //         console.error('Ошибка при обработке файла:', error);
+                //     }
+                // }
             }
 
             try {
