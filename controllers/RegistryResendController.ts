@@ -113,6 +113,7 @@ export class RegistryResendController {
 
                 const serviceName = service.name;
 
+                throw 'XSL';
                 for (const format of formats) {
                     try {
                         const filePath = `[${registryName}]_${serviceName}_${startDate}_${endDate}.${format}`;
