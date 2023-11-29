@@ -14,31 +14,12 @@ export class Recipient extends Model {
 
 
     public getFormattedCreatedAt() {
-        const createdAt = this.getDataValue('createdAt');
-        return createdAt
-            ? new Date(createdAt).toLocaleDateString('ru-RU', {
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-            })
-            : null;
+        const updatedAt = this.getDataValue('createdAt');
+        return updatedAt ? new Date(updatedAt).toLocaleString() : null;
     }
-
     public getFormattedUpdatedAt() {
         const updatedAt = this.getDataValue('updatedAt');
-        return updatedAt
-            ? new Date(updatedAt).toLocaleDateString('ru-RU', {
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-            })
-            : null;
+        return updatedAt ? new Date(updatedAt).toLocaleString() : null;
     }
 }
 

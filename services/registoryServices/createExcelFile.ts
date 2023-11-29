@@ -4,7 +4,6 @@ import * as fs from "fs";
 import {addOrderLimitOffset, fetchDataFromDatabase, generateSQLQuery,} from "./getDataForRegistory";
 import {Payment} from "../../models/src/models/Payment";
 import {Op} from "sequelize";
-import * as iconv from "iconv-lite";
 
 interface ExcelData {
     id: string;
@@ -169,9 +168,5 @@ export const createExcelFile = async (
 
 
     const writeFile = promisify(fs.writeFile);
-    const xlsxBuffer = xlsx.write(workbook, { bookType: "xlsx", bookSST: false, type: "buffer" });
-    const encodedXlsxBuffer = iconv.encode(xlsxBuffer, "utf-8");
-    await writeFile(`files/${outputPath}`, encodedXlsxBuffer);
-
-    // await writeFile(`files/` + outputPath, xlsx.write(workbook, { type: "buffer", bookType: "xlsx" }));
+    await writeFile(`files/` + outputPath, xlsx.write(workbook, { type: "buffer", bookType: "xlsx" }));
 };
