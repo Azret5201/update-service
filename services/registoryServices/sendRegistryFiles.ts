@@ -34,7 +34,7 @@ export const sendRegistryFiles = async (emailAddresses: string, registryFiles: s
             try {
                 console.log(await transporter.sendMail(mailOptions));
             } catch (error:any){
-                if (error.responseCode != 550) {
+                if (error.responseCode != 550 && error.responseCode != 504) {
                     throw error;
                 }
                 else {

@@ -9,6 +9,7 @@ import {
 import { getAccountValueByKey } from "../../utils/account2str";
 import {Payment} from "../../models/src/models/Payment";
 import {Op} from "sequelize";
+import * as iconv from "iconv-lite";
 
 interface DbfData {
     id: string;
@@ -134,8 +135,13 @@ export const createDBFFile = async (serverId: string, serviceId: string, data: a
         };
     });
 
-    const buffer = createDBFBuffer(fieldDescriptors, dbfData);
-    fs.writeFileSync(`files/` + outputPath, buffer);
+    const dbfDataBuffer:any = createDBFBuffer(fieldDescriptors, dbfData);
+
+// Преобразование данных в буфер с кодировкой UTF-8
+    const encodedDBFDataBuffer = iconv.encode(dbfDataBuffer, "utf-8");
+
+// Замените существующую запись в файл на следующую строку
+    fs.writeFileSync(`files/` + outputPath, encodedDBFDataBuffer);
 
     console.log('DBF file created successfully.');
 };

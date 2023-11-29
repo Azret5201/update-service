@@ -4,6 +4,7 @@ import * as fs from "fs";
 import {addOrderLimitOffset, fetchDataFromDatabase, generateSQLQuery,} from "./getDataForRegistory";
 import {Payment} from "../../models/src/models/Payment";
 import {Op} from "sequelize";
+import * as iconv from "iconv-lite";
 
 interface ExcelData {
     id: string;
@@ -62,7 +63,6 @@ export const createExcelFile = async (
     // Удаляем ненужные ключи из каждого объекта в массиве payments
     const paymentsWithSelectedKeys: ExcelData[] = payments.map(removeNonMatchingKeys);
 
-    console.log('ASSSSSSSSSSSSSSSSSSSSSSSSSSSS', paymentsWithSelectedKeys)
 
     async function processDataChunk(dataFromDB: any[]) {
         const uniqueIds = new Set<string>();
@@ -169,5 +169,9 @@ export const createExcelFile = async (
 
 
     const writeFile = promisify(fs.writeFile);
-    await writeFile(`files/` + outputPath, xlsx.write(workbook, { type: "buffer", bookType: "xlsx" }));
+    const xlsxBuffer = xlsx.write(workbook, { bookType: "xlsx", bookSST: false, type: "buffer" });
+    const encodedXlsxBuffer = iconv.encode(xlsxBuffer, "utf-8");
+    await writeFile(`files/${outputPath}`, encodedXlsxBuffer);
+
+    // await writeFile(`files/` + outputPath, xlsx.write(workbook, { type: "buffer", bookType: "xlsx" }));
 };

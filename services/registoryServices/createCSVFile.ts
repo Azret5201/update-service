@@ -4,6 +4,7 @@ import {addOrderLimitOffset, fetchDataFromDatabase, generateSQLQuery,} from "./g
 import {getAccountValueByKey} from "../../utils/account2str";
 import {Payment} from "../../models/src/models/Payment";
 import {Op} from "sequelize";
+import * as iconv from 'iconv-lite';
 import * as xlsx from "xlsx";
 
 interface CsvData {
@@ -154,6 +155,6 @@ export const createCSVFile = async (
 
 // Запись данных CSV в файл
     const writeFile = promisify(fs.writeFile);
-    await writeFile(`files/` + outputPath, csvData.join('\n'));
+    await writeFile(`files/${outputPath}`, iconv.encode(csvData.join('\n'), 'win1251'));
 
 };
