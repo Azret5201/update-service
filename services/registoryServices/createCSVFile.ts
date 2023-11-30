@@ -57,7 +57,7 @@ export const createCSVFile = async (
 
     let offset = 0;
     let batchIndex = 0;
-    const csvData: string[] = [columns.join(',')]; // Инициализация с заголовочной строкой
+    const csvData: string[] = [columns.join(';')]; // Инициализация с заголовочной строкой
 
     async function processDataChunk(dataFromDB: any[]) {
         const mergedData = paymentsWithSelectedKeys.concat(dataFromDB);
@@ -100,6 +100,15 @@ export const createCSVFile = async (
             }
         }
 
+        function formatDate(date: Date): string {
+            const day = date.getDate().toString().padStart(2, '0');
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const year = date.getFullYear();
+
+            return `${day}.${month}.${year}`;
+        }
+
+
         const cleanedFields = registryFields.map((field: string) =>
             field.replace(/^account\./, "")
         );
@@ -110,11 +119,16 @@ export const createCSVFile = async (
             return cleanedFields.reduce((filteredRow: { [key: string]: any }, field: string) => {
                 // Если поле есть в row, добавляем его в filteredRow
                 if (row.hasOwnProperty(field)) {
-                    filteredRow[field] = row[field];
+                    // Преобразование дат в нужный формат
+                    if (row[field] instanceof Date) {
+                        filteredRow[field] = formatDate(row[field]);
+                    } else {
+                        filteredRow[field] = row[field];
+                    }
                 }
                 return filteredRow;
             }, {});
-        }).filter((row: any) => Object.keys(row).length > 0); // Фильтруем записи, оставляем только те, у которых есть хотя бы одно значение.
+        }).filter((row: any) => Object.keys(row).length > 0);// Фильтруем записи, оставляем только те, у которых есть хотя бы одно значение.
 
 
 
@@ -124,7 +138,7 @@ export const createCSVFile = async (
                 return `"${value}"`;
             }
             return value;
-        }).join(',')));
+        }).join(';')));
     }
 
 
@@ -143,6 +157,7 @@ export const createCSVFile = async (
         sqlQuery = addOrderLimitOffset(sqlQuery, offset, batchSize);
 
         let dataFromDB: any = await fetchDataFromDatabase(sqlQuery);
+        console.log(dataFromDB)
         await processDataChunk(dataFromDB);
 
         if (dataFromDB.length === 0) {
