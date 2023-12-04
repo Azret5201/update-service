@@ -19,13 +19,27 @@ export class Registry extends Model {
 
 
 
-    public getFormattedCreatedAt() {
-        const updatedAt = this.getDataValue('createdAt');
-        return updatedAt ? new Date(updatedAt).toLocaleString() : null;
+    private getFormattedDate(date: Date | undefined): string | null {
+        const dateFormatOptions: Intl.DateTimeFormatOptions = {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+        };
+
+        return date ? date.toLocaleString('ru-RU', dateFormatOptions) : null;
     }
+
+    public getFormattedCreatedAt() {
+        const createdAt = this.getDataValue('createdAt') as Date | undefined;
+        return this.getFormattedDate(createdAt);
+    }
+
     public getFormattedUpdatedAt() {
-        const updatedAt = this.getDataValue('updatedAt');
-        return updatedAt ? new Date(updatedAt).toLocaleString() : null;
+        const updatedAt = this.getDataValue('updatedAt') as Date | undefined;
+        return this.getFormattedDate(updatedAt);
     }
 }
 
