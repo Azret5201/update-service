@@ -14,9 +14,10 @@ export class RegistryLogController {
 
         if (searchTerm) {
             whereClause['name'] = {
-                [Op.like]: `%${searchTerm}%`, // Используем оператор Op.like для поиска похожих записей
+                [Op.iLike]: `%${searchTerm}%`, // Используем оператор Op.iLike для регистронезависимого поиска похожих записей
             };
         }
+
 
         const logsDirectory = path.join(__dirname, './../logs'); // Путь к вашей директории
 

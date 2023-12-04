@@ -16,9 +16,10 @@ export class RecipientController {
 
         if (searchTerm) {
             whereClause['name'] = {
-                [Op.like]: `%${searchTerm}%`, // Используем оператор Op.like для поиска похожих записей
+                [Op.iLike]: `%${searchTerm}%`, // Используем оператор Op.iLike для регистронезависимого поиска похожих записей
             };
         }
+
 
         try {
             const totalCount = await Recipient.count({ where: whereClause });
