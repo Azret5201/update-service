@@ -72,7 +72,7 @@ export class ExportReportController {
             });
         } catch (error) {
             console.error('Ошибка при получении данных для отчета:', error);
-            res.status(500).json({ success: false, message: 'Ошибка при получении данных для отчета' });
+            res.status(500).json({ success: false, message: 'Ошибка при получении данных для отчета, ' + error });
         }
     }
 }
