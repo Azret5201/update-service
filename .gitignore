@@ -4,6 +4,12 @@
 node_modules/
 jspm_packages/
 
+*.xlsx
+*.csv
+*.xls
+*.txt
+*.dbf
+
 .env*
 storage/*
 *.js
@@ -13,7 +19,6 @@ package-lock.json
 successful.txt
 error.txt
 static/
-files/
 logs/
 registries_backup/
 main.ts
