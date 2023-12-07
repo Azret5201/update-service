@@ -11,7 +11,7 @@ jspm_packages/
 *.dbf
 
 .env*
-storage/*
+#storage/*
 *.js
 filtered/
 package-lock.json
