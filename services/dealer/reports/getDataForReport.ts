@@ -55,6 +55,11 @@ export const getDataForReport = async (startDate: any, endDate: any) => {
                 const param1Value = getParam1Value(item.payment_account);
                 if (param1Value) {
                     item.bill_server_name = param1Value;
+                    const isPhysicalPerson = [3366, 3264].includes(item.payment_id_service);
+                    const suffix = isPhysicalPerson ? 'физ. лица' : 'юр. лица';
+
+                    // Добавление суффикса к bill_server_name
+                    item.bill_server_name += ` (${suffix})`;
                 }
             });
 
@@ -157,6 +162,7 @@ export const generateSQLQueryByBserver = (startDate: any, endDate: any) => {
                 bill_servers.name AS bill_server_name,
                 bill_servers.dogovor AS bill_server_dogovor,
                 payments_log.account as payment_account,
+                payments_log.id_service as payment_id_service,
                 SUM(payments_log.real_pay) AS real_pay
             FROM payments_log
                 JOIN bill_servers ON payments_log.id_bserver = bill_servers.id
@@ -180,7 +186,8 @@ export const generateSQLQueryByBserver = (startDate: any, endDate: any) => {
                 bill_servers.id,
                 bill_servers.name,
                 bill_servers.dogovor,
-                payments_log.account`
+                payments_log.account,
+                payments_log.id_service`
 };
 
 export const addOrderLimitOffsetReport = (sql: string, offset: number, limit: number) => {
