@@ -26,7 +26,7 @@ export const createExcelFile = async (
     const { fields, startDate, endDate, paymentsList } = data[0];
 
     let paymentIds: string[] = [];
-
+    console.log('aaaaaaaaaaaaaaaaaaaaaaa', outputPath)
     if (paymentsList && paymentsList.length > 0) {
         const filteredPayments = paymentsList.filter(
             (payment: any) => payment.id_service === serviceId

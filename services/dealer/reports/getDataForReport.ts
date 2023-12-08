@@ -56,7 +56,11 @@ return `
                 payments_log.payments_run = 1
                 AND DATE(payments_log.time_proc) >= '${startDate}'
                 AND DATE(payments_log.time_proc) <= '${endDate}'
-                AND bill_servers.id NOT IN (600, 601)
+            
+                AND bill_servers.is_test = false
+                AND regions.blocked = 0
+                AND bill_servers.id NOT IN (601, 10053)
+            
                 AND payments_log.real_pay <> 0
                 AND payments_log.real_pay IS NOT NULL
             GROUP BY

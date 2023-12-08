@@ -15,7 +15,7 @@ jspm_packages/
 *.js
 filtered/
 package-lock.json
-#package.json
+package.json
 successful.txt
 error.txt
 static/

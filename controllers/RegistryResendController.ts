@@ -112,10 +112,16 @@ export class RegistryResendController {
 
 
                 const serviceName = service.name;
+                const sanitizedRegistryName = registryName.replace(/[\/\\\.]/g, ' ');
+                const sanitizedServiceName = serviceName.replace(/[\/\\\.]/g, ' ');
+
+
+
 
                 for (const format of formats) {
                     try {
-                        const filePath = `[${registryName}]_${serviceName}_${startDate}_${endDate}.${format}`;
+
+                        const filePath = `[${sanitizedRegistryName}]_${sanitizedServiceName}_${startDate}_${endDate}.${format}`;
 
                         switch (format.trim()) {
                             case 'xlsx':
