@@ -12,7 +12,37 @@ export class Registry extends Model {
     public formats!: object;
     public is_blocked!: boolean;
     public sql_query?: string;
+    public createdAt!: string;
+    public updatedAt!: string;
+    startDate: any;
+    endDate: any;
+
+
+
+    private getFormattedDate(date: Date | undefined): string | null {
+        const dateFormatOptions: Intl.DateTimeFormatOptions = {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+        };
+
+        return date ? date.toLocaleString('ru-RU', dateFormatOptions) : null;
+    }
+
+    public getFormattedCreatedAt() {
+        const createdAt = this.getDataValue('createdAt') as Date | undefined;
+        return this.getFormattedDate(createdAt);
+    }
+
+    public getFormattedUpdatedAt() {
+        const updatedAt = this.getDataValue('updatedAt') as Date | undefined;
+        return this.getFormattedDate(updatedAt);
+    }
 }
+
 
 Registry.init(
     {
@@ -52,13 +82,33 @@ Registry.init(
         sql_query: {
             type: DataTypes.STRING,
             allowNull: true,
-        }
+        },
+        deletedAt: {
+            type: DataTypes.DATE,
+            allowNull: true,
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            get() {
+                return this.getFormattedCreatedAt();
+            },
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            get() {
+                return this.getFormattedUpdatedAt();
+            },
+        },
     },
     {
         sequelize,
-        timestamps: false,
+        timestamps: true,
+        paranoid: true,
         modelName: 'Registry',
-        tableName: 'registries',
+        tableName: 'registries'
     },
 );
+
 

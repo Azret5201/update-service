@@ -14,9 +14,10 @@ export class RegistryBackupController {
 
         if (searchTerm) {
             whereClause['name'] = {
-                [Op.like]: `%${searchTerm}%`, // Используем оператор Op.like для поиска похожих записей
+                [Op.iLike]: `%${searchTerm}%`, // Используем оператор Op.iLike для регистронезависимого поиска похожих записей
             };
         }
+
 
         const registriesDirectory = path.join(__dirname, './../registries_backup'); // Путь к вашей директории
 

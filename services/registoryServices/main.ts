@@ -144,18 +144,23 @@ const processRecords = async (registries: any[]) => {
                                 'id': serviceId,
                                 }
                             })
-                        let serviceName;
+                        let serviceName = 'Сервис';
                         if (service) {
                             serviceName = service.name;
+
                             console.log(`Имя сервиса: ${serviceName}`);
                         } else {
                             console.log('Сервис не найден.');
                         }
 
+
                         for (const format of formats) {
                             try {
+                                const sanitizedRegistryName = registryName.replace(/[\/\\\.]/g, ' ');
+                                const sanitizedServiceName = serviceName.replace(/[\/\\\.]/g, ' ');
                                 log(`Processing registry file with ID: ${item['id']}`);
-                                const filePath = 'files/[' + registryName + ']_'+serviceName+'_'+ currentDate + '.' + format;
+                                const filePath = '[' + sanitizedRegistryName + ']_'+sanitizedServiceName+'_'+ currentDate + '.' + format;
+                                console.log('bbbbbbbbbbbbbbbbbbbbb', filePath)
                                 log(`Get data from service ${serviceId} in format ${format}`)
                                 if (format.trim() == 'xlsx') {
                                     await createExcelFile(serverId, serviceId, [item], filePath, registry.type, 1000);
