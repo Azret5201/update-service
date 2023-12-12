@@ -36,13 +36,14 @@ export class ExportReportController {
         // Заголовки столбцов
         worksheet.columns = [
             { header: 'Дата', key: 'date', width: 13 },
-            { header: 'Код дилера', key: 'region_id', width: 13 },
-            { header: 'Дилер', key: 'region_name', width: 35 },
-            { header: 'Код договора', key: 'region_dogovor', width: 13 },
+            { header: 'Код дилера', key: 'dealer_id', width: 13 },
+            { header: 'Дилер', key: 'dealer_name', width: 35 },
+            { header: 'Код договора', key: 'dealer_dogovor', width: 13 },
             { header: 'Код поставщика', key: 'bill_server_id', width: 16 },
             { header: 'Поставщик', key: 'bill_server_name', width: 25 },
             { header: 'Код договора', key: 'bill_server_dogovor', width: 13 },
             { header: 'Сумма', key: 'real_pay', width: 10 },
+            { header: 'Дилер ТСЖ', key: 'dealer_name_tsj', width: 35 },
         ];
 
 
@@ -74,5 +75,6 @@ export class ExportReportController {
             console.error('Ошибка при получении данных для отчета:', error);
             res.status(500).json({ success: false, message: 'Ошибка при получении данных для отчета, ' + error });
         }
+        console.log('script complete')
     }
 }
