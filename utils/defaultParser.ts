@@ -4,29 +4,60 @@ import { ColumnOrder } from '../models/src/models/ColumnOrder';
 import path, { ParsedPath } from 'path';
 import { AbonentService } from '../models/src/models/AbonentService';
 import { writeLogToFile } from './logger';
+import { log } from 'console';
+import { cast } from 'sequelize';
 
 interface Query {
   service_id?: number;
   identifier?: string;
   pay_sum?: string;
   another_data?: string[];
+  delete_mark?: boolean;
 }
 
 export async function getFilesInDirectory(dirPath: string) {
   const files = await fs.readdir(dirPath);
+  
   return files.map((file) => path.parse(path.resolve(dirPath, file)));
 }
 
 export async function getOrders(service_id: string) {
-  const orders = await ColumnOrder.findOne({
-    attributes: ['identifier_order', 'pay_sum_order'],
-    where: { service_id },
+  try {
+    const orders = await ColumnOrder.findOne({
+      attributes: ['identifier_order', 'pay_sum_order'],
+      where: { service_id },
+    });
+    console.log(`Очередь по сервису ${service_id} успешно получены!`)
+
+    return orders?.dataValues;
+  } catch(error) {
+    console.error('Очередь не получена!', error)
+  }
+}
+
+export async function getAbonentMark (service_id: string) {
+const abonents = await AbonentService.findOne({
+  attributes: ['delete_mark'],
+  where: { service_id }
+});
+
+return abonents ? abonents?.dataValues : false;
+}
+
+export async function removeOldAbonents(service_id: string, delete_mark: boolean) {
+  await AbonentService.destroy({
+    where: {
+      service_id: service_id,
+      delete_mark: delete_mark
+    }
   });
-  return orders?.dataValues;
 }
 
 export async function parserFile(file: ParsedPath) {
-  const orders = await getOrders(file.name);
+  const serviceName = file.name.toString().split('_');
+  const orders = await getOrders(serviceName[0]);
+  const abonentsMark = await getAbonentMark(serviceName[0]);
+  
   let remaining = '';
   if (orders) {
     try {
@@ -53,21 +84,44 @@ export async function parserFile(file: ParsedPath) {
             }
           });
           query['another_data'] = anotherData;
-          query['service_id'] = +file.name;
+          query['service_id'] = +serviceName[0];
+          query['delete_mark'] = !abonentsMark.delete_mark;
 
           index = remaining.indexOf('\n', last);
-          if (query.identifier) {
-            query.another_data = query.another_data.map((str: string) => str.replace('\r', ''));
-            AbonentService.create(query as any);
+          try {
+            if (query.identifier) {
+              query.another_data = query.another_data.map((str: string) => str.replace('\r', ''));
+              AbonentService.findOne({ where: { identifier: query.identifier, service_id: query.service_id }})
+                .then((abonentService) => {
+                  if (abonentService) {
+                    return abonentService.update({
+                      identifier: query.identifier,
+                      service_id: query.service_id,
+                      pay_sum: query.pay_sum,
+                      delete_mark: query.delete_mark,
+                      another_data: query.another_data
+                    })
+                  } else {
+                    AbonentService.create(query as any);
+                  }
+                })
+            }
           }
+        catch (error) {
+         console.log('error')
+        }
         }
         remaining = remaining.substring(last);
+
       });
+      
+      await removeOldAbonents(serviceName[0], abonentsMark.delete_mark);
+
       writeLogToFile(
         'successful',
         `Данные базы абонентов ${file.name} успешно записаны в таблицу ${AbonentService.tableName}`,
       );
-      // fs.rm(path.resolve(file.dir, file.base));
+      fs.rm(path.resolve(file.dir, file.base));
     } catch (err) {
       writeLogToFile(
         'error',

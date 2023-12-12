@@ -19,6 +19,9 @@ export class AbonentServiceController {
     if (!req.body.file && !req.body.serviceId && !req.body.identifierOrder) {
       res.status(400).json({ error: "don't have required paramerts" });
     }
+      //Данную переменную надо потом убрать, костыль
+    const paySum = req.body.paySumOrder === '' ? null : req.body.paySumOrder;
+
 
     ColumnOrder.findOne({ where: { service_id: req.body.serviceId } })
       .then((columnOrder) => {
@@ -26,14 +29,14 @@ export class AbonentServiceController {
           // Запись найдена, выполняем обновление
           return columnOrder.update({
             identifier_order: req.body.identifierOrder,
-            pay_sum_order: req.body.paySumOrder,
+            pay_sum_order: paySum
           });
         } else {
           // Запись не найдена, создаем новую
           return ColumnOrder.create({
             service_id: req.body.serviceId,
             identifier_order: req.body.identifierOrder,
-            pay_sum_order: req.body.paySumOrder,
+            pay_sum_order: paySum
           });
         }
       })
@@ -47,7 +50,8 @@ export class AbonentServiceController {
     const splitted = req.body.file.split(";base64,");
     const format = splitted[0].replace(/^data:/, '');
 
-    let fileData = '';
+    let fileData: any = '';
+
     if (format !== 'text/csv') {
       try {
           fileData = AbonentServiceController.convertXLSX(splitted[1]);
@@ -55,16 +59,16 @@ export class AbonentServiceController {
         console.error('Error converting base64 to CSV:', error);
       throw error;
       }
-    } 
-
-    const data = typeof fileData === 'string' ? fileData :  Buffer.from(splitted[1], "base64");
+    } else {
+      fileData = Buffer.from(splitted[1], "base64");
+    }
     
     const outputFilePath = __dirname + "/../storage/" + req.body.serviceId + "_" + new Date().getTime().toString() + ".csv";
 
     const fileStream = createWriteStream(outputFilePath);
-    fileStream.write(data);
+    
+    fileStream.write(fileData+'\n');
     fileStream.end();
-
 
     fileStream.on("finish", () => {
       res.status(200).json({ response: "Successful" });
