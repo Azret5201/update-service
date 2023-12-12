@@ -35,11 +35,11 @@ export const getDataForReport = async (startDate: any, endDate: any) => {
             fetchData(generateReportSQLQuery, (dataFromDB) => {
                 reportData.push(...dataFromDB);
             }),
-            fetchData(generateSQLQueryByBserver, (dataFromDB) => {
-                processBserverData(dataFromDB, reportData);
-            }),
             fetchData(generateSQLQueryByTSJDiller, (dataFromDB) => {
                 processTSJDillerData(dataFromDB, reportData);
+            }),
+            fetchData(generateSQLQueryByBserver, (dataFromDB) => {
+                processBserverData(dataFromDB, reportData);
             }),
         ]);
     } catch (error) {
