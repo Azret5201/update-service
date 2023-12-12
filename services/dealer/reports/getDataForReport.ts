@@ -4,12 +4,12 @@ import { TSJDialer } from "../../../models/src/models/TSJDialer";
 type SQLQueryGenerator = (startDate: any, endDate: any) => string;
 type DataProcessor = (data: any[]) => void;
 
-let reportData: any[] = [];
 export const getDataForReport = async (startDate: any, endDate: any) => {
     const batchSize = 1000;
     let batchIndex = 0;
     let offset = 0;
 
+    let reportData: any[] = [];
 
     const fetchData = async (sqlQueryGenerator: SQLQueryGenerator, dataProcessor: DataProcessor) => {
         let dataFromDB: any;
@@ -27,17 +27,19 @@ export const getDataForReport = async (startDate: any, endDate: any) => {
     };
 
 
-
     try {
+        // Очистка массива перед новыми запросами
+        reportData = [];  // Очистка массива перед новыми запросами
+
         await Promise.all([
             fetchData(generateReportSQLQuery, (dataFromDB) => {
                 reportData.push(...dataFromDB);
             }),
             fetchData(generateSQLQueryByBserver, (dataFromDB) => {
-                processBserverData(dataFromDB);
+                processBserverData(dataFromDB, reportData);
             }),
             fetchData(generateSQLQueryByTSJDiller, (dataFromDB) => {
-                processTSJDillerData(dataFromDB);
+                processTSJDillerData(dataFromDB, reportData);
             }),
         ]);
     } catch (error) {
@@ -49,7 +51,7 @@ export const getDataForReport = async (startDate: any, endDate: any) => {
     return reportData;
 };
 
-const processBserverData = (dataFromDB: any[]) => {
+const processBserverData = (dataFromDB: any[], reportData: any[]) => {
     dataFromDB.forEach((item) => {
         const param1Value = getParam1Value(item.payment_account);
         if (param1Value) {
@@ -67,7 +69,7 @@ const processBserverData = (dataFromDB: any[]) => {
 
 };
 
-const processTSJDillerData = async (dataFromDB: any[]) => {
+const processTSJDillerData = async (dataFromDB: any[], reportData: any[]) => {
     const allTSJDealers = await TSJDialer.findAll();
 
     dataFromDB.forEach((item) => {
