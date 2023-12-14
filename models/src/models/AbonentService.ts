@@ -39,6 +39,13 @@ AbonentService.init(
     },
   },
   {
+    indexes: [
+      {
+        unique: true,
+        fields: ['identifier', 'service_id'],
+        name: 'idx_unique_identifier_service_id'
+      },
+    ],
     sequelize,
     timestamps: false,
     modelName: 'AbonentService',
