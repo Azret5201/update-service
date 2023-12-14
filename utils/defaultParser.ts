@@ -1,5 +1,5 @@
 import fs from 'fs/promises';
-import { createReadStream } from 'fs';
+import { createReadStream, read } from 'fs';
 import { ColumnOrder } from '../models/src/models/ColumnOrder';
 import path, { ParsedPath } from 'path';
 import { AbonentService } from '../models/src/models/AbonentService';
@@ -41,7 +41,7 @@ const abonents = await AbonentService.findOne({
   where: { service_id }
 });
 
-return abonents ? abonents?.dataValues : false;
+return abonents ? abonents?.dataValues.delete_mark : false;
 }
 
 export async function removeOldAbonents(service_id: string, delete_mark: boolean) {
@@ -53,15 +53,12 @@ export async function removeOldAbonents(service_id: string, delete_mark: boolean
   });
 }
 
-export async function parserFile(file: ParsedPath) {
-  const serviceName = file.name.toString().split('_');
-  const orders = await getOrders(serviceName[0]);
-  const abonentsMark = await getAbonentMark(serviceName[0]);
-  
+async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean, file:ParsedPath) {
   let remaining = '';
   if (orders) {
     try {
       const readStream = createReadStream(path.resolve(file.dir, file.base));
+      const promises:any = [];
       readStream.on('data', async (chunk) => {
         remaining += chunk;
         let index = remaining.indexOf('\n');
@@ -85,13 +82,13 @@ export async function parserFile(file: ParsedPath) {
           });
           query['another_data'] = anotherData;
           query['service_id'] = +serviceName[0];
-          query['delete_mark'] = !abonentsMark.delete_mark;
+          query['delete_mark'] = !abonentsMark;
 
           index = remaining.indexOf('\n', last);
           try {
             if (query.identifier) {
               query.another_data = query.another_data.map((str: string) => str.replace('\r', ''));
-              AbonentService.findOne({ where: { identifier: query.identifier, service_id: query.service_id }})
+              const promise = AbonentService.findOne({ where: { identifier: query.identifier, service_id: query.service_id }})
                 .then((abonentService) => {
                   if (abonentService) {
                     return abonentService.update({
@@ -104,7 +101,8 @@ export async function parserFile(file: ParsedPath) {
                   } else {
                     AbonentService.create(query as any);
                   }
-                })
+                });
+                promises.push(promise)
             }
           }
         catch (error) {
@@ -112,16 +110,18 @@ export async function parserFile(file: ParsedPath) {
         }
         }
         remaining = remaining.substring(last);
-
       });
+      readStream.on('end', async () => {
+        await Promise.all(promises);
+        await removeOldAbonents(serviceName[0], abonentsMark);
+      })
       
-      await removeOldAbonents(serviceName[0], abonentsMark.delete_mark);
-
       writeLogToFile(
         'successful',
         `Данные базы абонентов ${file.name} успешно записаны в таблицу ${AbonentService.tableName}`,
       );
       fs.rm(path.resolve(file.dir, file.base));
+
     } catch (err) {
       writeLogToFile(
         'error',
@@ -132,3 +132,13 @@ export async function parserFile(file: ParsedPath) {
     writeLogToFile('error', `Не удалось найти очереди в таблице column_orders для сервиса ${file.name}`);
   }
 }
+
+export async function parserFile(file: ParsedPath) {
+  const serviceName = file.name.toString().split('_');
+  const orders = await getOrders(serviceName[0]);
+  const abonentsMark = await getAbonentMark(serviceName[0]);
+  
+  await upsertData(serviceName, orders, abonentsMark, file);
+}
+
+
