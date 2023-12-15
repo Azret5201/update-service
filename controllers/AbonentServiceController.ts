@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import { Service } from "../models/src/models/Service";
 import { ColumnOrder } from "../models/src/models/ColumnOrder";
-import { PathLike, createWriteStream, createReadStream, writeFileSync, appendFileSync } from "fs";
+import { createWriteStream } from "fs";
 import * as xlsx from "xlsx";
-import {Recipient} from "../models/src/models/Recipient";
 import {Op} from "sequelize";
+import * as path from 'path'; 
 
 
 export class AbonentServiceController {
@@ -87,7 +87,9 @@ export class AbonentServiceController {
       fileData = Buffer.from(splitted[1], "base64");
     }
     
-    const outputFilePath = __dirname + "/../storage/" + req.body.serviceId + "_" + new Date().getTime().toString() + ".csv";
+    // const outputFilePath = __dirname + "/../storage/" + req.body.serviceId + "_" + new Date().getTime().toString() + ".csv";
+    const outputFilePath = path.join(__dirname, "/../../storage/") + req.body.serviceId + "_" + new Date().getTime().toString() + ".csv";
+
 
     const fileStream = createWriteStream(outputFilePath);
     
