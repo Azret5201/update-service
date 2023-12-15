@@ -19,7 +19,7 @@ package.json
 successful.txt
 error.txt
 static/
-logs/
+logs/*
 registries_backup/
 main.ts
 cron-script.ts
