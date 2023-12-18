@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const projectRoot:string = process.env.PROJECT_ROOT || __dirname;
+const projectRoot:any = process.env.PROJECT_ROOT;
 
 export const getAbsolutePath = (...args: string[]): string => {
     const fullPath = path.join(projectRoot, ...args);
