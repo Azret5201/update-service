@@ -88,7 +88,7 @@ export class AbonentServiceController {
     }
     
     // const outputFilePath = __dirname + "/../storage/" + req.body.serviceId + "_" + new Date().getTime().toString() + ".csv";
-    const outputFilePath = path.join(__dirname, "/../../storage/") + req.body.serviceId + "_" + new Date().getTime().toString() + ".csv";
+    const outputFilePath = path.join(__dirname, "../storage/clients") + req.body.serviceId + "_" + new Date().getTime().toString() + ".csv";
 
 
     const fileStream = createWriteStream(outputFilePath);
