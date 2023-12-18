@@ -1,9 +1,9 @@
 import {Request, Response} from "express";
-import {Recipient} from "../models/src/models/Recipient";
-import {RecipientsRegistriesRelation} from "../models/src/models/RecipientsRegistriesRelation";
-import sequelize from "../models/src/sequelize";
+import {Recipient} from "../../models/src/models/registry/Recipient";
+import {RecipientsRegistriesRelation} from "../../models/src/models/registry/RecipientsRegistriesRelation";
+import sequelize from "../../models/src/sequelize";
 import {Op} from "sequelize";
-import {log} from "../utils/logger";
+import {log} from "../../utils/logger";
 
 export class RecipientController {
     public async getRecipientPage(req: Request, res: Response): Promise<void> {

@@ -1,5 +1,5 @@
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../sequelize';
+import sequelize from '../../sequelize';
 
 export class RecipientsRegistriesRelation extends Model {
     public id!: number;

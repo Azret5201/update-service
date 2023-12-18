@@ -1,7 +1,7 @@
 import {Request, Response} from "express";
-import sequelize from "../models/src/sequelize";
+import sequelize from "../../models/src/sequelize";
 import {Op} from "sequelize";
-import { Recipient, Registry, RecipientsRegistriesRelation } from '../models/src/models/db'
+import { Recipient, Registry, RecipientsRegistriesRelation } from '../../models/src/models/registry/db'
 export class RegistryController {
     public async getRegistryPage(req: Request, res: Response): Promise<void> {
         const pageNumber = req.query.page ? parseInt(req.query.page as string) : 1;

@@ -1,7 +1,7 @@
 import { createExcelFile } from './createExcelFile';
 import { createCSVFile } from "./createCSVFile";
 import { createDBFFile } from "./createDBFFile";
-import { Recipient, Registry } from "../../models/src/models/db";
+import { Recipient, Registry } from "../../models/src/models/registry/db";
 import { sendRegistryFiles } from "./sendRegistryFiles";
 import { Op } from "sequelize";
 import { log, logError } from "../../utils/logger";

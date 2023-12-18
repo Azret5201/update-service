@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { Service } from "../models/src/models/Service";
-import { ColumnOrder } from "../models/src/models/ColumnOrder";
+import { Service } from "../../models/src/models/Service";
+import { ColumnOrder } from "../../models/src/models/ColumnOrder";
 import { createWriteStream } from "fs";
 import * as xlsx from "xlsx";
 import {Op} from "sequelize";

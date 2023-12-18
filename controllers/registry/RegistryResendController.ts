@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import { Recipient, Registry } from '../models/src/models/db';
-import { createExcelFile } from "../services/registoryServices/createExcelFile";
-import { createCSVFile } from "../services/registoryServices/createCSVFile";
-import { createDBFFile } from "../services/registoryServices/createDBFFile";
-import { sendRegistryFiles } from "../services/registoryServices/sendRegistryFiles";
-import { Service } from "../models/src/models/Service";
-import {Payment} from "../models/src/models/Payment";
+import { Recipient, Registry } from '../../models/src/models/registry/db';
+import { createExcelFile } from "../../services/registoryServices/createExcelFile";
+import { createCSVFile } from "../../services/registoryServices/createCSVFile";
+import { createDBFFile } from "../../services/registoryServices/createDBFFile";
+import { sendRegistryFiles } from "../../services/registoryServices/sendRegistryFiles";
+import { Service } from "../../models/src/models/Service";
+import {Payment} from "../../models/src/models/Payment";
 
 export class RegistryResendController {
 

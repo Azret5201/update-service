@@ -1,5 +1,5 @@
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../sequelize';
+import sequelize from '../../sequelize';
 import {Recipient} from "./Recipient";
 
 export class Registry extends Model {
@@ -16,31 +16,6 @@ export class Registry extends Model {
     public updatedAt!: string;
     startDate: any;
     endDate: any;
-
-
-
-    private getFormattedDate(date: Date | undefined): string | null {
-        const dateFormatOptions: Intl.DateTimeFormatOptions = {
-            year: 'numeric',
-            month: 'numeric',
-            day: 'numeric',
-            hour: 'numeric',
-            minute: 'numeric',
-            second: 'numeric',
-        };
-
-        return date ? date.toLocaleString('ru-RU', dateFormatOptions) : null;
-    }
-
-    public getFormattedCreatedAt() {
-        const createdAt = this.getDataValue('createdAt') as Date | undefined;
-        return this.getFormattedDate(createdAt);
-    }
-
-    public getFormattedUpdatedAt() {
-        const updatedAt = this.getDataValue('updatedAt') as Date | undefined;
-        return this.getFormattedDate(updatedAt);
-    }
 }
 
 
@@ -90,16 +65,10 @@ Registry.init(
         createdAt: {
             type: DataTypes.DATE,
             allowNull: false,
-            get() {
-                return this.getFormattedCreatedAt();
-            },
         },
         updatedAt: {
             type: DataTypes.DATE,
             allowNull: false,
-            get() {
-                return this.getFormattedUpdatedAt();
-            },
         },
     },
     {

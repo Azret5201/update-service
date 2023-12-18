@@ -1,6 +1,6 @@
 import {Request, Response} from "express";
-import {Service} from "../models/src/models/Service";
-import {Server} from "../models/src/models/Server";
+import {Service} from "../../models/src/models/Service";
+import {Server} from "../../models/src/models/Server";
 
 export class AbonentServerController {
     public async getServers(req: Request, res: Response): Promise<void> {

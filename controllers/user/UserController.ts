@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { User } from '../models/src/models/User';
-import { checkHash, generateToken } from '../utils/authUtils';
+import { User } from '../../models/src/models/User';
+import { checkHash, generateToken } from '../../utils/authUtils';
 
 export class UserController {
   public async login(req: Request, res: Response): Promise<void> {

@@ -2,14 +2,14 @@ import { Request, Response } from 'express';
 import fs from 'fs';
 import path from 'path';
 import {Op} from "sequelize";
-import {getAbsolutePath} from "../utils/pathUtils";
+import {getAbsolutePath} from "../../utils/pathUtils";
 
-export class RegistryBackupController {
-    public async getBackups(req: Request, res: Response) {
+export class RegistryLogController {
+    public async getLogs(req: Request, res: Response) {
         const pageNumber = req.query.page ? parseInt(req.query.page as string) : 1;
         const pageSize = 50;
         const offset = (pageNumber - 1) * pageSize;
-        const searchTerm: any = req.query.search; // Получите поисковый запрос из параметров запроса
+        const searchTerm:any = req.query.search; // Получите поисковый запрос из параметров запроса
 
         const whereClause: any = {}; // Пустой объект для условий поиска
 
@@ -20,17 +20,17 @@ export class RegistryBackupController {
         }
 
 
-        const registriesDirectory = getAbsolutePath('storage/registries/backup/'); // Путь к вашей директории
+        const logsDirectory = getAbsolutePath('logs/registries/'); // Путь к вашей директории
 
         try {
             // Проверьте, существует ли каталог
-            if (!fs.existsSync(registriesDirectory)) {
-                return res.status(404).end('Каталог не найден');
+            if (!fs.existsSync(logsDirectory)) {
+                return res.status(404).end('Directory not found');
             }
 
-            // Получите список файлов в каталоге с датой создания и размером файла
-            const filesWithStats = fs.readdirSync(registriesDirectory).map((filename) => {
-                const filePath = path.join(registriesDirectory, filename);
+            // Получите список файлов в каталоге с датой создания
+            const filesWithStats = fs.readdirSync(logsDirectory).map((filename) => {
+                const filePath = path.join(logsDirectory, filename);
                 const stats = fs.statSync(filePath);
                 return {
                     name: filename,
@@ -66,18 +66,17 @@ export class RegistryBackupController {
                 data: paginatedFiles, // Теперь передаем все данные о файлах
             };
 
+
             res.json(response);
         } catch (error) {
             console.error(error);
-            res.status(500).json({ error: "Внутренняя ошибка сервера" });
+            res.status(500).json({error: "Internal server error"});
         }
     }
 
 
-
-
-    public async downloadBackup(req: Request, res: Response) {
-        const logsDirectory = getAbsolutePath('storage/registries/backup/'); // Используйте абсолютный путь
+    public async downloadLog(req: Request, res: Response) {
+        const logsDirectory = getAbsolutePath('logs/registries/'); // Используйте абсолютный путь
         const filename = req.body.filename;
 
         // Проверьте, существует ли каталог с логами
@@ -92,15 +91,15 @@ export class RegistryBackupController {
             return res.status(404).end('File not found');
         }
 
-        // Определите MIME-тип для zip-файлов
-        const mimeType = 'application/zip';
+        // Читаем содержимое файла
+        fs.readFile(filePath, 'utf8', (err, fileData) => {
+            if (err) {
+                console.error(err);
+                return res.status(500).json({error: "Error reading file"});
+            }
 
-        // Отправьте zip-файл клиенту
-        res.sendFile(filePath, {
-            headers: {
-                'Content-Type': mimeType,
-            },
+            // Отправляем содержимое файла клиенту
+            res.status(200).send(fileData);
         });
     }
-
-    }
+}
