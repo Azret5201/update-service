@@ -4,6 +4,7 @@ import * as fs from "fs";
 import {addOrderLimitOffset, fetchDataFromDatabase, generateSQLQuery,} from "./getDataForRegistory";
 import {Payment} from "../../models/src/models/Payment";
 import {Op} from "sequelize";
+import {getAbsolutePath} from "../../utils/pathUtils";
 
 interface ExcelData {
     id: string;
@@ -167,5 +168,5 @@ export const createExcelFile = async (
 
 
     const writeFile = promisify(fs.writeFile);
-    await writeFile(`files/` + outputPath, xlsx.write(workbook, { type: "buffer", bookType: "xlsx" }));
+    await writeFile(getAbsolutePath('storage/registries/files/') + outputPath, xlsx.write(workbook, { type: "buffer", bookType: "xlsx" }));
 };

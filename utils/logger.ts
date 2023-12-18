@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import moment from "moment";
+import {getAbsolutePath} from "./pathUtils";
 
 const getCurrentTimestamp = () => {
     const now = new Date();
@@ -8,7 +9,7 @@ const getCurrentTimestamp = () => {
 };
 
 // Путь к файлу лога (используйте абсолютный путь)
-const logFilePath = path.join(__dirname, '..', 'logs', `${moment().format('YYYY-MM-DD')}_registries.log`);
+const logFilePath = path.join(getAbsolutePath('logs/registries/'), `${moment().format('YYYY-MM-DD')}_registries.log`);
 
 export const log = (message: any) => {
     const logMessage = `${getCurrentTimestamp()} - ${message}\n`;
@@ -51,7 +52,7 @@ export async function writeLogToFile(logType: LogType, message: string): Promise
     const logMessage = `${new Date().toLocaleString()} - ${message}\n`;
 
     try {
-        const filePath = path.join(__dirname, '..', 'logs', fileName);
+        const filePath = getAbsolutePath('logs/registries/') + fileName;
         // Проверяем существование каталога и создаем его при необходимости
         const logDirectory = path.dirname(filePath);
         if (!fs.existsSync(logDirectory)) {

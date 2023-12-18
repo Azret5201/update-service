@@ -9,6 +9,7 @@ import {
 import { getAccountValueByKey } from "../../utils/account2str";
 import {Payment} from "../../models/src/models/Payment";
 import {Op} from "sequelize";
+import {getAbsolutePath} from "../../utils/pathUtils";
 
 interface DbfData {
     id: string;
@@ -135,7 +136,7 @@ export const createDBFFile = async (serverId: string, serviceId: string, data: a
     });
 
     const buffer = createDBFBuffer(fieldDescriptors, dbfData);
-    fs.writeFileSync(`files/` + outputPath, buffer);
+    fs.writeFileSync(getAbsolutePath('storage/registries/files/') + outputPath, buffer);
 
     console.log('DBF file created successfully.');
 };

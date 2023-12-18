@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import fs from 'fs';
 import path from 'path';
 import {Op} from "sequelize";
+import {getAbsolutePath} from "../utils/pathUtils";
 
 export class RegistryLogController {
     public async getLogs(req: Request, res: Response) {
@@ -19,7 +20,7 @@ export class RegistryLogController {
         }
 
 
-        const logsDirectory = path.join(__dirname, './../logs'); // Путь к вашей директории
+        const logsDirectory = getAbsolutePath('logs/registries/'); // Путь к вашей директории
 
         try {
             // Проверьте, существует ли каталог
@@ -75,7 +76,7 @@ export class RegistryLogController {
 
 
     public async downloadLog(req: Request, res: Response) {
-        const logsDirectory = path.join(__dirname, './../logs/'); // Используйте абсолютный путь
+        const logsDirectory = getAbsolutePath('logs/registries/'); // Используйте абсолютный путь
         const filename = req.body.filename;
 
         // Проверьте, существует ли каталог с логами

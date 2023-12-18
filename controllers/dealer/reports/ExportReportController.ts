@@ -13,6 +13,7 @@ import {
     getDataForReport
 } from "../../../services/dealer/reports/getDataForReport";
 import moment from "moment";
+import {getAbsolutePath} from "../../../utils/pathUtils";
 
 export class ExportReportController {
 
@@ -56,7 +57,7 @@ export class ExportReportController {
             });
 
             // Сохранение книги Excel в файл
-            const filePath = path.join(__dirname, `./../../../storage/files/dealer/reports/report.xlsx`);
+            const filePath = getAbsolutePath('storage/dealer/reports/') + 'report.xlsx';
             await workbook.xlsx.writeFile(filePath);
 
             // Отправка файла клиенту

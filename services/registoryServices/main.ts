@@ -7,6 +7,7 @@ import { Op } from "sequelize";
 import { log, logError } from "../../utils/logger";
 import moment from 'moment';
 import {Service} from "../../models/src/models/Service";
+import {getAbsolutePath} from "../../utils/pathUtils";
 const archiver = require('archiver');
 const fs = require('fs');
 const path = require('path');
@@ -16,7 +17,7 @@ const path = require('path');
 
 const main = async () => {
 
-    const folderPath = path.join(__dirname, './../../files'); // Укажите путь к вашей папке "files"
+    const folderPath = getAbsolutePath('storage/registries/files/'); // Укажите путь к вашей папке "files"
 
     try {
         const type = process.argv[2];
@@ -68,7 +69,7 @@ const main = async () => {
 
 // Функция для создания резервной копии реестров
 const backupRegistriesFiles = (type: any) => {
-    const backupDir = path.join(__dirname, './../../registries_backup');
+    const backupDir = getAbsolutePath('storage/registries/backup/');
     let registryType;
 
     const typeToRegistryType:any = {
@@ -94,7 +95,7 @@ const backupRegistriesFiles = (type: any) => {
     }
 
     // Поместите файлы реестров из папки "files" в архив
-    archive.directory(path.join(__dirname, './../../files'), false);
+    archive.directory(getAbsolutePath('storage/registries/files/'), false);
 
     archive.pipe(output);
     archive.finalize();
@@ -160,7 +161,6 @@ const processRecords = async (registries: any[]) => {
                                 const sanitizedServiceName = serviceName.replace(/[\/\\\.]/g, ' ');
                                 log(`Processing registry file with ID: ${item['id']}`);
                                 const filePath = '[' + sanitizedRegistryName + ']_'+sanitizedServiceName+'_'+ currentDate + '.' + format;
-                                console.log('bbbbbbbbbbbbbbbbbbbbb', filePath)
                                 log(`Get data from service ${serviceId} in format ${format}`)
                                 if (format.trim() == 'xlsx') {
                                     await createExcelFile(serverId, serviceId, [item], filePath, registry.type, 1000);

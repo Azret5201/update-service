@@ -2,6 +2,7 @@ import * as nodemailer from 'nodemailer';
 import * as fs from "fs";
 import {Response} from "express";
 import {logError} from "../../utils/logger";
+import {getAbsolutePath} from "../../utils/pathUtils";
 
 export const sendRegistryFiles = async (emailAddresses: string, registryFiles: string[]) => {
     const transporter = nodemailer.createTransport({
@@ -25,7 +26,7 @@ export const sendRegistryFiles = async (emailAddresses: string, registryFiles: s
                 text: 'Добрый день! В приложении реестры, которые вы запросили.',
                 attachments: registryFiles.map(filename => ({
                     filename: filename,
-                    content: fs.readFileSync(`files/` + filename),
+                    content: fs.readFileSync(getAbsolutePath('storage/registries/files/') + filename),
                 }))
             };
                 //
