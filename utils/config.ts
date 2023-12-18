@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 let envFilePath = '.env.dev';
 
 if (process.env.NODE_ENV === 'production') {
-  envFilePath = '.env.prod';
+  envFilePath = '.env';
 }
 
 dotenv.config({ path: envFilePath });
