@@ -99,7 +99,7 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
               const promise = AbonentService.findOne({ where: { identifier: query.identifier, service_id: query.service_id }})
                 .then((abonentService) => {
                   if (abonentService) {
-                    logger.log(`Client ${query.identifier} is exist in service ${query.service_id}, just updating information`)
+                    logger.log(`Client ${query.identifier} is exist in service ${query.identifier}, just updating information`)
                     return abonentService.update({
                       identifier: query.identifier,
                       service_id: query.service_id,
@@ -108,7 +108,7 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
                       another_data: query.another_data
                     })
                   } else {;
-                    logger.log(`Create new client in service ${query.service_id}`)
+                    logger.log(`Create new client in service ${query.identifier}`)
                     AbonentService.create(query as any);
                   }
                 });
