@@ -17,7 +17,7 @@ export class Logger {
 
   private createLogFilePath(logType: string): string {
     const logFileName = `${moment().format('YYYY-MM-DD')}_${logType}.log`;
-    return path.join(getAbsolutePath('storage/logs', logType), logFileName);
+    return path.join(getAbsolutePath('logs', logType), logFileName);
   }
 
   private ensureLogDirectoryExists(): void {

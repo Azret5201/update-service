@@ -62,7 +62,6 @@ export async function removeOldAbonents(service_id: string, delete_mark: boolean
 async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean, file:ParsedPath) {
   let remaining = '';
 
-  console.log('ASDASDASD');
   if (orders) {
     try {
       const readStream = createReadStream(path.resolve(file.dir, file.base));
