@@ -4,15 +4,16 @@ import { createDBFFile } from "./createDBFFile";
 import { Recipient, Registry } from "../../models/src/models/registry/db";
 import { sendRegistryFiles } from "./sendRegistryFiles";
 import { Op } from "sequelize";
-import { log, logError } from "../../utils/logger";
+// import { log, logError } from "../../utils/logger";
 import moment from 'moment';
 import {Service} from "../../models/src/models/Service";
 import {getAbsolutePath} from "../../utils/pathUtils";
+import {Logger} from "../../utils/logger2";
 const archiver = require('archiver');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
-
+const logger = new Logger('registries');
 
 
 const main = async () => {
@@ -27,8 +28,8 @@ const main = async () => {
             return;
         }
 
-        log(`============ Script started ============ \n`);
-        log('Remove old records from folder - Files');
+        logger.log(`============ Script started ============ \n`);
+        logger.log('Remove old records from folder - Files');
         try {
             const files = fs.readdirSync(folderPath);
 
@@ -36,10 +37,10 @@ const main = async () => {
             for (const file of files) {
                 const filePath = path.join(folderPath, file);
                 fs.unlinkSync(filePath);
-                log(`Record delete: ${filePath}`);
+                logger.log(`Record delete: ${filePath}`);
             }
 
-            log(`All old files have been successfully deleted \n`);
+            logger.log(`All old files have been successfully deleted \n`);
         } catch (err) {
             console.error('An error occurred while removing records:', err);
         }
@@ -65,9 +66,9 @@ const main = async () => {
             await processRecords(recipients);
         }
         backupRegistriesFiles(type);
-        log(`============ Script completed ============ \n`)
+        logger.log(`============ Script completed ============ \n`)
     } catch (error) {
-        logError(error);
+        logger.logError(error);
     }
     return 0;
 };
@@ -106,7 +107,7 @@ const backupRegistriesFiles = (type: any) => {
     archive.finalize();
 
     // Логируем информацию о создании резервной копии
-    log(`Backup of registry files created successfully. \n`);
+    logger.log(`Backup of registry files created successfully. \n`);
 };
 
 
@@ -114,13 +115,13 @@ const processRecords = async (registries: any[]) => {
 
     for (const registry of registries) {
         const registryFilePaths: string[] = [];
-        log('/////////// Start execution registry for recipient - '+ registry['name'] + ' ///////////');
+        logger.log('/////////// Start execution registry for recipient - '+ registry['name'] + ' ///////////');
         const registryFiles = await registry.Registries;
         if (registryFiles) {
             const emailAddresses = registry['emails'];
             const registryId = registry['id']; // Идентификатор текущего реестра
 
-            log(`Processing registry with ID: ${registryId}`);
+            logger.log(`Processing registry with ID: ${registryId}`);
 
             for (const item of registryFiles) {
                 const registryName = item['name'];
@@ -131,18 +132,18 @@ const processRecords = async (registries: any[]) => {
                 const currentDate = moment().format('YYYY-MM-DD');
 
                 if (!isBlocked) {
-                    log('-----------INFO------------')
-                    log('Sender Id: ' + registryId);
-                    log('Registry Id: ' + item['id']);
-                    log('Sender Name: ' + registry['name']);
-                    log('Registry Name: ' + registryName);
-                    log('Server id: '+ serverId);
-                    log('Services ids: '+ servicesId);
-                    log('Formats: '+ formats);
-                    log('Emails: '+ emailAddresses)
-                    log('Current Date: '+ moment().format('YYYY-MM-DD HH:mm:ss'))
+                    logger.log('-----------INFO------------')
+                    logger.log('Sender Id: ' + registryId);
+                    logger.log('Registry Id: ' + item['id']);
+                    logger.log('Sender Name: ' + registry['name']);
+                    logger.log('Registry Name: ' + registryName);
+                    logger.log('Server id: '+ serverId);
+                    logger.log('Services ids: '+ servicesId);
+                    logger.log('Formats: '+ formats);
+                    logger.log('Emails: '+ emailAddresses)
+                    logger.log('Current Date: '+ moment().format('YYYY-MM-DD HH:mm:ss'))
 
-                    log('---------PROCESSING---------')
+                    logger.log('---------PROCESSING---------')
                     for (const serviceId of servicesId) {
                         
                         const service = await Service.findOne({
@@ -164,9 +165,9 @@ const processRecords = async (registries: any[]) => {
                             try {
                                 const sanitizedRegistryName = registryName.replace(/[\/\\\.]/g, ' ');
                                 const sanitizedServiceName = serviceName.replace(/[\/\\\.]/g, ' ');
-                                log(`Processing registry file with ID: ${item['id']}`);
+                                logger.log(`Processing registry file with ID: ${item['id']}`);
                                 const filePath = '[' + sanitizedRegistryName + ']_'+sanitizedServiceName+'_'+ currentDate + '.' + format;
-                                log(`Get data from service ${serviceId} in format ${format}`)
+                                logger.log(`Get data from service ${serviceId} in format ${format}`)
                                 if (format.trim() == 'xlsx') {
                                     await createExcelFile(serverId, serviceId, [item], filePath, registry.type, 1000);
                                 } else if (format.trim() == 'csv') {
@@ -174,29 +175,29 @@ const processRecords = async (registries: any[]) => {
                                 } else if (format.trim() == 'dbf') {
                                     await createDBFFile(serverId, serviceId, [item], filePath, registry.type, 1000);
                                 } else {
-                                    logError(`UNKNOWN FILE FORMAT: ${format}`)
+                                    logger.logError(`UNKNOWN FILE FORMAT: ${format}`)
                                     break;
                                 }
 
                                 registryFilePaths.push(filePath);
-                                log(`Successfully processed registry file for service ${serviceId} in format ${format}.\n`);
+                                logger.log(`Successfully processed registry file for service ${serviceId} in format ${format}.\n`);
                             } catch (error) {
-                                logError(error);
+                                logger.logError(error);
                             }
                         }
                     }
                 }
             }
-            log('---------SENDING---------')
+            logger.log('---------SENDING---------')
             try {
                 await sendRegistryFiles(emailAddresses, registryFilePaths);
-                log(`Registry ${registry['name']} with ID ${registryId} successfully sent to the specified addresses.`);
-                log(`Emails: ${emailAddresses}`)
-                log(`Files: ${registryFilePaths}`)
+                logger.log(`Registry ${registry['name']} with ID ${registryId} successfully sent to the specified addresses.`);
+                logger.log(`Emails: ${emailAddresses}`)
+                logger.log(`Files: ${registryFilePaths}`)
             } catch (error) {
-                logError(error);
+                logger.logError(error);
             }
-            log('--------- FINISHED -------- \n')
+            logger.log('--------- FINISHED -------- \n')
         }
     }
 }
