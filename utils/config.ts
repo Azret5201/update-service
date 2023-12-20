@@ -1,10 +1,11 @@
 import * as dotenv from 'dotenv';
+import {getAbsolutePath} from "./pathUtils";
 
-let envFilePath = '.env.dev';
-
+let envFilePath = getAbsolutePath('.env.dev');
 if (process.env.NODE_ENV === 'production') {
-  envFilePath = '.env.prod';
+  envFilePath = getAbsolutePath('.env.prod');
 }
+console.log(envFilePath)
 
 dotenv.config({ path: envFilePath });
 
