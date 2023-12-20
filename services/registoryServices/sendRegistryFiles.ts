@@ -8,21 +8,21 @@ require('dotenv').config();
 const logger = new Logger('registries');
 export const sendRegistryFiles = async (emailAddresses: string, registryFiles: string[]) => {
     const transporter = nodemailer.createTransport({
-        host: process.env.MAIL_HOST,
-        port: process.env.MAIL_PORT,
+        host: 'mail.quickpay.kg',
+        port: 465,
         secure: true,
         auth: {
-            user: process.env.MAIL_USER,
-            pass: process.env.MAIL_PASS
+            user: 'reestr@quickpay.kg',
+            pass: 'eish<eph8seevah!g0Besu*Mahv0vaeb'
         }
-    }as nodemailer.TransportOptions);
+    });
 
     try {
         const emailsArray = emailAddresses.split(',').map(email => email.trim());
 
         for (const email of emailsArray) {
             const mailOptions = {
-                from: 'reestr@quickpay.kg',
+                from: '"Slujba tehnicheskoi podderzhki Quickpay" <reestr@quickpay.kg>',
                 to: email,
                 subject: 'Реестры принятых платежей', // Тема письма
                 text: 'Добрый день! В приложении реестры, которые вы запросили.',
