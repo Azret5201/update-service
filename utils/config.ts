@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 let envFilePath = '.env.dev';
 
 if (process.env.NODE_ENV === 'production') {
-  envFilePath = '.env';
+  envFilePath = '.env.prod';
 }
 
 dotenv.config({ path: envFilePath });
@@ -16,3 +16,4 @@ export const config = {
   dbName: process.env.DB_NAME || '',
   dbDialect: process.env.DB_DIALECT || 'postgres',
 };
+
