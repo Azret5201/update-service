@@ -8,14 +8,14 @@ require('dotenv').config();
 const logger = new Logger('registries');
 export const sendRegistryFiles = async (emailAddresses: string, registryFiles: string[]) => {
     const transporter = nodemailer.createTransport({
-        host: 'mail.quickpay.kg',
-        port: 465,
+        host: process.env.MAIL_HOST,
+        port: process.env.MAIL_PORT,
         secure: true,
         auth: {
-            user: 'reestr@quickpay.kg',
-            pass: 'eish<eph8seevah!g0Besu*Mahv0vaeb'
+            user: process.env.MAIL_USER,
+            pass: process.env.MAIL_PASS
         }
-    });
+    }as nodemailer.TransportOptions);
 
     try {
         const emailsArray = emailAddresses.split(',').map(email => email.trim());
