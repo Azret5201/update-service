@@ -54,6 +54,7 @@ Recipient.init(
         sequelize,
         paranoid: true,
         timestamps: true,
+
         modelName: 'Recipient',
         tableName: 'recipients',
     },

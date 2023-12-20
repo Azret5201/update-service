@@ -44,19 +44,24 @@ const main = async () => {
             console.error('An error occurred while removing records:', err);
         }
 
-
-        const recipients = await Recipient.findAll({
-            include: [Registry],
-            where: {
-                'type': type,
-                'is_blocked': false,
-                '$Registries.id$': {
-                    [Op.not]: null
+        console.log('STARTING Recipient.findAll');
+        let recipients
+        try {
+            recipients = await Recipient.findAll({
+                include: [Registry],
+                where: {
+                    'type': type,
+                    'is_blocked': false,
+                    '$Registries.id$': {
+                        [Op.not]: null
+                    }
                 }
-            }
-        });
-
-        if (recipients) {
+            });
+            console.log('Recipients:', recipients);
+        } catch (error) {
+            console.error('Error fetching recipients:', error);
+        }
+        if (recipients && recipients.length > 0) {
             await processRecords(recipients);
         }
         backupRegistriesFiles(type);
