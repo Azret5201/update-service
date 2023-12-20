@@ -49,7 +49,7 @@ export const addOrderLimitOffset = (sql: string, offset: number, limit: number) 
 
 export const getCorrectDateTime = (type: number, startDate:any, endDate:any) => {
     if (!startDate && !endDate) {
-        startDate = moment().startOf('day').subtract(2, 'day');
+        startDate = moment().startOf('day').subtract(1, 'day');
         endDate = moment(startDate).endOf('day');
     } else {
         startDate = moment(startDate)
