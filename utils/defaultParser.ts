@@ -3,9 +3,9 @@ import { createReadStream, read } from 'fs';
 import { ColumnOrder } from '../models/src/models/ColumnOrder';
 import path, { ParsedPath } from 'path';
 import { AbonentService } from '../models/src/models/AbonentService';
-import { writeLogToFile } from './logger';
-import { log } from 'console';
-import { cast } from 'sequelize';
+import { Logger } from './logger2';
+
+const logger = new Logger('offline_clients');
 
 interface Query {
   service_id?: number;
@@ -27,10 +27,10 @@ export async function getOrders(service_id: string) {
       attributes: ['identifier_order', 'pay_sum_order'],
       where: { service_id },
     });
-    console.log(`Очередь по сервису ${service_id} успешно получены!`)
-
+    logger.log(`Очередь по сервису ${service_id} успешно получены!`)
     return orders?.dataValues;
   } catch(error) {
+    logger.log(`Очередь по сервису ${service_id} не получена!`)
     console.error('Очередь не получена!', error)
   }
 }
@@ -45,16 +45,24 @@ return abonents ? abonents?.dataValues.delete_mark : false;
 }
 
 export async function removeOldAbonents(service_id: string, delete_mark: boolean) {
-  await AbonentService.destroy({
-    where: {
-      service_id: service_id,
-      delete_mark: delete_mark
-    }
-  });
+  try {
+    logger.log(`Remove old clients in service ${service_id}`);
+    await AbonentService.destroy({
+      where: {
+        service_id: service_id,
+        delete_mark: delete_mark
+      }
+    });
+  } catch (err) {
+    logger.log(`Can't remove clients in service ${service_id}`);
+  }
+  
 }
 
 async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean, file:ParsedPath) {
   let remaining = '';
+
+  console.log('ASDASDASD');
   if (orders) {
     try {
       const readStream = createReadStream(path.resolve(file.dir, file.base));
@@ -91,6 +99,7 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
               const promise = AbonentService.findOne({ where: { identifier: query.identifier, service_id: query.service_id }})
                 .then((abonentService) => {
                   if (abonentService) {
+                    logger.log(`Client ${query.identifier} is exist in service ${query.service_id}, just updating information`)
                     return abonentService.update({
                       identifier: query.identifier,
                       service_id: query.service_id,
@@ -98,7 +107,8 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
                       delete_mark: query.delete_mark,
                       another_data: query.another_data
                     })
-                  } else {
+                  } else {;
+                    logger.log(`Create new client in service ${query.service_id}`)
                     AbonentService.create(query as any);
                   }
                 });
@@ -106,7 +116,7 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
             }
           }
         catch (error) {
-         console.log('error')
+          logger.log(`Upsert clients error: ${error}`)
         }
         }
         remaining = remaining.substring(last);
@@ -116,20 +126,17 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
         await removeOldAbonents(serviceName[0], abonentsMark);
       })
       
-      writeLogToFile(
-        'successful',
-        `Данные базы абонентов ${file.name} успешно записаны в таблицу ${AbonentService.tableName}`,
+      logger.log(
+        `SUCCESSFUL: Clients from "${file.name}" file successfully inserting in table ${AbonentService.tableName}`,
       );
       fs.rm(path.resolve(file.dir, file.base));
 
     } catch (err) {
-      writeLogToFile(
-        'error',
-        `Не удалось записать в таблицу ${AbonentService.tableName} данные базы абонентов ${file.name}`,
+      logger.log(`ERROR: Can't insert clients data to the table ${AbonentService.tableName}: ${err}`,
       );
     }
   } else {
-    writeLogToFile('error', `Не удалось найти очереди в таблице column_orders для сервиса ${file.name}`);
+    logger.log(`ERROR: Can't find orders by service - ${file.name}`);
   }
 }
 
