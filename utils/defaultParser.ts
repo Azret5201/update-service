@@ -70,6 +70,8 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
         remaining += chunk;
         let index = remaining.indexOf('\n');
         let last = 0;
+        let countCreateRecords = 0;
+        let countUpdateRecords = 0;
         while (index > -1) {
           const line = remaining.substring(last, index);
 
@@ -98,17 +100,27 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
               const promise = AbonentService.findOne({ where: { identifier: query.identifier, service_id: query.service_id }})
                 .then((abonentService) => {
                   if (abonentService) {
-                    logger.log(`Client ${query.identifier} is exist in service ${query.identifier}, just updating information`)
-                    return abonentService.update({
-                      identifier: query.identifier,
-                      service_id: query.service_id,
-                      pay_sum: query.pay_sum,
-                      delete_mark: query.delete_mark,
-                      another_data: query.another_data
-                    })
-                  } else {;
-                    logger.log(`Create new client in service ${query.identifier}`)
-                    AbonentService.create(query as any);
+                    try {
+                      countUpdateRecords++;
+                      abonentService.update({
+                        identifier: query.identifier,
+                        service_id: query.service_id,
+                        pay_sum: query.pay_sum,
+                        delete_mark: query.delete_mark,
+                        another_data: query.another_data
+                      })
+                    }
+                    catch (err) {
+                      logger.log(`Can't update ${abonentService} : ${err}`)
+                    }
+                    
+                  } else {
+                    try {
+                      countCreateRecords++;
+                      AbonentService.create(query as any);
+                    } catch (err) {
+                      logger.log(`Can't create new record: ${err}`);
+                    }
                   }
                 });
                 promises.push(promise)
@@ -118,6 +130,7 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
           logger.log(`Upsert clients error: ${error}`)
         }
         }
+        logger.log(`By service ${serviceName[0]} inserted: ${countCreateRecords} and updated: ${countUpdateRecords}`);
         remaining = remaining.substring(last);
       });
       readStream.on('end', async () => {
