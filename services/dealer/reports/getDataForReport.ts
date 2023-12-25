@@ -1,5 +1,5 @@
 import { fetchDataFromDatabase } from "../../registoryServices/getDataForRegistory";
-import { TSJDialer } from "../../../models/src/models/TSJDialer";
+import { TSJDealer } from "../../../models/src/models/TSJDealer";
 
 type SQLQueryGenerator = (startDate: any, endDate: any) => string;
 type DataProcessor = (data: any[]) => void;
@@ -70,7 +70,7 @@ const processBserverData = (dataFromDB: any[], reportData: any[]) => {
 };
 
 const processTSJDillerData = async (dataFromDB: any[], reportData: any[]) => {
-    const allTSJDealers = await TSJDialer.findAll();
+    const allTSJDealers = await TSJDealer.findAll();
 
     dataFromDB.forEach((item) => {
         if (item.payment_identifier) {

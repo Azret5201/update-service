@@ -11,6 +11,8 @@ import {AcquiringController} from "../controllers/acquiring/AcquiringController"
 import {RegistryResendController} from "../controllers/registry/RegistryResendController";
 import {ExportReportController} from "../controllers/dealer/reports/ExportReportController";
 import {TSJDealerController} from "../controllers/dealer/reports/TSJDealerController";
+import {DatabaseControllerController} from "../controllers/database/DatabaseController";
+
 
 const router = Router();
 const abonentServiceController = new AbonentServiceController();
@@ -24,6 +26,10 @@ const acquiringController = new AcquiringController();
 const registryResendController = new RegistryResendController();
 const exportRegistryController = new ExportReportController();
 const tsjDealerController = new TSJDealerController();
+const databaseController = new DatabaseControllerController();
+
+router.get('/getDataFromDB', databaseController.getDataFromDB);
+
 
 router.post('/login', userController.login);
 

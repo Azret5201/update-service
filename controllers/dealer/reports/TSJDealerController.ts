@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import multer from "multer";
 import XLSX from "xlsx";
-import {TSJDialer} from "../../../models/src/models/TSJDialer";
+import {TSJDealer} from "../../../models/src/models/TSJDealer";
 import { Sequelize } from 'sequelize';
 import sequelize from "../../../models/src/sequelize";
 
@@ -12,7 +12,7 @@ export class TSJDealerController {
 
     public async getTSJDealers(req: Request, res: Response): Promise<void> {
         try {
-            const allDealers = await TSJDialer.findAll();
+            const allDealers = await TSJDealer.findAll();
             res.json(allDealers);
         } catch (error) {
             res.status(500).json({ error: "Internal server error" });
@@ -82,7 +82,7 @@ async function readExcelFile(dialerUploadFile: Buffer): Promise<{ success: boole
         for (let i = 1; i < rows.length; i++) {
             const row = rows[i];
             if (row[0]) {
-                const createdTSJDialer = {
+                const createdTSJDealer = {
                     code: row[0],
                     name: row[1],
                     address: row[2],
@@ -94,18 +94,18 @@ async function readExcelFile(dialerUploadFile: Buffer): Promise<{ success: boole
                     bank_account: row[8],
                     accountant: row[9],
                 };
-                console.log(createdTSJDialer);
-                dataFromExcel.push(createdTSJDialer);
+                console.log(createdTSJDealer);
+                dataFromExcel.push(createdTSJDealer);
             } else {
                 // console.error('Skipped row due to missing required fields:', i, row);
             }
         }
 
         // Удаление всех записей
-        await TSJDialer.destroy({ truncate: true, transaction });
+        await TSJDealer.destroy({ truncate: true, transaction });
 
         // Создание записей
-        await TSJDialer.bulkCreate(dataFromExcel, { transaction });
+        await TSJDealer.bulkCreate(dataFromExcel, { transaction });
 
         // Если все успешно, коммитим изменения
         await transaction.commit();

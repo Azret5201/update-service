@@ -1,7 +1,7 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../sequelize';
 
-export class TSJDialer extends Model {
+export class TSJDealer extends Model {
     public code!: number;
     public name!: string;
     public address!: string;
@@ -15,7 +15,7 @@ export class TSJDialer extends Model {
 
 }
 
-TSJDialer.init(
+TSJDealer.init(
   {
       code: {
           type: DataTypes.STRING,
@@ -64,7 +64,7 @@ TSJDialer.init(
   {
        sequelize,
        timestamps: false,
-       modelName: 'TSJDialer',
+       modelName: 'TSJDealer',
        tableName: 'abonents_service_10187',
   },
 );

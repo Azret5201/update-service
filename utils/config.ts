@@ -5,7 +5,6 @@ let envFilePath = getAbsolutePath('.env.dev');
 if (process.env.NODE_ENV === 'production') {
   envFilePath = getAbsolutePath('.env.prod');
 }
-console.log(envFilePath)
 
 dotenv.config({ path: envFilePath });
 
