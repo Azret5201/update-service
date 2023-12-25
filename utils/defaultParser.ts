@@ -97,7 +97,7 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
           try {
             if (query.identifier) {
               query.another_data = query.another_data.map((str: string) => str.replace('\r', ''));
-              const promise = AbonentService.findOne({ where: { identifier: query.identifier, service_id: query.service_id }})
+              await AbonentService.findOne({ where: { identifier: query.identifier, service_id: query.service_id }})
                 .then((abonentService) => {
                   if (abonentService) {
                     try {
@@ -123,7 +123,7 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
                     }
                   }
                 });
-                promises.push(promise)
+                // promises.push(promise)
             }
           }
         catch (error) {
@@ -133,10 +133,10 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
         logger.log(`By service ${serviceName[0]} inserted: ${countCreateRecords} and updated: ${countUpdateRecords}`);
         remaining = remaining.substring(last);
       });
-      readStream.on('end', async () => {
-        await Promise.all(promises);
-        await removeOldAbonents(serviceName[0], abonentsMark);
-      })
+      // readStream.on('end', async () => {
+      //   await Promise.all(promises);
+      //   await removeOldAbonents(serviceName[0], abonentsMark);
+      // })
       
       logger.log(
         `SUCCESSFUL: Clients from "${file.name}" file successfully inserting in table ${AbonentService.tableName}`,
