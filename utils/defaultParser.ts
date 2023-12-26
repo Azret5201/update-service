@@ -65,7 +65,7 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
   if (orders) {
     try {
       const readStream = createReadStream(path.resolve(file.dir, file.base));
-      const promises:any = [];
+      // const promises:any = [];
       readStream.on('data', async (chunk) => {
         remaining += chunk;
         let index = remaining.indexOf('\n');
@@ -113,7 +113,6 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
                     catch (err) {
                       logger.log(`Can't update ${abonentService} : ${err}`)
                     }
-                    
                   } else {
                     try {
                       countCreateRecords++;
@@ -133,10 +132,10 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
         logger.log(`By service ${serviceName[0]} inserted: ${countCreateRecords} and updated: ${countUpdateRecords}`);
         remaining = remaining.substring(last);
       });
-      // readStream.on('end', async () => {
+      readStream.on('end', async () => {
       //   await Promise.all(promises);
-      //   await removeOldAbonents(serviceName[0], abonentsMark);
-      // })
+        await removeOldAbonents(serviceName[0], abonentsMark);
+      })
       
       logger.log(
         `SUCCESSFUL: Clients from "${file.name}" file successfully inserting in table ${AbonentService.tableName}`,
