@@ -98,11 +98,11 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
             if (query.identifier) {
               query.another_data = query.another_data.map((str: string) => str.replace('\r', ''));
               await AbonentService.findOne({ where: { identifier: query.identifier, service_id: query.service_id }})
-                .then((abonentService) => {
+                .then(async (abonentService) => {
                   if (abonentService) {
                     try {
                       countUpdateRecords++;
-                      abonentService.update({
+                      await abonentService.update({
                         identifier: query.identifier,
                         service_id: query.service_id,
                         pay_sum: query.pay_sum,
@@ -116,7 +116,7 @@ async function upsertData(serviceName:string[], orders:any, abonentsMark:boolean
                   } else {
                     try {
                       countCreateRecords++;
-                      AbonentService.create(query as any);
+                      await AbonentService.create(query as any);
                     } catch (err) {
                       logger.log(`Can't create new record: ${err}`);
                     }
