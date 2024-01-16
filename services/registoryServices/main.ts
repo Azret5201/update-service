@@ -1,14 +1,15 @@
-import { createExcelFile } from './createExcelFile';
-import { createCSVFile } from "./createCSVFile";
-import { createDBFFile } from "./createDBFFile";
-import { Recipient, Registry } from "../../models/src/models/registry/db";
-import { sendRegistryFiles } from "./sendRegistryFiles";
-import { Op } from "sequelize";
+import {createExcelFile} from './createExcelFile';
+import {createCSVFile} from "./createCSVFile";
+import {createDBFFile} from "./createDBFFile";
+import {Recipient, Registry} from "../../models/src/models/registry/db";
+import {sendRegistryFiles} from "./sendRegistryFiles";
+import {Op} from "sequelize";
 // import { log, logError } from "../../utils/logger";
 import moment from 'moment';
 import {Service} from "../../models/src/models/Service";
 import {getAbsolutePath} from "../../utils/pathUtils";
 import {Logger} from "../../utils/logger2";
+
 const archiver = require('archiver');
 const fs = require('fs');
 const path = require('path');
@@ -78,7 +79,7 @@ const backupRegistriesFiles = (type: any) => {
     const backupDir = getAbsolutePath('storage/registries/backup/');
     let registryType;
 
-    const typeToRegistryType:any = {
+    const typeToRegistryType: any = {
         1: 'daily',
         2: 'weekly',
         3: 'monthly',
@@ -92,7 +93,7 @@ const backupRegistriesFiles = (type: any) => {
 
     const output = fs.createWriteStream(path.join(backupDir, `backup_${registryType}_register_${moment().format('YYYY-MM-DD_HH-mm')}.zip`));
     const archive = archiver('zip', {
-        zlib: { level: 9 } // Максимальное сжатие
+        zlib: {level: 9} // Максимальное сжатие
     });
 
     // Создаем каталог для резервных копий, если его нет
@@ -115,7 +116,7 @@ const processRecords = async (registries: any[]) => {
 
     for (const registry of registries) {
         const registryFilePaths: string[] = [];
-        logger.log('/////////// Start execution registry for recipient - '+ registry['name'] + ' ///////////');
+        logger.log('/////////// Start execution registry for recipient - ' + registry['name'] + ' ///////////');
         const registryFiles = await registry.Registries;
         if (registryFiles) {
             const emailAddresses = registry['emails'];
@@ -127,7 +128,7 @@ const processRecords = async (registries: any[]) => {
                 const registryName = item['name'];
                 const servicesId = item['services_id'];
                 const serverId = item['server_id'];
-                const formats:string = item['formats'];
+                const formats: string = item['formats'];
                 const isBlocked = item['is_blocked'];
                 const currentDate = moment().format('YYYY-MM-DD');
 
@@ -137,20 +138,20 @@ const processRecords = async (registries: any[]) => {
                     logger.log('Registry Id: ' + item['id']);
                     logger.log('Sender Name: ' + registry['name']);
                     logger.log('Registry Name: ' + registryName);
-                    logger.log('Server id: '+ serverId);
-                    logger.log('Services ids: '+ servicesId);
-                    logger.log('Formats: '+ formats);
-                    logger.log('Emails: '+ emailAddresses)
-                    logger.log('Current Date: '+ moment().format('YYYY-MM-DD HH:mm:ss'))
+                    logger.log('Server id: ' + serverId);
+                    logger.log('Services ids: ' + servicesId);
+                    logger.log('Formats: ' + formats);
+                    logger.log('Emails: ' + emailAddresses)
+                    logger.log('Current Date: ' + moment().format('YYYY-MM-DD HH:mm:ss'))
 
                     logger.log('---------PROCESSING---------')
                     for (const serviceId of servicesId) {
-                        
+
                         const service = await Service.findOne({
                             where: {
                                 'id': serviceId,
-                                }
-                            })
+                            }
+                        })
                         let serviceName = 'Сервис';
                         if (service) {
                             serviceName = service.name;
@@ -166,7 +167,7 @@ const processRecords = async (registries: any[]) => {
                                 const sanitizedRegistryName = registryName.replace(/[\/\\\.]/g, ' ');
                                 const sanitizedServiceName = serviceName.replace(/[\/\\\.]/g, ' ');
                                 logger.log(`Processing registry file with ID: ${item['id']}`);
-                                const filePath = '[' + sanitizedRegistryName + ']_'+sanitizedServiceName+'_'+ currentDate + '.' + format;
+                                const filePath = '[' + sanitizedRegistryName + ']_' + sanitizedServiceName + '_' + currentDate + '.' + format;
                                 logger.log(`Get data from service ${serviceId} in format ${format}`)
                                 if (format.trim() == 'xlsx') {
                                     await createExcelFile(serverId, serviceId, [item], filePath, registry.type, 1000);

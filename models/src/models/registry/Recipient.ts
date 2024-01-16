@@ -1,6 +1,6 @@
-import { Model, DataTypes } from 'sequelize';
+import {DataTypes, Model} from 'sequelize';
 import sequelize from '../../sequelize';
-import { Registry } from './Registry';
+import {Registry} from './Registry';
 
 export class Recipient extends Model {
     public id!: number;

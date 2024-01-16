@@ -1,5 +1,4 @@
-import { Request, Response } from 'express';
-import fs from 'fs';
+import {Request, Response} from 'express';
 import XLSX from 'xlsx';
 import * as ExcelJS from 'exceljs';
 
@@ -13,13 +12,13 @@ const app = express();
 app.use(bodyParser.json());
 
 const storage = multer.memoryStorage();
-const upload = multer({ storage: storage }).fields([{ name: 'excelFile', maxCount: 1 }, { name: 'textFile', maxCount: 1 }]);
+const upload = multer({storage: storage}).fields([{name: 'excelFile', maxCount: 1}, {name: 'textFile', maxCount: 1}]);
 
 export class AcquiringController {
     public async comparison(req: Request, res: Response) {
         upload(req, res, (err: any) => {
             if (err) {
-                return res.status(400).json({ error: 'Error uploading files.' });
+                return res.status(400).json({error: 'Error uploading files.'});
             }
 
             const files: { [fieldname: string]: Express.Multer.File[] } = req.files as any;
@@ -29,7 +28,7 @@ export class AcquiringController {
             console.log(req.files);
 
             if (!excelFiles || !textFiles || excelFiles.length === 0 || textFiles.length === 0) {
-                return res.status(400).json({ error: 'Excel and Text files are required.' });
+                return res.status(400).json({error: 'Excel and Text files are required.'});
             }
 
             const excelFile = excelFiles[0];
@@ -55,10 +54,10 @@ export class AcquiringController {
                     erroredDataText
                 );
 
-                res.status(200).json({ success: true, outputExcelFile });
+                res.status(200).json({success: true, outputExcelFile});
             } catch (error) {
                 console.error('Error processing files:', error);
-                res.status(500).json({ error: 'Internal server error.' });
+                res.status(500).json({error: 'Internal server error.'});
             }
 
         });
@@ -74,9 +73,9 @@ function maskAccount(account: string): string {
 
 function readExcelFile(excelFileBuffer: Buffer) {
     const dataFromExcel: any = new Map();
-    const workbook = XLSX.read(excelFileBuffer, { type: 'buffer' });
+    const workbook = XLSX.read(excelFileBuffer, {type: 'buffer'});
     const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-    const rows: any = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+    const rows: any = XLSX.utils.sheet_to_json(worksheet, {header: 1});
 
     for (let i = 1; i < rows.length - 1; i++) {
         const row = rows[i];
@@ -116,7 +115,6 @@ function readTextFile(textFileBuffer: Buffer) {
 }
 
 
-
 function compareData(dataFromExcel: any, dataFromTextFile: any) {
     const matchingData: any = [];
     const erroredDataExcel: any = [];
@@ -124,7 +122,7 @@ function compareData(dataFromExcel: any, dataFromTextFile: any) {
 
     if (dataFromExcel.size === 0 || dataFromTextFile.length === 0) {
         console.error('Данные не были загружены.');
-        return { matchingData, erroredDataExcel, erroredDataText };
+        return {matchingData, erroredDataExcel, erroredDataText};
     }
 
     for (let i = 0; i < dataFromTextFile.length; i++) {
@@ -150,7 +148,7 @@ function compareData(dataFromExcel: any, dataFromTextFile: any) {
                 console.log(`  - Значение Date из TXT: ${textRow.Date}`);
                 console.log(`  - Значение Date из XLT: ${matchingExcelRow.Date}`);
 
-                matchingData.push({ Excel: matchingExcelRow, Text: textRow });
+                matchingData.push({Excel: matchingExcelRow, Text: textRow});
 
                 dataFromExcel.delete(textRow.Account);
                 dataFromTextFile.splice(i, 1);
@@ -175,7 +173,7 @@ function compareData(dataFromExcel: any, dataFromTextFile: any) {
     console.log('Ошибочные данные из текстового файла:');
     console.log(JSON.stringify(erroredDataText, null, 2));
 
-    return { matchingData, erroredDataExcel, erroredDataText };
+    return {matchingData, erroredDataExcel, erroredDataText};
 }
 
 function createOutputExcelFile(
@@ -187,20 +185,20 @@ function createOutputExcelFile(
     const worksheet = workbook.addWorksheet('Data');
 
     worksheet.columns = [
-        { header: 'Идентификатор Excel', key: 'excelAccount', width: 19 },
-        { header: 'Сумма Excel', key: 'excelAmount', width: 10 },
-        { header: 'Дата Excel', key: 'excelDate', width: 19 },
-        { header: '', key: 'spacer', width: 10 },
-        { header: 'Идентификатор Text', key: 'textAccount', width: 19 },
-        { header: 'Сумма Text', key: 'textAmount', width: 10 },
-        { header: 'Дата Text', key: 'textDate', width: 19 },
+        {header: 'Идентификатор Excel', key: 'excelAccount', width: 19},
+        {header: 'Сумма Excel', key: 'excelAmount', width: 10},
+        {header: 'Дата Excel', key: 'excelDate', width: 19},
+        {header: '', key: 'spacer', width: 10},
+        {header: 'Идентификатор Text', key: 'textAccount', width: 19},
+        {header: 'Сумма Text', key: 'textAmount', width: 10},
+        {header: 'Дата Text', key: 'textDate', width: 19},
     ];
 
     const setStyleForError = (cell: any) => {
         cell.fill = {
             type: 'pattern',
             pattern: 'solid',
-            fgColor: { argb: 'FFFF0000' }, // Красный фон
+            fgColor: {argb: 'FFFF0000'}, // Красный фон
         };
     };
 
@@ -208,7 +206,7 @@ function createOutputExcelFile(
         cell.fill = {
             type: 'pattern',
             pattern: 'solid',
-            fgColor: { argb: '228B22' }, // Зелёный фон
+            fgColor: {argb: '228B22'}, // Зелёный фон
         };
     };
 

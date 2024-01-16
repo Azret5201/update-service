@@ -18,7 +18,7 @@ export const log = (message: any) => {
     // Проверяем существование каталога и создаем его при необходимости
     const logDirectory = path.dirname(logFilePath);
     if (!fs.existsSync(logDirectory)) {
-        fs.mkdirSync(logDirectory, { recursive: true });
+        fs.mkdirSync(logDirectory, {recursive: true});
     }
 
     fs.appendFile(logFilePath, logMessage, (err) => {
@@ -35,7 +35,7 @@ export const logError = (error: any) => {
     // Проверяем существование каталога и создаем его при необходимости
     const logDirectory = path.dirname(logFilePath);
     if (!fs.existsSync(logDirectory)) {
-        fs.mkdirSync(logDirectory, { recursive: true });
+        fs.mkdirSync(logDirectory, {recursive: true});
     }
 
     fs.appendFile(logFilePath, errorMessage, (err) => {
@@ -56,7 +56,7 @@ export async function writeLogToFile(logType: LogType, message: string): Promise
         // Проверяем существование каталога и создаем его при необходимости
         const logDirectory = path.dirname(filePath);
         if (!fs.existsSync(logDirectory)) {
-            fs.mkdirSync(logDirectory, { recursive: true });
+            fs.mkdirSync(logDirectory, {recursive: true});
         }
         await fs.promises.appendFile(filePath, logMessage);
     } catch (err) {

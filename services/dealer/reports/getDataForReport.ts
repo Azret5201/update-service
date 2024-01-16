@@ -1,5 +1,5 @@
-import { fetchDataFromDatabase } from "../../registoryServices/getDataForRegistory";
-import { TSJDialer } from "../../../models/src/models/TSJDialer";
+import {fetchDataFromDatabase} from "../../registoryServices/getDataForRegistory";
+import {TSJDealer} from "../../../models/src/models/TSJDealer";
 
 type SQLQueryGenerator = (startDate: any, endDate: any) => string;
 type DataProcessor = (data: any[]) => void;
@@ -70,7 +70,7 @@ const processBserverData = (dataFromDB: any[], reportData: any[]) => {
 };
 
 const processTSJDillerData = async (dataFromDB: any[], reportData: any[]) => {
-    const allTSJDealers = await TSJDialer.findAll();
+    const allTSJDealers = await TSJDealer.findAll();
 
     dataFromDB.forEach((item) => {
         if (item.payment_identifier) {
@@ -106,7 +106,7 @@ const groupData = (data: any[]): Record<string, any> => {
         }
 
         if (!groupedData[billServerName][regionId]) {
-            groupedData[billServerName][regionId] = { ...item, total_real_pay: item.real_pay };
+            groupedData[billServerName][regionId] = {...item, total_real_pay: item.real_pay};
         } else {
             groupedData[billServerName][regionId].real_pay += item.real_pay;
             groupedData[billServerName][regionId].total_real_pay += item.real_pay;
@@ -128,7 +128,7 @@ const groupDataDealerTSJ = (data: any[]): Record<string, any> => {
         }
 
         if (!groupedData[dealerNameTSJ][regionId]) {
-            groupedData[dealerNameTSJ][regionId] = { ...item, total_real_pay: item.real_pay };
+            groupedData[dealerNameTSJ][regionId] = {...item, total_real_pay: item.real_pay};
         } else {
             groupedData[dealerNameTSJ][regionId].real_pay += item.real_pay;
             groupedData[dealerNameTSJ][regionId].total_real_pay += item.real_pay;

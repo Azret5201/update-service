@@ -11,6 +11,8 @@ import {AcquiringController} from "../controllers/acquiring/AcquiringController"
 import {RegistryResendController} from "../controllers/registry/RegistryResendController";
 import {ExportReportController} from "../controllers/dealer/reports/ExportReportController";
 import {TSJDealerController} from "../controllers/dealer/reports/TSJDealerController";
+import {DatabaseControllerController} from "../controllers/database/DatabaseController";
+
 
 const router = Router();
 const abonentServiceController = new AbonentServiceController();
@@ -24,6 +26,10 @@ const acquiringController = new AcquiringController();
 const registryResendController = new RegistryResendController();
 const exportRegistryController = new ExportReportController();
 const tsjDealerController = new TSJDealerController();
+const databaseController = new DatabaseControllerController();
+
+router.get('/getDataFromDB', databaseController.getDataFromDB);
+
 
 router.post('/login', userController.login);
 
@@ -33,7 +39,6 @@ router.post('/abonent-service/store', abonentServiceController.store);
 router.get('/listServices', abonentServiceController.getServices);
 router.get('/listServers', abonentServerController.getServers);
 
-router.get('/registry/index', registryController.getRegistryPage);
 router.get('/registry/all', registryController.getRegistries);
 router.post('/registry', registryController.store);
 router.get('/registry/:id', registryController.show);
@@ -43,7 +48,6 @@ router.delete('/registry/:id', registryController.destroy);
 router.post('/registry/resend', registryResendController.getRegistryData);
 router.post('/registry/payments', registryResendController.getPayments);
 
-router.get('/recipient/index', recipientController.getRecipientPage);
 router.get('/recipient/all', recipientController.getRecipients);
 router.post('/recipient', recipientController.store);
 router.get('/recipient/:id', recipientController.show);
@@ -61,6 +65,5 @@ router.post('/acquiring/comparison', acquiringController.comparison);
 router.post('/dealer/reports/createReport', exportRegistryController.createReport);
 
 router.post('/dealer/reports/updateTSJDealer', tsjDealerController.updateDealer);
-router.get('/dealer/reports/getTSJDealer', tsjDealerController.getTSJDealers);
 
 export default router;

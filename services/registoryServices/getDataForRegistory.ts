@@ -1,7 +1,7 @@
 import {QueryTypes} from "sequelize";
 import sequelize from "../../models/src/sequelize";
 import moment from 'moment';
-import {log, logError} from "../../utils/logger";
+import {logError} from "../../utils/logger";
 
 
 export const fetchDataFromDatabase = async (sql: string) => {
@@ -47,7 +47,7 @@ export const addOrderLimitOffset = (sql: string, offset: number, limit: number) 
                      OFFSET ${offset}`;
 };
 
-export const getCorrectDateTime = (type: number, startDate:any, endDate:any) => {
+export const getCorrectDateTime = (type: number, startDate: any, endDate: any) => {
     if (!startDate && !endDate) {
         startDate = moment().startOf('day').subtract(1, 'day');
         endDate = moment(startDate).endOf('day');
@@ -79,7 +79,7 @@ export const getCorrectDateTime = (type: number, startDate:any, endDate:any) => 
     return [formattedStartDate, formattedEndDate];
 };
 
-export const setCorrectDateToSqlQuery = (sqlQuery: string, type: number, startDate:any, endDate:any) => {
+export const setCorrectDateToSqlQuery = (sqlQuery: string, type: number, startDate: any, endDate: any) => {
     const correctDateTimes = getCorrectDateTime(type, startDate, endDate);
     return sqlQuery.replace('$dateFrom', correctDateTimes[0]).replace('$dateTo', correctDateTimes[1]);
 }

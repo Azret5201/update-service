@@ -1,8 +1,26 @@
 import {Request, Response} from "express";
 import sequelize from "../../models/src/sequelize";
 import {Op} from "sequelize";
-import { Recipient, Registry, RecipientsRegistriesRelation } from '../../models/src/models/registry/db'
+import {RecipientsRegistriesRelation, Registry} from '../../models/src/models/registry/db'
+
 export class RegistryController {
+    public static async searchRegistriesWithRelated(column: string, value: string) {
+        const whereClause = {[column]: `${value}`};
+
+        const recipientRegistries = await RecipientsRegistriesRelation.findAll({
+            where: whereClause,
+        });
+
+        const registryIds = recipientRegistries.map((relation) => relation.registryId);
+
+        return await Registry.findAll({
+            where: {
+                id: registryIds,
+            },
+            attributes: ['id', 'name', 'server_id', 'formats', 'services_id']
+        });
+    }
+
     public async getRegistryPage(req: Request, res: Response): Promise<void> {
         const pageNumber = req.query.page ? parseInt(req.query.page as string) : 1;
         const pageSize = 50;
@@ -69,24 +87,6 @@ export class RegistryController {
             res.status(500).json({error: 'Internal server error'});
         }
     }
-
-    public static async searchRegistriesWithRelated(column: string, value: string) {
-        const whereClause = {[column]: `${value}`};
-
-        const recipientRegistries = await RecipientsRegistriesRelation.findAll({
-            where: whereClause,
-        });
-
-        const registryIds = recipientRegistries.map((relation) => relation.registryId);
-
-        return await Registry.findAll({
-            where: {
-                id: registryIds,
-            },
-            attributes: ['id', 'name', 'server_id', 'formats', 'services_id']
-        });
-    }
-
 
     public async store(req: Request, res: Response): Promise<void> {
         if (
