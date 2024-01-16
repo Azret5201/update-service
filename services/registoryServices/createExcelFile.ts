@@ -8,6 +8,7 @@ import {getAbsolutePath} from "../../utils/pathUtils";
 
 interface ExcelData {
     id: string;
+
     [key: string]: any;
 }
 
@@ -24,7 +25,7 @@ export const createExcelFile = async (
     const workbook = xlsx.utils.book_new();
     const worksheet = xlsx.utils.aoa_to_sheet([columns]);
 
-    const { fields, startDate, endDate, paymentsList } = data[0];
+    const {fields, startDate, endDate, paymentsList} = data[0];
 
     let paymentIds: string[] = [];
     if (paymentsList && paymentsList.length > 0) {
@@ -118,7 +119,7 @@ export const createExcelFile = async (
 
         if (rowIndex == 1) rowIndex = 2;
         const numberOfColumns = xlsx.utils.decode_range(<string>worksheet["!ref"]).e.c + 1;
-        worksheet["!cols"] = Array.from({ length: numberOfColumns }, () => ({
+        worksheet["!cols"] = Array.from({length: numberOfColumns}, () => ({
             wpx: 115,
         }));
         xlsx.utils.sheet_add_json(worksheet, filteredData, {
@@ -168,5 +169,8 @@ export const createExcelFile = async (
 
 
     const writeFile = promisify(fs.writeFile);
-    await writeFile(getAbsolutePath('storage/registries/files/') + outputPath, xlsx.write(workbook, { type: "buffer", bookType: "xlsx" }));
+    await writeFile(getAbsolutePath('storage/registries/files/') + outputPath, xlsx.write(workbook, {
+        type: "buffer",
+        bookType: "xlsx"
+    }));
 };

@@ -3,7 +3,6 @@ import {Recipient} from "../../models/src/models/registry/Recipient";
 import {RecipientsRegistriesRelation} from "../../models/src/models/registry/RecipientsRegistriesRelation";
 import sequelize from "../../models/src/sequelize";
 import {Op} from "sequelize";
-import {log} from "../../utils/logger";
 
 export class RecipientController {
     public async getRecipientPage(req: Request, res: Response): Promise<void> {
@@ -22,7 +21,7 @@ export class RecipientController {
 
 
         try {
-            const totalCount = await Recipient.count({ where: whereClause });
+            const totalCount = await Recipient.count({where: whereClause});
             const totalPages = Math.ceil(totalCount / pageSize);
             const results = await Recipient.findAll({
                 where: whereClause,
@@ -43,10 +42,9 @@ export class RecipientController {
 
             res.json(response);
         } catch (error) {
-            res.status(500).json({ error: "Internal server error" });
+            res.status(500).json({error: "Internal server error"});
         }
     }
-
 
 
     public async getRecipients(req: Request, res: Response): Promise<void> {
@@ -69,14 +67,13 @@ export class RecipientController {
                 res.json(allRecipients);
             }
         } catch (error) {
-            res.status(500).json({ error: "Internal server error" });
+            res.status(500).json({error: "Internal server error"});
         }
     }
 
 
-
     public async store(req: Request, res: Response): Promise<void> {
-        const { name, type, is_blocked, registry_ids } = req.body;
+        const {name, type, is_blocked, registry_ids} = req.body;
         const t = await sequelize.transaction();
 
         const filteredData: string[] = req.body.emails.filter((item: string) => item.trim() !== '');
@@ -89,7 +86,7 @@ export class RecipientController {
                 type,
                 emails,
                 is_blocked,
-            }, { transaction: t });
+            }, {transaction: t});
 
             if (Array.isArray(registry_ids)) {
                 for (const registry_id of registry_ids) {
@@ -98,18 +95,18 @@ export class RecipientController {
                         recipientId: createdRecipient.id,
                         registryId: registry_id,
 
-                    }, { transaction: t });
+                    }, {transaction: t});
                 }
             }
             console.log('Record created.');
 
             await t.commit();
 
-            res.json({ message: 'Record created' });
+            res.json({message: 'Record created'});
         } catch (error) {
             console.error('Create operation failed:', error);
             await t.rollback();
-            res.status(500).json({ error: 'Create operation failed'});
+            res.status(500).json({error: 'Create operation failed'});
         }
     }
 
@@ -120,11 +117,11 @@ export class RecipientController {
         try {
             const recipient = await Recipient.findByPk(recipientId);
             const recipientFiles = await RecipientsRegistriesRelation.findAll({
-                where: { recipientId: recipientId },
+                where: {recipientId: recipientId},
             });
 
             if (!recipient) {
-                res.status(404).json({ error: "Recipient not found" });
+                res.status(404).json({error: "Recipient not found"});
                 return;
             }
 
@@ -145,7 +142,7 @@ export class RecipientController {
             res.json(recipientData);
         } catch (error) {
             console.error("Get by ID operation failed:", error);
-            res.status(500).json({ error: "Get by ID operation failed" });
+            res.status(500).json({error: "Get by ID operation failed"});
         }
     }
 
@@ -155,12 +152,12 @@ export class RecipientController {
 
         const emails: string = filteredData.join(', ');
 
-        const { name, type, is_blocked, registry_ids } = req.body;
+        const {name, type, is_blocked, registry_ids} = req.body;
         try {
 
             const recipient = await Recipient.findByPk(recipientId);
             if (!recipient) {
-                res.status(404).json({ error: "Recipient not found" });
+                res.status(404).json({error: "Recipient not found"});
                 return;
 
             }
@@ -193,7 +190,7 @@ export class RecipientController {
             res.json(recipient);
         } catch (error) {
             console.error("Update operation failed:", error);
-            res.status(500).json({ error: "Update operation failed" });
+            res.status(500).json({error: "Update operation failed"});
         }
     }
 
@@ -206,32 +203,31 @@ export class RecipientController {
         try {
             // Удаляем связанные записи из другой таблицы
             await RecipientsRegistriesRelation.destroy({
-                where: { recipient_id: recipientId },
+                where: {recipient_id: recipientId},
                 transaction: t
             });
 
             // Удаляем запись из таблицы Recipient
-            const recipient = await Recipient.findByPk(recipientId, { transaction: t });
+            const recipient = await Recipient.findByPk(recipientId, {transaction: t});
             if (!recipient) {
-                res.status(404).json({ error: "Recipient not found" });
+                res.status(404).json({error: "Recipient not found"});
                 return;
             }
 
-            await recipient.destroy({ transaction: t });
+            await recipient.destroy({transaction: t});
 
             // Фиксируем транзакцию
             await t.commit();
 
-            res.json({ message: "Recipient and related records deleted successfully" });
+            res.json({message: "Recipient and related records deleted successfully"});
         } catch (error) {
             // Откатываем транзакцию в случае ошибки
             await t.rollback();
 
             console.error("Delete operation failed:", error);
-            res.status(500).json({ error: "Delete operation failed" });
+            res.status(500).json({error: "Delete operation failed"});
         }
     }
-
 
 
 }

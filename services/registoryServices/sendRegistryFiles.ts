@@ -1,9 +1,9 @@
 import * as nodemailer from 'nodemailer';
 import * as fs from "fs";
-import {Response} from "express";
 // import {logger.logError(} from "../../utils/logger";
 import {getAbsolutePath} from "../../utils/pathUtils";
 import {Logger} from "../../utils/logger2";
+
 require('dotenv').config();
 const logger = new Logger('registries');
 export const sendRegistryFiles = async (emailAddresses: string, registryFiles: string[]) => {
@@ -31,16 +31,15 @@ export const sendRegistryFiles = async (emailAddresses: string, registryFiles: s
                     content: fs.readFileSync(getAbsolutePath('storage/registries/files/') + filename),
                 }))
             };
-                //
-                // console.log(await transporter.sendMail(mailOptions));
+            //
+            // console.log(await transporter.sendMail(mailOptions));
             // Отправка письма
             try {
                 console.log(await transporter.sendMail(mailOptions));
-            } catch (error:any){
+            } catch (error: any) {
                 if (error.responseCode != 550 && error.responseCode != 504) {
                     throw error;
-                }
-                else {
+                } else {
                     logger.logError(error);
                 }
             }

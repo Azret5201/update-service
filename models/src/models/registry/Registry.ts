@@ -1,6 +1,5 @@
-import { Model, DataTypes } from 'sequelize';
+import {DataTypes, Model} from 'sequelize';
 import sequelize from '../../sequelize';
-import {Recipient} from "./Recipient";
 
 export class Registry extends Model {
     public id!: number;
@@ -79,5 +78,3 @@ Registry.init(
         tableName: 'registries'
     },
 );
-
-

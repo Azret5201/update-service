@@ -1,4 +1,4 @@
-import { Model, DataTypes } from 'sequelize';
+import {DataTypes, Model} from 'sequelize';
 import sequelize from '../sequelize';
 
 export class TSJDealer extends Model {
@@ -16,55 +16,55 @@ export class TSJDealer extends Model {
 }
 
 TSJDealer.init(
-  {
-      code: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          primaryKey: true,
-      },
-      name: {
-          type: DataTypes.STRING,
-          allowNull: true,
-      },
-      address: {
-          type: DataTypes.STRING,
-          allowNull: true,
-      },
-      fio: {
-          type: DataTypes.STRING,
-          allowNull: true,
-      },
-      inn: {
-          type: DataTypes.STRING,
-          allowNull: true,
-      },
-      okpo: {
-          type: DataTypes.INTEGER,
-          allowNull: true,
-      },
-      bank: {
-          type: DataTypes.STRING,
-          allowNull: true,
-      },
-      bik: {
-          type: DataTypes.STRING,
-          allowNull: true,
-      },
-      bank_account: {
-          type: DataTypes.STRING,
-          allowNull: true,
-      },
-      accountant: {
-          type: DataTypes.STRING,
-          allowNull: true,
-      },
+    {
+        code: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            primaryKey: true,
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        address: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        fio: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        inn: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        okpo: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+        },
+        bank: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        bik: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        bank_account: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        accountant: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
 
 
-  },
-  {
-       sequelize,
-       timestamps: false,
-       modelName: 'TSJDealer',
-       tableName: 'abonents_service_10187',
-  },
+    },
+    {
+        sequelize,
+        timestamps: false,
+        modelName: 'TSJDealer',
+        tableName: 'abonents_service_10187',
+    },
 );

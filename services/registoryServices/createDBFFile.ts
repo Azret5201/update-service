@@ -1,18 +1,12 @@
-import { promisify } from "util";
 import * as fs from "fs";
-import {
-    addOrderLimitOffset,
-    fetchDataFromDatabase,
-    generateSQLQuery,
-    setCorrectDateToSqlQuery
-} from "./getDataForRegistory";
-import { getAccountValueByKey } from "../../utils/account2str";
+import {addOrderLimitOffset, fetchDataFromDatabase, generateSQLQuery} from "./getDataForRegistory";
 import {Payment} from "../../models/src/models/Payment";
 import {Op} from "sequelize";
 import {getAbsolutePath} from "../../utils/pathUtils";
 
 interface DbfData {
     id: string;
+
     [key: string]: any;
 
 }
@@ -20,7 +14,7 @@ interface DbfData {
 export const createDBFFile = async (serverId: string, serviceId: string, data: any[], outputPath: string, type: number, batchSize: number): Promise<void> => {
     let dataFromDB: any[] = [];
     let uniqueIds = new Set<string>();
-    const { fields, startDate, endDate, paymentsList } = data[0];
+    const {fields, startDate, endDate, paymentsList} = data[0];
     const columns = data[0].table_headers.split(", ");
     console.log(fields, ' is fields');
 
@@ -55,10 +49,10 @@ export const createDBFFile = async (serverId: string, serviceId: string, data: a
     };
 
 
-
 // Удаляем ненужные ключи из каждого объекта в массиве payments
-    const paymentsWithSelectedKeys:any = payments.map(removeNonMatchingKeys);
+    const paymentsWithSelectedKeys: any = payments.map(removeNonMatchingKeys);
     console.log(paymentsWithSelectedKeys)
+
     async function processDataChunk(dataFromDB: any[]) {
 
         const mergedData = paymentsWithSelectedKeys.concat(dataFromDB);
@@ -82,16 +76,15 @@ export const createDBFFile = async (serverId: string, serviceId: string, data: a
 
         if (!hasIdColumn) {
             // Если id не является частью регистра, удаляем его из объектов в uniqueDataFromDB
-            uniqueDataFromDB = uniqueDataFromDB.map((item:any) => {
+            uniqueDataFromDB = uniqueDataFromDB.map((item: any) => {
                 delete item.id;
                 return item;
             });
         }
 
 
-
         // Переименование ключей данных
-        const renamedData: any[] = uniqueDataFromDB.map((item:any) => {
+        const renamedData: any[] = uniqueDataFromDB.map((item: any) => {
             const renamedItem: any = {};
             registryFields.forEach((field: any, index: any) => {
                 if (field.startsWith('account.')) {
@@ -142,7 +135,6 @@ export const createDBFFile = async (serverId: string, serviceId: string, data: a
 };
 
 
-
 const createDBFBuffer = (fieldDescriptors: any[], data: any[]): Buffer => {
     const headerLength = 32 + 32 * fieldDescriptors.length + 1;
     const recordLength = fieldDescriptors.reduce((sum, field) => sum + field.size, 1); // 1 for deletion flag
@@ -188,4 +180,3 @@ const createDBFBuffer = (fieldDescriptors: any[], data: any[]): Buffer => {
 
     return buffer;
 };
-

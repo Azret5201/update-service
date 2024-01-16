@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import {Request, Response} from 'express';
 import fs from 'fs';
 import path from 'path';
 import {Op} from "sequelize";
@@ -69,11 +69,9 @@ export class RegistryBackupController {
             res.json(response);
         } catch (error) {
             console.error(error);
-            res.status(500).json({ error: "Внутренняя ошибка сервера" });
+            res.status(500).json({error: "Внутренняя ошибка сервера"});
         }
     }
-
-
 
 
     public async downloadBackup(req: Request, res: Response) {
@@ -103,4 +101,4 @@ export class RegistryBackupController {
         });
     }
 
-    }
+}

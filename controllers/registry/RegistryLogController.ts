@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import {Request, Response} from 'express';
 import fs from 'fs';
 import path from 'path';
 import {Op} from "sequelize";
@@ -9,7 +9,7 @@ export class RegistryLogController {
         const pageNumber = req.query.page ? parseInt(req.query.page as string) : 1;
         const pageSize = 50;
         const offset = (pageNumber - 1) * pageSize;
-        const searchTerm:any = req.query.search; // Получите поисковый запрос из параметров запроса
+        const searchTerm: any = req.query.search; // Получите поисковый запрос из параметров запроса
 
         const whereClause: any = {}; // Пустой объект для условий поиска
 

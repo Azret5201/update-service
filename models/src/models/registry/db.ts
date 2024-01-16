@@ -1,4 +1,3 @@
-
 import {Recipient} from "./Recipient";
 import {Registry} from "./Registry";
 import {RecipientsRegistriesRelation} from "./RecipientsRegistriesRelation";
@@ -15,4 +14,4 @@ Registry.belongsToMany(Recipient, {
     otherKey: 'recipientId',
 });
 
-export { Recipient, Registry, RecipientsRegistriesRelation };
+export {Recipient, Registry, RecipientsRegistriesRelation};

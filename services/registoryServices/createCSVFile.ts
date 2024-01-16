@@ -1,15 +1,14 @@
-import { promisify } from 'util';
+import {promisify} from 'util';
 import * as fs from 'fs';
-import { addOrderLimitOffset, fetchDataFromDatabase, generateSQLQuery } from './getDataForRegistory';
-import { getAccountValueByKey } from '../../utils/account2str';
-import { Payment } from '../../models/src/models/Payment';
-import { Op } from 'sequelize';
+import {addOrderLimitOffset, fetchDataFromDatabase, generateSQLQuery} from './getDataForRegistory';
+import {Payment} from '../../models/src/models/Payment';
+import {Op} from 'sequelize';
 import * as iconv from 'iconv-lite';
-import * as xlsx from 'xlsx';
 import {getAbsolutePath} from "../../utils/pathUtils";
 
 interface CsvData {
     id: string;
+
     [key: string]: any;
 }
 
@@ -21,7 +20,7 @@ export const createCSVFile = async (
     type: number,
     batchSize: number
 ): Promise<void> => {
-    const { fields, startDate, endDate, paymentsList } = data[0];
+    const {fields, startDate, endDate, paymentsList} = data[0];
 
     let paymentIds: string[] = [];
     if (paymentsList && paymentsList.length > 0) {
@@ -171,5 +170,5 @@ export const createCSVFile = async (
 
 // Запись данных CSV в файл
     const writeFile = promisify(fs.writeFile);
-    await writeFile(getAbsolutePath('storage/registries/files/')+ outputPath, iconv.encode(csvData.join('\n'), 'win1251'));
+    await writeFile(getAbsolutePath('storage/registries/files/') + outputPath, iconv.encode(csvData.join('\n'), 'win1251'));
 };

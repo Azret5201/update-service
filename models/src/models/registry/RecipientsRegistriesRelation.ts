@@ -1,4 +1,4 @@
-import { Model, DataTypes } from 'sequelize';
+import {DataTypes, Model} from 'sequelize';
 import sequelize from '../../sequelize';
 
 export class RecipientsRegistriesRelation extends Model {
@@ -32,4 +32,3 @@ RecipientsRegistriesRelation.init(
         tableName: 'recipients_registries_relation',
     }
 );
-
