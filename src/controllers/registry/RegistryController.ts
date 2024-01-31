@@ -1,6 +1,5 @@
 import {Request, Response} from "express";
 import sequelize from "../../../config/sequelize";
-import {Op} from "sequelize";
 import {Registry} from '../../models/Registry';
 import {RecipientRegistry} from '../../models/RecipientRegistry';
 
@@ -20,33 +19,6 @@ export class RegistryController {
             },
             attributes: ['id', 'name', 'server_id', 'formats', 'services_id']
         });
-    }
-
-    public async getRegistries(req: Request, res: Response): Promise<void> {
-        try {
-            const column = req.query.column as string;
-            const value = req.query.value as string;
-            const includeRelated = req.query.includeRelated as string;
-            if (column && value) {
-                let registries;
-                if (includeRelated && includeRelated.toLowerCase() === 'true') {
-
-                    registries = await RegistryController.searchRegistriesWithRelated(column, value);
-                    console.log(includeRelated)
-                } else {
-                    const whereClause = {[column]: {[Op.like]: `%${value}%`}};
-                    registries = await Registry.findAll({where: whereClause});
-                }
-
-                res.json(registries);
-            } else {
-                const allRegistries = await Registry.findAll();
-                res.json(allRegistries);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            res.status(500).json({error: 'Internal server error'});
-        }
     }
 
     public async store(req: Request, res: Response): Promise<void> {

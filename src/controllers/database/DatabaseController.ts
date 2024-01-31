@@ -8,7 +8,7 @@ export class DatabaseController {
         try {
             const modelName = req.query.model as string;
             const Model = sequelize.models[modelName];
-
+            console.log(sequelize.models)
             if (!Model) {
                 res.status(400).json({error: `Model ${modelName} not found`});
                 return;

@@ -5,7 +5,6 @@ export class Server extends Model {
     public id!: number;
     public name!: string;
 }
-
 Server.init(
     {
         id: {
@@ -16,7 +15,7 @@ Server.init(
         name: {
             type: DataTypes.STRING,
             allowNull: false,
-        }
+        },
     },
     {
         sequelize,

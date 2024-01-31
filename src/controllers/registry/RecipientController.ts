@@ -1,35 +1,9 @@
 import {Request, Response} from "express";
 import {Recipient} from "../../models/Recipient";
 import sequelize from "../../../config/sequelize";
-import {Op} from "sequelize";
 import {RecipientRegistry} from "../../models/RecipientRegistry";
 
 export class RecipientController {
-
-    public async getRecipients(req: Request, res: Response): Promise<void> {
-        try {
-            const column = req.query.column as string;
-            const value = req.query.value as string;
-
-            // Проверка наличия параметров запроса
-            if (column && value) {
-                const recipients = await Recipient.findAll({
-                    where: {
-                        [column]: {
-                            [Op.like]: `%${value}%`, // Используйте нужный оператор сравнения
-                        },
-                    },
-                });
-                res.json(recipients);
-            } else {
-                const allRecipients = await Recipient.findAll();
-                res.json(allRecipients);
-            }
-        } catch (error) {
-            res.status(500).json({error: "Internal server error"});
-        }
-    }
-
 
     public async store(req: Request, res: Response): Promise<void> {
         const {name, type, is_blocked, registry_ids} = req.body;

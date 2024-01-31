@@ -37,9 +37,7 @@ router.use(AuthMiddleware.authenticate);
 router.get('/users', userController.getUsers);
 router.post('/abonent-service/store', abonentServiceController.store);
 router.get('/listServices', abonentServiceController.getServices);
-router.get('/listServers', abonentServerController.getServers);
 
-router.get('/registry/all', registryController.getRegistries);
 router.post('/registry', registryController.store);
 router.get('/registry/:id', registryController.show);
 router.put('/registry/:id', registryController.update);
@@ -48,7 +46,6 @@ router.delete('/registry/:id', registryController.destroy);
 router.post('/registry/resend', registryResendController.getRegistryData);
 router.post('/registry/payments', registryResendController.getPayments);
 
-router.get('/recipient/all', recipientController.getRecipients);
 router.post('/recipient', recipientController.store);
 router.get('/recipient/:id', recipientController.show);
 router.put('/recipient/:id', recipientController.update);
