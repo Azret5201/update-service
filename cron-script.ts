@@ -1,6 +1,6 @@
 import path from 'path';
-import {getFilesInDirectory, parserFile} from './utils/defaultParser';
-import {Logger} from './utils/logger2';
+import {getFilesInDirectory, parserFile} from './src/utils/defaultParser';
+import {Logger} from './src/utils/logger2';
 
 const looger = new Logger('offline_clients');
 

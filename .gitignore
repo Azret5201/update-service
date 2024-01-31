@@ -1,5 +1,4 @@
 # Logs
-
 # Dependency directories
 node_modules/
 jspm_packages/
@@ -22,8 +21,7 @@ filtered/
 package-lock.json
 package.json
 static/
-#logs/*
+logs
 registries_backup/
-main.ts
 cron-script.ts
 .idea/
