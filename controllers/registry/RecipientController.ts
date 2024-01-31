@@ -92,8 +92,8 @@ export class RecipientController {
                 for (const registry_id of registry_ids) {
                     // console.log(registry_id)
                     await RecipientsRegistriesRelation.create({
-                        recipientId: createdRecipient.id,
-                        registryId: registry_id,
+                        recipient_id: createdRecipient.id,
+                        registry_id: registry_id,
 
                     }, {transaction: t});
                 }
@@ -112,12 +112,12 @@ export class RecipientController {
 
 
     public async show(req: Request, res: Response): Promise<void> {
-        const recipientId = req.params.id;
+        const recipient_id = req.params.id;
 
         try {
-            const recipient = await Recipient.findByPk(recipientId);
+            const recipient = await Recipient.findByPk(recipient_id);
             const recipientFiles = await RecipientsRegistriesRelation.findAll({
-                where: {recipientId: recipientId},
+                where: {recipient_id: recipient_id},
             });
 
             if (!recipient) {
@@ -135,7 +135,7 @@ export class RecipientController {
                 updatedAt: recipient.updatedAt,
 
                 registry_ids: recipientFiles.map((file) => ({
-                    id: file.registryId,
+                    id: file.registry_id,
                 })),
             };
 
@@ -147,7 +147,7 @@ export class RecipientController {
     }
 
     public async update(req: Request, res: Response): Promise<void> {
-        const recipientId = req.params.id;
+        const recipient_id = req.params.id;
         const filteredData: string[] = req.body.emails.filter((item: string) => item.trim() !== '');
 
         const emails: string = filteredData.join(', ');
@@ -155,7 +155,7 @@ export class RecipientController {
         const {name, type, is_blocked, registry_ids} = req.body;
         try {
 
-            const recipient = await Recipient.findByPk(recipientId);
+            const recipient = await Recipient.findByPk(recipient_id);
             if (!recipient) {
                 res.status(404).json({error: "Recipient not found"});
                 return;
@@ -174,15 +174,15 @@ export class RecipientController {
                 // Delete existing relations
                 await RecipientsRegistriesRelation.destroy({
                     where: {
-                        recipientId: recipient.id,
+                        recipient_id: recipient.id,
                     },
                 });
 
                 // Create new relations
                 for (const registry_id of registry_ids) {
                     await RecipientsRegistriesRelation.create({
-                        recipientId: recipient.id,
-                        registryId: registry_id,
+                        recipient_id: recipient.id,
+                        registry_id: registry_id,
                     });
                 }
             }
@@ -195,7 +195,7 @@ export class RecipientController {
     }
 
     public async destroy(req: Request, res: Response): Promise<void> {
-        const recipientId = req.params.id;
+        const recipient_id = req.params.id;
 
         // Начинаем транзакцию
         const t = await sequelize.transaction();
@@ -203,12 +203,12 @@ export class RecipientController {
         try {
             // Удаляем связанные записи из другой таблицы
             await RecipientsRegistriesRelation.destroy({
-                where: {recipient_id: recipientId},
+                where: {recipient_id: recipient_id},
                 transaction: t
             });
 
             // Удаляем запись из таблицы Recipient
-            const recipient = await Recipient.findByPk(recipientId, {transaction: t});
+            const recipient = await Recipient.findByPk(recipient_id, {transaction: t});
             if (!recipient) {
                 res.status(404).json({error: "Recipient not found"});
                 return;

@@ -35,8 +35,9 @@ export class RegistryResendController {
 
 
                 const serviceName = service.name;
-                const sanitizedRegistryName = registryName.replace(/[\/\\\.]/g, ' ');
-                const sanitizedServiceName = serviceName.replace(/[\/\\\.]/g, ' ');
+                const sanitizedRegistryName = registryName.replace(/[\/\\.'"]/g, '');
+                const sanitizedServiceName = serviceName.replace(/[\/\\.'"]/g, '');
+
 
 
                 for (const format of formats) {
@@ -89,17 +90,18 @@ export class RegistryResendController {
 
     public async getRegistryData(req: Request, res: Response): Promise<void> {
 
+
+        console.log(req.body);
         // console.log(req.body)
         // return
-        const recipientId = req.body.recipient;
-        const registryId = req.body.selectedRegistry;
+        const recipient_id = req.body.formData.recipient_id;
+        const registry_id = req.body.formData.registry_id;
         const formData = req.body.formData;
         const paymentsData: any[] = req.body.rows;
-        const isTestEmailEnabled = req.body.isTestEmailEnabled;
+        const isTestEmailEnabled = req.body.formData.isTestEmailEnabled;
 
         const servicesIds: any[] = paymentsData.map(payment => payment.id_service);
         const uniqueServicesIds = Array.from(new Set(servicesIds));
-
 
         const serviceDifferences = uniqueServicesIds.filter((serviceId: any) => !formData.services_id.includes(serviceId));
 
@@ -112,11 +114,10 @@ export class RegistryResendController {
             return;
         }
 
-
         try {
             const recipient: any = await Recipient.findOne({
                 where: {
-                    id: recipientId,
+                    id: recipient_id,
                 },
             });
             if (!recipient) {
@@ -128,7 +129,7 @@ export class RegistryResendController {
             }
             const registryData: any = await Registry.findOne({
                 where: {
-                    id: registryId,
+                    id: registry_id,
                 },
             });
 

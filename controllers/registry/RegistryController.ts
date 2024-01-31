@@ -11,11 +11,11 @@ export class RegistryController {
             where: whereClause,
         });
 
-        const registryIds = recipientRegistries.map((relation) => relation.registryId);
+        const registry_ids = recipientRegistries.map((relation) => relation.registry_id);
 
         return await Registry.findAll({
             where: {
-                id: registryIds,
+                id: registry_ids,
             },
             attributes: ['id', 'name', 'server_id', 'formats', 'services_id']
         });
@@ -89,6 +89,7 @@ export class RegistryController {
     }
 
     public async store(req: Request, res: Response): Promise<void> {
+        console.log(req.body)
         if (
             !req.body.name
             || !req.body.servicesId
@@ -137,6 +138,7 @@ export class RegistryController {
 
     public async update(req: Request, res: Response): Promise<void> {
         const fileId = req.params.id;
+        console.log(fileId)
         if (!req.body.serviceId && !req.body.table_headers && !req.body.name && (!req.body.fields || !req.body.sqlQuery)) {
             res.status(400).json({error: "Required parameters are missing"});
             return;

@@ -31,8 +31,7 @@ export const sendRegistryFiles = async (emailAddresses: string, registryFiles: s
                     content: fs.readFileSync(getAbsolutePath('storage/registries/files/') + filename),
                 }))
             };
-            //
-            // console.log(await transporter.sendMail(mailOptions));
+
             // Отправка письма
             try {
                 console.log(await transporter.sendMail(mailOptions));

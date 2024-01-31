@@ -3,8 +3,8 @@ import sequelize from '../../sequelize';
 
 export class RecipientsRegistriesRelation extends Model {
     public id!: number;
-    public recipientId!: number;
-    public registryId!: number;
+    public recipient_id!: number;
+    public registry_id!: number;
 }
 
 RecipientsRegistriesRelation.init(
@@ -14,12 +14,12 @@ RecipientsRegistriesRelation.init(
             autoIncrement: true,
             primaryKey: true,
         },
-        recipientId: {
+        recipient_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             field: 'recipient_id',
         },
-        registryId: {
+        registry_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             field: 'registry_id',

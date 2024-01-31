@@ -120,9 +120,9 @@ const processRecords = async (registries: any[]) => {
         const registryFiles = await registry.Registries;
         if (registryFiles) {
             const emailAddresses = registry['emails'];
-            const registryId = registry['id']; // Идентификатор текущего реестра
+            const registry_id = registry['id']; // Идентификатор текущего реестра
 
-            logger.log(`Processing registry with ID: ${registryId}`);
+            logger.log(`Processing registry with ID: ${registry_id}`);
 
             for (const item of registryFiles) {
                 const registryName = item['name'];
@@ -134,7 +134,7 @@ const processRecords = async (registries: any[]) => {
 
                 if (!isBlocked) {
                     logger.log('-----------INFO------------')
-                    logger.log('Sender Id: ' + registryId);
+                    logger.log('Sender Id: ' + registry_id);
                     logger.log('Registry Id: ' + item['id']);
                     logger.log('Sender Name: ' + registry['name']);
                     logger.log('Registry Name: ' + registryName);
@@ -192,7 +192,7 @@ const processRecords = async (registries: any[]) => {
             logger.log('---------SENDING---------')
             try {
                 await sendRegistryFiles(emailAddresses, registryFilePaths);
-                logger.log(`Registry ${registry['name']} with ID ${registryId} successfully sent to the specified addresses.`);
+                logger.log(`Registry ${registry['name']} with ID ${registry_id} successfully sent to the specified addresses.`);
                 logger.log(`Emails: ${emailAddresses}`)
                 logger.log(`Files: ${registryFilePaths}`)
             } catch (error) {
