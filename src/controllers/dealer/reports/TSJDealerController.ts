@@ -9,16 +9,6 @@ const upload = multer({storage: storage}).single('dialerUploadFile');
 
 export class TSJDealerController {
 
-    public async getTSJDealers(req: Request, res: Response): Promise<void> {
-        try {
-            const allDealers = await TSJDealer.findAll();
-            res.json(allDealers);
-        } catch (error) {
-            res.status(500).json({error: "Internal server error"});
-        }
-    }
-
-
     // Ваш updateDealer
     public async updateDealer(req: Request, res: Response) {
         try {

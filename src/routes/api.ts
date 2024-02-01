@@ -12,6 +12,7 @@ import {RegistryResendController} from "../controllers/registry/RegistryResendCo
 import {ExportReportController} from "../controllers/dealer/reports/ExportReportController";
 import {TSJDealerController} from "../controllers/dealer/reports/TSJDealerController";
 import {DatabaseController} from "../controllers/database/DatabaseController";
+import {GSFRUpdateController} from "../controllers/GSFR/GSFRUpdateController";
 
 
 const router = Router();
@@ -27,6 +28,7 @@ const registryResendController = new RegistryResendController();
 const exportRegistryController = new ExportReportController();
 const tsjDealerController = new TSJDealerController();
 const databaseController = new DatabaseController();
+const gsfrUpdateController = new GSFRUpdateController();
 
 router.get('/getDataFromDB', databaseController.getDataFromDB);
 
@@ -62,5 +64,6 @@ router.post('/acquiring/comparison', acquiringController.comparison);
 router.post('/dealer/reports/createReport', exportRegistryController.createReport);
 
 router.post('/dealer/reports/updateTSJDealer', tsjDealerController.updateDealer);
+router.post('/GSFR/updateGFSR', gsfrUpdateController.update);
 
 export default router;
