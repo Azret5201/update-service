@@ -1,7 +1,7 @@
 import { Dialect, Model, Sequelize } from "sequelize";
 import * as dotenv from "dotenv";
 import moment from "moment-timezone";
-
+require('dotenv').config();
 dotenv.config();
 
 const config = {
@@ -12,6 +12,8 @@ const config = {
   dbName: process.env.DB_NAME || "",
   dbDialect: process.env.DB_DIALECT || "postgres",
 };
+
+console.log(config)
 
 export const sequelize = new Sequelize(config.dbName, config.dbUser, config.dbPassword, {
   host: config.dbHost,
