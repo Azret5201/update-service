@@ -4,7 +4,7 @@ import * as xml2js from 'xml2js';
 const allDataArray: any[] = [];
 
 const urls = [
-    // 'https://scsanctions.un.org/resources/xml/en/consolidated.xml',
+    'https://scsanctions.un.org/resources/xml/en/consolidated.xml',
     'https://fiu.gov.kg/uploads/65afad57b900d.xml',
     'https://fiu.gov.kg/uploads/657ae4a6152b5.xml',
     'https://fiu.gov.kg/uploads/65a51ca583341.xml',
@@ -15,7 +15,7 @@ export const updateGSFR = async () => {
     try {
         for (const url of urls) {
             const data = await fetchData(url);
-            // console.log(data);
+            console.log(data);
             const result = await parseXml(data);
 
             const values = extractValuesDynamically(result);
@@ -30,21 +30,17 @@ export const updateGSFR = async () => {
 
         console.log('Общий массив объектов:', combinedArray);
     } catch (err) {
-        console.error('Ошибка:', err);
+        // console.error('Ошибка:', err);
     }
 };
 
 const fetchData = async (url: string): Promise<string> => {
     try {
 
-        const response = await axios.get(url, {
-            headers: {
-                'Accept-Charset': 'application/xml',
-                'Accept': 'application/xml', // Добавлено
-            }
-        });
+        const response = await axios.get(url);
         return response.data;
     } catch (error) {
+        console.log(error)
         throw error;
     }
 };
