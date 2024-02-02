@@ -15,13 +15,13 @@ export const updateGSFR = async () => {
     try {
         for (const url of urls) {
             const data = await fetchData(url);
-            console.log(data);
+            // console.log(data);
             const result = await parseXml(data);
 
             const values = extractValuesDynamically(result);
             const mappedValues = applyMapping(values);
 
-            console.log(`Массив объектов для ${url}:`, [mappedValues]);
+            // console.log(`Массив объектов для ${url}:`, [mappedValues]);
 
             allDataArray.push(mappedValues);
         }

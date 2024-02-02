@@ -7,7 +7,6 @@ export class GSFRUpdateController {
         try {
             // Используйте await перед вызовом getDataForReport
             const reportData: any = await updateGSFR()
-            console.log(reportData)
 
         } catch (error) {
             console.error('Ошибка при получении данных для отчета:', error);

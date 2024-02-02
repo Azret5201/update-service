@@ -37,8 +37,8 @@ export class RegistryResendController {
 
 
                 const serviceName = service.name;
-                const sanitizedRegistryName = registryName.replace(/[\/\\.'"]/g, '');
-                const sanitizedServiceName = serviceName.replace(/[\/\\.'"]/g, '');
+                const sanitizedRegistryName = registryName.replace(/[\/\\.'"_\s]/g, '_');
+                const sanitizedServiceName = serviceName.replace(/[\/\\.'"_\s]/g, '_');
 
 
 
