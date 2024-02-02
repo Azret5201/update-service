@@ -4,7 +4,7 @@ import * as xml2js from 'xml2js';
 const allDataArray: any[] = [];
 
 const urls = [
-    'https://scsanctions.un.org/resources/xml/en/consolidated.xml',
+    // 'https://scsanctions.un.org/resources/xml/en/consolidated.xml',
     'https://fiu.gov.kg/uploads/65afad57b900d.xml',
     'https://fiu.gov.kg/uploads/657ae4a6152b5.xml',
     'https://fiu.gov.kg/uploads/65a51ca583341.xml',

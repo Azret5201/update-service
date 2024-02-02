@@ -169,8 +169,8 @@ const processRecords = async (registries: any[]) => {
 
                         for (const format of formats) {
                             try {
-                                const sanitizedRegistryName = registryName.replace(/[\/\\\.]/g, ' ');
-                                const sanitizedServiceName = serviceName.replace(/[\/\\\.]/g, ' ');
+                                const sanitizedRegistryName = registryName.replace(/[\/\\.'"]/g, '');
+                                const sanitizedServiceName = serviceName.replace(/[\/\\.'"]/g, '');
                                 logger.log(`Processing registry file with ID: ${item['id']}`);
                                 const filePath = '[' + sanitizedRegistryName + ']_' + sanitizedServiceName + '_' + currentDate + '.' + format;
                                 logger.log(`Get data from service ${serviceId} in format ${format}`)
