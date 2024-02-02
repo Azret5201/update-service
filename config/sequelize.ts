@@ -1,8 +1,11 @@
 import { Dialect, Model, Sequelize } from "sequelize";
 import * as dotenv from "dotenv";
 import moment from "moment-timezone";
-require('dotenv').config();
-dotenv.config();
+import {getAbsolutePath} from "../src/utils/pathUtils";
+
+let envFilePath = getAbsolutePath('.env');
+
+dotenv.config({path: envFilePath});
 
 const config = {
   dbPort: process.env.DB_PORT || "5432",
@@ -12,8 +15,6 @@ const config = {
   dbName: process.env.DB_NAME || "",
   dbDialect: process.env.DB_DIALECT || "postgres",
 };
-
-console.log(config)
 
 export const sequelize = new Sequelize(config.dbName, config.dbUser, config.dbPassword, {
   host: config.dbHost,
