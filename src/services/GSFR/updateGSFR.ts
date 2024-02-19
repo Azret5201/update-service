@@ -15,13 +15,12 @@ export const updateGSFR = async () => {
     try {
         for (const url of urls) {
             const data = await fetchData(url);
-            console.log(data);
             const result = await parseXml(data);
 
             const values = extractValuesDynamically(result);
             const mappedValues = applyMapping(values);
 
-            // console.log(`Массив объектов для ${url}:`, [mappedValues]);
+            console.log(`Массив объектов для ${url}:`, [mappedValues]);
 
             allDataArray.push(mappedValues);
         }
@@ -29,15 +28,16 @@ export const updateGSFR = async () => {
         const combinedArray = [].concat(...allDataArray);
 
         console.log('Общий массив объектов:', combinedArray);
+        return combinedArray;
     } catch (err) {
-        // console.error('Ошибка:', err);
+        console.error('Ошибка:', err);
     }
 };
 
 const fetchData = async (url: string): Promise<string> => {
     try {
 
-        const response = await axios.get(url);
+        const response = await axios.get(url, { timeout: 5000 });
         return response.data;
     } catch (error) {
         console.log(error)
@@ -85,6 +85,8 @@ const extractValuesDynamically = (obj: any): any[] => {
 const applyMapping = (values: any[]): any[] => {
     const mapping: any = {
         'Name': 'name',
+        'Surname': 'surname',
+        'Patronomic': 'patronomic',
         'FIRST_NAME': 'firstName',
         'SECOND_NAME': 'secondName',
         'THIRD_NAME': 'thirdName',
@@ -92,18 +94,44 @@ const applyMapping = (values: any[]): any[] => {
     };
 
     const result: any[] = [];
+    let currentEntry: any = {};
+    let lastParentKey: string | undefined;
 
     values.forEach((field) => {
         for (const key in field) {
+            if (key.endsWith('.i:nil')) {
+                continue;  // Пропустить текущую итерацию цикла, если ключ оканчивается на .i:nil
+            }
+            const parentKey: string | undefined = key.split('.').slice(-2, -1)[0];
+
             if (field.hasOwnProperty(key)) {
                 const lastWord: any = key.split('.').pop();
                 const mappedKey = mapping[lastWord];
+
                 if (mappedKey) {
-                    result.push({ [mappedKey]: field[key] !== undefined ? field[key] : null });
+                    currentEntry[mappedKey] = field[key] !== undefined ? field[key] : null;
+                }
+            }
+
+            if (parentKey !== lastParentKey) {
+                // Если lastParentKey не определен или не совпадает с текущим parentKey, создаем новую запись
+                if (lastParentKey === undefined || parentKey !== lastParentKey) {
+                    // Добавляем предыдущую запись в результат, если она не пуста
+                    if (Object.keys(currentEntry).length > 0) {
+                        result.push(currentEntry);
+                    }
+                    // Создаем новую запись и обновляем lastParentKey
+                    currentEntry = {};
+                    lastParentKey = parentKey;
                 }
             }
         }
     });
+
+    // Добавляем последнюю запись в результат, если она не пуста
+    if (Object.keys(currentEntry).length > 0) {
+        result.push(currentEntry);
+    }
 
     return result;
 };
