@@ -21,7 +21,7 @@ export class RegistryController {
             attributes: ['id', 'name', 'server_id', 'formats', 'services_id']
         });
     }
-
+//НЕ УДАЛЯТЬ!
     public async getRegistries(req: Request, res: Response): Promise<void> {
         try {
             const column = req.query.column as string;
@@ -45,19 +45,18 @@ export class RegistryController {
             }
         } catch (error) {
             console.error('Error:', error);
-            res.status(500).json({error: 'Internal server error'});
+            res.status(500).json({success: false, message:  `Произошла ошибка при получении данных об реестрах \n ${error}`});
         }
     }
 
     public async store(req: Request, res: Response): Promise<void> {
-        console.log(req.body)
         if (
             !req.body.name
             || !req.body.servicesId
             || !req.body.serverId
             || !req.body.formats
         ) {
-            res.status(400).json({error: "Required parameters are missing"});
+            res.status(400).json({success: false, message:  "Отсутствуют обязательные поля"});
             return;
         }
 
@@ -73,10 +72,10 @@ export class RegistryController {
                 sql_query: req.body.sqlQuery,
             });
 
-            res.json({message: "Record created"});
+            res.status(200).json({success: true, message: 'Реестр успешно создан'});
         } catch (error) {
-            console.error("Create operation failed:", error);
-            res.status(500).json({error: "Create operation failed"});
+
+            res.status(500).json({success: false, message: `Произошла ошибка при создании реестра \n ${error}`});
         }
     }
 
@@ -86,14 +85,14 @@ export class RegistryController {
         Registry.findByPk(fileId)
             .then((registry) => {
                 if (!registry) {
-                    res.status(404).json({error: "Registry file not found"});
+                    res.status(404).json({success: false, message:  "Реестр не найден"});
                     return;
                 }
                 res.json(registry);
             })
             .catch((error) => {
                 console.error("Show operation failed:", error);
-                res.status(500).json({error: "Show operation failed"});
+                res.status(500).json({success: false, message:  `Не удалось получить данные \n ${error}`});
             });
     }
 
@@ -101,13 +100,13 @@ export class RegistryController {
         const fileId = req.params.id;
         console.log(fileId)
         if (!req.body.serviceId && !req.body.table_headers && !req.body.name && (!req.body.fields || !req.body.sqlQuery)) {
-            res.status(400).json({error: "Required parameters are missing"});
+            res.status(400).json({success: false, message:  "Отсутствуют обязательные поля"});
             return;
         }
         Registry.findByPk(fileId)
             .then((registry) => {
                 if (!registry) {
-                    res.status(404).json({error: "Registry file not found"});
+                    res.status(404).json({success: false, message:  "Реестр не найден"});
                     return;
                 }
 
@@ -124,12 +123,12 @@ export class RegistryController {
 
             })
             .then((updatedRegistry) => {
-                res.json(updatedRegistry);
+                res.status(200).json({success: true, message: 'Реестр успешно обновлён', updatedRegistry});
             })
             .catch((error) => {
                 console.error("Update operation failed:", error);
 
-                res.status(500).json({error: "Update operation failed"});
+                res.status(500).json({success: false, message:  "Не удалось обновить реестр"});
             });
     }
 
@@ -151,7 +150,7 @@ export class RegistryController {
             // Удаляем запись из таблицы Registry
             const registry = await Registry.findByPk(registry_id, {transaction: t});
             if (!registry) {
-                res.status(404).json({error: "Registry not found"});
+                res.status(404).json({success: false, message:  "Реестр не найден"});
                 return;
             }
 
@@ -161,13 +160,13 @@ export class RegistryController {
             // Фиксируем транзакцию
             await t.commit();
 
-            res.json({message: "Registry and related records deleted successfully"});
+            res.status(200).json({success: true, message:  "Реестр успешно удалён"});
         } catch (error) {
             // Откатываем транзакцию в случае ошибки
             await t.rollback();
 
             console.error("Delete operation failed:", error);
-            res.status(500).json({error: "Delete operation failed"});
+            res.status(500).json({success: false, message:  `Не удалось удалить реестр \n ${error}` });
         }
     }
 }
