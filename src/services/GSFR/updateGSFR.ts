@@ -1,109 +1,162 @@
-import axios from 'axios-https-proxy-fix';
-import * as xml2js from 'xml2js';
+import axios from "axios-https-proxy-fix";
+import * as xml2js from "xml2js";
+import redisCluster from "../../../config/redis";
 
 const allDataArray: any[] = [];
+const pathsToArray = {
+  UN: "CONSOLIDATED_LIST.INDIVIDUALS",
+  PFT: "ArrayOfLegalizationPhysic.LegalizationPhysic",
+  SSPKR: "SanctionList.physicPersons", // Сводный санкционный перечень Кыргызской Республики
+  PLPD_FIZ: "ArrayOfLegalizationPhysic.LegalizationPhysic", // ПЛПД физ. лица
+  PLPD_UR: "ArrayOfLegalization.Legalization", // ПЛПД юр. лица
+};
 
-const urls = [
-    'https://scsanctions.un.org/resources/xml/en/consolidated.xml',
-    'https://fiu.gov.kg/uploads/65afad57b900d.xml',
-    'https://fiu.gov.kg/uploads/657ae4a6152b5.xml',
-    'https://fiu.gov.kg/uploads/65a51ca583341.xml',
-    'https://fiu.gov.kg/uploads/65b39e65cbc8a.xml'
-];
+const arrayOfRequiredFields = {
+  // Порядок name, surname, patronymic, fio, inn
+  PFT: ["Name", "Surname", "Patronomic"],
+  UN: ["Name", "Surname", "Patronymic"],
+  SSPKR: ["Name", "Surname", "Patronymic"],
+  PLPD_FIZ: ["Name", "Surname", "Patronymic"],
+  PLPD_UR: ["Name", "Surname", "Patronymic"],
+};
 
-export const updateGSFR = async () => {
-    try {
-        for (const url of urls) {
-            const data = await fetchData(url);
-            console.log(data);
-            const result = await parseXml(data);
+const redisSetKey = "{fishy}";
 
-            const values = extractValuesDynamically(result);
-            const mappedValues = applyMapping(values);
+export const updateGSFR = async (UrlPathList: object) => {
+  try {
+    for (const [typeSanction, url] of Object.entries(UrlPathList)) {
+      const endpointSettings = pathsToArray[typeSanction as keyof typeof pathsToArray];
+      const data = await fetchData(url);
+      const result = await parseXml(data);
+      const arrayData = extractArrayData(result, endpointSettings);
 
-            // console.log(`Массив объектов для ${url}:`, [mappedValues]);
-
-            allDataArray.push(mappedValues);
-        }
-
-        const combinedArray = [].concat(...allDataArray);
-
-        console.log('Общий массив объектов:', combinedArray);
-    } catch (err) {
-        // console.error('Ошибка:', err);
+      const requredFields = arrayOfRequiredFields[typeSanction as keyof typeof arrayOfRequiredFields];
+      // inserToRedis(arrayData, requredFields);
+      formationRecords(arrayData, requredFields);
+      // console.log("After extract array: ", arrayData);
+      return;
     }
+
+    const combinedArray = [].concat(...allDataArray);
+
+    return {
+      result: "success",
+      data: combinedArray,
+    };
+  } catch (err) {
+    console.error("Ошибка:", err);
+  }
 };
 
 const fetchData = async (url: string): Promise<string> => {
-    try {
-
-        const response = await axios.get(url);
-        return response.data;
-    } catch (error) {
-        console.log(error)
-        throw error;
-    }
+  try {
+    const response = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
 };
-
-
 
 const parseXml = (xmlData: string): Promise<any> => {
-    const options = {
-        explicitArray: false,
-        mergeAttrs: true,
-    };
+  const options = {
+    explicitArray: false,
+    mergeAttrs: true,
+  };
 
-    return new Promise((resolve, reject) => {
-        xml2js.parseString(xmlData, {...options, ...{explicitArray: false}}, (parseErr, result) => {
-            if (parseErr) {
-                reject(parseErr);
-            } else {
-                resolve(result);
-            }
-        });
+  return new Promise((resolve, reject) => {
+    xml2js.parseString(xmlData, { ...options, ...{ explicitArray: false } }, (parseErr, result) => {
+      if (parseErr) {
+        reject(parseErr);
+      } else {
+        resolve(result);
+      }
     });
+  });
 };
 
-const extractValuesDynamically = (obj: any): any[] => {
-    const values: any[] = [];
+const extractArrayData = (obj: any, pathToArrayData: string): [{ [key: string]: any }] => {
+  // Разбиваем путь на массив ключей
+  const keys = pathToArrayData.split(".");
+  // Итеративно получаем доступ к вложенному свойству
+  let current = obj;
 
-    const traverse = (node: any, path: string[] = []) => {
-        if (typeof node === 'object') {
-            for (const key in node) {
-                traverse(node[key], [...path, key]);
-            }
-        } else {
-            const joinedPath = path.join('.');
-            values.push({ [joinedPath]: node });
-        }
-    };
+  for (const key of keys) {
+    if (current[key] === undefined) {
+      throw new Error("Incorect path to array");
+    }
 
-    traverse(obj);
-    return values;
+    current = current[key];
+  }
+
+  return current;
 };
 
-const applyMapping = (values: any[]): any[] => {
-    const mapping: any = {
-        'Name': 'name',
-        'FIRST_NAME': 'firstName',
-        'SECOND_NAME': 'secondName',
-        'THIRD_NAME': 'thirdName',
-        'FOURTH_NAME': 'fourthName',
-    };
+const formationRecords = async (arrayData: [{ [key: string]: any }], needFields: string[]) => {
+  arrayData.forEach((objectPerson) => {
+    const surname = objectPerson[needFields[1]];
+    const name = objectPerson[needFields[0]];
+    const patronomic = objectPerson[needFields[2]];
+    const fouthName = objectPerson[needFields[3]];
+    const onlyFullName = objectPerson[needFields[4]];
+    const inn = objectPerson[needFields[5]];
 
-    const result: any[] = [];
+    if (!onlyFullName) {
+      //Если есть фамилия, то формируем комбинации
+      const fullName = concatString(surname, name, patronomic).trim();
+      const surnameWithName = concatString(surname, name).trim();
+      const nameWithSurname = concatString(name, surname).trim();
+      const NamePatronomicSurname = concatString(name, patronomic, surname).trim();
 
-    values.forEach((field) => {
-        for (const key in field) {
-            if (field.hasOwnProperty(key)) {
-                const lastWord: any = key.split('.').pop();
-                const mappedKey = mapping[lastWord];
-                if (mappedKey) {
-                    result.push({ [mappedKey]: field[key] !== undefined ? field[key] : null });
-                }
-            }
-        }
-    });
+      const fullNameWithFourthName = concatString(fullName, fouthName).trim();
+      const NamePatronomicSurnameWithFouthName = concatString(NamePatronomicSurname, fouthName).trim();
+    
+      if (surnameWithName != "") {
+        insertToRedisOrToLog(surnameWithName);
+      }
+      if (nameWithSurname != "") {
+        insertToRedisOrToLog(nameWithSurname);
+      }
+      if (fullName != "") {
+        insertToRedisOrToLog(fullName);
+      }
+      if (NamePatronomicSurname != "") {
+        insertToRedisOrToLog(NamePatronomicSurname);
+      }
+      if (fullNameWithFourthName != "") {
+        insertToRedisOrToLog(fullNameWithFourthName);
+      }
+      if (NamePatronomicSurnameWithFouthName != "") {
+        insertToRedisOrToLog(NamePatronomicSurnameWithFouthName);
+      }
+    } else {
+      if (onlyFullName != "") {
+        insertToRedisOrToLog(onlyFullName);
+      }
+      if (inn != "") {
+        insertToRedisOrToLog(inn);
+      }
+    }
+  });
+};
 
-    return result;
+const insertToRedisOrToLog = (text: string, redisKey = "terrorist_fio"): void => {
+  if (redisCluster) {
+    redisCluster?.sAdd(redisSetKey + redisKey, text);
+    redisCluster?.sAdd(redisSetKey + redisKey + "64", btoa(text));
+  } else {
+    console.log(redisKey, text);
+  }
+};
+
+const concatString = (...args: string[]): string => {
+  let result = "";
+  for (let i = 0; i < args.length; i++) {
+    if (args[i]) {
+      result += (i ? " " : "") + args[i];
+    } else {
+      return "";
+    }
+  }
+  return result;
 };
