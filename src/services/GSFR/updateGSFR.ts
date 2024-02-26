@@ -93,6 +93,8 @@ const extractArrayData = (obj: any, pathToArrayData: string): [{ [key: string]: 
 };
 
 const formationRecords = async (arrayData: [{ [key: string]: any }], needFields: string[]) => {
+
+  const instanceRedisCluster = await redisCluster();
   arrayData.forEach((objectPerson) => {
     const surname = objectPerson[needFields[1]];
     const name = objectPerson[needFields[0]];
@@ -112,38 +114,39 @@ const formationRecords = async (arrayData: [{ [key: string]: any }], needFields:
       const NamePatronomicSurnameWithFouthName = concatString(NamePatronomicSurname, fouthName).trim();
     
       if (surnameWithName != "") {
-        insertToRedisOrToLog(surnameWithName);
+        insertToRedisOrToLog(surnameWithName, instanceRedisCluster);
       }
       if (nameWithSurname != "") {
-        insertToRedisOrToLog(nameWithSurname);
+        insertToRedisOrToLog(nameWithSurname, instanceRedisCluster);
       }
       if (fullName != "") {
-        insertToRedisOrToLog(fullName);
+        insertToRedisOrToLog(fullName, instanceRedisCluster);
       }
       if (NamePatronomicSurname != "") {
-        insertToRedisOrToLog(NamePatronomicSurname);
+        insertToRedisOrToLog(NamePatronomicSurname, instanceRedisCluster);
       }
       if (fullNameWithFourthName != "") {
-        insertToRedisOrToLog(fullNameWithFourthName);
+        insertToRedisOrToLog(fullNameWithFourthName, instanceRedisCluster);
       }
       if (NamePatronomicSurnameWithFouthName != "") {
-        insertToRedisOrToLog(NamePatronomicSurnameWithFouthName);
+        insertToRedisOrToLog(NamePatronomicSurnameWithFouthName, instanceRedisCluster);
       }
     } else {
       if (onlyFullName != "") {
-        insertToRedisOrToLog(onlyFullName);
+        insertToRedisOrToLog(onlyFullName, instanceRedisCluster);
       }
       if (inn != "") {
-        insertToRedisOrToLog(inn);
+        insertToRedisOrToLog(inn, instanceRedisCluster);
       }
     }
   });
 };
 
-const insertToRedisOrToLog = (text: string, redisKey = "terrorist_fio"): void => {
-  if (redisCluster) {
-    redisCluster?.sAdd(redisSetKey + redisKey, text);
-    redisCluster?.sAdd(redisSetKey + redisKey + "64", btoa(text));
+const insertToRedisOrToLog = (text: string, instanceRedisCluster:any, redisKey = "terrorist_fio"): void => {
+
+  if (instanceRedisCluster) {
+    instanceRedisCluster?.sAdd(redisSetKey + redisKey, text);
+    instanceRedisCluster?.sAdd(redisSetKey + redisKey + "64", btoa(text));
   } else {
     console.log(redisKey, text);
   }
