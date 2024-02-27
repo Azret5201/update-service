@@ -31,11 +31,9 @@ export const updateGSFR = async (UrlPathList: object) => {
       const data = await fetchData(url);
       const result = await parseXml(data);
       const arrayData = extractArrayData(result, endpointSettings);
-      // console.log(arrayData);
-      // return;
+      
       const requredFields = arrayOfRequiredFields[typeSanction as keyof typeof arrayOfRequiredFields];
       formationRecords(arrayData, requredFields);
-      return;
     }
 
     return {
