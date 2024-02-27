@@ -1,11 +1,13 @@
 import axios from "axios-https-proxy-fix";
 import * as xml2js from "xml2js";
 import redisCluster from "../../../config/redis";
+import crypto from 'crypto';
+import https from 'https';
 
 const allDataArray: any[] = [];
 const pathsToArray = {
-  UN: "CONSOLIDATED_LIST.INDIVIDUALS",
-  PFT: "ArrayOfLegalizationPhysic.LegalizationPhysic",
+  UN: "CONSOLIDATED_LIST.INDIVIDUALS.INDIVIDUAL",
+  PFT: "ArrayOfPersonServedSentence.PersonServedSentence",
   SSPKR: "SanctionList.physicPersons.KyrgyzPhysicPerson", // Сводный санкционный перечень Кыргызской Республики
   PLPD_FIZ: "ArrayOfLegalizationPhysic.LegalizationPhysic", // ПЛПД физ. лица
   PLPD_UR: "ArrayOfLegalization.Legalization", // ПЛПД юр. лица
@@ -17,7 +19,7 @@ const arrayOfRequiredFields = {
   SSPKR: ["Name", "Surname", "Patronymic"],
   PFT: ["Name", "Surname", "Patronomic"],
   PLPD_FIZ: ["Name", "Surname", "Patronymic"],
-  PLPD_UR: ["", "", "", "", "FounderDetails"],
+  PLPD_UR: ["", "", "", "", "FounderDetails", "INN"],
 };
 
 const redisSetKey = "{fishy}";
@@ -29,6 +31,7 @@ export const updateGSFR = async (UrlPathList: object) => {
       const data = await fetchData(url);
       const result = await parseXml(data);
       const arrayData = extractArrayData(result, endpointSettings);
+      // console.log(arrayData);
       // return;
       const requredFields = arrayOfRequiredFields[typeSanction as keyof typeof arrayOfRequiredFields];
       formationRecords(arrayData, requredFields);
@@ -46,7 +49,11 @@ export const updateGSFR = async (UrlPathList: object) => {
 
 const fetchData = async (url: string): Promise<string> => {
   try {
-    const response = await axios.get(url);
+    const response = await axios.get(url, {
+        httpsAgent: new https.Agent({
+          secureOptions: crypto.constants.SSL_OP_LEGACY_SERVER_CONNECT,
+        }),
+    });
     return response.data;
   } catch (error) {
     console.log(error);
@@ -132,7 +139,7 @@ const formationRecords = async (arrayData: [{ [key: string]: any }], needFields:
         insertToRedisOrToLog(onlyFullName, instanceRedisCluster);
       }
       if (inn != "") {
-        insertToRedisOrToLog(inn, instanceRedisCluster);
+        insertToRedisOrToLog(inn, instanceRedisCluster, 'terrorist_inn');
       }
     }
   });
