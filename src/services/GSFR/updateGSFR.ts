@@ -13,9 +13,9 @@ const pathsToArray = {
 
 const arrayOfRequiredFields = {
   // Порядок name, surname, patronymic, fio, inn
-  PFT: ["Name", "Surname", "Patronomic"],
   UN: ["FIRST_NAME", "SECOND_NAME", "THIRD_NAME", "FOURTH_NAME"],
   SSPKR: ["Name", "Surname", "Patronymic"],
+  PFT: ["Name", "Surname", "Patronomic"],
   PLPD_FIZ: ["Name", "Surname", "Patronymic"],
   PLPD_UR: ["", "", "", "", "FounderDetails"],
 };
@@ -40,6 +40,7 @@ export const updateGSFR = async (UrlPathList: object) => {
     };
   } catch (err) {
     console.error("Ошибка:", err);
+    throw err;
   }
 };
 
