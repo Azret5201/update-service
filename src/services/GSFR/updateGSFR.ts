@@ -16,9 +16,9 @@ const pathsToArray = {
 const arrayOfRequiredFields = {
   // Порядок name, surname, patronymic, fio, inn
   UN: ["FIRST_NAME", "SECOND_NAME", "THIRD_NAME", "FOURTH_NAME"],
-  SSPKR: ["Name", "Surname", "Patronymic"],
+  SSPKR: ["Name", "Surname", "Patronomic"],
   PFT: ["Name", "Surname", "Patronomic"],
-  PLPD_FIZ: ["Name", "Surname", "Patronymic"],
+  PLPD_FIZ: ["Name", "Surname", "Patronomic"],
   PLPD_UR: ["", "", "", "", "FounderDetails", "INN"],
 };
 
@@ -31,7 +31,6 @@ export const updateGSFR = async (UrlPathList: object) => {
       const data = await fetchData(url);
       const result = await parseXml(data);
       const arrayData = extractArrayData(result, endpointSettings);
-      
       const requredFields = arrayOfRequiredFields[typeSanction as keyof typeof arrayOfRequiredFields];
       formationRecords(arrayData, requredFields);
     }
@@ -95,6 +94,10 @@ const extractArrayData = (obj: any, pathToArrayData: string): [{ [key: string]: 
 
 const formationRecords = async (arrayData: [{ [key: string]: any }], needFields: string[]) => {
   const instanceRedisCluster = await redisCluster();
+  if(instanceRedisCluster){
+    instanceRedisCluster?.unlink(redisSetKey + "terrorist_fio");
+    instanceRedisCluster?.unlink(redisSetKey + "terrorist_inn"); 
+  }
 
   arrayData.forEach((objectPerson) => {
     const surname = filterData(objectPerson[needFields[1]]);
