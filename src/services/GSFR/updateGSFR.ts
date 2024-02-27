@@ -4,18 +4,18 @@ import redisCluster from "../../../config/redis";
 
 const allDataArray: any[] = [];
 const pathsToArray = {
-  UN: "CONSOLIDATED_LIST.INDIVIDUALS",
-  PFT: "ArrayOfLegalizationPhysic.LegalizationPhysic",
+  UN: "CONSOLIDATED_LIST.INDIVIDUALS", // Сводный санкционный перечень Совета Безопасности ООН
   SSPKR: "SanctionList.physicPersons", // Сводный санкционный перечень Кыргызской Республики
+  PFT: "ArrayOfLegalizationPhysic.LegalizationPhysic", //ПФТ
   PLPD_FIZ: "ArrayOfLegalizationPhysic.LegalizationPhysic", // ПЛПД физ. лица
   PLPD_UR: "ArrayOfLegalization.Legalization", // ПЛПД юр. лица
 };
 
 const arrayOfRequiredFields = {
   // Порядок name, surname, patronymic, fio, inn
-  PFT: ["Name", "Surname", "Patronomic"],
   UN: ["Name", "Surname", "Patronymic"],
   SSPKR: ["Name", "Surname", "Patronymic"],
+  PFT: ["Name", "Surname", "Patronomic"],
   PLPD_FIZ: ["Name", "Surname", "Patronymic"],
   PLPD_UR: ["Name", "Surname", "Patronymic"],
 };
@@ -45,6 +45,7 @@ export const updateGSFR = async (UrlPathList: object) => {
     };
   } catch (err) {
     console.error("Ошибка:", err);
+    throw err;
   }
 };
 
