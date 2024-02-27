@@ -6,7 +6,7 @@ const allDataArray: any[] = [];
 const pathsToArray = {
   UN: "CONSOLIDATED_LIST.INDIVIDUALS",
   PFT: "ArrayOfLegalizationPhysic.LegalizationPhysic",
-  SSPKR: "SanctionList.physicPersons", // Сводный санкционный перечень Кыргызской Республики
+  SSPKR: "SanctionList.physicPersons.KyrgyzPhysicPerson", // Сводный санкционный перечень Кыргызской Республики
   PLPD_FIZ: "ArrayOfLegalizationPhysic.LegalizationPhysic", // ПЛПД физ. лица
   PLPD_UR: "ArrayOfLegalization.Legalization", // ПЛПД юр. лица
 };
@@ -14,10 +14,10 @@ const pathsToArray = {
 const arrayOfRequiredFields = {
   // Порядок name, surname, patronymic, fio, inn
   PFT: ["Name", "Surname", "Patronomic"],
-  UN: ["Name", "Surname", "Patronymic"],
+  UN: ["FIRST_NAME", "SECOND_NAME", "THIRD_NAME", "FOURTH_NAME"],
   SSPKR: ["Name", "Surname", "Patronymic"],
   PLPD_FIZ: ["Name", "Surname", "Patronymic"],
-  PLPD_UR: ["Name", "Surname", "Patronymic"],
+  PLPD_UR: ["", "", "", "", "FounderDetails"],
 };
 
 const redisSetKey = "{fishy}";
@@ -29,19 +29,14 @@ export const updateGSFR = async (UrlPathList: object) => {
       const data = await fetchData(url);
       const result = await parseXml(data);
       const arrayData = extractArrayData(result, endpointSettings);
-
+      // return;
       const requredFields = arrayOfRequiredFields[typeSanction as keyof typeof arrayOfRequiredFields];
-      // inserToRedis(arrayData, requredFields);
       formationRecords(arrayData, requredFields);
-      // console.log("After extract array: ", arrayData);
       return;
     }
 
-    const combinedArray = [].concat(...allDataArray);
-
     return {
       result: "success",
-      data: combinedArray,
     };
   } catch (err) {
     console.error("Ошибка:", err);
@@ -93,26 +88,26 @@ const extractArrayData = (obj: any, pathToArrayData: string): [{ [key: string]: 
 };
 
 const formationRecords = async (arrayData: [{ [key: string]: any }], needFields: string[]) => {
-
   const instanceRedisCluster = await redisCluster();
+
   arrayData.forEach((objectPerson) => {
-    const surname = objectPerson[needFields[1]];
-    const name = objectPerson[needFields[0]];
-    const patronomic = objectPerson[needFields[2]];
-    const fouthName = objectPerson[needFields[3]];
-    const onlyFullName = objectPerson[needFields[4]];
-    const inn = objectPerson[needFields[5]];
+    const surname = filterData(objectPerson[needFields[1]]);
+    const name = filterData(objectPerson[needFields[0]]);
+    const patronomic = filterData(objectPerson[needFields[2]]);
+    const fouthName = filterData(objectPerson[needFields[3]]);
+    const onlyFullName = filterData(objectPerson[needFields[4]]);
+    const inn = filterData(objectPerson[needFields[5]]);
 
     if (!onlyFullName) {
       //Если есть фамилия, то формируем комбинации
-      const fullName = concatString(surname, name, patronomic).trim();
-      const surnameWithName = concatString(surname, name).trim();
-      const nameWithSurname = concatString(name, surname).trim();
-      const NamePatronomicSurname = concatString(name, patronomic, surname).trim();
+      const fullName = concatString(surname, name, patronomic);
+      const surnameWithName = concatString(surname, name);
+      const nameWithSurname = concatString(name, surname);
+      const NamePatronomicSurname = concatString(name, patronomic, surname);
 
-      const fullNameWithFourthName = concatString(fullName, fouthName).trim();
-      const NamePatronomicSurnameWithFouthName = concatString(NamePatronomicSurname, fouthName).trim();
-    
+      const fullNameWithFourthName = concatString(fullName, fouthName);
+      const NamePatronomicSurnameWithFouthName = concatString(NamePatronomicSurname, fouthName);
+
       if (surnameWithName != "") {
         insertToRedisOrToLog(surnameWithName, instanceRedisCluster);
       }
@@ -142,11 +137,10 @@ const formationRecords = async (arrayData: [{ [key: string]: any }], needFields:
   });
 };
 
-const insertToRedisOrToLog = (text: string, instanceRedisCluster:any, redisKey = "terrorist_fio"): void => {
-
+const insertToRedisOrToLog = (text: string, instanceRedisCluster: any, redisKey = "terrorist_fio"): void => {
   if (instanceRedisCluster) {
     instanceRedisCluster?.sAdd(redisSetKey + redisKey, text);
-    instanceRedisCluster?.sAdd(redisSetKey + redisKey + "64", btoa(text));
+    instanceRedisCluster?.sAdd(redisSetKey + redisKey + "64", Buffer.from(text).toString("base64"));
   } else {
     console.log(redisKey, text);
   }
@@ -162,4 +156,15 @@ const concatString = (...args: string[]): string => {
     }
   }
   return result;
+};
+
+const filterData = (element: string) => {
+  if (element && typeof element === "string") {
+    return element
+      .replace(/[«»()\n'"--–+.,]|нет данных|na|n\/a/gi, "")
+      .trim()
+      .toUpperCase();
+  }
+
+  return "";
 };

@@ -1,7 +1,7 @@
 import { createCluster, RedisClusterType } from "redis";
 
 // const redisNodesString:string = process.env.REDIS_NODES || '';
-let redisCluster: null | RedisClusterType | any = "null";
+let redisCluster: null | RedisClusterType = null;
 
 export default async function initRedisCluster() {
   if (process.env.IS_USE_REDIS) {
@@ -9,16 +9,16 @@ export default async function initRedisCluster() {
       return { url: item };
     });
 
-    console.log(redisNodes);
-
     const redisOptions = {
       rootNodes: redisNodes,
-      password: process.env.REDIS_PASSWORD,
+      defaults: {
+        password: process.env.REDIS_PASSWORD,
+      }
     };
 
     const redisCluster = createCluster(redisOptions);
-    return await redisCluster.connect();   
-    
+    await redisCluster.connect();   
+    return redisCluster;
   }
   
 }
