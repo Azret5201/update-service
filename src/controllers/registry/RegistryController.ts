@@ -85,20 +85,18 @@ export class RegistryController {
         Registry.findByPk(fileId)
             .then((registry) => {
                 if (!registry) {
-                    res.status(404).json({success: false, message:  "Реестр не найден"});
-                    return;
+                    throw("Реестр не найден");
                 }
                 res.json(registry);
             })
             .catch((error) => {
                 console.error("Show operation failed:", error);
-                res.status(500).json({success: false, message:  `Не удалось получить данные \n ${error}`});
+                res.status(500).json({success: false, message:  `Не удалось получить данные: \n ${error}`});
             });
     }
 
     public async update(req: Request, res: Response): Promise<void> {
         const fileId = req.params.id;
-        console.log(fileId)
         if (!req.body.serviceId && !req.body.table_headers && !req.body.name && (!req.body.fields || !req.body.sqlQuery)) {
             res.status(400).json({success: false, message:  "Отсутствуют обязательные поля"});
             return;
@@ -106,8 +104,7 @@ export class RegistryController {
         Registry.findByPk(fileId)
             .then((registry) => {
                 if (!registry) {
-                    res.status(404).json({success: false, message:  "Реестр не найден"});
-                    return;
+                    throw("Реестр не найден");
                 }
 
                 registry.name = req.body.name;
@@ -128,7 +125,7 @@ export class RegistryController {
             .catch((error) => {
                 console.error("Update operation failed:", error);
 
-                res.status(500).json({success: false, message:  "Не удалось обновить реестр"});
+                res.status(500).json({success: false, message:  "Не удалось обновить реестр:", error});
             });
     }
 

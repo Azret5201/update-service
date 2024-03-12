@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { User } from '../../models/User';
 import {checkHash, generateToken} from '../../utils/authUtils';
 import {Role} from "../../models/Role";
+import jwt from "jsonwebtoken";
 
 export class UserController {
     public async login(req: Request, res: Response): Promise<void> {
@@ -28,29 +29,24 @@ export class UserController {
             }
 
             const role:any = await Role.findOne({
-                attributes: ['id', 'name'], // Изменено на 'name', так как name используется внизу
+                attributes: ['id', 'name'],
                 where: { id: user.id_role },
             });
             const token = generateToken(user.id);
+            const decodedToken:any = jwt.verify(token, 'secret');
+
+            let token_expires:any = null;
+            if ("exp" in decodedToken) {
+                token_expires = new Date(decodedToken.exp * 1000);
+            }
             // Добавляем свойство role_name к объекту пользователя
             user.dataValues.role_name = role.name;
 
-            // Отправляем пользовательские данные, включая имя роли, обратно клиенту
-            res.status(200).json({success: true, user: user, accessToken: token});
+            res.status(200).json({success: true, user: user, accessToken: token, tokenExpires: token_expires});
         } catch (error) {
             console.error(error);
             res.status(500).json({success: false, message: 'Произошла ошибка при попытке входа ' + error});
         }
 
-    }
-
-    public async getUsers(req: Request, res: Response): Promise<void> {
-        try {
-            const users = await User.findAll();
-
-            res.json(users);
-        } catch (error) {
-            res.status(500).json({success: false, message: 'Произошла ошибка при попытке получения пользователя ' + error});
-        }
     }
 }

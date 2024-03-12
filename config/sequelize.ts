@@ -57,4 +57,5 @@ function convertDates(obj: any) {
   obj._convertedDates = true;
 }
 
+
 export default sequelize;

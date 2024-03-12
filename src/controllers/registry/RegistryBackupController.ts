@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import {Op} from "sequelize";
 import {getAbsolutePath} from "../../utils/pathUtils";
+import moment from "moment";
 
 export class RegistryBackupController {
     public async getBackups(req: Request, res: Response) {
@@ -35,7 +36,7 @@ export class RegistryBackupController {
                 return {
                     name: filename,
                     size: stats.size, // Добавляем размер файла
-                    createdAt: stats.ctime, // Используем дату создания файла
+                    createdAt: moment.utc(stats.ctime).format("YYYY-MM-DD HH:mm:ss"), // Используем дату создания файла
                 };
             });
 

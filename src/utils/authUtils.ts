@@ -3,8 +3,7 @@ import crypto from 'crypto';
 import md5 from 'md5';
 
 export function generateToken(userId: number): string {
-    const token = jwt.sign({userId}, 'secret', {expiresIn: '12h'});
-    return token;
+    return jwt.sign({userId}, 'secret', {expiresIn: '12h'});
 }
 
 export function QP01Hash(value: string, SALT: string | null = null): string {

@@ -36,7 +36,6 @@ router.post('/login', userController.login);
 router.use(AuthMiddleware.authenticate);
 
 router.get('/getDataFromDB', databaseController.getDataFromDB);
-router.get('/users', userController.getUsers);
 router.post('/abonent-service/store', abonentServiceController.store);
 router.get('/listServices', abonentServiceController.getServices);
 

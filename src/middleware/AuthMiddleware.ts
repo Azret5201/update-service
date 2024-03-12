@@ -11,25 +11,28 @@ declare global {
 }
 
 export class AuthMiddleware {
-    public static authenticate(req: Request, res: Response, next: NextFunction): void {
-        let token = req.header('Authorization');
+    public static authenticate(req: Request, res: Response, next: NextFunction) {
 
-        if (!token) {
-            // Если отсутствует токен, перенаправьте пользователя на страницу логина
-            return res.redirect('/login'); // Используйте правильный путь к странице логина
-        }
-        token = token.split(' ')[1];
         try {
-            const decoded = jwt.verify(token, 'secret');
+            let token = req.header('Authorization');
+            if (!token) {
+                throw new Error('Токен отсутствует');
+            }
+            token = token.split(' ')[1];
+            const decodedToken: any = jwt.verify(token, 'secret');
 
-            if (typeof decoded === 'object' && decoded.hasOwnProperty('userId')) {
-                const userId = (decoded as { userId: number }).userId;
+            if (
+                typeof decodedToken === 'object' &&
+                new Date(decodedToken.exp * 1000).getTime() > Date.now() &&
+                decodedToken.hasOwnProperty('userId')
+            ) {
+                const userId = (decodedToken as { userId: number }).userId;
 
                 User.findByPk(userId, {
                     attributes: ['id', 'login', 'passwd'],
                 }).then((user) => {
                     if (user) {
-                        decoded.user = user.id;
+                        decodedToken.user = user.id;
                         next();
                     } else {
                         res.status(401).json({error: 'Unauthorized'});
@@ -39,8 +42,7 @@ export class AuthMiddleware {
                 res.status(401).json({error: 'Unauthorized'});
             }
         } catch (error) {
-            // Если токен недействителен, перенаправьте пользователя на страницу логина
-            return res.redirect('/login'); // Используйте правильный путь к странице логина
+            return res.status(500).json({success: false, message: 'Ошибка при проверки токена авторизации: ' + error});
         }
     }
 }
