@@ -2,7 +2,7 @@ import { Sequelize, DataTypes, Model } from 'sequelize';
 
 interface UserAttributes {
     id?: number;
-    id_User: number;
+    id_role: number;
     login: string;
     passwd: string;
     fio: string;
@@ -14,7 +14,7 @@ interface UserAttributes {
 class User extends Model<UserAttributes>
     implements UserAttributes {
     public id!: number;
-    public id_User!: number;
+    public id_role!: number;
     public login!: string;
     public passwd!: string;
     public fio!: string;
@@ -32,7 +32,7 @@ export function setupUserModel(sequelize: Sequelize): void {
                 autoIncrement: true,
                 primaryKey: true,
             },
-            id_User: {
+            id_role: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
             },

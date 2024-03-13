@@ -3,6 +3,7 @@ import { User } from '../../models/User';
 import {checkHash, generateToken} from '../../utils/authUtils';
 import {Role} from "../../models/Role";
 import jwt from "jsonwebtoken";
+import {sequelize} from "../../models";
 
 export class UserController {
     public async login(req: Request, res: Response): Promise<void> {
