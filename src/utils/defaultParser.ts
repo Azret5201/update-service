@@ -10,7 +10,7 @@ const logger = new Logger('offline_clients');
 interface Query {
     service_id?: number;
     identifier?: string;
-    pay_sum?: string;
+    pay_sum?: any;
     another_data?: string[];
     delete_mark?: boolean;
 }
@@ -133,7 +133,7 @@ async function upsertData(serviceName: string[], orders: any, abonentsMark: bool
             logger.log(
                 `SUCCESSFUL: Clients from "${file.name}" file successfully inserting in table ${AbonentService.tableName}`,
             );
-            fs.rm(path.resolve(file.dir, file.base));
+            await fs.rm(path.resolve(file.dir, file.base));
 
         } catch (err) {
             logger.log(`ERROR: Can't insert clients data to the table ${AbonentService.tableName}: ${err}`,
