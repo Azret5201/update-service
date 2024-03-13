@@ -1,6 +1,5 @@
 import {Router} from 'express';
 import {AbonentServiceController} from '../controllers/abonent/AbonentServiceController';
-import {AbonentServerController} from '../controllers/abonent/AbonentServerController';
 import {RecipientController} from '../controllers/registry/RecipientController';
 import {UserController} from '../controllers/user/UserController';
 import {AuthMiddleware} from '../middleware/AuthMiddleware';
@@ -17,7 +16,6 @@ import {GSFRUpdateController} from "../controllers/GSFR/GSFRUpdateController";
 
 const router = Router();
 const abonentServiceController = new AbonentServiceController();
-const abonentServerController = new AbonentServerController();
 const recipientController = new RecipientController();
 const registryController = new RegistryController();
 const registryBackupController = new RegistryBackupController();
@@ -37,7 +35,6 @@ router.use(AuthMiddleware.authenticate);
 
 router.get('/getDataFromDB', databaseController.getDataFromDB);
 router.post('/abonent-service/store', abonentServiceController.store);
-router.get('/listServices', abonentServiceController.getServices);
 
 router.post('/registry', registryController.store);
 router.get('/registry/:id', registryController.show);

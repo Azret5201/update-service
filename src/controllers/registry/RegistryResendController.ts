@@ -92,10 +92,6 @@ export class RegistryResendController {
 
     public async getRegistryData(req: Request, res: Response): Promise<void> {
 
-
-        console.log(req.body);
-        // console.log(req.body)
-        // return
         const recipient_id = req.body.formData.recipient_id;
         const registry_id = req.body.formData.registry_id;
         const formData = req.body.formData;

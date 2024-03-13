@@ -5,31 +5,6 @@ import {Op} from "sequelize";
 import {RecipientRegistry} from "../../models/RecipientRegistry";
 
 export class RecipientController {
-//НЕ УДАЛЯТЬ!
-    public async getRecipients(req: Request, res: Response): Promise<void> {
-        try {
-            const column = req.query.column as string;
-            const value = req.query.value as string;
-
-            // Проверка наличия параметров запроса
-            if (column && value) {
-                const recipients = await Recipient.findAll({
-                    where: {
-                        [column]: {
-                            [Op.like]: `%${value}%`, // Используйте нужный оператор сравнения
-                        },
-                    },
-                });
-                res.json(recipients);
-            } else {
-                const allRecipients = await Recipient.findAll();
-                res.json(allRecipients);
-            }
-        } catch (error) {
-            res.status(500).json({success: false, message:  `Произошла ошибка при получении данных об получателе \n ${error}`});
-        }
-    }
-
 
     public async store(req: Request, res: Response): Promise<void> {
         if (

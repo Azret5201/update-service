@@ -5,49 +5,6 @@ import {Registry} from '../../models/Registry';
 import {RecipientRegistry} from '../../models/RecipientRegistry';
 
 export class RegistryController {
-    public static async searchRegistriesWithRelated(column: string, value: string) {
-        const whereClause = {[column]: `${value}`};
-
-        const recipientRegistries = await RecipientRegistry.findAll({
-            where: whereClause,
-        });
-
-        const registry_ids = recipientRegistries.map((relation) => relation.registry_id);
-
-        return await Registry.findAll({
-            where: {
-                id: registry_ids,
-            },
-            attributes: ['id', 'name', 'server_id', 'formats', 'services_id']
-        });
-    }
-//НЕ УДАЛЯТЬ!
-    public async getRegistries(req: Request, res: Response): Promise<void> {
-        try {
-            const column = req.query.column as string;
-            const value = req.query.value as string;
-            const includeRelated = req.query.includeRelated as string;
-            if (column && value) {
-                let registries;
-                if (includeRelated && includeRelated.toLowerCase() === 'true') {
-
-                    registries = await RegistryController.searchRegistriesWithRelated(column, value);
-                    console.log(includeRelated)
-                } else {
-                    const whereClause = {[column]: {[Op.like]: `%${value}%`}};
-                    registries = await Registry.findAll({where: whereClause});
-                }
-
-                res.json(registries);
-            } else {
-                const allRegistries = await Registry.findAll();
-                res.json(allRegistries);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            res.status(500).json({success: false, message:  `Произошла ошибка при получении данных об реестрах \n ${error}`});
-        }
-    }
 
     public async store(req: Request, res: Response): Promise<void> {
         if (

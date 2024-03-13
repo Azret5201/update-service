@@ -1,80 +1,67 @@
-import {DataTypes, Model} from 'sequelize';
-import sequelize from '../../config/sequelize';
+import { Sequelize, DataTypes, Model } from 'sequelize';
 
-export class Registry extends Model {
-    public id!: number;
-    public name!: string;
-    public services_id!: object;
-    public server_id!: object;
-    public table_headers!: object;
-    public fields!: object;
-    public formats!: object;
-    public is_blocked!: boolean;
-    public sql_query?: string;
-    public createdAt!: string;
-    public updatedAt!: string;
-    startDate: any;
-    endDate: any;
+interface PermissionAttributes {
+    id?: number;
+    name: string;
+    title: string;
+    description: string;
+    deletedAt?: Date;
+    createdAt?: Date;
+    updatedAt?: Date;
 }
 
+class Permission extends Model<PermissionAttributes>
+    implements PermissionAttributes {
+    public id!: number;
+    public name!: string;
+    public title!: string;
+    public description!: string;
+    public readonly deletedAt!: Date;
+    public readonly createdAt!: Date;
+    public readonly updatedAt!: Date;
+}
 
-Registry.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true,
+export { Permission, PermissionAttributes };
+
+export function setupPermissionModel(sequelize: Sequelize): void {
+    Permission.init(
+        {
+            id: {
+                type: DataTypes.INTEGER,
+                autoIncrement: true,
+                primaryKey: true,
+            },
+            name: {
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
+            title: {
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
+            description: {
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
+            deletedAt: {
+                type: DataTypes.DATE,
+                allowNull: true,
+            },
+            createdAt: {
+                type: DataTypes.DATE,
+                allowNull: false,
+            },
+            updatedAt: {
+                type: DataTypes.DATE,
+                allowNull: false,
+            },
         },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        services_id: {
-            type: DataTypes.JSON,
-            allowNull: false,
-        },
-        server_id: {
-            type: DataTypes.JSON,
-            allowNull: true,
-        },
-        table_headers: {
-            type: DataTypes.JSON,
-            allowNull: true,
-        },
-        fields: {
-            type: DataTypes.JSON,
-            allowNull: true,
-        },
-        formats: {
-            type: DataTypes.JSON,
-            allowNull: true,
-        },
-        is_blocked: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-        },
-        sql_query: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        deletedAt: {
-            type: DataTypes.DATE,
-            allowNull: true,
-        },
-        createdAt: {
-            type: DataTypes.DATE,
-            allowNull: false,
-        },
-        updatedAt: {
-            type: DataTypes.DATE,
-            allowNull: false,
-        },
-    },
-    {
-        sequelize,
-        timestamps: true,
-        paranoid: true,
-        modelName: 'Registry',
-        tableName: 'registries'
-    },
-);
+        {
+            sequelize,
+            modelName: 'Permission',
+            tableName: 'access_permissions',
+            timestamps: true,
+            paranoid: true,
+        }
+    );
+}

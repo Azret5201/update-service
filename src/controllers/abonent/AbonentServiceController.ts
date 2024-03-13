@@ -1,9 +1,7 @@
 import {Request, Response} from "express";
-import {Service} from "../../models/Service";
 import {ColumnOrder} from "../../models/ColumnOrder";
 import {createWriteStream} from "fs";
 import * as xlsx from "xlsx";
-import {Op} from "sequelize";
 import * as path from 'path';
 
 
@@ -20,37 +18,7 @@ export class AbonentServiceController {
         return csvData;
     }
 
-    //   try {
-    //     const services = await Service.findAll();
-    //     res.json(services);
-    //   } catch (error) {
-    //     res.status(500).json({ error: "Internal server error" });
-    //   }
-    // }
 
-    public async getServices(req: Request, res: Response): Promise<void> {
-        try {
-            const column = req.query.column as string;
-            const value = req.query.value as string;
-
-            // Проверка наличия параметров запроса
-            if (column && value) {
-                const services = await Service.findAll({
-                    where: {
-                        [column]: {
-                            [Op.in]: value, // Используйте нужный оператор сравнения
-                        },
-                    },
-                });
-                res.json(services);
-            } else {
-                const allServices = await Service.findAll();
-                res.json(allServices);
-            }
-        } catch (error) {
-            res.status(500).json({error: "Internal server error"});
-        }
-    }
 
     public async store(req: Request, res: Response): Promise<void> {
         if (!req.body.file && !req.body.serviceId && !req.body.identifierOrder) {

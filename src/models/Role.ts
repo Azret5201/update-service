@@ -1,26 +1,41 @@
-import {DataTypes, Model} from 'sequelize';
-import sequelize from '../../config/sequelize';
+import {DataTypes, Model, Sequelize} from 'sequelize';
 
-export class Role extends Model {
-    public id!: number;
-    public name!: string;
+interface RoleAttributes {
+    id?: number;
+    name: string;
+    id_region: number;
 }
 
-Role.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true,
+class Role extends Model<RoleAttributes>
+    implements RoleAttributes {
+    public id!: number;
+    public name!: string;
+    public id_region!: number;
+}
+
+export {Role, RoleAttributes};
+
+export function setupRoleModel(sequelize: Sequelize): void {
+    Role.init(
+        {
+            id: {
+                type: DataTypes.INTEGER,
+                // autoIncrement: true,
+                primaryKey: true,
+            },
+            name: {
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
+            id_region: {
+                type: DataTypes.INTEGER,
+            },
         },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
+        {
+            sequelize,
+            timestamps: false,
+            modelName: 'Role',
+            tableName: 'roles',
         },
-    },
-    {
-        sequelize,
-        modelName: 'Role',
-        tableName: 'roles',
-    },
-);
+    );
+}

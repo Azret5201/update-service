@@ -1,13 +1,24 @@
-import {DataTypes, Model} from 'sequelize';
-import sequelize from '../../config/sequelize';
+import { Sequelize, DataTypes, Model } from 'sequelize';
 
-export class ColumnOrder extends Model {
+
+interface ColumnOrderAttributes {
+    id?: number;
+    service_id: number;
+    identifier_order: number;
+    pay_sum_order: number;
+}
+
+class ColumnOrder extends Model<ColumnOrderAttributes>
+    implements ColumnOrderAttributes {
     public id!: number;
     public service_id!: number;
     public identifier_order!: number;
     public pay_sum_order!: number;
 }
 
+export { ColumnOrder, ColumnOrderAttributes };
+
+export function setupColumnOrderModel(sequelize: Sequelize): void {
 ColumnOrder.init(
     {
         id: {
@@ -38,3 +49,4 @@ ColumnOrder.init(
         tableName: 'column_orders',
     },
 );
+}

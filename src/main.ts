@@ -1,6 +1,7 @@
 import bodyParser from 'body-parser';
 import router from './routes/api';
 import cors from 'cors';
+import {sequelize} from "./models";
 
 const express = require('express');
 
@@ -15,10 +16,10 @@ app.use(bodyParser.json({limit: '50mb'}));
 app.use(cors());
 app.use('/api', router);
 
-app.listen(port, (err: any) => {
-    if (err) {
-        console.error(`[server]: Error starting server: ${err}`);
-    } else {
-        console.log(`[server]: Server is running at http://localhost:${port}`);
-    }
+sequelize.sync().then(() => {
+    app.listen(port, () => {
+        console.log(`App is running on http://localhost:${port}`);
+    });
+}).catch(error => {
+    console.error('Ошибка синхронизации базы данных:', error);
 });
