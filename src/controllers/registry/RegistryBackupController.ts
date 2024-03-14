@@ -27,7 +27,7 @@ export class RegistryBackupController {
             });
 
             // Отсортируйте файлы по дате создания в убывающем порядке
-            const sortedFiles = filteredFiles.sort((a: any, b: any) => b.createdAt - a.createdAt);
+            const sortedFiles = filteredFiles.sort((a: any, b: any) => a.createdAt - b.createdAt);
 
             const totalCount = filteredFiles.length;
 
