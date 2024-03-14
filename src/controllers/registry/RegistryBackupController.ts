@@ -22,18 +22,19 @@ export class RegistryBackupController {
                 return {
                     name: filename,
                     size: stats.size, // Добавляем размер файла
-                    createdAt: moment(stats.ctime).format("YYYY-MM-DD HH:mm:ss"), // Используем дату создания файла
+                    createdAt: moment(stats.ctime).format("YYYY-MM-DD"), // Используем дату создания файла
                 };
             });
 
             // Отсортируйте файлы по дате создания в убывающем порядке
+            const sortedFiles = filteredFiles.sort((a: any, b: any) => a.createdAt - b.createdAt);
 
             const totalCount = filteredFiles.length;
 
             // Отправьте список файлов на клиент
             const response = {
                 total: totalCount,
-                data: filteredFiles, // Теперь передаем все данные о файлах
+                data: sortedFiles, // Теперь передаем все данные о файлах
             };
 
             res.json(response);
