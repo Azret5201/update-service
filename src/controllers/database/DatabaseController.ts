@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import { Op, Sequelize } from 'sequelize';
 import {sequelize} from "../../models";
-// import sequelize from '../../../config/sequelize';
 
 export class DatabaseController {
     public async getDataFromDB(req: Request, res: Response): Promise<void> {

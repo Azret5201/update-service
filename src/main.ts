@@ -4,9 +4,11 @@ import cors from 'cors';
 import {sequelize} from "./models";
 
 import express from 'express';
+import moment from "moment";
 
 
 const port = process.env.PORT;
+moment.tz.setDefault(process.env.TIME_ZONE);
 
 
 const app = express();

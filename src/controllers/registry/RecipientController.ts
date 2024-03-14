@@ -1,8 +1,7 @@
 import {Request, Response} from "express";
 import {Recipient} from "../../models/Recipient";
-import sequelize from "../../../config/sequelize";
-import {Op} from "sequelize";
 import {RecipientRegistry} from "../../models/RecipientRegistry";
+import {sequelize} from "../../models";
 
 export class RecipientController {
 

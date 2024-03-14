@@ -2,7 +2,8 @@ import {Request, Response} from "express";
 import multer from "multer";
 import XLSX from "xlsx";
 import {TSJDealer} from "../../../models/TSJDealer";
-import sequelize from "../../../../config/sequelize";
+import {sequelize} from "../../../models";
+
 
 const storage = multer.memoryStorage();
 const upload = multer({storage: storage}).single('dialerUploadFile');

@@ -45,7 +45,7 @@ function convertDates(obj: any) {
   Object.keys(obj).forEach((key) => {
     const value = obj[key];
     if (value instanceof Date) {
-      obj[key] = moment.utc(value).format("YYYY-MM-DD HH:mm:ss");
+      obj[key] = moment(value).format("YYYY-MM-DD HH:mm:ss");
     } else if (typeof value === "object" && value !== null) {
       // Помечаем объект, чтобы избежать бесконечной рекурсии
       value._convertedDates = true;

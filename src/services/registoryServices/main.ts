@@ -5,7 +5,6 @@ import {Recipient} from "../../models/Recipient";
 import {Registry} from "../../models/Registry";
 import {sendRegistryFiles} from "./sendRegistryFiles";
 import {Op} from "sequelize";
-// import { log, logError } from "../../utils/logger";
 import moment from 'moment';
 import {Service} from "../../models/Service";
 import {getAbsolutePath} from "../../utils/pathUtils";
@@ -22,7 +21,6 @@ const logger = new Logger('registries');
 const main = async () => {
 
     const folderPath = getAbsolutePath('storage/registries/files/'); // Укажите путь к вашей папке "files"
-
     try {
         const type = process.argv[2];
 
