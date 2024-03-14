@@ -27,14 +27,13 @@ export class RegistryBackupController {
             });
 
             // Отсортируйте файлы по дате создания в убывающем порядке
-            const sortedFiles = filteredFiles.sort((a: any, b: any) => a.createdAt - b.createdAt);
 
             const totalCount = filteredFiles.length;
 
             // Отправьте список файлов на клиент
             const response = {
                 total: totalCount,
-                data: sortedFiles, // Теперь передаем все данные о файлах
+                data: filteredFiles, // Теперь передаем все данные о файлах
             };
 
             res.json(response);
