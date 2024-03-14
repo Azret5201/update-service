@@ -11,10 +11,10 @@ export class ExportReportController {
         const startDate = formData.startDate;
         const endDate = formData.endDate;
 
-        if (startDate > endDate) {
+        if (!startDate && !endDate) {
             res.status(500).json({
                 success: false,
-                message: 'Неверные даты. Дата окончания не может быть раньше даты начала'
+                message: 'Не выбран период отправки'
             });
             return;
         }

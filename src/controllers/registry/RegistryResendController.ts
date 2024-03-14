@@ -23,6 +23,14 @@ export class RegistryResendController {
             const startDate = registryData.startDate;
             const endDate = registryData.endDate;
 
+            if (!startDate && !endDate) {
+                res.status(500).json({
+                    success: false,
+                    message: 'Не выбран период отправки'
+                });
+                return;
+            }
+
             for (const serviceId of servicesId) {
                 const service = await Service.findOne({
                     where: {
@@ -91,7 +99,7 @@ export class RegistryResendController {
     }
 
     public async getRegistryData(req: Request, res: Response): Promise<void> {
-
+        console.log(req.body)
         const recipient_id = req.body.formData.recipient_id;
         const registry_id = req.body.formData.registry_id;
         const formData = req.body.formData;
