@@ -22,7 +22,7 @@ export class RegistryBackupController {
                 return {
                     name: filename,
                     size: stats.size, // Добавляем размер файла
-                    createdAt: moment(stats.ctime).format("YYYY-MM-DD"), // Используем дату создания файла
+                    createdAt: moment(stats.ctime).format("YYYY-MM-DD HH:mm:ss"), // Используем дату создания файла
                 };
             });
 
