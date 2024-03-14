@@ -3,7 +3,7 @@ import router from './routes/api';
 import cors from 'cors';
 import {sequelize} from "./models";
 
-const express = require('express');
+import express from 'express';
 
 
 const port = process.env.PORT;
@@ -18,7 +18,7 @@ app.use('/api', router);
 
 sequelize.sync().then(() => {
     app.listen(port, () => {
-        console.log(`App is running on http://localhost:${port}`);
+        console.log(`\nApp is running on http://localhost:${port} \n`);
     });
 }).catch(error => {
     console.error('Ошибка синхронизации базы данных:', error);
