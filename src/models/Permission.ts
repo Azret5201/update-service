@@ -42,19 +42,7 @@ export function setupPermissionModel(sequelize: Sequelize): void {
             description: {
                 type: DataTypes.STRING,
                 allowNull: false,
-            },
-            deletedAt: {
-                type: DataTypes.DATE,
-                allowNull: true,
-            },
-            createdAt: {
-                type: DataTypes.DATE,
-                allowNull: false,
-            },
-            updatedAt: {
-                type: DataTypes.DATE,
-                allowNull: false,
-            },
+            }
         },
         {
             sequelize,

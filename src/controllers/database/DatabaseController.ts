@@ -4,6 +4,7 @@ import {sequelize} from "../../models";
 
 export class DatabaseController {
     public async getDataFromDB(req: Request, res: Response): Promise<void> {
+        console.log(req.query.model)
         try {
             const modelName = req.query.model as string;
             const Model = sequelize.models[modelName];
