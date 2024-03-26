@@ -43,42 +43,44 @@ router.post('/checkUserAccess', userController.getPermissionsRoleByUserId);
 // router.get('/getDataFromDB', PermissionMiddleware.checkPermission('test_permission'), databaseController.getDataFromDB);
 
 router.get('/getDataFromDB', databaseController.getDataFromDB);
-router.post('/abonent-service/store', abonentServiceController.store);
-router.post('/registry', registryController.store);
-router.get('/registry/:id', registryController.show);
-router.put('/registry/:id', registryController.update);
-router.delete('/registry/:id', registryController.destroy);
 
-router.post('/registry/resend', registryResendController.getRegistryData);
-router.post('/registry/payments', registryResendController.getPayments);
+router.post('/abonent-service/store',PermissionMiddleware.checkPermission('update_database'), abonentServiceController.store);
 
-router.post('/recipient', recipientController.store);
-router.get('/recipient/:id', recipientController.show);
-router.put('/recipient/:id', recipientController.update);
-router.delete('/recipient/:id', recipientController.destroy);
+router.post('/registry',PermissionMiddleware.checkPermission('reports_management'), registryController.store);
+router.get('/registry/:id',PermissionMiddleware.checkPermission('reports_management'), registryController.show);
+router.put('/registry/:id',PermissionMiddleware.checkPermission('reports_management'), registryController.update);
+router.delete('/registry/:id',PermissionMiddleware.checkPermission('reports_management'), registryController.destroy);
 
-router.get('/registryBackup/index', registryBackupController.getBackups);
-router.post('/registryBackup/download', registryBackupController.downloadBackup);
+router.post('/registry/resend',PermissionMiddleware.checkPermission('reports_management'), registryResendController.getRegistryData);
+router.post('/registry/payments',PermissionMiddleware.checkPermission('reports_management'), registryResendController.getPayments);
 
-router.get('/registryLog/index', registryLogController.getLogs);
-router.post('/registryLog/download', registryLogController.downloadLog);
+router.post('/recipient',PermissionMiddleware.checkPermission('reports_management'), recipientController.store);
+router.get('/recipient/:id',PermissionMiddleware.checkPermission('reports_management'), recipientController.show);
+router.put('/recipient/:id',PermissionMiddleware.checkPermission('reports_management'), recipientController.update);
+router.delete('/recipient/:id',PermissionMiddleware.checkPermission('reports_management'), recipientController.destroy);
 
-router.post('/acquiring/comparison', acquiringController.comparison);
+router.get('/registryBackup/index',PermissionMiddleware.checkPermission('reports_management'), registryBackupController.getBackups);
+router.post('/registryBackup/download',PermissionMiddleware.checkPermission('reports_management'), registryBackupController.downloadBackup);
 
-router.post('/dealer/reports/createReport', exportRegistryController.createReport);
+router.get('/registryLog/index',PermissionMiddleware.checkPermission('reports_management'), registryLogController.getLogs);
+router.post('/registryLog/download',PermissionMiddleware.checkPermission('reports_management'), registryLogController.downloadLog);
 
-router.post('/dealer/reports/updateTSJDealer', tsjDealerController.updateDealer);
-router.post('/GSFR/updateGFSR', gsfrUpdateController.update);
+router.post('/acquiring/comparison',PermissionMiddleware.checkPermission('develop'), acquiringController.comparison);
+
+router.post('/dealer/reports/createReport',PermissionMiddleware.checkPermission('reports_dealer'), exportRegistryController.createReport);
+router.post('/dealer/reports/updateTSJDealer',PermissionMiddleware.checkPermission('reports_dealer'), tsjDealerController.updateDealer);
+
+router.post('/GSFR/updateGFSR',PermissionMiddleware.checkPermission('update_gsfr'), gsfrUpdateController.update);
 
 
-router.post('/permission', permissionController.store);
-router.get('/permission/:id', permissionController.show);
-router.put('/permission/:id', permissionController.update);
-router.delete('/permission/:id', permissionController.destroy);
+router.post('/permission',PermissionMiddleware.checkPermission('access_management'), permissionController.store);
+router.get('/permission/:id',PermissionMiddleware.checkPermission('access_management'), permissionController.show);
+router.put('/permission/:id',PermissionMiddleware.checkPermission('access_management'), permissionController.update);
+router.delete('/permission/:id',PermissionMiddleware.checkPermission('access_management'), permissionController.destroy);
 
 // router.post('/role', roleController.store);
-router.get('/role/:id', roleController.show);
-router.put('/role/:id', roleController.update);
+router.get('/role/:id',PermissionMiddleware.checkPermission('access_management'), roleController.show);
+router.put('/role/:id',PermissionMiddleware.checkPermission('access_management'), roleController.update);
 // router.delete('/role/:id', roleController.destroy);
 
 export default router;
