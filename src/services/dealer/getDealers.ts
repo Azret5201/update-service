@@ -68,7 +68,7 @@ export const getBalance = async (telegramId: number) => {
     }
   } else {
     message =
-      "К сожалению не получилось взять ваш баланс. Обратитесь к вашему мменеджеру!";
+      "К сожалению не получилось взять ваш баланс. Обратитесь к вашему мменеджеру @KubaQP!";
   }
 
   return message;
