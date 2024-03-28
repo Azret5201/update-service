@@ -1,5 +1,5 @@
 import { Telegraf, Markup, session } from "telegraf";
-import { getBalance, getDealerByPhone, helloMessage, testBot } from "../dealer/getDealers";
+import { getBalance, getDealerByPhone, helloMessage, prodBot } from "../dealer/getDealers";
 import * as dotenv from "dotenv";
 import { getAbsolutePath } from "../../utils/pathUtils";
 import sequelize from "../../../config/sequelize";
