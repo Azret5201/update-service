@@ -12,7 +12,7 @@ export const helloMessage = "Привет! Я твой личный финанс
 
 export const getDealerByPhone = async (phone: string, userId: number) => {
   try {
-    const sqlQuery = `SELECT id FROM regions WHERE phone = '${phone}'`;
+    const sqlQuery = `SELECT id FROM regions WHERE region_phone = '${phone}'`;
     const [results, metadata]: [any[], any] = await sequelize.query(sqlQuery);
 
     if (results && results.length > 0) {
