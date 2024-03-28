@@ -1,65 +1,56 @@
-import { Telegraf, Markup } from 'telegraf';
-import { getDuosDealer } from '../dealer/getDealers';
+import { Telegraf, Markup, session } from 'telegraf';
+import { getBalance, getDealerByPhone, retryCount, setDealer } from '../dealer/getDealers';
+import * as dotenv from "dotenv";
+import { getAbsolutePath } from "../../utils/pathUtils";
+import sequelize from '../../../config/sequelize';
 
-// Создаем экземпляр бота
 const bot = new Telegraf('6708220727:AAGfVxcx6lYVbSkEokgqrmJtCXuq4CDoUNg');
 
-let currentState: string | null = null;
-
-// Приветственное сообщение
 bot.start((ctx) => {
-    const keyboard = Markup.keyboard([
-        ['Авторизоваться', 'Баланс'],
-    ]).resize();
-
-    currentState = 'waiting_for_pin';
-
-    // Отправляем сообщение с клавиатурой
-    ctx.reply('Привет! Нажми на кнопку:', keyboard);
+    ctx.reply('Привет! Пожалуйста, отправьте свой номер телефона для авторизации.', {
+        reply_markup: {
+            keyboard: [
+                [{ text: "Отправить номер телефона", request_contact: true }]
+            ],
+            one_time_keyboard: true,
+            resize_keyboard: true
+        }
+    });
 });
 
-bot.hears('Авторизоваться', (ctx) => {
-    if (currentState === 'waiting_for_pin') {
-        ctx.reply('Введите номер телефона и пин(ПРИМЕР: 0701800714,2983:)');
+bot.on('contact', async (ctx) => {
+    const contact = ctx.message?.contact;
 
-        currentState = 'waiting_for_pin_input';
+    if (contact) {
+        const phoneNumber = contact.phone_number;
+        const userId = ctx.from?.id;
+
+        const dealer = await getDealerByPhone(phoneNumber, userId);
+
+        if (dealer) {
+            const authenticatedKeyboard = Markup.keyboard([
+                ['Баланс'],
+            ]).resize();
+            
+            ctx.reply(`Выберите действие:`);
+
+            ctx.reply('Вы успешно прошли авторизацию!', authenticatedKeyboard);
+        } else {
+            ctx.replyWithHTML(`Вы не прошли авторизацию!\n\nВозможно у вас неправильно введен ваш номер телефона! Обратитесь к вашему менеджеру!`);
+        }
     } else {
-        ctx.reply('Пожалуйста, следуйте инструкциям.');
+        ctx.reply('Что-то пошло не так. Пожалуйста, попробуйте еще раз.');
     }
-})
-
-
-bot.on('text', (ctx) => {
-    if (currentState === 'waiting_for_pin_input') {
-        const pinCode = ctx.message?.text;
-
-        const [phone, id] = pinCode.split(',');
-        const dealer = getDuosDealer(parseInt(id, 10), phone);
-        // ctx.reply(`Ваш PIN: ${pinCode}`);
-        
-        currentState = null;
-    }
-})
-// // Обработчик команды /echo
-// bot.command('echo', (ctx) => {
-//     const message = ctx.message;
-//     if (message) {
-//         const text = message.text?.replace('/echo', '').trim();
-//         if (text) {
-//             ctx.reply(text);
-//         } else {
-//             const userId = ctx.from?.id;
-//             ctx.reply(`Ваш ID: ${userId}`);
-//         }
-//     }
-// });
-
-// Обработчик текстовых сообщений
-bot.on('text', (ctx) => {
-    ctx.reply('Понял ваше сообщение: ' + ctx.message?.text);
 });
 
-// Запуск бота
+//получить баланс
+bot.hears('Баланс', async (ctx) => {
+    const userId = ctx.from?.id; 
+    const dealer = await getBalance(userId);
+
+    ctx.reply(dealer);
+})
+
 bot.launch().then(() => {
     console.log('Бот запущен');
 }).catch(err => {

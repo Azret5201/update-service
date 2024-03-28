@@ -13,6 +13,7 @@ import {setupServiceModel} from "./Service";
 import {setupTSJDealerModel} from "./TSJDealer";
 import {setupUserModel} from "./User";
 import {setupRolePermissionsModel} from "./RolePermissions";
+import { setupDealerModel } from './Dealer';
 
 // Определите функцию для инициализации всех моделей
 async function initModels(): Promise<void> {
@@ -30,6 +31,7 @@ async function initModels(): Promise<void> {
     setupServiceModel(sequelize);
     setupTSJDealerModel(sequelize);
     setupUserModel(sequelize);
+    setupDealerModel(sequelize);
 }
 
 // Вызовите функцию инициализации моделей
