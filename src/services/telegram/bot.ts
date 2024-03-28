@@ -4,7 +4,7 @@ import * as dotenv from "dotenv";
 import { getAbsolutePath } from "../../utils/pathUtils";
 import sequelize from "../../../config/sequelize";
 
-const bot = new Telegraf(testBot);
+const bot = new Telegraf(prodBot);
 
 bot.start((ctx) => {
   ctx.replyWithHTML(helloMessage, { parse_mode: 'HTML' });
